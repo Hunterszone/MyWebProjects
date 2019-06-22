@@ -1,0 +1,19 @@
+<script type="text/javascript">
+
+function resizeText(multiplier) {
+  if (document.body.style.fontSize == "") {
+    document.body.style.fontSize = "1.0em";
+  }
+  document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.2) + "em";
+}
+
+</script>
+
+Hey, ypu !!!
+
+<img id="plustext" alt="Increase text size" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGLt075kn9YJJi-6R-
+
+qtWqYa1yz5Q9AWbuZ6Kl9xCCfU2KrsDoEtsWH08" onclick="resizeText(1)" />
+<img id="minustext" alt="Decrease text size" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGLt075kn9YJJi-6R-
+
+qtWqYa1yz5Q9AWbuZ6Kl9xCCfU2KrsDoEtsWH08" onclick="resizeText(-1)" />

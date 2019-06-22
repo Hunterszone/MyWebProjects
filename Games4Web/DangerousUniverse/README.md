@@ -1,0 +1,27 @@
+# README - check it out!
+
+### Link: https://me4gaming.com/DangerousUniverse/game1.html or http://me4gaming.mygamesonline.org/DangerousUniverse/game1.html
+
+### Main techniques: moving sprites, collisions detection, frame-rate dependency, mobile version
+
+### Old-school look & feel arcade space game for web and mobile
+- use the arrows to navigate your ship
+- avoid the obstacles and stay alive, in order to reach a high score
+
+### Features
+- in-browser desktop version
+- in-browser mobile version, using the TouchEvents Web API (pure JS)
+
+_Sources:_    
+https://www.w3.org/TR/touch-events/#touch-interface   
+https://developer.mozilla.org/en-US/docs/Web/API/Touch_events
+
+
+NB.: Mobile support is available only for Chrome
+
+## AUTHOR: 
+
+Konstantin Drenski
+
+
+*ENJOY RESPONSIBLY! :)*

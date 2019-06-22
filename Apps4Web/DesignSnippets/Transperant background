@@ -1,0 +1,20 @@
+<STYLE TYPE="text/css">
+
+img {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+img:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+
+
+</style>
+   
+
+<img src="http://i.picresize.com/images/2015/04/06/TvdNV.jpg">
+
+

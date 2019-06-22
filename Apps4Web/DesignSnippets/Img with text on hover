@@ -1,0 +1,22 @@
+  <a href="http://dir.bg"><div class="img">info here</div></a>
+
+
+<style type="text/css">
+
+
+a{
+    display:block;
+    background-color:#666;
+    width:100px;
+    height:100px;
+}
+
+a div.img{
+    display:none;
+}
+
+a:hover div.img{
+    display:block;
+}
+
+</style>

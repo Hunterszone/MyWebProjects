@@ -1,0 +1,29 @@
+<div class="box">Charms..</div>
+
+
+<STYLE TYPE="text/css">
+
+
+body {
+  color: yellow;
+  font: 600 14px/24px "algerian", Verdana;
+}
+.box {
+  background: black;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 95px;
+  line-height: 95px;
+  text-align: center;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  width: 95px;
+}
+.box:hover {
+  background: #780000;
+}
+
+
+
+</STYLE>

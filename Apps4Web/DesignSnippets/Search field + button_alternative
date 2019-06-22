@@ -1,0 +1,46 @@
+<style type="text/css">
+
+.search-bar {
+height: 29px;
+background-color: #EBEBE0;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+position:relative;
+width:230px
+}
+.search-bar .searchbutton {
+position:absolute;
+top:23%;
+right:15px;
+}
+.sfield {
+float: left;
+margin: 5px 0 0 8px;
+font: 10pt algerian;
+color: black;
+height: 20px;
+line-height: 18px;
+padding: 0;
+background: transparent;
+border: 0;
+max-width: 180px
+}
+
+</style>
+
+<div class="search-bar">
+<div id="tfheader">
+<form id="tfnewsearch" method="get" action="http://www.google.com" target="_blank">
+<input type="text" class="sfield" name="q" id="s" id="s" maxlength="120" onfocus="if 
+
+(this.value == 'Enter a word') {this.value = '';}" onblur="if (this.value == '') 
+
+{this.value = 'Enter a word';}" type="text" size="25" maxlength="120">
+<input type="image" value="Google" id="searchsubmit" class="searchbutton" 
+
+name="search" src="http://www.spheretekk.com/bc/images/search-icon.gif" alt="Search">
+</form>
+<div class="tfclear"></div>
+</div>
+</div>

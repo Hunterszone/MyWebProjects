@@ -1,0 +1,282 @@
+<STYLE TYPE="text/css">
+ 
+fieldset {
+    display: block;
+    margin-left: 315px;
+    margin-right: 315px;
+    padding-top: 5em;
+    padding-bottom: 3.5em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 8px groove (internal value);
+    background-color: rgba(0,0,0,0.5);
+    
+} 
+</STYLE>
+ 
+ 
+<style type="text/css">
+ 
+  input:required:invalid, input:focus:invalid {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeVJREFUeNqkU01oE1EQ/mazSTdRmqSxLVSJVKU9RYoHD8WfHr16kh5EFA8eSy6hXrwUPBSKZ6E9V1CU4tGf0DZWDEQrGkhprRDbCvlpavan3ezu+LLSUnADLZnHwHvzmJlvvpkhZkY7IqFNaTuAfPhhP/8Uo87SGSaDsP27hgYM/lUpy6lHdqsAtM+BPfvqKp3ufYKwcgmWCug6oKmrrG3PoaqngWjdd/922hOBs5C/jJA6x7AiUt8VYVUAVQXXShfIqCYRMZO8/N1N+B8H1sOUwivpSUSVCJ2MAjtVwBAIdv+AQkHQqbOgc+fBvorjyQENDcch16/BtkQdAlC4E6jrYHGgGU18Io3gmhzJuwub6/fQJYNi/YBpCifhbDaAPXFvCBVxXbvfbNGFeN8DkjogWAd8DljV3KRutcEAeHMN/HXZ4p9bhncJHCyhNx52R0Kv/XNuQvYBnM+CP7xddXL5KaJw0TMAF8qjnMvegeK/SLHubhpKDKIrJDlvXoMX3y9xcSMZyBQ+tpyk5hzsa2Ns7LGdfWdbL6fZvHn92d7dgROH/730YBLtiZmEdGPkFnhX4kxmjVe2xgPfCtrRd6GHRtEh9zsL8xVe+pwSzj+OtwvletZZ/wLeKD71L+ZeHHWZ/gowABkp7AwwnEjFAAAAAElFTkSuQmCC);
+    background-position: right top;
+    background-repeat: no-repeat;
+    -moz-box-shadow: none;
+  }
+  input:required:valid {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAepJREFUeNrEk79PFEEUx9/uDDd7v/AAQQnEQokmJCRGwc7/QeM/YGVxsZJQYI/EhCChICYmUJigNBSGzobQaI5SaYRw6imne0d2D/bYmZ3dGd+YQKEHYiyc5GUyb3Y+77vfeWNpreFfhvXfAWAAJtbKi7dff1rWK9vPHx3mThP2Iaipk5EzTg8Qmru38H7izmkFHAF4WH1R52654PR0Oamzj2dKxYt/Bbg1OPZuY3d9aU82VGem/5LtnJscLxWzfzRxaWNqWJP0XUadIbSzu5DuvUJpzq7sfYBKsP1GJeLB+PWpt8cCXm4+2+zLXx4guKiLXWA2Nc5ChOuacMEPv20FkT+dIawyenVi5VcAbcigWzXLeNiDRCdwId0LFm5IUMBIBgrp8wOEsFlfeCGm23/zoBZWn9a4C314A1nCoM1OAVccuGyCkPs/P+pIdVIOkG9pIh6YlyqCrwhRKD3GygK9PUBImIQQxRi4b2O+JcCLg8+e8NZiLVEygwCrWpYF0jQJziYU/ho2TUuCPTn8hHcQNuZy1/94sAMOzQHDeqaij7Cd8Dt8CatGhX3iWxgtFW/m29pnUjR7TSQcRCIAVW1FSr6KAVYdi+5Pj8yunviYHq7f72po3Y9dbi7CxzDO1+duzCXH9cEPAQYAhJELY/AqBtwAAAAASUVORK5CYII=);
+    background-position: right top;
+    background-repeat: no-repeat;
+  }
+ 
+ 
+</style>
+ 
+ 
+ 
+ 
+<head>
+<body background="http://i.picresize.com/images/2015/04/28/iO4N.jpg"></body>
+
+ 
+<br><br><br><br><form id='register' action='file:///C:/Users/bgdrek01/Desktop/Piece%20of%20art.html' method='post'
+    accept-charset='UTF-8'>
+ 
+ 
+<fieldset><center>
+ 
+<legend><font face="algerian"><font size="4"><font color="yellow"><u>Enter your credentials:</u></font></font></font></legend>
+ 
+<p><br><font face="verdana"><font size="3"><font color="white">Username:</font></font></font></br></p>
+<p><input type="text" required pattern="\w+" name="username"></p>
+ 
+<p><font face="verdana"><font size="3"><font color="white">Password:</font></font></font></p>
+<p><input type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="pwd1" onchange="form.pwd2.pattern = this.value;"></p>
+ 
+<p><font face="verdana"><font size="3"><font color="white">Confirm Password:</font></font></font></p>
+<p><input type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" name="pwd2"></p>
+
+<br><p class="keeplogin"> 
+          <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+          <label for="loginkeeping"><font face="algerian"><font size="2"><font color="yellow"><i>Keep me signed in</i></font></font></font></label>
+     </p>
+ 
+<br><br>
+<input type='submit' name='Register now' value='Sign in now' style="cursor: pointer;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ 
+<input type="hidden"><input type="reset" value="Clear form" name="submit" style="cursor: pointer;">
+ 
+ 
+</center></fieldset>
+</form>
+ 
+ 
+</body>
+</head>
+ 
+ 
+<style type="text/css">
+ 
+input[type=submit] {
+    border-radius: 25px;
+    border: 2;
+    width: 110px;
+    height:25px;
+    font-family: Algerian;
+    background: #f4f4f4;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #f4f4f4), color-stop(100%, #ededed));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #f4f4f4 1%, #ededed 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#ededed', GradientType=0);
+    /* IE6-9 */
+}
+ 
+ 
+ 
+input[type=reset] {
+    border-radius: 25px;
+    border: 2;
+    width: 105px;
+    height:25px;
+    font-family: Algerian;
+    background: #f4f4f4;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #f4f4f4), color-stop(100%, #ededed));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f4f4f4 1%, #ededed 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #f4f4f4 1%, #ededed 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#ededed', GradientType=0);
+    /* IE6-9 */
+}
+ 
+</style>
+
+<script style="text/javascript">
+
+
+$key = 'fc4d57ed55a78de1a7b31e711866ef5a2848442349f52cd470008f6d30d47282';
+$key = pack("H*", $key); // They key is used in binary form
+
+// Am Using Memecahe as Sample Database
+$db = new Memcache();
+$db->addserver("127.0.0.1");
+
+try {
+    // Start Remember Me
+    $rememberMe = new RememberMe($key);
+    $rememberMe->setDB($db); // set example database
+
+    // Check if remember me is present
+    if ($data = $rememberMe->auth()) {
+        printf("Returning User %s\n", $data['user']);
+
+        // Limit Acces Level
+        // Disable Change of password and private information etc
+
+    } else {
+        // Sample user
+        $user = "baba";
+
+        // Do normal login
+        $rememberMe->remember($user);
+        printf("New Account %s\n", $user);
+    }
+} catch (Exception $e) {
+    printf("#Error  %s\n", $e->getMessage());
+}
+
+class RememberMe {
+    private $key = null;
+    private $db;
+
+    function __construct($privatekey) {
+        $this->key = $privatekey;
+    }
+
+    public function setDB($db) {
+        $this->db = $db;
+    }
+
+    public function auth() {
+
+        // Check if remeber me cookie is present
+        if (! isset($_COOKIE["auto"]) || empty($_COOKIE["auto"])) {
+            return false;
+        }
+
+        // Decode cookie value
+        if (! $cookie = @json_decode($_COOKIE["auto"], true)) {
+            return false;
+        }
+
+        // Check all parameters
+        if (! (isset($cookie['user']) || isset($cookie['token']) || isset($cookie['signature']))) {
+            return false;
+        }
+
+        $var = $cookie['user'] . $cookie['token'];
+
+        // Check Signature
+        if (! $this->verify($var, $cookie['signature'])) {
+            throw new Exception("Cokies has been tampared with");
+        }
+
+        // Check Database
+        $info = $this->db->get($cookie['user']);
+        if (! $info) {
+            return false; // User must have deleted accout
+        }
+
+        // Check User Data
+        if (! $info = json_decode($info, true)) {
+            throw new Exception("User Data corrupted");
+        }
+
+        // Verify Token
+        if ($info['token'] !== $cookie['token']) {
+            throw new Exception("System Hijacked or User use another browser");
+        }
+
+        /**
+         * Important
+         * To make sure the cookie is always change
+         * reset the Token information
+         */
+
+        $this->remember($info['user']);
+        return $info;
+    }
+
+    public function remember($user) {
+        $cookie = [
+                "user" => $user,
+                "token" => $this->getRand(64),
+                "signature" => null
+        ];
+        $cookie['signature'] = $this->hash($cookie['user'] . $cookie['token']);
+        $encoded = json_encode($cookie);
+
+        // Add User to database
+        $this->db->set($user, $encoded);
+
+        /**
+         * Set Cookies
+         * In production enviroment Use
+         * setcookie("auto", $encoded, time() + $expiration, "/~root/",
+         * "example.com", 1, 1);
+         */
+        setcookie("auto", $encoded); // Sample
+    }
+
+    public function verify($data, $hash) {
+        $rand = substr($hash, 0, 4);
+        return $this->hash($data, $rand) === $hash;
+    }
+
+    private function hash($value, $rand = null) {
+        $rand = $rand === null ? $this->getRand(4) : $rand;
+        return $rand . bin2hex(hash_hmac('sha256', $value . $rand, $this->key, true));
+    }
+
+    private function getRand($length) {
+        switch (true) {
+            case function_exists("mcrypt_create_iv") :
+                $r = mcrypt_create_iv($length, MCRYPT_DEV_URANDOM);
+                break;
+            case function_exists("openssl_random_pseudo_bytes") :
+                $r = openssl_random_pseudo_bytes($length);
+                break;
+            case is_readable('/dev/urandom') : // deceze
+                $r = file_get_contents('/dev/urandom', false, null, 0, $length);
+                break;
+            default :
+                $i = 0;
+                $r = "";
+                while($i ++ < $length) {
+                    $r .= chr(mt_rand(0, 255));
+                }
+                break;
+        }
+        return substr(bin2hex($r), 0, $length);
+    }
+}
+
+</script>
