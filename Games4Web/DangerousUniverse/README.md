@@ -17,7 +17,7 @@ https://www.w3.org/TR/touch-events/#touch-interface
 https://developer.mozilla.org/en-US/docs/Web/API/Touch_events
 
 
-NB.: Mobile support is available only for Chrome
+NB.: Full mobile support for Chrome only
 
 ## AUTHOR: 
 
