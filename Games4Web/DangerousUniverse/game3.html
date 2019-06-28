@@ -356,7 +356,7 @@ function startGame() {
 	myLevels.update();
 	myShieldTxt.text="Super Resizer!";
 	myShields = new component(57, 57, "images/shield.gif", 410, 115, "image", "text")
-	myShieldTxt2.text="Resize in:" + 0 + "s.";
+	myShieldTxt2.text="Resize in:" + 10 + "s.";
 	myShieldTxt2.update();
 
 	startup();
@@ -515,6 +515,7 @@ function updateGameArea() {
 			
 				highs.push((myGameArea.frameNo)*2); // "scored" is the High Score reached
 			}
+			myEarth.update();myEarthTxt.text="Greetings from Earth";myEarthTxt.update();
 			return;
 		}
 		
@@ -627,25 +628,23 @@ function updateGameArea() {
         myPortals[i].update();
     }
 	
-    myScore.text="#PTS COUNTER:" + myGameArea.frameNo;
-	myScore.update();
-	myScoreUp.update();
-	myHoles.update();
-	myTime.text="#TIME:" + (myGameArea.frameNo) / 100;
-	myTime.update();
-	myLives.update();
-	myLives2.update();
-	myLives3.update();
-	myMood.text="#HARD:";
-	myMood.update();
-	myShieldTxt.update();
-	myShieldTxt2.update();
-	var countk;
-	for(countk = 0; countk < 99; countk++){if(myGameArea.frameNo == 1000*countk){myGamePiece = new component(25, 25, "images/smile.gif", 10, 150, "image", "text");minHeight*1.1;maxHeight*1.1;myGamePiece.speedX=countk*(1/(countk-0.5));document.getElementById('sound2').play();myScore2.text="LevelUp! " + countk;myScore2.update();myLevels.text = "#LEVEL:" + (countk + 1);myLevels.update();}
-	if(myGameArea.frameNo > 1000 && myGameArea.frameNo < 1300){myEarth.update();myEarthTxt.text="Greetings from Earth";myEarthTxt.update();}
-	if(myGameArea.frameNo > 2500 && myGameArea.frameNo < 2800){myEarth.update();myEarthTxt.text="Greetings from Earth";myEarthTxt.update();}
-	if(myGameArea.frameNo > 4500 && myGameArea.frameNo < 4800){myEarth.update();myEarthTxt.text="Greetings from Earth";myEarthTxt.update();}
-	if(myGameArea.frameNo > 7000 && myGameArea.frameNo < 7300){myEarth.update();myEarthTxt.text="Greetings from Earth";myEarthTxt.update();}
+		myScore.text="#PTS COUNTER:" + myGameArea.frameNo;
+		myScore.update();
+		myScoreUp.update();
+		myHoles.update();
+		myTime.text="#TIME:" + (myGameArea.frameNo) / 100;
+		myTime.update();
+		myLives.update();
+		myLives2.update();
+		myLives3.update();
+		myMood.text="#HARD:";
+		myMood.update();
+		myShieldTxt.update();
+		myShieldTxt2.update();
+		var countk;
+		for(countk = 0; countk < 99; countk++){if(myGameArea.frameNo == 1000*countk){myGamePiece = new component(25, 25, "images/smile.gif", 10, 150, "image", "text");minHeight*1.1;maxHeight*1.1;myGamePiece.speedX=countk*(1/(countk-0.5));document.getElementById('sound2').play();myScore2.text="LevelUp! " + countk;myScore2.update();myLevels.text = "#LEVEL:" + (countk + 1);myLevels.update();if(countk == 99) countk = 0;}
+		if (myGameArea.frameNo*countk-0.5 < getRandomArbitrary(everyinterval(100), everyinterval(300))){
+		myEarth.update();myEarthTxt.text="";myEarthTxt.update();}
 	}
 	if (myGameArea.key && myGameArea.key == 37) {myGamePiece.speedX = -1; document.getElementById('sound4').play();}
     if (myGameArea.key && myGameArea.key == 39) {myGamePiece.speedX = 1.3; document.getElementById('sound4').play();}
@@ -657,6 +656,10 @@ function updateGameArea() {
     myGamePiece.update();
 	myShields.update();
 	myLevels.update();
+}
+
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
 }
 
 function everyinterval(n) {
