@@ -7,108 +7,21 @@
 <!-- CSS for BLINKING TEXT HEADER WITH FIRE SHADOW -->
 <html>
    <head>
-      <!-- JAVA SCRIPT -->
-      <script type="text/javascript">
-         <!-- Begin
-         function popUp(URL) {
-         day = new Date();
-         id = day.getTime();
-         eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=1,width=350,height=150,left = 650,top = 375');");
-         }
-         // End -->
-         
-         var t1=0;
-         window.onscroll = scroll1;
-         
-         function scroll1(){
-             var toTop = document.getElementById('toTop');
-             window.scrollY>400 ? toTop.style.display='Block' :  toTop.style.display='none';
-         	if(window.scrollY>1600){
-         		
-         		toTop.style.display='none';
-         	}
-         }
-         
-         function abcd()
-         {
-             var y1 = window.scrollY;
-             y1 = y1-1000;
-             window.scrollTo(0,y1);
-             if(y1>0)
-             {
-                 t1 = setTimeout("abcd()",200);  
-             }
-             else
-             {
-                 clearTimeout(t1);   
-             }
-         }
-         
-         function bigImg(f) {
-             f.style.height = "60px";
-             f.style.width = "60px";
-         }
-         
-         function normalImg(f) {
-             f.style.height = "50px";
-             f.style.width = "50px";
-         }
-         
-           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-         
-           ga('create', 'UA-57030474-1', 'auto');
-           ga('send', 'pageview');
-         
-         
-         tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
-         tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
-         
-         function GetClock(){
-         var d=new Date();
-         var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear(),nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
-         
-              if(nhour==0){ap=" AM";nhour=12;}
-         else if(nhour<12){ap=" AM";}
-         else if(nhour==12){ap=" PM";}
-         else if(nhour>12){ap=" PM";nhour-=12;}
-         
-         if(nyear<1000) nyear+=1900;
-         if(nmin<=9) nmin="0"+nmin;
-         if(nsec<=9) nsec="0"+nsec;
-         
-         document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
-         }
-         
-         function move() {
-           var elem = document.getElementById("myBar");   
-           var width = 0;
-           var id = setInterval(frame, 50);
-           function frame() {
-             if (width >= 100) {
-               clearInterval(id);      
-         	  document.getElementById("myBar").style.display="none";
-         	  document.getElementById("myP").style.display="none";
-             } else {
-               width++; 
-               elem.style.width = width + '%'; 
-               var num = width * 1 / 1;
-               num = num.toFixed(0)
-               document.getElementById("demo").innerHTML = num;
-             }
-           }
-         }
-         
-         window.onload=function(){
-         GetClock();
-         move();
-         setInterval(GetClock,1000);
-         }
-         
-      </script>
-      <style type="text/css">
+      <!-- CSS -->
+	  <style>
+		html {
+		  scroll-behavior: smooth;
+		}
+		
+		.content {
+		  display: flex;
+		  justify-content: space-between;
+		  max-width: 400px;
+		  margin: 0 auto;
+		  padding: 10px 0;
+		}
+      </style>
+	  <style type="text/css">
          .blink_text {
          -webkit-animation-name: blinker;
          -webkit-animation-duration: 2.5s;
@@ -231,7 +144,7 @@
          }
       </style>
       <!-- CSS for BACKGROUND -->
-      <STYLE TYPE="text/css">
+      <style>
          body { 
          background: url(http://www.knowledgequarter.london/wp-content/uploads/2017/05/books.jpg) no-repeat center center fixed; 
          -webkit-background-size: cover;
@@ -265,7 +178,7 @@
       </style>
       <!-- CSS for NAVIGATION PANE -->
       <!--
-         <STYLE TYPE="text/css">
+         <style>
          
          
          #primary_nav_wrap
@@ -346,7 +259,7 @@
          }
          
          
-         </STYLE>
+         </style>
          
          --->
       <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -378,9 +291,8 @@
          #toTop {
          display: block;
          position: fixed;
-         bottom: 400px;
+         bottom: 100px;
          right: 20px;
-         font-size: 48px;
          opacity: 1;
          display:none;
          cursor: pointer;
@@ -483,12 +395,12 @@
          .shakeimage {POSITION: relative}
       </style>
       <!-- CSS for FIRE SHADOWS -->
-      <STYLE TYPE="text/css">
+      <style>
          h222 {
          text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px 
          #451b0e;
          } 
-      </STYLE>
+      </style>
       <style type="text/css">
          @-webkit-keyframes pulse_animation {
          0% { -webkit-transform: scale(1); }
@@ -520,7 +432,7 @@
          }
       </style>
       <!-- CSS for SOCIAL NETWORKS BUTTONS -->
-      <STYLE TYPE="text/css">
+      <style>
          .social {
          position: relative;
          width: 50%;
@@ -567,7 +479,7 @@
          .social .link.facebook:hover {
          background-color: white;
          }
-      </STYLE>
+      </style>
       <!-- CSS for SOME FIXES -->
       <style>
          h20 {
@@ -747,6 +659,92 @@
          overflow-x:hidden;
          }
       </style>
+      <!-- JAVA SCRIPT -->
+      <script type="text/javascript">
+         <!-- Begin
+         function popUp(URL) {
+         day = new Date();
+         id = day.getTime();
+         eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=1,width=350,height=150,left = 650,top = 375');");
+         }
+         // End -->
+         
+         var t1=0;
+         window.onscroll = scroll1;
+         
+         function scroll1(){
+             var toTop = document.getElementById('toTop');
+             window.scrollY>400 ? toTop.style.display='Block' :  toTop.style.display='none';
+         	if(window.scrollY>1600){
+         		
+         		toTop.style.display='none';
+         	}
+         }
+                  
+         function bigImg(f) {
+             f.style.height = "60px";
+             f.style.width = "60px";
+         }
+         
+         function normalImg(f) {
+             f.style.height = "50px";
+             f.style.width = "50px";
+         }
+         
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+         
+           ga('create', 'UA-57030474-1', 'auto');
+           ga('send', 'pageview');
+         
+         
+         tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+         tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+         
+         function GetClock(){
+         var d=new Date();
+         var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear(),nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+         
+              if(nhour==0){ap=" AM";nhour=12;}
+         else if(nhour<12){ap=" AM";}
+         else if(nhour==12){ap=" PM";}
+         else if(nhour>12){ap=" PM";nhour-=12;}
+         
+         if(nyear<1000) nyear+=1900;
+         if(nmin<=9) nmin="0"+nmin;
+         if(nsec<=9) nsec="0"+nsec;
+         
+         document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+         }
+         
+         function move() {
+           var elem = document.getElementById("myBar");   
+           var width = 0;
+           var id = setInterval(frame, 50);
+           function frame() {
+             if (width >= 100) {
+               clearInterval(id);      
+         	  document.getElementById("myBar").style.display="none";
+         	  document.getElementById("myP").style.display="none";
+             } else {
+               width++; 
+               elem.style.width = width + '%'; 
+               var num = width * 1 / 1;
+               num = num.toFixed(0)
+               document.getElementById("demo").innerHTML = num;
+             }
+           }
+         }
+         
+         window.onload=function(){
+         GetClock();
+         move();
+         setInterval(GetClock,1000);
+         }
+         
+      </script>
    </head>
    <table>
       <tr>
@@ -766,7 +764,7 @@
          </td>
       </tr>
    </table>
-   <!--<LINK rel="stylesheet" type="text/css" name="KOKO" href="STYLES.CSS">--->
+   <!--<LINK rel="stylesheet" type="text/css" name="KOKO" href="styles.css">--->
    <!-- HTML for ANIMATION, CLOCK, HEADING AND SEARCH ENGINE -->
    <center>
       <b>
@@ -786,7 +784,7 @@
    <p><br>
    <center><b><i><font face="algerian"><font size="6"><font color="white">YOUR PLACE <font color="yellow">FOR</font> WEB DEVELOPMENT <font color="yellow"></font><font color="yellow">&</font>WEB DESIGN</font></font></font></font></i></b></center>
    </br></p>
-   <img id="toTop" src="http://rs300.pbsrc.com/albums/nn22/montira_bucket/arrow/arrow-3.gif~c200" onclick="abcd()" title="Back to top" style="width: 70px; height: 70px;"> 
+   <a href="#"><img id="toTop" src="http://rs300.pbsrc.com/albums/nn22/montira_bucket/arrow/arrow-3.gif~c200" title="Back to top" style="width: 70px; height: 70px;"></a>
    <br>
    <center>
       <ul id="menu">
@@ -840,32 +838,36 @@
       </div>
       <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
       <div class="slider" style="cursor: hand;">
-      <input type="radio" name="slide_switch" id="id1" checked="checked" onclick="window.open('https://nodejs.org/')" />
+      <!-- 1st image -->
+	  <input type="radio" name="slide_switch" id="id1" checked="checked" onclick="window.open('https://wordpress.org/')" />
       <label for="id1">
-      <img src="http://blog.rivaliq.com/wp-content/uploads/2014/01/nodejs_0.png" width="100" height="51.9" />
+      <img src="https://s.w.org/style/images/about/WordPress-logotype-wmark.png" width="100" height="51.9" />
       </label>
-      <img src="http://blog.rivaliq.com/wp-content/uploads/2014/01/nodejs_0.png" width="640" height="320" />
-      <!--Lets show the second image by default on page load-->
+	  <img src="https://s.w.org/style/images/about/WordPress-logotype-wmark.png" width="640" height="320" />
+      <!-- 2nd image -->
       <input type="radio" name="slide_switch" id="id2" onclick="window.open('https://angularjs.org/')" />
       <label for="id2">
       <img src="http://supnig.com/media/pictures/angularjs.png" width="100" height="51.9"/>
       </label>
       <img src="http://supnig.com/media/pictures/angularjs.png" width="640" height="320" />
-      <input type="radio" name="slide_switch" id="id3" onclick="window.open('https://wix.com/')" />
+      <!-- 3rd image -->
+	  <input type="radio" name="slide_switch" id="id3" onclick="window.open('https://wix.com/')" />
       <label for="id3">
-      <img src="http://streetfightmagcom.b.presscdn.com/wp-content/uploads/9bc178_9737c4bcb5cd54861daa2377c139d60b.jpg" width="100" height="51.9" />
+      <img src="https://www.gvate.com/wp-content/uploads/2015/05/New-York-Wix-Service-and-Support.png" width="100" height="51.9" />
       </label>
-      <img src="http://streetfightmagcom.b.presscdn.com/wp-content/uploads/9bc178_9737c4bcb5cd54861daa2377c139d60b.jpg" width="640" height="320" />
-      <input type="radio" name="slide_switch" id="id4" onclick="window.open('http://w3schools.com/')" />
+      <img src="https://www.gvate.com/wp-content/uploads/2015/05/New-York-Wix-Service-and-Support.png" width="640" height="320" />
+      <!-- 4th image -->
+	  <input type="radio" name="slide_switch" id="id4" onclick="window.open('http://w3schools.com/')" />
       <label for="id4">
       <img src="http://mostlywebsites.net/wp-content/uploads/w3schools-logo.jpg" width="100" height="51.9" />
       </label>
       <img src="http://mostlywebsites.net/wp-content/uploads/w3schools-logo.jpg" width="640" height="320" />
-      <input type="radio" name="slide_switch" id="id5" onclick="window.open('https://weebly.com/')" />
+      <!-- 5th image -->
+	  <input type="radio" name="slide_switch" id="id5" onclick="window.open('https://weebly.com/')" />
       <label for="id5">
-      <img src="http://www.spiderwebconnections.com/wp-content/uploads/2012/11/weebly.jpg" width="100" height="51.9" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Weebly_logo.svg/1280px-Weebly_logo.svg.png" width="100" height="51.9" />
       </label>
-      <img src="http://www.spiderwebconnections.com/wp-content/uploads/2012/11/weebly.jpg" width="640" height="320" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Weebly_logo.svg/1280px-Weebly_logo.svg.png" width="640" height="320" />
       </div>
       </center>
       <br><br>
@@ -925,23 +927,15 @@
                style="width:70px;height:70px"></span></a>
          </div>
          <p><br>
-         <table style="width:98.5%">
-            <tr>
-               <td>
-                  <center>
+			<div class="content">
                      <a href="javascript:window.print()"><img src="http://icons.iconarchive.com/icons/avosoft/warm-toolbar/256/print-icon.png" alt="print this page" id="print-button" title="Print" style="width:40px;height:40px" 
-                        /></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        /></a>
                      <a href="javascript:popUp('http://www.partyviberadio.com/player/embed-auto/reggae.html')"><img src="http://icons.iconarchive.com/icons/ncrow/mega-pack-2/256/Windows-Media-Player-12-icon.png" title="Online radio" 
-                        style="width:40px;height:40px" /></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
-                     <a href="#"><img src="http://icons.iconarchive.com/icons/icojam/blue-bits/256/arrow-up-icon.png" title="Back to top" style="width:40px;height:40px"/></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                     <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" target="_blank"><img src="http://icons.iconarchive.com/icons/graphicloads/seo-services/256/creative-icon.png" title="Creative Commons" 
-                        style="width:40px;height:40px" /></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
-                     <a href="http://www.smashingmagazine.com/feed/" target="_blank"><img src="http://icons.iconarchive.com/icons/graphics-vibe/simple-rounded-social/256/rss-feed-icon.png" alt="[Valid RSS]" 
-                        title="RSS feeds" style="width:40px;height:40px" /></a>
-                  </center>
-               </td>
-            </tr>
-         </table>
+                        style="width:40px;height:40px" /></a>
+                     <a href="#"><img src="http://icons.iconarchive.com/icons/icojam/blue-bits/256/arrow-up-icon.png" title="Back to top" style="width:40px;height:40px"/></a>
+                     <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" target="_blank"><img src="http://icons.iconarchive.com/icons/graphicloads/seo-services/256/creative-icon.png" title="Creative Commons" style="width:40px;height:40px" /></a>
+                     <a href="http://www.smashingmagazine.com/feed/" target="_blank"><img src="http://icons.iconarchive.com/icons/graphics-vibe/simple-rounded-social/256/rss-feed-icon.png" alt="[Valid RSS]" title="RSS feeds" style="width:40px;height:40px" /></a>
+			</div>
          </br></p>
          <br>
          <center><font size="3"><font color="white"><b><i>Copyright Â© 2015 THAT BAD DESIGN. All rights reserved.</i></b></font></font></center>
