@@ -350,7 +350,7 @@ function startGame() {
     myGameArea.start();
 	myScoreUp.text="#HIGH SCORE:" + 0;
 	myScoreUp.update();
-	myHoles.text="#HOLES HIT:" + 0;
+	myHoles.text="#BLACK HOLES:" + 0;
 	myHoles.update();
 	myLevels.text="#LEVEL:" + 1;
 	myLevels.update();
@@ -510,7 +510,7 @@ function updateGameArea() {
 			myScoreTr.update();
 			myScoreUp.text="#HIGH SCORE:" + (myGameArea.frameNo)*2;
 			for (i = 2; i < myTresures.length; i++) {holer.push(i++);}
-			myHoles.text="#HOLES HIT:" + holer.push(i);
+			myHoles.text="#BLACK HOLES:" + holer.push(i);
 			if(highs.includes((myGameArea.frameNo)*2) == false){
 			
 				highs.push((myGameArea.frameNo)*2); // "scored" is the High Score reached
