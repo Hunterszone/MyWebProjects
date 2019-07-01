@@ -543,11 +543,11 @@ function updateGameArea() {
 				myScoreTr.update();
 				document.getElementById('sound26').play();
 				for(q = 1; q < 99; q++){
-					myShieldTxt2.text="Resize in:" + (q*0.1 - myGameArea.frameNo / 100).toPrecision(2) + "s.";
+					myShieldTxt2.text="Resize in:" + Math.abs(10 - ((q*0.1 - myGameArea.frameNo / 100).toPrecision(2))) + "s.";
 					myShieldTxt2.update();
 					if(q*0.1 - myGameArea.frameNo / 100 < -20){
 						
-						myShieldTxt2.text="Resize in:" + -(q*0.1 - myGameArea.frameNo / 100).toPrecision(2) + "s.";
+						myShieldTxt2.text="Resize in:" + Math.abs(10 - ((q*0.1 - myGameArea.frameNo / 100).toPrecision(2))) + "s.";
 						myShieldTxt2.update();
 						if(myGameArea.frameNo / 100 > -(q*0.1 - myGameArea.frameNo / 100)){
 							
