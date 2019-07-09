@@ -115,224 +115,232 @@ var myMood;
 var myHoles;
 var myEarth;
 var myLevels;
-
+var countDownDate = new Date().getTime();
 var highs = [];
 var ongoingTouches = [];
 
-var HighScoreTable = [highs, 'P', 'T', 'S', '#####', 'P', 'E', 'R','#####', 'H', 'O', 'L', 'E'];
- 	
-	function convertArrayOfObjectsToCSV(args) {  
-        var result, ctr, keys, columnDelimiter, lineDelimiter, data;
+var HighScoreTable = [highs, 'P', 'T', 'S', '#####', 'P', 'E', 'R', '#####', 'H', 'O', 'L', 'E'];
 
-        data = args.data || null;
-        if (data == null || !data.length) {
-            return null;
-        }
+function convertArrayOfObjectsToCSV(args) {
+	var result,
+	ctr,
+	keys,
+	columnDelimiter,
+	lineDelimiter,
+	data;
 
-        columnDelimiter = args.columnDelimiter || ',';
-        lineDelimiter = args.lineDelimiter || '\n';
+	data = args.data || null;
+	if (data == null || !data.length) {
+		return null;
+	}
 
-        keys = Object.keys(data[0]);
+	columnDelimiter = args.columnDelimiter || ',';
+	lineDelimiter = args.lineDelimiter || '\n';
 
-        result = '';
-        result += keys.join(columnDelimiter);
-        result += lineDelimiter;
+	keys = Object.keys(data[0]);
 
-        data.forEach(function(item) {
-            ctr = 0;
-            keys.forEach(function(key) {
-                if (ctr > 0) result += columnDelimiter;
+	result = '';
+	result += keys.join(columnDelimiter);
+	result += lineDelimiter;
 
-                result += item[key];
-                ctr++;
-            });
-            result += lineDelimiter;
-        });
+	data.forEach(function (item) {
+		ctr = 0;
+		keys.forEach(function (key) {
+			if (ctr > 0)
+				result += columnDelimiter;
 
-        return result;
-    }
-	
-	function downloadCSV(args) {  
-        var data, filename, link;
-        var csv = convertArrayOfObjectsToCSV({
-            data: HighScoreTable
-        });
-        if (csv == null) return;
+			result += item[key];
+			ctr++;
+		});
+		result += lineDelimiter;
+	});
 
-        filename = args.filename || 'HighScoreTable.csv';
+	return result;
+}
 
-        if (!csv.match(/^data:text\/csv/i)) {
-            csv = 'data:text/csv;charset=utf-8,' + csv;
-        }
-		
-		
-				
-        data = encodeURI(csv);
+function downloadCSV(args) {
+	var data,
+	filename,
+	link;
+	var csv = convertArrayOfObjectsToCSV({
+			data: HighScoreTable
+		});
+	if (csv == null)
+		return;
 
-        link = document.createElement('a');
-        link.setAttribute('href', data);
-        link.setAttribute('download', filename);
-        link.click();
-    }
+	filename = args.filename || 'HighScoreTable.csv';
 
+	if (!csv.match(/^data:text\/csv/i)) {
+		csv = 'data:text/csv;charset=utf-8,' + csv;
+	}
 
-function newgame(){
+	data = encodeURI(csv);
+
+	link = document.createElement('a');
+	link.setAttribute('href', data);
+	link.setAttribute('download', filename);
+	link.click();
+}
+
+function newgame() {
 	location.reload();
 }
 
 function copyTouch(touch) {
-  return { identifier: touch.identifier, pageX: touch.pageX, pageY: touch.pageY };
+	return {
+		identifier: touch.identifier,
+		pageX: touch.pageX,
+		pageY: touch.pageY
+	};
 }
 
 function colorForTouch(touch) {
-  var r = touch.identifier % 16;
-  var g = Math.floor(touch.identifier / 3) % 16;
-  var b = Math.floor(touch.identifier / 7) % 16;
-  r = r.toString(16); // make it a hex digit
-  g = g.toString(16); // make it a hex digit
-  b = b.toString(16); // make it a hex digit
-  var color = "#" + r + g + b;
-  console.log("color for touch with identifier " + touch.identifier + " = " + color);
-  return color;
+	var r = touch.identifier % 16;
+	var g = Math.floor(touch.identifier / 3) % 16;
+	var b = Math.floor(touch.identifier / 7) % 16;
+	r = r.toString(16); // make it a hex digit
+	g = g.toString(16); // make it a hex digit
+	b = b.toString(16); // make it a hex digit
+	var color = "#" + r + g + b;
+	console.log("color for touch with identifier " + touch.identifier + " = " + color);
+	return color;
 }
 
 function ongoingTouchIndexById(idToFind) {
-  for (var i = 0; i < ongoingTouches.length; i++) {
-    var id = ongoingTouches[i].identifier;
-    
-    if (id == idToFind) {
-      return i;
-    }
-  }
-  return -1;    // not found
+	for (var i = 0; i < ongoingTouches.length; i++) {
+		var id = ongoingTouches[i].identifier;
+
+		if (id == idToFind) {
+			return i;
+		}
+	}
+	return -1; // not found
 }
 
 /*function log(msg) {
-  var p = document.getElementById('log');
-  p.innerHTML = msg + "\n" + p.innerHTML;
+var p = document.getElementById('log');
+p.innerHTML = msg + "\n" + p.innerHTML;
 }*/
 
 function handleStart(evt) {
-  evt.preventDefault();
-  console.log("touchstart.");
-  var el = document.getElementsByTagName("canvas")[0];
-  var ctx = el.getContext("2d");
-  var touches = evt.changedTouches;
-        
-  for (var i = 0; i < touches.length; i++) {
-    console.log("touchstart:" + i + "...");
-    ongoingTouches.push(copyTouch(touches[i]));
-    var color = colorForTouch(touches[i]);
-    ctx.beginPath();
-    ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);  // a circle at the start
-    ctx.fillStyle = color;
-    ctx.fill();
-	myGamePiece.speedX = 1.3; 
-	document.getElementById('sound4').play();
-    console.log("touchstart:" + i + ".");
-  }
-  
+	evt.preventDefault();
+	console.log("touchstart.");
+	var el = document.getElementsByTagName("canvas")[0];
+	var ctx = el.getContext("2d");
+	var touches = evt.changedTouches;
+
+	for (var i = 0; i < touches.length; i++) {
+		console.log("touchstart:" + i + "...");
+		ongoingTouches.push(copyTouch(touches[i]));
+		var color = colorForTouch(touches[i]);
+		ctx.beginPath();
+		ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false); // a circle at the start
+		ctx.fillStyle = color;
+		ctx.fill();
+		myGamePiece.speedX = 1.3;
+		document.getElementById('sound4').play();
+		console.log("touchstart:" + i + ".");
+	}
+
 }
 
 function handleMove(evt) {
-  evt.preventDefault();
-  var el = document.getElementsByTagName("canvas")[0];
-  var ctx = el.getContext("2d");
-  var touches = evt.changedTouches;
+	evt.preventDefault();
+	var el = document.getElementsByTagName("canvas")[0];
+	var ctx = el.getContext("2d");
+	var touches = evt.changedTouches;
 
-  for (var i = 0; i < touches.length; i++) {
-    var color = colorForTouch(touches[i]);
-    var idx = ongoingTouchIndexById(touches[i].identifier);
+	for (var i = 0; i < touches.length; i++) {
+		var color = colorForTouch(touches[i]);
+		var idx = ongoingTouchIndexById(touches[i].identifier);
 
-    if (idx >= 0) {
-      console.log("continuing touch "+idx);
-      ctx.beginPath();
-      console.log("ctx.moveTo(" + ongoingTouches[idx].pageX + ", " + ongoingTouches[idx].pageY + ");");
-      ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
-      console.log("ctx.lineTo(" + touches[i].pageX + ", " + touches[i].pageY + ");");
-      ctx.lineTo(touches[i].pageX, touches[i].pageY);
-      ctx.lineWidth = 4;
-      ctx.strokeStyle = color;
-      ctx.stroke();
-	  
-	  if(ongoingTouches[idx].pageX < 250){
-		myGamePiece.speedX = -1; 
-		document.getElementById('sound4').play();
-	  }
-	  
-	  if(ongoingTouches[idx].pageX >= 250){
-		myGamePiece.speedX = 1.3; 
-		document.getElementById('sound4').play();
-	  }
-	  
-	  if(ongoingTouches[idx].pageY < 200){
-		myGamePiece.speedY = -1.3; 
-		document.getElementById('sound4').play();
-	  }
-	  
-	  if(ongoingTouches[idx].pageY >= 200){
-		myGamePiece.speedY = 1.3; 
-		document.getElementById('sound4').play();
-	  }
+		if (idx >= 0) {
+			console.log("continuing touch " + idx);
+			ctx.beginPath();
+			console.log("ctx.moveTo(" + ongoingTouches[idx].pageX + ", " + ongoingTouches[idx].pageY + ");");
+			ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
+			console.log("ctx.lineTo(" + touches[i].pageX + ", " + touches[i].pageY + ");");
+			ctx.lineTo(touches[i].pageX, touches[i].pageY);
+			ctx.lineWidth = 4;
+			ctx.strokeStyle = color;
+			ctx.stroke();
 
-      ongoingTouches.splice(idx, 1, copyTouch(touches[i]));  // swap in the new touch record
-      console.log(".");
-    } else {
-      console.log("can't figure out which touch to continue");
-    }
-  }
+			if (ongoingTouches[idx].pageX < 250) {
+				myGamePiece.speedX = -1;
+				document.getElementById('sound4').play();
+			}
+
+			if (ongoingTouches[idx].pageX >= 250) {
+				myGamePiece.speedX = 1.3;
+				document.getElementById('sound4').play();
+			}
+
+			if (ongoingTouches[idx].pageY < 200) {
+				myGamePiece.speedY = -1.3;
+				document.getElementById('sound4').play();
+			}
+
+			if (ongoingTouches[idx].pageY >= 200) {
+				myGamePiece.speedY = 1.3;
+				document.getElementById('sound4').play();
+			}
+
+			ongoingTouches.splice(idx, 1, copyTouch(touches[i])); // swap in the new touch record
+			console.log(".");
+		} else {
+			console.log("can't figure out which touch to continue");
+		}
+	}
 }
-
 
 function handleEnd(evt) {
-  evt.preventDefault();
-  //log("touchend");
-  var el = document.getElementsByTagName("canvas")[0];
-  var ctx = el.getContext("2d");
-  var touches = evt.changedTouches;
+	evt.preventDefault();
+	//log("touchend");
+	var el = document.getElementsByTagName("canvas")[0];
+	var ctx = el.getContext("2d");
+	var touches = evt.changedTouches;
 
-  for (var i = 0; i < touches.length; i++) {
-    var color = colorForTouch(touches[i]);
-    var idx = ongoingTouchIndexById(touches[i].identifier);
+	for (var i = 0; i < touches.length; i++) {
+		var color = colorForTouch(touches[i]);
+		var idx = ongoingTouchIndexById(touches[i].identifier);
 
-    if (idx >= 0) {
-      ctx.lineWidth = 4;
-      ctx.fillStyle = color;
-      ctx.beginPath();
-      ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
-      ctx.lineTo(touches[i].pageX, touches[i].pageY);
-      ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8);  // and a square at the end
-      ongoingTouches.splice(idx, 1);  // remove it; we're done
-    } else {
-      console.log("can't figure out which touch to end");
-    }
-  }
+		if (idx >= 0) {
+			ctx.lineWidth = 4;
+			ctx.fillStyle = color;
+			ctx.beginPath();
+			ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
+			ctx.lineTo(touches[i].pageX, touches[i].pageY);
+			ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8); // and a square at the end
+			ongoingTouches.splice(idx, 1); // remove it; we're done
+		} else {
+			console.log("can't figure out which touch to end");
+		}
+	}
 }
 
-
 function handleCancel(evt) {
-  evt.preventDefault();
-  console.log("touchcancel.");
-  var touches = evt.changedTouches;
-  
-  for (var i = 0; i < touches.length; i++) {
-    var idx = ongoingTouchIndexById(touches[i].identifier);
-    ongoingTouches.splice(idx, 1);  // remove it; we're done
-  }
+	evt.preventDefault();
+	console.log("touchcancel.");
+	var touches = evt.changedTouches;
+
+	for (var i = 0; i < touches.length; i++) {
+		var idx = ongoingTouchIndexById(touches[i].identifier);
+		ongoingTouches.splice(idx, 1); // remove it; we're done
+	}
 }
 
 function startup() {
-  var el = document.getElementsByTagName("canvas")[0];
-  el.addEventListener("touchstart", handleStart, false);
-  el.addEventListener("touchend", handleEnd, false);
-  el.addEventListener("touchcancel", handleCancel, false);
-  el.addEventListener("touchmove", handleMove, false);
-  console.log("initialized.");
+	var el = document.getElementsByTagName("canvas")[0];
+	el.addEventListener("touchstart", handleStart, false);
+	el.addEventListener("touchend", handleEnd, false);
+	el.addEventListener("touchcancel", handleCancel, false);
+	el.addEventListener("touchmove", handleMove, false);
+	console.log("initialized.");
 }
 
 function startGame() {
-    myGamePiece = new component(25, 25, "images/smile.gif", 10, 150, "image", "text");
-    myLives = new component(20, 20, "images/hapsmile.jpg", 120, -1, "image", "text");
+	myGamePiece = new component(25, 25, "images/smile.gif", 10, 150, "image", "text");
+	myLives = new component(20, 20, "images/hapsmile.jpg", 120, -1, "image", "text");
 	myLives2 = new component(20, 20, "images/hapsmile.jpg", 90, -1, "image", "text");
 	myLives3 = new component(20, 20, "images/hapsmile.jpg", 60, -1, "image", "text");
 	myMood = new component("15px", "Consolas", "red", 5, 20, "text");
@@ -347,147 +355,169 @@ function startGame() {
 	myEarthTxt = new component("10px", "Consolas", "white", 220, 105, "text");
 	myShieldTxt = new component("10px", "Consolas", "red", 400, 102, "text");
 	myShieldTxt2 = new component("10px", "Consolas", "white", 400, 112, "text");
-    myGameArea.start();
-	myScoreUp.text="#HIGH SCORE:" + 0;
+	myGameArea.start();
+	myScoreUp.text = "#HIGH SCORE:" + 0;
 	myScoreUp.update();
-	myHoles.text="#BLACK HOLES:" + 0;
+	myHoles.text = "#BLACK HOLES:" + 0;
 	myHoles.update();
-	myLevels.text="#LEVEL:" + 1;
+	myLevels.text = "#LEVEL:" + 1;
 	myLevels.update();
-	myShieldTxt.text="Super Resizer!";
+	myShieldTxt.text = "Super Resizer!";
 	myShields = new component(57, 57, "images/shield.gif", 410, 115, "image", "text")
-	myShieldTxt2.text="Resize in:" + 10 + "s.";
-	myShieldTxt2.update();
-
-	startup();
+			var x = setInterval(function () {
+					var now = new Date().getTime();
+					var distance = countDownDate + 11000 - now;
+					var seconds = Math.abs(Math.floor((distance % (1000 * 60)) / 1000));
+					myShieldTxt2.text = "Resize in:" + seconds + "s.";
+					myShieldTxt2.update();
+					if (distance < 0) {
+						//clearInterval(x);
+						countDownDate = countDownDate + 11000;
+					}
+				}, 1000);
+		startup();
 }
 
 var myGameArea = {
-    canvas : document.createElement("canvas"),
-    start : function() {
+	canvas: document.createElement("canvas"),
+	start: function () {
 		this.canvas.width = 480;
-        this.canvas.height = 270;
-        this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-        this.frameNo = 0;
-        this.interval = setInterval(updateGameArea, 20);
+		this.canvas.height = 270;
+		this.context = this.canvas.getContext("2d");
+		document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+		this.frameNo = 0;
+		this.interval = setInterval(updateGameArea, 20);
 		window.addEventListener('keydown', function (e) {
-            myGameArea.key = e.keyCode;
-        })
-        window.addEventListener('keyup', function (e) {
-            myGameArea.key = false;
-        })
-        },
-    clear : function() {
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    },
-	
-	stop : function() {
-        clearInterval(this.interval);
-    }
+			myGameArea.key = e.keyCode;
+		})
+		window.addEventListener('keyup', function (e) {
+			myGameArea.key = false;
+		})
+	},
+	clear: function () {
+		this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+	},
+
+	stop: function () {
+		clearInterval(this.interval);
+	}
 }
 function component(width, height, color, x, y, type) {
-    this.type = type;
+	this.type = type;
 	if (type == "image") {
-    this.image = new Image();
-    this.image.src = color;
-  }
-	else{
-		    this.type = type;
+		this.image = new Image();
+		this.image.src = color;
+	} else {
+		this.type = type;
 	}
-    this.score = 0;
-    this.width = width;
-    this.height = height;
-    this.speedX = 0;
-    this.speedY = 0;    
-    this.x = x;
-    this.y = y;
-    this.gravity = 0;
-    this.gravitySpeed = 0;
-    this.update = function() {
-        ctx = myGameArea.context;
-       if (type == "image") {
-      ctx.drawImage(this.image, 
-        this.x, 
-        this.y,
-        this.width, this.height);
-    }
-		else if (this.type == "text") {
-            ctx.font = this.width + " " + this.height;
-            ctx.fillStyle = color;
-            ctx.fillText(this.text, this.x, this.y);
-        }	
-	else {
-      ctx.fillStyle = color;
-      ctx.fillRect(this.x, this.y, this.width, this.height);
-    }
-    }
-    this.newPos = function() {
-        this.x += this.speedX;
-        this.y += this.speedY; 
-        this.hitBottom();
+	this.score = 0;
+	this.width = width;
+	this.height = height;
+	this.speedX = 0;
+	this.speedY = 0;
+	this.x = x;
+	this.y = y;
+	this.gravity = 0;
+	this.gravitySpeed = 0;
+	this.update = function () {
+		ctx = myGameArea.context;
+		if (type == "image") {
+			ctx.drawImage(this.image,
+				this.x,
+				this.y,
+				this.width, this.height);
+		} else if (this.type == "text") {
+			ctx.font = this.width + " " + this.height;
+			ctx.fillStyle = color;
+			ctx.fillText(this.text, this.x, this.y);
+		} else {
+			ctx.fillStyle = color;
+			ctx.fillRect(this.x, this.y, this.width, this.height);
+		}
+	}
+	this.newPos = function () {
+		this.x += this.speedX;
+		this.y += this.speedY;
+		this.hitBottom();
 		this.hitTop();
 		this.hitLeft();
 		this.hitRight();
-    }
-	
-	 this.hitBottom = function() {
-        let rockbottom = myGameArea.canvas.height - this.height;
-        if (this.y > rockbottom) {
-            this.y = rockbottom;
-        }
-    }
-    
-	this.hitTop = function() {
-        let rocktop = this.height - 10;
-        if (this.y < rocktop) {
-            this.y = rocktop;
-        }
-    }
-    
-	this.hitLeft = function() {
-        let rockleft = this.width - 10;
-        if (this.x < rockleft) {
-            this.x = rockleft;
-        }
-    }
-	
-		
-	this.hitRight = function() {
-        let rockright = myGameArea.canvas.width - this.width;
-        if (this.x > rockright) {
-            this.x = rockright;
-        }
-    }
-    
-    this.crashWith = function(otherobj) {
-        let myleft = this.x;
-        let myright = this.x + (this.width);
-        let mytop = this.y;
-        let mybottom = this.y + (this.height);
-        let otherleft = otherobj.x;
-        let otherright = otherobj.x + (otherobj.width);
-        let othertop = otherobj.y;
-        let otherbottom = otherobj.y + (otherobj.height);
-        let crash = true;
-        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
-            crash = false;
-        }
-        return crash;
-    }
+	}
+
+	this.hitBottom = function () {
+		let rockbottom = myGameArea.canvas.height - this.height;
+		if (this.y > rockbottom) {
+			this.y = rockbottom;
+		}
+	}
+
+	this.hitTop = function () {
+		let rocktop = this.height - 10;
+		if (this.y < rocktop) {
+			this.y = rocktop;
+		}
+	}
+
+	this.hitLeft = function () {
+		let rockleft = this.width - 10;
+		if (this.x < rockleft) {
+			this.x = rockleft;
+		}
+	}
+
+	this.hitRight = function () {
+		let rockright = myGameArea.canvas.width - this.width;
+		if (this.x > rockright) {
+			this.x = rockright;
+		}
+	}
+
+	this.crashWith = function (otherobj) {
+		let myleft = this.x;
+		let myright = this.x + (this.width);
+		let mytop = this.y;
+		let mybottom = this.y + (this.height);
+		let otherleft = otherobj.x;
+		let otherright = otherobj.x + (otherobj.width);
+		let othertop = otherobj.y;
+		let otherbottom = otherobj.y + (otherobj.height);
+		let crash = true;
+		if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+			crash = false;
+		}
+		return crash;
+	}
 }
 function updateGameArea() {
 	myAudio.play();
-    var x, y, height, gap, gapTr, gapPor, minHeight, minHeightTr, minHeightPor, maxHeightTr, maxHeightPor, maxHeight, minGapTr, minGapPor, minGap, maxGapTr, maxGap, maxGapPor;
+	var x,
+	y,
+	height,
+	gap,
+	gapTr,
+	gapPor,
+	minHeight,
+	minHeightTr,
+	minHeightPor,
+	maxHeightTr,
+	maxHeightPor,
+	maxHeight,
+	minGapTr,
+	minGapPor,
+	minGap,
+	maxGapTr,
+	maxGap,
+	maxGapPor;
 	var holer = [];
-    for (i = 0; i < myObstacles.length && i < myTresures.length && i < myPortals.length && i < myFallings.length; i += 1){
-        if (myGamePiece.crashWith(myObstacles[i])){
+	for (i = 0; i < myObstacles.length && i < myTresures.length && i < myPortals.length && i < myFallings.length; i += 1) {
+		if (myGamePiece.crashWith(myObstacles[i])) {
 			ctx.font = "30px Arial";
-			ctx.fillText("CRASHED!",10,245);
-			myScore.text="#PTS COUNTER:" + myGameArea.frameNo*0 + 0 + 0 + 0 + 0;
+			ctx.fillText("CRASHED!", 10, 245);
+			ctx.fillStyle="red";
+			myScore.text = "#PTS COUNTER:" + myGameArea.frameNo * 0 + 0 + 0 + 0 + 0;
 			myScore.update();
 			var sound = document.getElementById("sound8");
-		    sound.play();
+			sound.play();
 			myAudio.pause();
 			myLives = new component(27, 27, "images/dead.png", 120, 0, "image", "text");
 			myLives.update();
@@ -495,37 +525,39 @@ function updateGameArea() {
 			myLives2.update();
 			myLives3 = new component(27, 27, "images/dead.png", 60, 0, "image", "text");
 			myLives3.update();
-			return;
-        }
-		
-		
-		if(myGamePiece.crashWith(myTresures[i])){
-			myGamePiece.newPos();    
-			myGamePiece.update();
-			ctx.font = "30px Arial";
-			ctx.fillStyle="yellow";
-			ctx.fillText("Black Hole",200,45);
-			document.getElementById('sound18').play();
-			myScoreTr.text="DOUBLE!";
-			myScoreTr.update();
-			myScoreUp.text="#HIGH SCORE:" + (myGameArea.frameNo)*2;
-			for (i = 2; i < myTresures.length; i++) {holer.push(i++);}
-			myHoles.text="#BLACK HOLES:" + holer.push(i);
-			if(highs.includes((myGameArea.frameNo)*2) == false){
-			
-				highs.push((myGameArea.frameNo)*2); // "scored" is the High Score reached
-			}
-			myEarth.update();myEarthTxt.text="Greetings from Earth";myEarthTxt.update();
 			return;
 		}
-		
-		if (myGamePiece.crashWith(myFallings[i])){
+
+		if (myGamePiece.crashWith(myTresures[i])) {
+			myGamePiece.newPos();
+			myGamePiece.update();
+			ctx.font = "30px Arial";
+			ctx.fillStyle = "yellow";
+			ctx.fillText("Black Hole", 200, 45);
+			document.getElementById('sound18').play();
+			myScoreTr.text = "DOUBLE!";
+			myScoreTr.update();
+			myScoreUp.text = "#HIGH SCORE:" + (myGameArea.frameNo) * 2;
+			for (i = 2; i < myTresures.length; i++) {
+				holer.push(i++);
+			}
+			myHoles.text = "#BLACK HOLES:" + holer.push(i);
+			if (highs.includes((myGameArea.frameNo) * 2) == false) {
+				highs.push((myGameArea.frameNo) * 2); // "scored" is the High Score reached
+			}
+			myEarth.update();
+			myEarthTxt.text = "Greetings from Earth";
+			myEarthTxt.update();
+			return;
+		}
+
+		if (myGamePiece.crashWith(myFallings[i])) {
 			ctx.font = "30px Arial";
 			myGamePiece = new component();
-			myScore.text="#PTS COUNTER:" + myGameArea.frameNo*0 + 0 + 0 + 0 + 0;
+			myScore.text = "#PTS COUNTER:" + myGameArea.frameNo * 0 + 0 + 0 + 0 + 0;
 			myScore.update();
 			var sound = document.getElementById("sound10");
-		    sound.play();
+			sound.play();
 			myAudio.pause();
 			myLives = new component(27, 27, "images/dead.png", 120, 0, "image", "text");
 			myLives.update();
@@ -534,37 +566,40 @@ function updateGameArea() {
 			myLives3 = new component(27, 27, "images/dead.png", 60, 0, "image", "text");
 			myLives3.update();
 			return;
-        }
-		
-		if(myGamePiece.crashWith(myShields) == true){
-				myGamePiece = new component(15, 15, "images/smile.gif", 30, 100, "image", "text");
-				myScoreUp.text="#HIGH SCORE:" + (myGameArea.frameNo)*3;
-				myScoreTr.text="TRIPLE!";
-				myScoreTr.update();
-				document.getElementById('sound26').play();
-				for(q = 1; q < 99; q++){
-					myShieldTxt2.text="Resize in:" + Math.abs(10 - ((q*0.1 - myGameArea.frameNo / 100).toPrecision(2))) + "s.";
-					myShieldTxt2.update();
-					if(q*0.1 - myGameArea.frameNo / 100 < -20){
-						
-						myShieldTxt2.text="Resize in:" + Math.abs(10 - ((q*0.1 - myGameArea.frameNo / 100).toPrecision(2))) + "s.";
+		}
+
+		if (myGamePiece.crashWith(myShields) == true) {
+			myGamePiece = new component(15, 15, "images/smile.gif", 30, 100, "image", "text");
+			myScoreUp.text = "#HIGH SCORE:" + (myGameArea.frameNo) * 3;
+			myScoreTr.text = "TRIPLE!";
+			myScoreTr.update();
+			document.getElementById('sound26').play();
+			for (q = 1; q < 99; q++) {
+				var x = setInterval(function () {
+						var now = new Date().getTime();
+						var distance = countDownDate + 11000 - now;
+						var seconds = Math.abs(Math.floor((distance % (1000 * 60)) / 1000));
+						myShieldTxt2.text = "Resize in:" + seconds + "s.";
 						myShieldTxt2.update();
-						if(myGameArea.frameNo / 100 > -(q*0.1 - myGameArea.frameNo / 100)){
-							
-							myShields = new component(57, 57, "images/smoked.png", 410, 115, "image", "text");
-							myGamePiece = new component(25, 25, "images/smile.gif", 0, 240, "image", "text");
-							document.getElementById('sound26').pause();
-							document.getElementById('sound27').play();
-							myShieldTxt2.text="Resizer tired!";
-							myShieldTxt2.update();
+						if (distance < 1) {
+							//clearInterval(x);
+							countDownDate = countDownDate + 11000;
 						}
-					}
+					}, 1000);
+				if (myGameArea.frameNo / 100 > Math.abs(10 - ((q * 0.1 - myGameArea.frameNo / 100).toPrecision(2)))) {
+					myShields = new component(57, 57, "images/smoked.png", 410, 115, "image", "text");
+					myGamePiece = new component(25, 25, "images/smile.gif", 0, 240, "image", "text");
+					document.getElementById('sound26').pause();
+					document.getElementById('sound27').play();
+					myShieldTxt2.text = "Resizer tired!";
+					myShieldTxt2.update();
 				}
 			}
-			
-		if(myGamePiece.crashWith(myPortals[i])){
+		}
+
+		if (myGamePiece.crashWith(myPortals[i])) {
 			ctx.font = "30px Arial";
-			ctx.fillText("BURNED!",200,210);
+			ctx.fillText("BURNED!", 200, 210);
 			myGamePiece = new component(25, 25, "images/newship.jpg", 10, 240, "image", "text");
 			this.interval = setInterval(updateGameArea, 910);
 			myGamePiece.speedX = 1.5;
@@ -576,108 +611,139 @@ function updateGameArea() {
 			myLives2 = "";
 			myLives2 = myLives3;
 			myLives3 = new component(27, 27, 410, 0, "image", "text");
-			myScore.text="#PTS COUNTER:" + myGameArea.frameNo*0 + 0 + 0 + 0 + 0;
+			myScore.text = "#PTS COUNTER:" + myGameArea.frameNo * 0 + 0 + 0 + 0 + 0;
 			myScore.update();
 			myLives3.update();
-			myMood.text="      ASHED!";
+			myMood.text = "      ASHED!";
 			myMood.update();
-			myScoreUp.text="#HIGH SCORE:" + (-500*i);
+			myScoreUp.text = "#HIGH SCORE:" + (-500 * i);
 			return;
 		}
 	}
-    
-    myGameArea.clear();
-    myGameArea.frameNo += 1;
-    if (everyinterval(150)) {
-        x = myGameArea.canvas.width;
+
+	myGameArea.clear();
+	myGameArea.frameNo += 1;
+	if (everyinterval(150)) {
+		x = myGameArea.canvas.width;
 		y = myGameArea.canvas.height;
-        minHeight = 40;
-        maxHeight = 50;
+		minHeight = 40;
+		maxHeight = 50;
 		minHeightTr = 10;
-        maxHeightTr = 350;
+		maxHeightTr = 350;
 		minHeightPor = 10;
-        maxHeightPor = 350;
-        height = Math.floor(Math.random()*(maxHeight-minHeight+10)+minHeight);
-        minGap = 50;
-        maxGap = 200;
+		maxHeightPor = 350;
+		height = Math.floor(Math.random() * (maxHeight - minHeight + 10) + minHeight);
+		minGap = 50;
+		maxGap = 200;
 		minGapTr = 10;
-        maxGapTr = 250;
+		maxGapTr = 250;
 		minGapPor = 200;
-        maxGapPor = 250;
-        gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-		gapTr = Math.floor(Math.random()*(maxGapTr-minGapTr+1)+minGapTr);
-		gapPor = Math.floor(Math.random()*(maxGapPor-minGapPor+10)+minGapPor);
+		maxGapPor = 250;
+		gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
+		gapTr = Math.floor(Math.random() * (maxGapTr - minGapTr + 1) + minGapTr);
+		gapPor = Math.floor(Math.random() * (maxGapPor - minGapPor + 10) + minGapPor);
 		myFallings.push(new component(27, 27, "images/stone.gif", 230, 240, "image", "text"));
 		myTresures.push(new component(27, 27, "images/portal.gif", 330, 120, "image", "text"));
-		myTresures.push(new component(27, 27, "images/portal.gif", x+10, height + gap, "image", "text"));
+		myTresures.push(new component(27, 27, "images/portal.gif", x + 10, height + gap, "image", "text"));
 		myPortals.push(new component(50, 17, "images/comet.gif", 330, 60, "image", "text"));
-		myPortals.push(new component(50, 17, "images/comet.gif", x+50, height + gap, "image", "text"));
-        myObstacles.push(new component(30, height, "images/stalk.jpg", x, 0, "image", "text"));
-        myObstacles.push(new component(30, x - height - gap + 60, "images/hole.jpg", x, height + gap + 65, "image", "text"));
-		}
-	
-		
-    for (i = 0; i < myObstacles.length && i < myTresures.length && i < myPortals.length && i < myFallings.length; i += 1){
-        myFallings[i].y += -1;
-        myFallings[i].update();
-		myObstacles[i].x += -1;
-        myObstacles[i].update();
-		myTresures[i].x += -2;
-        myTresures[i].update();
-		myPortals[i].x += -3;
-        myPortals[i].update();
-    }
-	
-		myScore.text="#PTS COUNTER:" + myGameArea.frameNo;
-		myScore.update();
-		myScoreUp.update();
-		myHoles.update();
-		myTime.text="#TIME:" + (myGameArea.frameNo) / 100;
-		myTime.update();
-		myLives.update();
-		myLives2.update();
-		myLives3.update();
-		myMood.text="#HARD:";
-		myMood.update();
-		myShieldTxt.update();
-		myShieldTxt2.update();
-		var countk;
-		for(countk = 0; countk < 99; countk++){if(myGameArea.frameNo == 1000*countk){myGamePiece = new component(25, 25, "images/smile.gif", 10, 150, "image", "text");minHeight*1.1;maxHeight*1.1;myGamePiece.speedX=countk*(1/(countk-0.5));document.getElementById('sound2').play();myScore2.text="LevelUp! " + countk;myScore2.update();myLevels.text = "#LEVEL:" + (countk + 1);myLevels.update();if(countk == 99) countk = 0;}
-		if (myGameArea.frameNo*countk-0.5 < getRandomArbitrary(everyinterval(100), everyinterval(300))){
-		myEarth.update();myEarthTxt.text="";myEarthTxt.update();}
+		myPortals.push(new component(50, 17, "images/comet.gif", x + 50, height + gap, "image", "text"));
+		myObstacles.push(new component(30, height, "images/stalk.jpg", x, 0, "image", "text"));
+		myObstacles.push(new component(30, x - height - gap + 60, "images/hole.jpg", x, height + gap + 65, "image", "text"));
 	}
-	if (myGameArea.key && myGameArea.key == 37) {myGamePiece.speedX = -1; document.getElementById('sound4').play();}
-    if (myGameArea.key && myGameArea.key == 39) {myGamePiece.speedX = 1.3; document.getElementById('sound4').play();}
-    if (myGameArea.key && myGameArea.key == 38) {myGamePiece.speedY = -1.3; document.getElementById('sound4').play();}
-    if (myGameArea.key && myGameArea.key == 40) {myGamePiece.speedY = 1.3; document.getElementById('sound4').play();}
-	if (myGameArea.key && myGameArea.key == 13) {newgame();}
+
+	for (i = 0; i < myObstacles.length && i < myTresures.length && i < myPortals.length && i < myFallings.length; i += 1) {
+		myFallings[i].y += -1;
+		myFallings[i].update();
+		myObstacles[i].x += -1;
+		myObstacles[i].update();
+		myTresures[i].x += -2;
+		myTresures[i].update();
+		myPortals[i].x += -3;
+		myPortals[i].update();
+	}
+
+	myScore.text = "#PTS COUNTER:" + myGameArea.frameNo;
+	myScore.update();
+	myScoreUp.update();
+	myHoles.update();
+	myTime.text = "#TIME:" + (myGameArea.frameNo) / 100;
+	myTime.update();
+	myLives.update();
+	myLives2.update();
+	myLives3.update();
+	myMood.text = "#HARD:";
+	myMood.update();
+	myShieldTxt.update();
+	myShieldTxt2.update();
+	var countk;
+	for (countk = 0; countk < 99; countk++) {
+		if (myGameArea.frameNo == 1000 * countk) {
+			myGamePiece = new component(25, 25, "images/smile.gif", 10, 150, "image", "text");
+			minHeight * 1.1;
+			maxHeight * 1.1;
+			myGamePiece.speedX = countk * (1 / (countk - 0.5));
+			document.getElementById('sound2').play();
+			myScore2.text = "LevelUp! " + countk;
+			myScore2.update();
+			myLevels.text = "#LEVEL:" + (countk + 1);
+			myLevels.update();
+			if (countk == 99)
+				countk = 0;
+		}
+		if (myGameArea.frameNo * countk - 0.5 < getRandomArbitrary(everyinterval(100), everyinterval(300))) {
+			myEarth.update();
+			myEarthTxt.text = "";
+			myEarthTxt.update();
+		}
+	}
+	if (myGameArea.key && myGameArea.key == 37) {
+		myGamePiece.speedX = -1;
+		document.getElementById('sound4').play();
+	}
+	if (myGameArea.key && myGameArea.key == 39) {
+		myGamePiece.speedX = 1.3;
+		document.getElementById('sound4').play();
+	}
+	if (myGameArea.key && myGameArea.key == 38) {
+		myGamePiece.speedY = -1.3;
+		document.getElementById('sound4').play();
+	}
+	if (myGameArea.key && myGameArea.key == 40) {
+		myGamePiece.speedY = 1.3;
+		document.getElementById('sound4').play();
+	}
+	if (myGameArea.key && myGameArea.key == 13) {
+		newgame();
+	}
 	//if (myGameArea.key && myGameArea.key == 80) {pausegame();}
-	myGamePiece.newPos();    
-    myGamePiece.update();
+	myGamePiece.newPos();
+	myGamePiece.update();
 	myShields.update();
 	myLevels.update();
 }
 
 function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
+	return Math.random() * (max - min) + min;
 }
 
 function everyinterval(n) {
-    if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
-    return false;
+	if ((myGameArea.frameNo / n) % 1 == 0) {
+		return true;
+	}
+	return false;
 }
 
-myAudio = new Audio('sounds/backsong.wav'); 
-myAudio.addEventListener('ended', function() {
-    this.currentTime = 0;
-    this.play();
+myAudio = new Audio('sounds/backsong.wav');
+myAudio.addEventListener('ended', function () {
+	this.currentTime = 0;
+	this.play();
 }, false);
 
-function pausegame(){
+function pausegame() {
 	alert("GAME WAS PAUSED! CLICK O.K. TO UNPAUSE.");
 }
 
-function help(){
+function help() {
 	alert("PRESS ANY ARROW TO START YOUR TRIP.\nUSE THE ARROWS TO NAVIGATE YOUR SHIP.\nGO THROUGH BLACK HOLES TO UNLOCK ADDITIONAL METRICS AND TO DOUBLE YOUR SCORE. HOWEVER, THEY COULD CHANGE YOUR TRIP UNEXPECTEDLY...\nWATCH OUT THE COMETS - THEY BOUNCE YOU BACK, LOWER YOUR SCORE AND CAN MAKE YOU BURN TO ASHES !");
 }
 </script>
