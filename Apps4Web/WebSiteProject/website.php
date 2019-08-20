@@ -23,10 +23,10 @@
     
     <!-- CSS for BACKGROUND -->
 
-<STYLE TYPE="text/css">
+<style type="text/css">
  
 body { 
-background: url(http://www.calgaryherald.com/news/cms/binary/10271025.jpg?size=sw620x65) no-repeat center center fixed; 
+background-image: url("book-carousel.jpg") no-repeat center center fixed;
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
