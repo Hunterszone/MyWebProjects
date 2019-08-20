@@ -938,7 +938,7 @@
 			</div>
          </br></p>
          <br>
-         <center><font size="3"><font color="white"><b><i>Copyright Â© 2015 THAT BAD DESIGN. All rights reserved.</i></b></font></font></center>
+         <center><font size="3"><font color="white"><b><i>Copyright © 2015 THAT BAD DESIGN. All rights reserved.</i></b></font></font></center>
          <div id='social-sidebar'>
             <ul>
                <li>
