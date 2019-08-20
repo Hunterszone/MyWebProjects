@@ -18,11 +18,11 @@
     		if(get_magic_quotes_gpc()) {
     			$str = stripslashes($str);
     		}
-    		return mysql_real_escape_string($str);
+    		return mysqli_real_escape_string($str);
     	}    
     	//Sanitize the POST values
-    	$username = clean($_POST['username']);
-    	$password = clean($_POST['password']);
+    	$username = clean($_POST['root']);
+    	$password = clean($_POST['root']);
         
         if (isset($_COOKIE['PrivatePageLogin'])) {
         if ($_COOKIE['PrivatePageLogin'] == md5($password.$nonsense)) {
