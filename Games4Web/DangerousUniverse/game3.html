@@ -358,7 +358,7 @@ function startGame() {
 	myGameArea.start();
 	myScoreUp.text = "#HIGH SCORE:" + 0;
 	myScoreUp.update();
-	myHoles.text = "#BLACK HOLES:" + 0;
+	myHoles.text = "#HOLES HIT:" + 0;
 	myHoles.update();
 	myLevels.text = "#LEVEL:" + 1;
 	myLevels.update();
@@ -541,7 +541,7 @@ function updateGameArea() {
 			for (i = 2; i < myTresures.length; i++) {
 				holer.push(i++);
 			}
-			myHoles.text = "#BLACK HOLES:" + holer.push(i);
+			myHoles.text = "#HOLES HIT:" + holer.push(i);
 			if (highs.includes((myGameArea.frameNo) * 2) == false) {
 				highs.push((myGameArea.frameNo) * 2); // "scored" is the High Score reached
 			}
@@ -603,7 +603,7 @@ function updateGameArea() {
 			myGamePiece = new component(25, 25, "images/newship.jpg", 10, 240, "image", "text");
 			this.interval = setInterval(updateGameArea, 910);
 			myGamePiece.speedX = 1.5;
-			var burnedsound = new Audio('sounds/burned.mp3');
+			var burnedsound = new Audio('sounds/burned.wav');
 			burnedsound.loop = false;
 			burnedsound.play();
 			myLives = "";
@@ -750,12 +750,12 @@ function help() {
 </head>
 <body onload="startGame();">
 <audio id="sound4" src="sounds\boing.wav" preload="auto"></audio>
-<audio id="sound2" src="sounds\Levelup.mp3" preload="auto"></audio>
-<audio id="sound8" src="sounds\fin.mp3" preload="auto"></audio>
+<audio id="sound2" src="sounds\Levelup.wav" preload="auto"></audio>
+<audio id="sound8" src="sounds\fin.wav" preload="auto"></audio>
 <audio id="sound10" src="sounds\smashed.wav" preload="auto"></audio>
 <audio id="sound18" src="sounds\highsc.wav" preload="auto"></audio>
-<audio id="sound26" src="sounds\magic.mp3" preload="auto"></audio>
-<audio id="sound27" src="sounds\denied.mp3" preload="auto"></audio>
+<audio id="sound26" src="sounds\magic.wav" preload="auto"></audio>
+<audio id="sound27" src="sounds\denied.wav" preload="auto"></audio>
 <br>
 <center><table>
 <tbody><tr>
