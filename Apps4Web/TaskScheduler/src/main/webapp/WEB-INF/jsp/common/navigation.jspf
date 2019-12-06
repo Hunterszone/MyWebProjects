@@ -3,13 +3,25 @@
 	<div class="">
 		<a href="http://www.me4gaming.com" class="navbar-brand">Me4Gaming</a>
 	</div>
-	<div class="navbar-collapse">
+	<div class="navbar-collapse" id="btnss">
 		<ul class="nav navbar-nav">
-			<li class="active"><a href="/">Home</a></li>
-			<li><a href="/list-todos">Todos</a></li>
+			<li class="btn active"><a href="/">Home</a></li>
+			<li class="btn"><a href="/list-todos">Todos</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="/logout">Logout</a></li>
+			<li class="btn"><a href="/logout">Logout</a></li>
 		</ul>
 	</div>
+	<script>
+		var btnContainer = document.getElementById("btnss");
+		var btns = btnContainer.getElementsByClassName("btn");
+	
+		for (var i = 0; i < btns.length; i++) {
+		  btns[i].addEventListener("click", function() {
+		    var current = document.getElementsByClassName("active");
+		    current[0].className = current[0].className.replace(" active", "");
+		    this.className += " active";
+		  });
+		}
+	</script>
 </nav>
