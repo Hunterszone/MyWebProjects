@@ -32,6 +32,11 @@ public class TodoController {
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(
 				dateFormat, false));
 	}
+	
+	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
+	public String showWelcome(ModelMap model) {
+		return "welcome";
+	}
 
 	@RequestMapping(value = "/list-todos", method = RequestMethod.GET)
 	public String showTodos(ModelMap model) {
@@ -61,8 +66,8 @@ public class TodoController {
 	@RequestMapping(value = "/delete-todo", method = RequestMethod.GET)
 	public String deleteTodo(@RequestParam int id) {
 
-		if(id==1)
-			throw new RuntimeException("Something went wrong");
+//		if(id==1)
+//			throw new RuntimeException("Something went wrong");
 		
 		service.deleteTodo(id);
 		return "redirect:/list-todos";
