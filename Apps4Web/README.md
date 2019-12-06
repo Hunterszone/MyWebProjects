@@ -1,1 +1,1 @@
-# Spring MVC --- HTML5/CSS3/JS+JQuery --- PHP projects
+# Spring --- HTML5/CSS3/JS+JQuery --- PHP projects
