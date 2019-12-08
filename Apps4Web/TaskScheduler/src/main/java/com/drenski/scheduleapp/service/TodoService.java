@@ -1,8 +1,10 @@
 package com.drenski.scheduleapp.service;
 
+import com.drenski.scheduleapp.model.DbConn;
 import com.drenski.scheduleapp.model.Todo;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -10,7 +12,7 @@ import java.util.List;
 
 @Service
 public class TodoService {
-    private static List<Todo> todos = new ArrayList<>();
+    public static List<Todo> todos = new ArrayList<>();
     private static int todoCount = 3;
 
     static{
@@ -43,6 +45,11 @@ public class TodoService {
     public void updateTodo(Todo todo){
     		todos.remove(todo);
     		todos.add(todo);
+        try {
+            DbConn.main(null);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void addTodo(String name, String desc, Date targetDate,

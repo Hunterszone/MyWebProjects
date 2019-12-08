@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>First Web Application</title>
+    <title>Login</title>
 </head>
 <body>
 <font color="red">${errorMessage}</font>

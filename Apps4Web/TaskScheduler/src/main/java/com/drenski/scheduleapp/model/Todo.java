@@ -92,6 +92,10 @@ public class Todo {
         return true;
     }
 
+    public String[] getUserAndDesc(Todo todo) {
+        return new String[]{todo.getUser(), todo.getDesc()};
+    }
+
     @Override
     public String toString() {
         return String.format(

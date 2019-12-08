@@ -1,7 +1,7 @@
 
 <nav role="navigation" class="navbar navbar-default">
 	<div class="">
-		<a href="http://www.me4gaming.com" class="navbar-brand">Me4Gaming</a>
+		<a href="http://www.me4gaming.com" target="_blank" class="navbar-brand">Me4Gaming</a>
 	</div>
 	<div class="navbar-collapse" id="btnss">
 		<ul class="nav navbar-nav">
