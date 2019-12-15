@@ -33,10 +33,14 @@ public class DbConn {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             System.out.println("Connected database successfully...");
 
+            // Empty DB before operations
+            preparedStatement = conn.prepareStatement("DELETE FROM tasks WHERE 1");
+            preparedStatement.executeUpdate();
+
             while (counter < TodoService.todos.size()) {
                 // STEP 3: Execute a query
                 taskAttributes = todo.getUserAndDesc(TodoService.todos.get(counter));
-                preparedStatement = conn.prepareStatement("INSERT INTO tasks (USERS, DESCRIPTION) " + "VALUES (?,?)");
+                preparedStatement = conn.prepareStatement("INSERT INTO tasks (USER, TASK) " + "VALUES (?,?)");
                 preparedStatement.setString(1, taskAttributes[0]);
                 System.out.println("USERS added: " + taskAttributes[0]);
                 preparedStatement.setString(2, taskAttributes[1]);

@@ -21,6 +21,11 @@ public class TodoService {
         todos.add(new Todo(2, "root", "Learn Struts", new Date(), false));
         todos.add(new Todo(3, "root", "Learn Hibernate", new Date(),
                 false));
+        try {
+            DbConn.main(null);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<Todo> retrieveTodos(String user) {
@@ -43,18 +48,17 @@ public class TodoService {
     }
 
     public void updateTodo(Todo todo){
-    		todos.remove(todo);
-    		todos.add(todo);
+    	todos.remove(todo);
+    	addTodo(todo.getUser(), todo.getTask(), todo.getTargetDate(), todo.getDone());
+    }
+
+    public void addTodo(String name, String desc, Date targetDate, boolean isDone) {
+        todos.add(new Todo(++todoCount, name, desc, targetDate, isDone));
         try {
             DbConn.main(null);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    public void addTodo(String name, String desc, Date targetDate,
-            boolean isDone) {
-        todos.add(new Todo(++todoCount, name, desc, targetDate, isDone));
     }
 
     public void deleteTodo(int id) {
@@ -64,6 +68,10 @@ public class TodoService {
             if (todo.getId() == id) {
                 iterator.remove();
             }
+        } try {
+            DbConn.main(null);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

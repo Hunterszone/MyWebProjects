@@ -4,24 +4,24 @@
 	<form:form method="post" commandName="todo">
 		<form:hidden path="id" />
 		<fieldset class="form-group">
-			<form:label path="desc">Description</form:label>
-			<form:input path="desc" type="text" class="form-control"
-				required="required" />
-			<form:errors path="desc" cssClass="text-warning" />
+			<form:label path="task">Description</form:label>
+			<form:input path="task" type="text" class="form-control"
+						required="required" />
+			<form:errors path="task" cssClass="text-warning" />
 		</fieldset>
 
 		<fieldset class="form-group">
 			<form:label path="targetDate">Target Date</form:label>
 			<form:input path="targetDate" type="text" class="form-control"
-				required="required" />
+						required="required" />
 			<form:errors path="targetDate" cssClass="text-warning" />
 		</fieldset>
 
 		<fieldset class="form-group">
-			<form:label path="done">Done</form:label>
-			<form:input path="done" type="text" class="form-control"
+			<form:label path="status">Done</form:label>
+			<form:input path="status" type="text" class="form-control"
 						required="required" />
-			<form:errors path="done" cssClass="text-warning" />
+			<form:errors path="status" cssClass="text-warning" />
 		</fieldset>
 
 		<button type="submit" class="btn btn-success">Add</button>

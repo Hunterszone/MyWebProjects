@@ -1,27 +1,30 @@
 package com.drenski.scheduleapp.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class Todo {
+
     private int id;
     private String user;
-    
-//    @Size(min=10, message="Enter at least 10 Characters...")
-    private String desc;
-
     private Date targetDate;
     private boolean isDone;
+
+    @NotNull(message = "Empty task not allowed!")
+    @Size(min=5, message="Enter at least 5 characters!")
+    private String task;
 
     public Todo() {
     		super();
     }
     
-    public Todo(int id, String user, String desc, Date targetDate,
-            boolean isDone) {
+    public Todo(int id, String user, String task, Date targetDate,
+                boolean isDone) {
         super();
         this.id = id;
         this.user = user;
-        this.desc = desc;
+        this.task = task;
         this.targetDate = targetDate;
         this.isDone = isDone;
     }
@@ -42,12 +45,12 @@ public class Todo {
         this.user = user;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getTask() {
+        return task;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setTask(String task) {
+        this.task = task;
     }
 
     public Date getTargetDate() {
@@ -93,14 +96,13 @@ public class Todo {
     }
 
     public String[] getUserAndDesc(Todo todo) {
-        return new String[]{todo.getUser(), todo.getDesc()};
+        return new String[]{todo.getUser(), todo.getTask()};
     }
 
     @Override
     public String toString() {
         return String.format(
-                "Todo [id=%s, user=%s, desc=%s, targetDate=%s, getDone=%s]", id,
-                user, desc, targetDate, isDone);
+                "Todo [id=%s, user=%s, task=%s, targetDate=%s, getDone=%s]", id,
+                user, task, targetDate, isDone);
     }
-
 }
