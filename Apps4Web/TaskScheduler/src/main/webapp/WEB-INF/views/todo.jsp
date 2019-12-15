@@ -18,10 +18,10 @@
 		</fieldset>
 
 		<fieldset class="form-group">
-			<form:label path="status">Done</form:label>
-			<form:input path="status" type="text" class="form-control"
+			<form:label path="done">Done</form:label>
+			<form:input path="done" type="text" class="form-control"
 						required="required" />
-			<form:errors path="status" cssClass="text-warning" />
+			<form:errors path="done" cssClass="text-warning" />
 		</fieldset>
 
 		<button type="submit" class="btn btn-success">Add</button>
