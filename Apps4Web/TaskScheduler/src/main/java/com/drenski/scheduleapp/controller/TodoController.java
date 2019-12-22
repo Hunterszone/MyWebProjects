@@ -41,7 +41,7 @@ public class TodoController {
 		return "list-todos";
 	}
 
-	private String getLoggedInUserName(ModelMap model) {
+	public String getLoggedInUserName(ModelMap model) {
 		Object principal = SecurityContextHolder.getContext()
 				.getAuthentication().getPrincipal();
 		
