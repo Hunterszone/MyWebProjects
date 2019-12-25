@@ -1,16 +1,19 @@
-import org.junit.After;
+import com.drenski.scheduleapp.model.Todo;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Date;
+
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class TodoTest {
 
-    private SampleMocks todo;
+    private MockTodo todo;
 
     @Before
     public void setUp() {
-        todo = new SampleMocks();
+        todo = new MockTodo();
     }
 
     @Test
@@ -21,10 +24,5 @@ public class TodoTest {
         assertTrue("Task is less than 5 chars", todo.getSampleTodo().getTask().length() >= 5);
         assertNotNull("TargetDate is null", todo.getSampleTodo().getTargetDate());
         assertNotNull("Status is null", todo.getSampleTodo().getDone());
-    }
-
-    @After
-    public void tearDown() {
-        todo = null;
     }
 }
