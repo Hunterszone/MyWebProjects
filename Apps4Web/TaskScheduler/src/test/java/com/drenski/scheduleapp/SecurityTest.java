@@ -7,16 +7,14 @@ import org.springframework.security.config.annotation.ObjectPostProcessor;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import static org.junit.Assert.*;
 
-public class SecurityTest implements ObjectPostProcessor {
+public class SecurityTest implements ObjectPostProcessor<Object> {
 
-    private SampleMocks todo;
     private AuthenticationManagerBuilder auth;
-    private ObjectPostProcessor obj;
+    private ObjectPostProcessor<Object> obj;
     private SecurityConfiguration secConf;
 
     @Before
     public void setUp() {
-        todo = new SampleMocks();
         obj = new SecurityTest();
         auth =  new AuthenticationManagerBuilder(obj);
         secConf = new SecurityConfiguration();
@@ -34,14 +32,14 @@ public class SecurityTest implements ObjectPostProcessor {
         }
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public Object postProcess(Object o) {
         return null;
     }
 
     @After
     public void tearDown() {
-        todo = null;
         obj = null;
         auth =  null;
         secConf = null;
