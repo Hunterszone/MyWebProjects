@@ -11,10 +11,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 
     //Create User - root/root
 	@Autowired
-    public void configureGlobalSecurity(AuthenticationManagerBuilder auth)
+    public String[] configureGlobalSecurity(AuthenticationManagerBuilder auth)
             throws Exception {
+        String[] roles = {"USER", "ADMIN"};
         auth.inMemoryAuthentication().withUser("root").password("root")
-                .roles("USER", "ADMIN");
+                .roles(roles[0], roles[1]);
+        return roles;
     }
 	
 	@Override
