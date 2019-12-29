@@ -1,4 +1,4 @@
-package src.main.java.com.drenski.scheduleapp;
+package com.drenski.scheduleapp.init;
 
 import static org.springframework.boot.SpringApplication.run;
 
