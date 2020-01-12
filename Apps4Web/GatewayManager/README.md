@@ -18,3 +18,4 @@ Spring Boot app for managing multiple gateways (masters) and their associated de
 
 ## Screenshots
 ![Screenshot](images/screenshot.PNG)
+![Screenshot](images/screenshot2.PNG)
