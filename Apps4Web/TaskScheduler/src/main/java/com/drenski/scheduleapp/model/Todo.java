@@ -8,12 +8,12 @@ public class Todo {
 
     private int id;
     private String user;
+    private String task;
     private Date targetDate;
     private boolean isDone;
 
     @NotNull(message = "Empty task not allowed!")
     @Size(min=5, message="Enter at least 5 characters!")
-    private String task;
 
     public Todo() {
     		super();

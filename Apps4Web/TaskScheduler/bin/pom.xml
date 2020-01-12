@@ -90,7 +90,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.drenski.scheduleapp.init.TaskScheduler</mainClass>
+					<mainClass>com.drenski.scheduleapp.TaskScheduler</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

@@ -20,8 +20,8 @@ public class DbConn {
     private static final String PASS = "root";
 
     public static void main(String[] args) throws SQLException {
-        Connection conn = null;
         Todo todo = new Todo();
+        Connection conn = null;
         PreparedStatement preparedStatement = null;
         int counter = 0;
         try {
