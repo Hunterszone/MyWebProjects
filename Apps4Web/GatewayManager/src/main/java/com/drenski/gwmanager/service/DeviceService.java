@@ -32,7 +32,7 @@ public class DeviceService {
 
 	public void deleteDevice(int id) {
 		Iterator<Device> iterator = devices.iterator();
-		while (iterator.hasNext() && devices.size() > 1) {
+		while (iterator.hasNext()) {
 			Device device = iterator.next();
 			if (device.getId() == id) {
 				iterator.remove();
