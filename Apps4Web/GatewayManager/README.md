@@ -16,6 +16,9 @@ Spring Boot app for managing multiple gateways (masters) and their associated de
 * If you want to delete a specific device, add following URL parameter **/delete-device?id=** and type the desired device ID right after the **=** sign (Example: **localhost:8080/delete-device?id=11**) .
 * You can use XAMPP as a convinient way to setup your DB on local server.
 
+## To do
+* separate list of devices will be implemented for every gateway (currently the device list is static and shared between all gateways)
+
 ## Screenshots
 ![Screenshot](images/screenshot.PNG)
 ![Screenshot](images/screenshot2.PNG)
