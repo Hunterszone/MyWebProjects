@@ -14,18 +14,16 @@ import com.drenski.gwmanager.model.Gateway;
 
 @Service
 public class GatewayService {
+
 	public static List<Gateway> gateways = new ArrayList<>();
-	static List<Device> exampleDevices = new ArrayList<Device>();
 
 	static {
-		exampleDevices.add(new Device(DeviceService.generate(10, 100), "IBM", new Date(), true));
-		exampleDevices.add(new Device(DeviceService.generate(10, 100), "IBM", new Date(), false));
+		DeviceService.devices.add(new Device(DeviceService.generate(10, 100), "IBM", new Date(), true));
+		DeviceService.devices.add(new Device(DeviceService.generate(10, 100), "AIWA", new Date(), false));
 
-		gateways.add(new Gateway(getNumericString(7), "root", "192.168.0.1", exampleDevices));
-		gateways.add(new Gateway(getNumericString(7), "root", "192.168.0.2", exampleDevices));
-		gateways.add(new Gateway(getNumericString(7), "root", "192.168.0.3", exampleDevices));
+		gateways.add(new Gateway(getNumericString(7), "root", "192.168.0.1", DeviceService.devices));
 		try {
-			DbConn.main(null);
+			DbConn.initDbConn();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -45,6 +43,7 @@ public class GatewayService {
 	}
 
 	public Object addGateway(Gateway gateway) {
+		DeviceService.devices = new ArrayList<Device>();
 		gateway = new Gateway(String.valueOf(0), "", "", DeviceService.devices);
 		return gateway;
 	}
@@ -73,7 +72,7 @@ public class GatewayService {
 			if (Integer.parseInt(gateway.getId()) == Integer.parseInt(id)) {
 				iterator.remove();
 				try {
-					DbConn.main(null);
+					DbConn.initDbConn();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}

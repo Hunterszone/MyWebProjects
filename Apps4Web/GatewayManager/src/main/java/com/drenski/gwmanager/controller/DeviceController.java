@@ -43,7 +43,7 @@ public class DeviceController {
 
 	@GetMapping("/delete-device")
 	public String deleteDevice(@RequestParam String id) {
-		if (id == "") {
+		if (id != null && id.equals("")) {
 			id = String.valueOf(DeviceService.devices.get(0).getId());
 		}
 		service.deleteDevice(Integer.parseInt(id));

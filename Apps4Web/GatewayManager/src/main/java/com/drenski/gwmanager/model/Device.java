@@ -83,5 +83,4 @@ public class Device {
 		return String.format("Device [id=%s, vendor=%s, creationDate=%s, isOnline=%s]", id, vendor, creationDate,
 				isOnline) + "\n";
 	}
-
 }

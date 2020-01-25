@@ -1,6 +1,7 @@
 package com.drenski.gwmanager.service;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -13,7 +14,7 @@ import com.drenski.gwmanager.model.Device;
 @Service
 public class DeviceService {
 
-	public static List<Device> devices = GatewayService.exampleDevices;
+	public static List<Device> devices = new ArrayList<>();
 
 	public static int generate(int min, int max) {
 		return min + (int) (Math.random() * ((max - min) + 1));
@@ -23,7 +24,7 @@ public class DeviceService {
 		if (devices.size() < 10) {
 			devices.add(new Device(generate(10, 100), vendor, creationDate, isOnline));
 			try {
-				DbConn.main(null);
+				DbConn.initDbConn();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -39,7 +40,7 @@ public class DeviceService {
 			}
 		}
 		try {
-			DbConn.main(null);
+			DbConn.initDbConn();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

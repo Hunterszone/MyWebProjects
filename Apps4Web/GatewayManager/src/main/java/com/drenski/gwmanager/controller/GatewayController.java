@@ -66,7 +66,7 @@ public class GatewayController {
 			if (IPAddressValidator.isValid(gateway.getIpAddress())) {
 				GatewayService.gateways.add(gateway);
 				try {
-					DbConn.main(null);
+					DbConn.initDbConn();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -83,7 +83,7 @@ public class GatewayController {
 	public String deleteGateway(@RequestParam String id) {
 		service.deleteGateway(id);
 		try {
-			DbConn.main(null);
+			DbConn.initDbConn();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
