@@ -1,5 +1,7 @@
 package com.drenski.gwmanager;
 
+import java.util.Date;
+
 import com.drenski.gwmanager.model.Device;
 import com.drenski.gwmanager.model.Gateway;
 import com.drenski.gwmanager.service.DeviceService;
@@ -18,8 +20,7 @@ public class SampleMocks {
 	}
 
 	public Device getSampleDevice() {
-		sampleDevice = new Device(DeviceService.devices.get(0).getId(), DeviceService.devices.get(0).getVendor(),
-				DeviceService.devices.get(0).getCreationDate(), DeviceService.devices.get(0).getOnline());
+		sampleDevice = new Device(DeviceService.generate(10, 100), "IBM", new Date(), true);
 		return sampleDevice;
 	}
 

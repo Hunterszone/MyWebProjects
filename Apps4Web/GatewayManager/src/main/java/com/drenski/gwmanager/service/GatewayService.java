@@ -22,6 +22,7 @@ public class GatewayService {
 		DeviceService.devices.add(new Device(DeviceService.generate(10, 100), "AIWA", new Date(), false));
 
 		gateways.add(new Gateway(getNumericString(7), "root", "192.168.0.1", DeviceService.devices));
+		gateways.add(new Gateway(getNumericString(7), "root", "192.168.0.168", DeviceService.devices));
 		try {
 			DbConn.initDbConn();
 		} catch (SQLException e) {
