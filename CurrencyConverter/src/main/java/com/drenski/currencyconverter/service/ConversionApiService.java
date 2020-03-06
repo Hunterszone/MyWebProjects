@@ -1,19 +1,13 @@
 package com.drenski.currencyconverter.service;
 
 import java.io.BufferedReader;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.net.UnknownHostException;
-import java.nio.charset.StandardCharsets;
-import java.util.Date;
-
-import javax.swing.filechooser.FileSystemView;
 
 import org.json.JSONException;
 import org.json.simple.JSONObject;
@@ -22,18 +16,18 @@ import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ExchangeRateService implements ApiHandler {
+public class ConversionApiService implements ApiHandler {
 
 	/* https://currencylayer.com - service provider */
 	private static final String TOKEN = "b860bbec1be4e73de0659ffbf932a996";
 	private static final String API_URL = "http://api.currencylayer.com";
 
 	@Override
-	public String gettingResponseFromAPI(String currency, String source) {
+	public String gettingResponseFromAPI(String from, String to, String amount) {
 		try {
 			// Define endpoints
-			String urlFromTo = API_URL + "/live?access_key=" + TOKEN + "&currencies=" + currency.toUpperCase()
-					+ "&source=" + source.toUpperCase() + "&format=1";
+			String urlFromTo = API_URL + "/convert?access_key=" + TOKEN + "&from=" + from.toUpperCase()
+					+ "&to=" + to.toUpperCase() + "&amount=" +  amount.toUpperCase() + "&format=1";
 
 			// GET response from API
 			URL obj = new URL(urlFromTo);
@@ -57,7 +51,7 @@ public class ExchangeRateService implements ApiHandler {
 		} catch (ProtocolException ex) {
 		} catch (IOException ex) {
 		}
-		return currency + " " + source;
+		return from + " " + to + " " + amount;
 	}
 
 	@Override
@@ -71,53 +65,56 @@ public class ExchangeRateService implements ApiHandler {
 	}
 
 	@Override
-	public Object[] connectToAPIAndParseValues(String currency, String source)
+	public Object[] connectToAPIAndParseValues(String from, String to, String amount)
 			throws JSONException, IOException, ParseException {
 
 		// calling gettingresponse method and initializing response object
-		String response = gettingResponseFromAPI(currency, source);
+		String response = gettingResponseFromAPI(from, to, amount);
 		// calling method for parsing response in JSON object
-		JSONObject resultCurrency = parsingJSONData(currency, response);
-		JSONObject resultSource = parsingJSONData(source, response);
-		if (resultCurrency != null && resultSource != null) {
+		JSONObject resultFrom = parsingJSONData(from, response);
+		JSONObject resultTo = parsingJSONData(to, response);
+		JSONObject resultAmount = parsingJSONData(amount, response);
+		if (resultFrom != null && resultTo != null && resultAmount != null) {
 			System.out.println("Data imported");
 		} else {
-			return new Object[] { currency.toUpperCase(), source.toUpperCase(), 0, 0, 0, "NO DATA" };
+			return new Object[] { from.toLowerCase(), to.toLowerCase(), amount.toLowerCase(), 0, 0, 0, "NO DATA" };
 		}
-		return new Object[] { currency.toUpperCase(), source.toUpperCase(), 0, 0, 0, "NO DATA" };
+		return new Object[] { from.toLowerCase(), to.toLowerCase(), amount.toLowerCase(), 0, 0, 0, "NO DATA" };
 	}
 
 	@Override
-	public String[] extractData(Object currency, Object source) {
+	public String[] extractData(Object from, Object to, Object amount) {
 		JSONParser parser = new JSONParser();
 		JSONObject json = null;
 		try {
-			String jsonRespBlock = gettingResponseFromAPI((String) currency, (String) source);
+			String jsonRespBlock = gettingResponseFromAPI((String) from, (String) to, (String) amount);
 			json = (JSONObject) parser.parse(jsonRespBlock);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		source = json.get("source");
-		currency = json.get("quotes");
+		from = json.get("source");
+		to = json.get("source");
+		amount = json.get("quotes");
 
-		return new String[] { currency.toString(), source.toString() };
+		return new String[] { from.toString(), to.toString(), amount.toString() };
 	}
 
 	@Override
-	public String gettingResponseFromAPI(String from, String to, String amount) {
+	public String gettingResponseFromAPI(String currency, String source) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Object[] connectToAPIAndParseValues(String from, String to, String amount) {
+	public Object[] connectToAPIAndParseValues(String currency, String source)
+			throws JSONException, IOException, ParseException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String[] extractData(Object from, Object to, Object amount) {
+	public String[] extractData(Object currency, Object source) {
 		// TODO Auto-generated method stub
 		return null;
 	}
