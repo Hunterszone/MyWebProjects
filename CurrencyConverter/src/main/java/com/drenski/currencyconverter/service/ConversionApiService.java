@@ -15,6 +15,8 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
 
+import com.drenski.currencyconverter.handler.ApiHandler;
+
 @Service
 public class ConversionApiService implements ApiHandler {
 
@@ -23,11 +25,11 @@ public class ConversionApiService implements ApiHandler {
 	private static final String API_URL = "http://api.currencylayer.com";
 
 	@Override
-	public String gettingResponseFromAPI(String from, String to, String amount) {
+	public String getAPIResponseConversion(String source, String target, String amount) {
 		try {
 			// Define endpoints
-			String urlFromTo = API_URL + "/convert?access_key=" + TOKEN + "&from=" + from.toUpperCase()
-					+ "&to=" + to.toUpperCase() + "&amount=" +  amount.toUpperCase() + "&format=1";
+			String urlFromTo = API_URL + "/convert?access_key=" + TOKEN + "&from=" + source.toUpperCase() + "&to="
+					+ target.toUpperCase() + "&amount=" + amount.toUpperCase() + "&format=1";
 
 			// GET response from API
 			URL obj = new URL(urlFromTo);
@@ -51,7 +53,7 @@ public class ConversionApiService implements ApiHandler {
 		} catch (ProtocolException ex) {
 		} catch (IOException ex) {
 		}
-		return from + " " + to + " " + amount;
+		return source + " " + target + " " + amount;
 	}
 
 	@Override
@@ -65,56 +67,76 @@ public class ConversionApiService implements ApiHandler {
 	}
 
 	@Override
-	public Object[] connectToAPIAndParseValues(String from, String to, String amount)
+	public Object[] connAPIAndParseObjConversion(String source, String target, String amount)
 			throws JSONException, IOException, ParseException {
 
 		// calling gettingresponse method and initializing response object
-		String response = gettingResponseFromAPI(from, to, amount);
+		String response = getAPIResponseConversion(source, target, amount);
 		// calling method for parsing response in JSON object
-		JSONObject resultFrom = parsingJSONData(from, response);
-		JSONObject resultTo = parsingJSONData(to, response);
+		JSONObject resultFrom = parsingJSONData(source, response);
+		JSONObject resultTo = parsingJSONData(target, response);
 		JSONObject resultAmount = parsingJSONData(amount, response);
 		if (resultFrom != null && resultTo != null && resultAmount != null) {
 			System.out.println("Data imported");
 		} else {
-			return new Object[] { from.toLowerCase(), to.toLowerCase(), amount.toLowerCase(), 0, 0, 0, "NO DATA" };
+			return new Object[] { source.toLowerCase(), target.toLowerCase(), amount.toLowerCase(), 0, 0, 0,
+					"NO DATA" };
 		}
-		return new Object[] { from.toLowerCase(), to.toLowerCase(), amount.toLowerCase(), 0, 0, 0, "NO DATA" };
+		return new Object[] { source.toLowerCase(), target.toLowerCase(), amount.toLowerCase(), 0, 0, 0, "NO DATA" };
 	}
 
 	@Override
-	public String[] extractData(Object from, Object to, Object amount) {
+	public String[] extractConversionData(Object source, Object target, Object amount) {
 		JSONParser parser = new JSONParser();
 		JSONObject json = null;
 		try {
-			String jsonRespBlock = gettingResponseFromAPI((String) from, (String) to, (String) amount);
+			String jsonRespBlock = getAPIResponseConversion((String) source, (String) target, (String) amount);
 			json = (JSONObject) parser.parse(jsonRespBlock);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		from = json.get("source");
-		to = json.get("source");
+		source = json.get("source");
+		target = json.get("source");
 		amount = json.get("quotes");
 
-		return new String[] { from.toString(), to.toString(), amount.toString() };
+		return new String[] { source.toString(), target.toString(), amount.toString() };
 	}
 
 	@Override
-	public String gettingResponseFromAPI(String currency, String source) {
+	public String getAPIResponseExchange(String currency, String source) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Object[] connectToAPIAndParseValues(String currency, String source)
+	public Object[] connAPIAndParseObjExchange(String currency, String source)
 			throws JSONException, IOException, ParseException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String[] extractData(Object currency, Object source) {
+	public String[] extractExchangeData(Object currency, Object source) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getAPIResponseConversionList(String date, String currency) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object[] connAPIAndParseObjConversionList(String date, String currency)
+			throws JSONException, IOException, ParseException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String[] extractConversionListData(Object date, Object currency) {
 		// TODO Auto-generated method stub
 		return null;
 	}

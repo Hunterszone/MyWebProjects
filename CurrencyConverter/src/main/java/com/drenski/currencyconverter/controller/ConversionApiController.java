@@ -12,22 +12,23 @@ import com.drenski.currencyconverter.service.ConversionApiService;
 @RestController
 public class ConversionApiController {
 
+	// Test sample:
+	// http://localhost:8080/convert?source=USD&target=PLN&amount=100
+
 	@Autowired
 	ConversionApiService service;
 
 	private String[] conversionResults;
-	private String template = "Exchange rate from %s to %s for amount %s is: ";
+	private String template = "Conversion rate from %s to %s for amount %s is: ";
 
 	@GetMapping("/convert")
-	public String exchangeRate(@RequestParam(value = "from", defaultValue = "BGN") String from,
-			@RequestParam(value = "to", defaultValue = "USD") String to,
+	public String conversionRate(@RequestParam(value = "source", defaultValue = "USD") String source,
+			@RequestParam(value = "target", defaultValue = "BGN") String target,
 			@RequestParam(value = "amount", defaultValue = "10") String amount) {
-		conversionResults = service.extractData(from, to, amount);
+		conversionResults = service.extractConversionData(source, target, amount);
 		if (conversionResults == null) {
-			System.out.println("DeviceController has thrown error!");
 			return "error";
 		}
-		return String.format(template, from, to, amount) + Arrays.toString(conversionResults);
+		return String.format(template, source, target, amount) + Arrays.toString(conversionResults);
 	}
-
 }

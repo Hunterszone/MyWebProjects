@@ -1,4 +1,4 @@
-package com.drenski.currencyconverter.service;
+package com.drenski.currencyconverter.handler;
 
 import java.io.IOException;
 
