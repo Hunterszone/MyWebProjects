@@ -1,19 +1,13 @@
 package com.drenski.currencyconverter.service;
 
 import java.io.BufferedReader;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.net.UnknownHostException;
-import java.nio.charset.StandardCharsets;
-import java.util.Date;
-
-import javax.swing.filechooser.FileSystemView;
 
 import org.json.JSONException;
 import org.json.simple.JSONObject;
