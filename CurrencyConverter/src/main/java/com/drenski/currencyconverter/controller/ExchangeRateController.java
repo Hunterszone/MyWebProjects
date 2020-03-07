@@ -26,6 +26,9 @@ public class ExchangeRateController {
 	public String exchangeRate(@RequestParam(value = "source", defaultValue = "USD") String source,
 			@RequestParam(value = "target", defaultValue = "BGN") String target) {
 		exchangeResults = service.extractExchangeData(source, target);
+		if (exchangeResults == null) {
+			return "error";
+		}
 		return String.format(template, target, source) + Arrays.toString(exchangeResults);
 	}
 }
