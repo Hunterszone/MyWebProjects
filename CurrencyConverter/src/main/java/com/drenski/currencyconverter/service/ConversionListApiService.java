@@ -9,7 +9,6 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.net.UnknownHostException;
 
-import org.json.JSONException;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -57,33 +56,6 @@ public class ConversionListApiService implements ApiHandler {
 	}
 
 	@Override
-	public JSONObject parsingJSONData(String currency, String response) throws ParseException {
-
-		// parsing response in JSON object
-		JSONParser parser = new JSONParser();
-		JSONObject json = (JSONObject) parser.parse(response);
-		JSONObject resultFrom = (JSONObject) json.get(currency.toUpperCase());
-		return resultFrom;
-	}
-
-	@Override
-	public Object[] connAPIAndParseObjConversionList(String date, String currency)
-			throws JSONException, IOException, ParseException {
-
-		// calling gettingresponse method and initializing response object
-		String response = getAPIResponseConversionList(date, currency);
-		// calling method for parsing response in JSON object
-		JSONObject resultDate = parsingJSONData(date.toString(), response);
-		JSONObject resultCurrency = parsingJSONData(currency, response);
-		if (resultDate != null && resultCurrency != null) {
-			System.out.println("Data imported");
-		} else {
-			return new Object[] { date, currency };
-		}
-		return new Object[] { date, currency };
-	}
-
-	@Override
 	public String[] extractConversionListData(Object date, Object currency) {
 		JSONParser parser = new JSONParser();
 		JSONObject json = null;
@@ -108,13 +80,6 @@ public class ConversionListApiService implements ApiHandler {
 	}
 
 	@Override
-	public Object[] connAPIAndParseObjExchange(String currency, String source)
-			throws JSONException, IOException, ParseException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public String[] extractExchangeData(Object currency, Object source) {
 		// TODO Auto-generated method stub
 		return null;
@@ -122,13 +87,6 @@ public class ConversionListApiService implements ApiHandler {
 
 	@Override
 	public String getAPIResponseConversion(String source, String target, String amount) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object[] connAPIAndParseObjConversion(String source, String target, String amount)
-			throws JSONException, IOException, ParseException {
 		// TODO Auto-generated method stub
 		return null;
 	}

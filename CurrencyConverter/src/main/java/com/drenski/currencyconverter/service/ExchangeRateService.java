@@ -9,7 +9,6 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.net.UnknownHostException;
 
-import org.json.JSONException;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -55,33 +54,6 @@ public class ExchangeRateService implements ApiHandler {
 	}
 
 	@Override
-	public JSONObject parsingJSONData(String currencyObj, String response) throws ParseException {
-
-		// parsing response in JSON object
-		JSONParser parser = new JSONParser();
-		JSONObject json = (JSONObject) parser.parse(response);
-		JSONObject result = (JSONObject) json.get(currencyObj.toUpperCase());
-		return result;
-	}
-
-	@Override
-	public Object[] connAPIAndParseObjExchange(String source, String target)
-			throws JSONException, IOException, ParseException {
-
-		// calling gettingresponse method and initializing response object
-		String response = getAPIResponseExchange(source, target);
-		// calling method for parsing response in JSON object
-		JSONObject resultSource = parsingJSONData(source, response);
-		JSONObject resultTarget = parsingJSONData(target, response);
-		if (resultSource != null && resultTarget != null) {
-			System.out.println("Data imported");
-		} else {
-			return new Object[] { source.toUpperCase(), target.toUpperCase() };
-		}
-		return new Object[] { source.toUpperCase(), target.toUpperCase() };
-	}
-
-	@Override
 	public String[] extractExchangeData(Object source, Object target) {
 		JSONParser parser = new JSONParser();
 		JSONObject json = null;
@@ -105,12 +77,6 @@ public class ExchangeRateService implements ApiHandler {
 	}
 
 	@Override
-	public Object[] connAPIAndParseObjConversion(String from, String to, String amount) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public String[] extractConversionData(Object from, Object to, Object amount) {
 		// TODO Auto-generated method stub
 		return null;
@@ -118,13 +84,6 @@ public class ExchangeRateService implements ApiHandler {
 
 	@Override
 	public String getAPIResponseConversionList(String date, String currency) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object[] connAPIAndParseObjConversionList(String date, String currency)
-			throws JSONException, IOException, ParseException {
 		// TODO Auto-generated method stub
 		return null;
 	}

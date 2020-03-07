@@ -9,7 +9,6 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.net.UnknownHostException;
 
-import org.json.JSONException;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -57,35 +56,6 @@ public class ConversionApiService implements ApiHandler {
 	}
 
 	@Override
-	public JSONObject parsingJSONData(String currency, String response) throws ParseException {
-
-		// parsing response in JSON object
-		JSONParser parser = new JSONParser();
-		JSONObject json = (JSONObject) parser.parse(response);
-		JSONObject resultFrom = (JSONObject) json.get(currency.toUpperCase());
-		return resultFrom;
-	}
-
-	@Override
-	public Object[] connAPIAndParseObjConversion(String source, String target, String amount)
-			throws JSONException, IOException, ParseException {
-
-		// calling gettingresponse method and initializing response object
-		String response = getAPIResponseConversion(source, target, amount);
-		// calling method for parsing response in JSON object
-		JSONObject resultFrom = parsingJSONData(source, response);
-		JSONObject resultTo = parsingJSONData(target, response);
-		JSONObject resultAmount = parsingJSONData(amount, response);
-		if (resultFrom != null && resultTo != null && resultAmount != null) {
-			System.out.println("Data imported");
-		} else {
-			return new Object[] { source.toLowerCase(), target.toLowerCase(), amount.toLowerCase(), 0, 0, 0,
-					"NO DATA" };
-		}
-		return new Object[] { source.toLowerCase(), target.toLowerCase(), amount.toLowerCase(), 0, 0, 0, "NO DATA" };
-	}
-
-	@Override
 	public String[] extractConversionData(Object source, Object target, Object amount) {
 		JSONParser parser = new JSONParser();
 		JSONObject json = null;
@@ -110,13 +80,6 @@ public class ConversionApiService implements ApiHandler {
 	}
 
 	@Override
-	public Object[] connAPIAndParseObjExchange(String currency, String source)
-			throws JSONException, IOException, ParseException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public String[] extractExchangeData(Object currency, Object source) {
 		// TODO Auto-generated method stub
 		return null;
@@ -124,13 +87,6 @@ public class ConversionApiService implements ApiHandler {
 
 	@Override
 	public String getAPIResponseConversionList(String date, String currency) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object[] connAPIAndParseObjConversionList(String date, String currency)
-			throws JSONException, IOException, ParseException {
 		// TODO Auto-generated method stub
 		return null;
 	}

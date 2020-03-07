@@ -12,8 +12,10 @@ import com.drenski.currencyconverter.service.ConversionApiService;
 @RestController
 public class ConversionApiController {
 
-	// Test sample:
-	// http://localhost:8080/convert?source=USD&target=PLN&amount=100
+	/*
+	 * Test sample: http://localhost:8080/convert?source=USD&target=PLN&amount=100
+	 * (NB: requires paid subscription to work !!!)
+	 */
 
 	@Autowired
 	ConversionApiService service;

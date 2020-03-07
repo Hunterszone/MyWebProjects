@@ -12,8 +12,10 @@ import com.drenski.currencyconverter.service.ConversionListApiService;
 @RestController
 public class ConversionListApiController {
 
-	// Test sample:
-	// http://localhost:8080/history?date=2018-03-07&currency=USD,AUD,CAD,PLN,MXN
+	/*
+	 * Test sample:
+	 * http://localhost:8080/history?date=2019-03-07&currency=USD,AUD,CAD,PLN,MXN
+	 */
 
 	@Autowired
 	ConversionListApiService service;

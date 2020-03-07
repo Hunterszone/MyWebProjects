@@ -1,11 +1,5 @@
 package com.drenski.currencyconverter.handler;
 
-import java.io.IOException;
-
-import org.json.JSONException;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.ParseException;
-
-public interface ApiHandler extends GettingResponseHandler, ParsingJsonHandler, ConnectToApiHandler, ExtractionHandler {
+public interface ApiHandler extends GettingResponseHandler, ExtractionHandler {
 
 }

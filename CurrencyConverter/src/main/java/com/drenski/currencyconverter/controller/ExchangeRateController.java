@@ -12,8 +12,9 @@ import com.drenski.currencyconverter.service.ExchangeRateService;
 @RestController
 public class ExchangeRateController {
 
-	// Test sample:
-	// http://localhost:8080/exchange?source=USD&target=BGN
+	/*
+	 * Test sample: http://localhost:8080/exchange?source=USD&target=BGN
+	 */
 
 	@Autowired
 	ExchangeRateService service;
