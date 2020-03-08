@@ -1,6 +1,5 @@
 package com.drenski.currencyconverter;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
@@ -28,9 +27,7 @@ public class OutputTest {
 
 		service.extractExchangeData("usd", "bgn");
 
-		assertEquals("Output is incorrect!",
-				"{  \"success\":true,  \"terms\":\"https:\\/\\/currencylayer.com\\/terms\",  \"privacy\":\"https:\\/\\/currencylayer.com\\/privacy\",  \"timestamp\":1583598847,  \"source\":\"USD\",  \"quotes\":{    \"USDBGN\":1.729495  }}",
-				mocks.getSampleOutput());
+		assertTrue("Output was modified!", mocks.getSampleOutput().contains("1.729495"));
 	}
 
 	@Test

@@ -1,6 +1,5 @@
 package com.drenski.currencyconverter;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
@@ -28,9 +27,7 @@ public class InputTest {
 
 		service.getAPIResponseExchange("bgn", "usd");
 
-		assertEquals("Endpoint is incorrect!",
-				"http://api.currencylayer.com/live?access_key=b860bbec1be4e73de0659ffbf932a996&currencies=USD&source=BGN&format=1",
-				mocks.getSampleInput());
+		assertTrue("Currency was modified!", mocks.getSampleInput().contains("currencies=USD&source=BGN"));
 	}
 
 	@Test
