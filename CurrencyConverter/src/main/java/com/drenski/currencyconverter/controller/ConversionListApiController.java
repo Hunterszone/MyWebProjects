@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.drenski.currencyconverter.dbconn.DbConn;
+import com.drenski.currencyconverter.dbconn.DbConnWithMySql;
 import com.drenski.currencyconverter.service.ConversionListApiService;
 
 @RestController
@@ -30,7 +30,7 @@ public class ConversionListApiController {
 			@RequestParam(value = "currency", defaultValue = "BGN") String currency) {
 		conversionListResults = service.extractConversionListData(date, currency);
 		try {
-			DbConn.initDbConn();
+			DbConnWithMySql.initDbConn();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

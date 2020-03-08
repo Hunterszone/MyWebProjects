@@ -8,21 +8,18 @@ import java.util.Map;
 
 import com.drenski.currencyconverter.service.HelperStructures;
 
-public class DbConn {
+public class DbConnWithMySql {
 
 	// API extraction
 	private static Map<String, String> endpointAndOutput;
 
 	// JDBC driver name and database URL
-	private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver"; // for H2 is "org.h2.Driver"
-	private static final String DB_URL = "jdbc:mysql://localhost:3306/currconverter"; // for H2 is "jdbc:h2:file:" +
-	// user.home +
-	// "/IdeaProjects/demo-rest-api/DB_OUT";
-	// //change to your DB_OUT path
+	private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+	private static final String DB_URL = "jdbc:mysql://localhost:3306/currconverter";
 
 	// Database credentials
 	private static final String USER = "root";
-	private static final String PASS = "root";
+	private static final String PASS = "";
 
 	public static void initDbConn() throws SQLException {
 		Connection conn = null;
