@@ -38,8 +38,8 @@ public class DbConn {
 			System.out.println("Connected database successfully...");
 
 			// Empty DB before operations
-			preparedStatement = conn.prepareStatement("DELETE FROM responses WHERE 1");
-			preparedStatement.executeUpdate();
+//			preparedStatement = conn.prepareStatement("DELETE FROM responses WHERE 1");
+//			preparedStatement.executeUpdate();
 
 			while (counter < HelperStructures.endpoints.size()) {
 				// STEP 3: Execute a query
@@ -73,6 +73,8 @@ public class DbConn {
 			} // end finally try
 		} // end try
 		endpointAndOutput.clear();
+		HelperStructures.endpoints.clear();
+		HelperStructures.outputs.clear();
 		System.out.println("Goodbye!");
 	}
 }
