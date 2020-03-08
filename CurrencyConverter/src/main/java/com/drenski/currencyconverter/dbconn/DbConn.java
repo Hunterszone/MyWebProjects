@@ -37,7 +37,7 @@ public class DbConn {
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
 			System.out.println("Connected database successfully...");
 
-			// Empty DB before operations
+			// Empty DB before operations - optional
 //			preparedStatement = conn.prepareStatement("DELETE FROM responses WHERE 1");
 //			preparedStatement.executeUpdate();
 
