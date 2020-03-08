@@ -30,7 +30,7 @@ public class ConversionListApiService implements ApiHandler {
 			String urlHistorical = API_URL + "/historical?access_key=" + TOKEN + "&date=" + date + "&currencies="
 					+ currency.toUpperCase() + "&format=1";
 
-			HelperService.endpoints.add(urlHistorical);
+			HelperStructures.endpoints.add(urlHistorical);
 
 			// GET response from API
 			URL obj = new URL(urlHistorical);
@@ -73,8 +73,8 @@ public class ConversionListApiService implements ApiHandler {
 		date = json.get("date");
 		currency = json.get("quotes");
 
-		HelperService.outputs.add(jsonRespBlock);
-		HelperService.endpointsAndOutputs.put(HelperService.endpoints.get(0), HelperService.outputs.get(0));
+		HelperStructures.outputs.add(jsonRespBlock);
+		HelperStructures.endpointsAndOutputs.put(HelperStructures.endpoints.get(0), HelperStructures.outputs.get(0));
 
 		return new String[] { date.toString(), currency.toString() };
 	}

@@ -30,7 +30,7 @@ public class ConversionApiService implements ApiHandler {
 			String urlConversion = API_URL + "/convert?access_key=" + TOKEN + "&from=" + source.toUpperCase() + "&to="
 					+ target.toUpperCase() + "&amount=" + amount.toUpperCase() + "&format=1";
 
-			HelperService.endpoints.add(urlConversion);
+			HelperStructures.endpoints.add(urlConversion);
 
 			// GET response from API
 			URL obj = new URL(urlConversion);
@@ -73,8 +73,8 @@ public class ConversionApiService implements ApiHandler {
 		target = json.get("source");
 		amount = json.get("quotes");
 
-		HelperService.outputs.add(jsonRespBlock);
-		HelperService.endpointsAndOutputs.put(HelperService.endpoints.get(0), HelperService.outputs.get(0));
+		HelperStructures.outputs.add(jsonRespBlock);
+		HelperStructures.endpointsAndOutputs.put(HelperStructures.endpoints.get(0), HelperStructures.outputs.get(0));
 
 		return new String[] { source.toString(), target.toString(), amount.toString() };
 	}

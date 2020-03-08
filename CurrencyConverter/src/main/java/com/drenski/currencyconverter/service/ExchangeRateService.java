@@ -30,7 +30,7 @@ public class ExchangeRateService implements ApiHandler {
 			String urlFromTo = API_URL + "/live?access_key=" + TOKEN + "&currencies=" + target.toUpperCase()
 					+ "&source=" + source.toUpperCase() + "&format=1";
 
-			HelperService.endpoints.add(urlFromTo);
+			HelperStructures.endpoints.add(urlFromTo);
 
 			// GET response from API
 			URL obj = new URL(urlFromTo);
@@ -70,8 +70,8 @@ public class ExchangeRateService implements ApiHandler {
 		source = json.get("source");
 		target = json.get("quotes");
 
-		HelperService.outputs.add(jsonRespBlock);
-		HelperService.endpointsAndOutputs.put(HelperService.endpoints.get(0), HelperService.outputs.get(0));
+		HelperStructures.outputs.add(jsonRespBlock);
+		HelperStructures.endpointsAndOutputs.put(HelperStructures.endpoints.get(0), HelperStructures.outputs.get(0));
 
 		return new String[] { source.toString(), target.toString() };
 	}

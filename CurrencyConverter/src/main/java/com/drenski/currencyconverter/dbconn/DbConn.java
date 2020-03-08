@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Map;
 
-import com.drenski.currencyconverter.service.HelperService;
+import com.drenski.currencyconverter.service.HelperStructures;
 
 public class DbConn {
 
@@ -41,9 +41,9 @@ public class DbConn {
 			preparedStatement = conn.prepareStatement("DELETE FROM responses WHERE 1");
 			preparedStatement.executeUpdate();
 
-			while (counter < HelperService.endpoints.size()) {
+			while (counter < HelperStructures.endpoints.size()) {
 				// STEP 3: Execute a query
-				endpointAndOutput = HelperService.endpointsAndOutputs;
+				endpointAndOutput = HelperStructures.endpointsAndOutputs;
 				preparedStatement = conn.prepareStatement("INSERT INTO responses (ENDPOINT, OUTPUT) " + "VALUES (?,?)");
 				preparedStatement.setString(1, endpointAndOutput.keySet().iterator().next());
 				System.out.println("ENDPOINT added: " + endpointAndOutput.keySet().iterator().next());

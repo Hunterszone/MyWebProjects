@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class HelperService {
+public class HelperStructures {
 
 	public static List<String> endpoints = new ArrayList<>();
 	public static List<String> outputs = new ArrayList<>();
