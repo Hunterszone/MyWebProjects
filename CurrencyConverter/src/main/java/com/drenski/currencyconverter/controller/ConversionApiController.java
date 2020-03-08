@@ -1,5 +1,6 @@
 package com.drenski.currencyconverter.controller;
 
+import java.sql.SQLException;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.drenski.currencyconverter.dbconn.DbConn;
 import com.drenski.currencyconverter.service.ConversionApiService;
 
 @RestController
@@ -28,6 +30,12 @@ public class ConversionApiController {
 			@RequestParam(value = "target", defaultValue = "BGN") String target,
 			@RequestParam(value = "amount", defaultValue = "10") String amount) {
 		conversionResults = service.extractConversionData(source, target, amount);
+		try {
+			DbConn.initDbConn();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		if (conversionResults == null) {
 			return "error";
 		}

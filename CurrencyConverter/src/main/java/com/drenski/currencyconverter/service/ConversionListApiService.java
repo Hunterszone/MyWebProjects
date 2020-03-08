@@ -27,11 +27,13 @@ public class ConversionListApiService implements ApiHandler {
 	public String getAPIResponseConversionList(String date, String currency) {
 		try {
 			// Define endpoints
-			String urlFromTo = API_URL + "/historical?access_key=" + TOKEN + "&date=" + date + "&currencies="
+			String urlHistorical = API_URL + "/historical?access_key=" + TOKEN + "&date=" + date + "&currencies="
 					+ currency.toUpperCase() + "&format=1";
 
+			HelperService.endpoints.add(urlHistorical);
+
 			// GET response from API
-			URL obj = new URL(urlFromTo);
+			URL obj = new URL(urlHistorical);
 			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 			con.setRequestMethod("GET");
 			con.connect();
@@ -59,8 +61,9 @@ public class ConversionListApiService implements ApiHandler {
 	public String[] extractConversionListData(Object date, Object currency) {
 		JSONParser parser = new JSONParser();
 		JSONObject json = null;
+		String jsonRespBlock = "";
 		try {
-			String jsonRespBlock = getAPIResponseConversionList((String) date, (String) currency);
+			jsonRespBlock = getAPIResponseConversionList((String) date, (String) currency);
 			json = (JSONObject) parser.parse(jsonRespBlock);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
@@ -69,6 +72,9 @@ public class ConversionListApiService implements ApiHandler {
 
 		date = json.get("date");
 		currency = json.get("quotes");
+
+		HelperService.outputs.add(jsonRespBlock);
+		HelperService.endpointsAndOutputs.put(HelperService.endpoints.get(0), HelperService.outputs.get(0));
 
 		return new String[] { date.toString(), currency.toString() };
 	}

@@ -27,11 +27,13 @@ public class ConversionApiService implements ApiHandler {
 	public String getAPIResponseConversion(String source, String target, String amount) {
 		try {
 			// Define endpoints
-			String urlFromTo = API_URL + "/convert?access_key=" + TOKEN + "&from=" + source.toUpperCase() + "&to="
+			String urlConversion = API_URL + "/convert?access_key=" + TOKEN + "&from=" + source.toUpperCase() + "&to="
 					+ target.toUpperCase() + "&amount=" + amount.toUpperCase() + "&format=1";
 
+			HelperService.endpoints.add(urlConversion);
+
 			// GET response from API
-			URL obj = new URL(urlFromTo);
+			URL obj = new URL(urlConversion);
 			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 			con.setRequestMethod("GET");
 			con.connect();
@@ -59,8 +61,9 @@ public class ConversionApiService implements ApiHandler {
 	public String[] extractConversionData(Object source, Object target, Object amount) {
 		JSONParser parser = new JSONParser();
 		JSONObject json = null;
+		String jsonRespBlock = "";
 		try {
-			String jsonRespBlock = getAPIResponseConversion((String) source, (String) target, (String) amount);
+			jsonRespBlock = getAPIResponseConversion((String) source, (String) target, (String) amount);
 			json = (JSONObject) parser.parse(jsonRespBlock);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
@@ -69,6 +72,9 @@ public class ConversionApiService implements ApiHandler {
 		source = json.get("source");
 		target = json.get("source");
 		amount = json.get("quotes");
+
+		HelperService.outputs.add(jsonRespBlock);
+		HelperService.endpointsAndOutputs.put(HelperService.endpoints.get(0), HelperService.outputs.get(0));
 
 		return new String[] { source.toString(), target.toString(), amount.toString() };
 	}

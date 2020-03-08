@@ -1,5 +1,6 @@
 package com.drenski.currencyconverter.controller;
 
+import java.sql.SQLException;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.drenski.currencyconverter.dbconn.DbConn;
 import com.drenski.currencyconverter.service.ExchangeRateService;
 
 @RestController
@@ -26,6 +28,12 @@ public class ExchangeRateController {
 	public String exchangeRate(@RequestParam(value = "source", defaultValue = "USD") String source,
 			@RequestParam(value = "target", defaultValue = "BGN") String target) {
 		exchangeResults = service.extractExchangeData(source, target);
+		try {
+			DbConn.initDbConn();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		if (exchangeResults == null) {
 			return "error";
 		}

@@ -30,6 +30,8 @@ public class ExchangeRateService implements ApiHandler {
 			String urlFromTo = API_URL + "/live?access_key=" + TOKEN + "&currencies=" + target.toUpperCase()
 					+ "&source=" + source.toUpperCase() + "&format=1";
 
+			HelperService.endpoints.add(urlFromTo);
+
 			// GET response from API
 			URL obj = new URL(urlFromTo);
 			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -57,8 +59,9 @@ public class ExchangeRateService implements ApiHandler {
 	public String[] extractExchangeData(Object source, Object target) {
 		JSONParser parser = new JSONParser();
 		JSONObject json = null;
+		String jsonRespBlock = "";
 		try {
-			String jsonRespBlock = getAPIResponseExchange((String) source, (String) target);
+			jsonRespBlock = getAPIResponseExchange((String) source, (String) target);
 			json = (JSONObject) parser.parse(jsonRespBlock);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
@@ -66,6 +69,9 @@ public class ExchangeRateService implements ApiHandler {
 		}
 		source = json.get("source");
 		target = json.get("quotes");
+
+		HelperService.outputs.add(jsonRespBlock);
+		HelperService.endpointsAndOutputs.put(HelperService.endpoints.get(0), HelperService.outputs.get(0));
 
 		return new String[] { source.toString(), target.toString() };
 	}
