@@ -34,7 +34,7 @@ public class ExchangeRateController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if (exchangeResults == null) {
+		if (exchangeResults.equals(null)) {
 			return "error";
 		}
 		return String.format(template, target, source) + Arrays.toString(exchangeResults);

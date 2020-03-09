@@ -36,7 +36,7 @@ public class ConversionApiController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if (conversionResults == null) {
+		if (conversionResults.equals(null)) {
 			return "error";
 		}
 		return String.format(template, source, target, amount) + Arrays.toString(conversionResults);
