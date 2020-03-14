@@ -1,4 +1,4 @@
-package com.drenski.gwmanager.model;
+package com.drenski.gwmanager.dbconn;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,15 +7,17 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
+import com.drenski.gwmanager.model.Device;
+import com.drenski.gwmanager.model.Gateway;
 import com.drenski.gwmanager.service.GatewayService;
 
-public class DbConn {
+public class DbConnWithMySql {
 
 	private static Map<String, List<Device>> gatewaysAndDevices;
 
 	// JDBC driver name and database URL
 	private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver"; // for H2 is "org.h2.Driver"
-	private static final String DB_URL = "jdbc:mysql://localhost:3306/gwmanager"; // for H2 is "jdbc:h2:file:" +
+	private static final String DB_URL = "jdbc:mysql://localhost:3306/gwmanager"; // for H2 is "jdbc:h2:file:"
 
 	// Database credentials
 	private static final String USER = "root";
@@ -71,6 +73,7 @@ public class DbConn {
 				se.printStackTrace();
 			}
 		}
+		gatewaysAndDevices.clear();
 		System.out.println("Goodbye!");
 	}
 }

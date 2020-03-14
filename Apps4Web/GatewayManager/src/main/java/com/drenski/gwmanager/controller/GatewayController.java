@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.drenski.gwmanager.dbconn.DbConnWithMySql;
 import com.drenski.gwmanager.helpers.IPAddressValidator;
-import com.drenski.gwmanager.model.DbConn;
 import com.drenski.gwmanager.model.Gateway;
 import com.drenski.gwmanager.service.DeviceService;
 import com.drenski.gwmanager.service.GatewayService;
@@ -66,7 +66,7 @@ public class GatewayController {
 			if (IPAddressValidator.isValid(gateway.getIpAddress())) {
 				GatewayService.gateways.add(gateway);
 				try {
-					DbConn.initDbConn();
+					DbConnWithMySql.initDbConn();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -83,7 +83,7 @@ public class GatewayController {
 	public String deleteGateway(@RequestParam String id) {
 		service.deleteGateway(id);
 		try {
-			DbConn.initDbConn();
+			DbConnWithMySql.initDbConn();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

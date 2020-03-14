@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.drenski.gwmanager.model.DbConn;
+import com.drenski.gwmanager.dbconn.DbConnWithMySql;
 import com.drenski.gwmanager.model.Device;
 
 @Service
@@ -24,7 +24,7 @@ public class DeviceService {
 		if (devices.size() < 10) {
 			devices.add(new Device(generate(10, 100), vendor, creationDate, isOnline));
 			try {
-				DbConn.initDbConn();
+				DbConnWithMySql.initDbConn();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -40,7 +40,7 @@ public class DeviceService {
 			}
 		}
 		try {
-			DbConn.initDbConn();
+			DbConnWithMySql.initDbConn();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

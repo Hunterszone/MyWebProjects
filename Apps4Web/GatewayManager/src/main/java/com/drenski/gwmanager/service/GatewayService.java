@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.drenski.gwmanager.model.DbConn;
+import com.drenski.gwmanager.dbconn.DbConnWithMySql;
 import com.drenski.gwmanager.model.Device;
 import com.drenski.gwmanager.model.Gateway;
 
@@ -24,7 +24,7 @@ public class GatewayService {
 		gateways.add(new Gateway(getNumericString(7), "root", "192.168.0.1", DeviceService.devices));
 		gateways.add(new Gateway(getNumericString(7), "root", "192.168.0.168", DeviceService.devices));
 		try {
-			DbConn.initDbConn();
+			DbConnWithMySql.initDbConn();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -73,7 +73,7 @@ public class GatewayService {
 			if (Integer.parseInt(gateway.getId()) == Integer.parseInt(id)) {
 				iterator.remove();
 				try {
-					DbConn.initDbConn();
+					DbConnWithMySql.initDbConn();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
