@@ -1,6 +1,5 @@
 package com.drenski.gwmanager.controller;
 
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -20,7 +19,6 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.drenski.gwmanager.dbconn.DbConnWithMySql;
 import com.drenski.gwmanager.helpers.IPAddressValidator;
 import com.drenski.gwmanager.model.Gateway;
 import com.drenski.gwmanager.service.DeviceService;
@@ -51,25 +49,19 @@ public class GatewayController {
 
 	@GetMapping("/add-gateway")
 	public String showAddGatewayPage(ModelMap model, Gateway gateway) {
-		model.addAttribute("gateway", service.addGateway(gateway));
+		model.addAttribute("gateway", new Gateway(String.valueOf(0), gateway.getGatewayName(), gateway.getIpAddress(),
+				DeviceService.devices));
 		return "gateway";
 	}
 
 	@PostMapping("/add-gateway")
 	public String addGateway(ModelMap model, @Valid Gateway gateway, BindingResult result) {
 
-		gateway = new Gateway(GatewayService.getNumericString(7), gateway.getGatewayName(), gateway.getIpAddress(),
-				DeviceService.devices);
-
 		if (result.hasErrors()) {
 			model.addAttribute("gateway", gateway);
 			if (IPAddressValidator.isValid(gateway.getIpAddress())) {
-				GatewayService.gateways.add(gateway);
-				try {
-					DbConnWithMySql.initDbConn();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
+				service.addGateway(gateway.getId(), gateway.getGatewayName(), gateway.getIpAddress(),
+						gateway.getDevices());
 			} else {
 				System.out.println("WRONG IP PATTERN!");
 				return "invalid";
@@ -82,11 +74,6 @@ public class GatewayController {
 	@GetMapping("/delete-gateway")
 	public String deleteGateway(@RequestParam String id) {
 		service.deleteGateway(id);
-		try {
-			DbConnWithMySql.initDbConn();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
 		return "redirect:/list-gateways";
 	}
 

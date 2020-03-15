@@ -73,7 +73,8 @@ public class DbConnWithMySql {
 				se.printStackTrace();
 			}
 		}
-		gatewaysAndDevices.clear();
+		if (gatewaysAndDevices != null)
+			gatewaysAndDevices.clear();
 		System.out.println("Goodbye!");
 	}
 }

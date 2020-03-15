@@ -43,10 +43,14 @@ public class GatewayService {
 		return sb.toString();
 	}
 
-	public Object addGateway(Gateway gateway) {
+	public void addGateway(String id, String gwName, String ipAddress, List<Device> devices) {
 		DeviceService.devices = new ArrayList<Device>();
-		gateway = new Gateway(String.valueOf(0), "", "", DeviceService.devices);
-		return gateway;
+		gateways.add(new Gateway(GatewayService.getNumericString(7), gwName, ipAddress, DeviceService.devices));
+		try {
+			DbConnWithMySql.initDbConn();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public List<Gateway> retrieveGateways(String gwName) {
