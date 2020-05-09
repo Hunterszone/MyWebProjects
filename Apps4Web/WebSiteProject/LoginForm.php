@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -44,11 +39,11 @@ and open the template in the editor.
       </tr>
       <tr>
         <td><div align="right">Password</div></td>
-        <td><input type="password" type="text" /></td>
+        <td><input type="password" name="password" type="text" /></td>
       </tr>
       <tr>
         <td><div align="right"></div></td>
-        <td><input name="" type="submit" value="login" /></td>
+        <td><input type="submit" value="Login" /></td>
       </tr>
     </table>
     </form>
