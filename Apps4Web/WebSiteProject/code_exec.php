@@ -9,6 +9,9 @@
 		
         if($result){
             echo "New user registered succesfully!";
+			/* Redirect browser */
+			header("refresh:3;url=index.php");
+			exit();
         }
         else
             echo "Error registering!";
