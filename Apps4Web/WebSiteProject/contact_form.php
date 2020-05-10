@@ -40,27 +40,31 @@
       </tr>
 	</table>    
 
+<fieldset><p><center>
+    <form action="" name="action" method="POST" enctype="multipart/form-data">
+
 <?php
 
-$action=$_REQUEST['action'];
+$action="";
+if(isset($_REQUEST['action'])){
+	$action=$_REQUEST['action'];
+}
 
 if ($action=="")    /* display the contact form */
     {
     ?>
-<fieldset><p><center>
-    <form  action="" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="action" value="submit">
-    <p><font face="algerian" color="black">Your name:
+    <p><font face="algerian" color="green">Your name:
     <input name="name" type="text" value="" size="30"/></font></p>
-    <p><font face="algerian" color="black">Your email:
+    <p><font face="algerian" color="green">Your email:
     <input name="email" type="text" value="" size="30"/></font></p>
-    <p><legend><font face="algerian"><font size="4"><font color="black"><u>Send us your feedback:</u></font></font></font></legend></p>
+    <p><legend><font face="algerian"><font size="4"><font color="green"><u>Send us your feedback:</u></font></font></font></legend></p>
     <textarea ng-model="message" name="message" cols="55" rows="16" maxlength="400" placeholder="UP TO 400 CHARACTERS"></textarea>
     <center><p>
 		<input type='submit' ng-click="send()" value='Send' style="cursor: pointer;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-		<input type='reset' ng-click="clear()" value='Clear form' style="cursor: pointer;">
+		<input type='reset' ng-click="clear()" value='Clear' style="cursor: pointer;">
 	</p></center>
-	<p><font face="algerian"><font size="2"><font color="black">Number of characters left: <span ng-bind="left()"></span></font></font></font></p>
+	<p><font face="algerian"><font size="2"><font color="green">Number of characters left: <span ng-bind="left()"></span></font></font></font></p>
     </form></center></p>
     <?php
     } 
@@ -71,39 +75,19 @@ else                /* send the submitted data */
     $message=$_REQUEST['message'];
     if (($name=="")||($email=="")||($message==""))
         {
-        echo "All fields are required, please fill <a href=\"\">the form</a> again.";
+		echo "<center>";
+        echo "All fields are required, please fill <a href='contact_form.php'>the form</a> again.";
+		echo "</center>";
         }
     else{        
         $from="From: $name<$email>\r\nReturn-path: $email";
         $subject="Message sent using your contact form";
         mail("k.drenski91@gmail.com", $subject, $message, $from);
+		echo "<center>";
         echo "Email sent!";
+		echo "</center>";
         }
     }  
 ?>
-
-<!--<STYLE TYPE="text/css">
- 
-body { 
-background: url(http://kaba35.com/wp-content/uploads/2015/11/Savin-NY-Website-Background-Web1.jpg) no-repeat center center fixed; 
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-}
-
-fieldset {
-	display: block;
-	margin-left: 315px;
-	margin-right: 315px;
-	padding-top: 5em;
-	padding-bottom: 3.5em;
-	padding-left: 0.75em;
-	padding-right: 0.75em;
-	border: 8px groove (internal value);
-	background-color: rgba(0,0,0,0.5);
-
-} 
-</style>-->
 
 </body>
