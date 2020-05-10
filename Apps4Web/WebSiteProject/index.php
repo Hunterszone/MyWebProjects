@@ -792,11 +792,11 @@
       <ul id="menu">
          <li><a href="SignUp.htm">SIGN UP</a></li>
          <li><a href="LoginForm.php">SIGN IN</a></li>
-         <li><a href="html.html">HTML</a></li>
-         <li><a href="css.html">CSS</a></li>
-         <li><a href="javascript.html">JavaScript</a></li>
-         <li><a href="php.html">PHP</a></li>
-		 <li><a href="contact_form.php">CONTACT US</a></li>
+         <li><a href="html.html" target="_blank">HTML</a></li>
+         <li><a href="css.html" target="_blank">CSS</a></li>
+         <li><a href="javascript.html" target="_blank">JavaScript</a></li>
+         <li><a href="php.html" target="_blank">PHP</a></li>
+		 <li><a href="contact_form.php" target="_blank">CONTACT US</a></li>
       </ul>
    </center>
    </br>  
