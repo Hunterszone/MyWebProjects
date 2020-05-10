@@ -749,6 +749,7 @@
    <table>
       <tr>
          <td>
+			<a href="index.php">
             <div id="milkyway">
                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" height="200" width="auto">
                   <param name="wmode" value="transparent">
@@ -758,6 +759,7 @@
                   <embed height="91" src="http://parallelreality-bg.com/templates/reality/images/milkyway2.png" bgcolor="#000000" width="115" quality="best" play="true" wmode="transparent">
                </object>
             </div>
+			</a>
          </td>
          <td>
             <div id="clockbox" style="font-family:Jokerman; font-size:120%; text-align:right; color:#D6FF5C"></div>
@@ -788,14 +790,13 @@
    <br>
    <center>
       <ul id="menu">
-         <li><a href="Sign Up.htm" target="_blank">SIGN UP</a></li>
-         <li><a href="LoginForm.php" target="_blank">SIGN IN</a></li>
-         <li><a href="Feedback.htm" target="_blank">COMMENT</a></li>
-         <li><a href="html.html" target="_blank">HTML</a></li>
-         <li><a href="css.html" target="_blank">CSS</a></li>
-         <li><a href="javascript.html" target="_blank">JavaScript</a></li>
-         <li><a href="php.html" target="_blank">PHP</a></li>
-         <li><a href="quizes.php" target="_blank">Quiz</a></li>
+         <li><a href="SignUp.htm">SIGN UP</a></li>
+         <li><a href="LoginForm.php">SIGN IN</a></li>
+         <li><a href="html.html">HTML</a></li>
+         <li><a href="css.html">CSS</a></li>
+         <li><a href="javascript.html">JavaScript</a></li>
+         <li><a href="php.html">PHP</a></li>
+		 <li><a href="contact_form.php">CONTACT US</a></li>
       </ul>
    </center>
    </br>  

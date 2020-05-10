@@ -7,4 +7,4 @@
     		header("location: LoginForm.php");
     		exit();
     	}
-    ?>
+?>

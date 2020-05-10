@@ -28,9 +28,9 @@
         if ($_COOKIE['PrivatePageLogin'] == md5($password.$nonsense)) {
         ?>
 
-    <!-- LOGGED IN CONTENT HERE -->
+<!-- LOGGED IN CONTENT HERE -->
 
-    <?php
+<?php
 		exit;
 		   } else {
 			  echo "Bad Cookie.";
@@ -57,7 +57,7 @@
     	}  
     	//Create query, but first use hashing algorithm md5 for the password
         sha1($password);
-    	$qry="SELECT * FROM userandpass WHERE username='$username' AND password='$password'";
+    	$qry="SELECT * FROM users WHERE username='$username' AND password='$password'";
     	$result=mysqli_query($conn,$qry);
         
     	//Check whether the query was successful or not
@@ -101,4 +101,4 @@
 		
 		//$conn->close();
 
-    ?>
+?>

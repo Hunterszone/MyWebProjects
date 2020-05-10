@@ -4,7 +4,7 @@
 		
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $query = "INSERT INTO userandpass (username, password) VALUES('$username', '$password')";
+        $query = "INSERT INTO users (username, password) VALUES('$username', '$password')";
         $result = mysqli_query($conn,$query);
 		
         if($result){

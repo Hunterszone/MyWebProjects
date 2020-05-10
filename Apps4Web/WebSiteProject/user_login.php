@@ -1,3 +1,10 @@
+<?php
+
+		require_once('authentication.php');
+		echo "Welcome, " . htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
+			
+?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -6,820 +13,660 @@ and open the template in the editor.
 -->
 <!-- CSS for BLINKING TEXT HEADER WITH FIRE SHADOW -->
 <html>
-<style type="text/css">
-
-.blink_text {
--webkit-animation-name: blinker;
--webkit-animation-duration: 2.5s;
--webkit-animation-timing-function: linear;
--webkit-animation-iteration-count: infinite;
-
--moz-animation-name: blinker;
--moz-animation-duration: 2.5s;
--moz-animation-timing-function: linear;
--moz-animation-iteration-count: infinite;
-
--ms-animation-name: blinker;
--ms-animation-duration: 2.5s;
--ms-animation-timing-function: linear;
--ms-animation-iteration-count: infinite;
-
-}
-
-@-moz-keyframes blinker {  
- 0% { opacity: 1.0; }
- 50% { opacity: 0.0; }
- 100% { opacity: 1.0; }
- }
-
-@-webkit-keyframes blinker {  
- 0% { opacity: 1.0; }
- 50% { opacity: 0.0; }
- 100% { opacity: 1.0; }
- }
-
-@-ms-keyframes blinker {  
- 0% { opacity: 1.0; }
- 50% { opacity: 0.0; }
- 100% { opacity: 1.0; }
- }
-
-h1 {
-    text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px 
-
-#451b0e;
-
-} 
-
- </style>
-
-
-<!-- CSS styles for menu with sections -->
-
-<style type="text/css">
-
-ul#menu {
-    padding: 0;
-}
-
-ul#menu li {
-    display: inline;
-}
-
-ul#menu li a {
-    color: white;
-    background-color: black;
-    font-weight: bold;
-    font-size: 125%;
-    padding: 10px 30px;
-    text-decoration: none;
-    border-radius: 4px 4px 0 0;
-}
-
-ul#menu li a:hover {
-    color: black;
-    font-weight: bold;
-    font-size: 150%;
-    background-color: orange;
-}
-</style>
-
-
-
-
-<!-- CSS styles for standard search box -->
-
-<style type="text/css">
-
-	#tfnewsearch{
-		padding:20px;
-	}
-	.tftextinput{
-		margin: 0;
-		padding: 5px 18px;
-		font: Verdana;
-		font-size:21px;
-		border:1px solid black; 
-		border-top-left-radius: 5px 5px;
-		border-bottom-left-radius: 5px 5px;
-		background-image: url('http://www.knowledgequarter.london/wp-content/uploads/2017/05/books.jpg');
-		background-position: 4px 2px;
-		background-size: 30px 30px;
-		background-repeat: no-repeat;
-		text-indent: 23px;
-	}
-	.tfbutton {
-		margin: 0;
-		padding: 5px 15px;
-		font-size:21px;
-                font-weight: bold;
-		outline: none;
-		cursor: pointer;
-		text-align: center;
-		text-decoration: none;
-		color: #ffffff;
-		border: solid 1px black; 
-		background: black;
-		background: -webkit-gradient(linear, left top, left bottom, from black), to(black));
-		background: -moz-linear-gradient(top, black,  black);
-		border-top-right-radius: 5px 5px;
-		border-bottom-right-radius: 5px 5px;
-	}
-	.tfbutton:hover {
-		text-decoration: none;
-		color: black;
-		background: orange;
-		background: -webkit-gradient(linear, left top, left bottom, from(orange), to(orange));
-		background: -moz-linear-gradient(top,  orange,  orange);
-	        background: -ms-linear-gradient(top,  orange,  orange);	
-	}
-	/* Fixes submit button height problem in Firefox */
-	.tfbutton::-moz-focus-inner {
-	  border: 0;
-	}
-	.tfclear{
-		clear:both;
-	}
-</style>
-
-
-
-<!-- CSS for LARGER CHECKBOX IN BING SEARCH -->
-
-
-<style type="text/css">
-
-.L1 {
-width: 17px;
-height: 17px;
-}
-
-
-</style> 
-
-
-
-
-
-<!-- CSS for BACKGROUND -->
-
-<STYLE TYPE="text/css">
- 
-body { 
-background: url(http://www.knowledgequarter.london/wp-content/uploads/2017/05/books.jpg) no-repeat center center fixed; 
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-}
- 
-</style> 
- 
- 
-<style type="text/css">
-
-.cd-fixed-background .cd-content::after {
-	/* phone image on small devices */
-	content: '';
-	display: block;
-	width: 104%;
-	padding: 34% 0;
-	margin: 2em auto 0;
-}
-
-html, body {
- 	height: 100%;
-}
- 
-
-.cd-fixed-background {
-	height: 60%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	background-attachment: fixed;
-}
- 
-  
-.cd-fixed-background.img-3 {
-	background-image: url("http://www.calgaryherald.com/news/cms/binary/10271025.jpg?size=sw620x65");
-}
-
-</style>
- 
-
-
-
- 
- 
-<!-- CSS for NAVIGATION PANE -->
-
-
-<STYLE TYPE="text/css">
-
-
-
-
-#primary_nav_wrap
-{
-	margin-top:15px
-}
-
-#primary_nav_wrap ul
-{
-	list-style:none;
-	position:relative;
-	float:left;
-	margin:0;
-	padding:0
-}
-
-#primary_nav_wrap ul a
-{
-	display:block;
-	color:rgba(0,0,0,0.5);
-	text-decoration:none;
-	font-weight:700;
-	font-size:12px;
-	line-height:32px;
-	padding:0 15px;
-	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
-}
-
-#primary_nav_wrap ul li
-{
-	position:relative;
-	float:left;
-	margin:0;
-	padding:0
-}
-
-#primary_nav_wrap ul li.current-menu-item
-{
-	background:rgba(0,0,0,0.5)
-}
-
-#primary_nav_wrap ul li:hover
-{
-	background:rgba(0,0,0,0.5)
-}
-
-#primary_nav_wrap ul ul
-{
-	display:none;
-	position:absolute;
-	top:100%;
-	left:0;
-	background:rgba(0,0,0,0.5);
-	padding:0
-}
-
-#primary_nav_wrap ul ul li
-{
-	float:none;
-	width:200px
-}
-
-#primary_nav_wrap ul ul a
-{
-	line-height:120%;
-	padding:10px 15px
-}
-
-#primary_nav_wrap ul ul ul
-{
-	top:0;
-	left:100%
-}
-
-#primary_nav_wrap ul li:hover > ul
-{
-	display:block
-}
-
-
-</STYLE>
- 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
- 
-<style>
-
-.TheTextOff{
-color:rgba(255, 255, 255, 0.7);
-font-family:Arial, Helvetica, sans-serif;
-font-size:20px;
-}
- 
-.TheTextOn{
-color:yellow;
-font-family:Arial, Helvetica, sans-serif;
-font-size:22px;
-}
-
-
-h10 {
-    position: fixed;
-    width: 59%;
-}  
-
-
-</style>
-
-
-
-
-
-<!-- CSS for SOURCES HEADERS -->
-
-<style type="text/css">
-
-h888 {
-
-    position: fixed;
-    width: 100%;
-}  
-
-</style>
-
-
-
-
-
-
-<!-- CSS for YELLOW SHADOWS -->
-
-<style type="text/css">
-
-h2 {
-    text-shadow: 5px 5px 5px yellow;
-}  
-
-</style>  
-
-
-
-
-
-<!-- CSS for OUR PARTNERS block -->
-
-<style type="text/css">
-
-
-    
-.slider:after {
-    font-size: 140%;
-    text-align: center;
-    color: white;
-    padding-top: 40px;
-    padding-left:  50px;
-    content: 'exploring' url(http://i.stack.imgur.com/KUdfa.png) 'thumbnails..';
-    position:absolute;
-    width:100%; height:100%;
-    top:0; left:0;
-    background:rgba(0,0,0,0.9);
-    opacity:0;   
-    box-sizing:border-box;
-    -moz-box-sizing:border-box; 
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-            
-}
-
-.slider:hover:after {
-    opacity:0.8;
-
-}
-
-
-.slider{
-	width: 640px; /*Same as width of the large image*/
-	position: relative;
-	/*Instead of height we will use padding*/
-	padding-top: 320px; /*That helps bring the labels down*/
-	
-	margin: 50px auto;
-	
-	/*Lets add a shadow*/
-	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
-}
-
-
-/*Last thing remaining is to add transitions*/
-.slider>img{
-	position: absolute;
-	left: 0; top: 0;
-	transition: all 0.5s;
-}
-
-.slider input[name='slide_switch'] {
-	display: none;
-}
-
-.slider label {
-	/*Lets add some spacing for the thumbnails*/
-	margin: 18px 0 0 18px;
-	border: 3px solid #999;
-	
-	float: left;
-	cursor: pointer;
-	transition: all 0.5s;
-	
-	/*Default style = low opacity*/
-	opacity: 1;
-}
-
-.slider label img{
-	display: block;
-}
-
-
-/*Click effects*/
-.slider input[name='slide_switch']:checked+label {
-	border-color: #666;
-	opacity: 1;
-}
-
-/*Change opacity*/
-/*Time to work on the main images*/
-.slider input[name='slide_switch'] ~ img {
-	opacity: 0;
-	transform: scale(1.1);
-}
-/*That hides all main images at a 110% size
-On click the images will be displayed at normal size to complete the effect
-*/
-.slider input[name='slide_switch']:checked+label+img {
-	opacity: 1;
-	transform: scale(1);
-}
-/*Clicking on any thumbnail activates the image related to it*/
-
-</style>
-
-
-
-
-<!-- CSS for titles margins -->
-
-<style type="text/css">
-<!--
-.gap { margin-right: 50px; }
--->
-</style>
-
-
-<style type="text/css">
-<!--
-.gap { margin-right: 50px; }
--->
-</style>
-
-
-
-
-
-<!-- CSS for SHAKEIMAGES -->
-
-
-<style>
-
-.shakeimage {POSITION: relative}
-</style>
-
-
-
-
-<!-- CSS for FIRE SHADOWS -->
-
-<STYLE TYPE="text/css">
-
-
-h222 {
-    text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px 
-
-#451b0e;
-
-} 
-
-
-</STYLE>
-
-
-
-<style type="text/css">
-
-
-@-webkit-keyframes pulse_animation {
-	0% { -webkit-transform: scale(1); }
-	20% { -webkit-transform: scale(1); }
-	30% { -webkit-transform: scale(1.08); }
-	40% { -webkit-transform: scale(1); }
-	60% { -webkit-transform: scale(1); }
-	70% { -webkit-transform: scale(1.05); }
-	80% { -webkit-transform: scale(1); }
-	100% { -webkit-transform: scale(1); }
-}
-
-.pulse:hover {
-	-animation-name: 'pulse_animation';
-	-animation-duration: 2500ms;
-	-transform-origin:100% 100%;
-	-animation-iteration-count: infinite;
-	-webkit-animation-name: 'pulse_animation';
-	-webkit-animation-duration: 2500ms;
-	-webkit-transform-origin:70% 70%;
-	-webkit-animation-iteration-count: infinite;
-	-moz-animation-name: 'pulse_animation';
-	-moz-animation-duration: 2500ms;
-	-moz-transform-origin:70% 70%;
-	-moz-animation-iteration-count: infinite;
-	-ms-animation-name: 'pulse_animation';
-	-ms-animation-duration: 2500ms;
-	-ms-transform-origin:70% 70%;
-	-ms-animation-iteration-count: infinite;
-}
-
-</style>
-
-
-<!-- CSS for SOCIAL NETWORKS BUTTONS -->
-
-<STYLE TYPE="text/css">
-
-
-.social {
-  position: relative;
-  width: 39%;
-  top: 50%;
-  text-align: center;
-  transform: translateY(0%);
-  box-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px 	
-	
-#451b0e;
-
-background-color: rgba(0, 0, 0, 0.5)
-
-}
-
-.social .link {
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  background-clip: content-box;  
-  padding: -10px;
-  transition: .5s;
-  color: #D7D0BE;
-  margin-left: 30px;
-  margin-right: 30px;
-  text-shadow:
-    0 -20px 0 rgba(0, 0, 0, 0.2),
-    0 1px 0 rgba(255, 255, 255, 0.2);
-  font-size: 70px;
-}
-
-.social .link span {
-  display: block;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.social .link:hover {
-  color: black;
-  margin-left: 5px;
-  transform: translateX(10px) rotate(360deg);
-}
-
-
-.social .link.twitter:hover {
-  background-color: white;
-}
-
-
-.social .link.facebook:hover {
-  background-color: white;
-}
-
-</STYLE>
-
-
-
-
-
-<!-- CSS for SOME FIXES -->
-
-<style>
-
-
-h20 {
-    position: fixed;
-    width: 80%;
-}  
-
-
-</style>
-
-
-<style>
-
-
-h30 {
-    position: fixed;
-    width: 150%;
-}  
-
-
-</style>
-
-
-
-
-
-
-
-<!-- CSS for BOXES OF SECRETS -->
-
-<style type="text/css">
-
-body {
-  color: yellow;
-  font: 600 14px/24px "algerian", Verdana;
-}
-.box {
-  
-  margin: 1.5em;
-  background: rgba(0,0,0,0.5);
-  border-radius: 6px;
-  cursor: pointer;
-  height: 170px;
-  line-height: 170px;
-  text-align: center;
-  -webkit-transition-property: background;
-  -moz-transition-property: background;
-  -o-transition-property: background;
-  transition-property: background;
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s; 
-  transition-duration: 0.3s; 
-  -webkit-transition: 1s ease-in-out;
-  -moz-transition: 1s ease-in-out;
-  -o-transition: 1s ease-in-out;
-  transition: 1s ease-in-out; 
-  -webkit-box-shadow: 19px 21px 41px 0px rgba(0,0,0,0.69);
-  -moz-box-shadow: 19px 21px 41px 0px rgba(0,0,0,0.69);
-  box-shadow: 19px 21px 41px 0px rgba(0,0,0,0.69);
-  border-radius: 34px 34px 34px 34px;
-  -moz-border-radius: 34px 34px 34px 34px;
-  -webkit-border-radius: 34px 34px 34px 34px;
-  border: 6px solid rgba(255, 255, 255, 0.7);
-  width: 170px;
-}
-.box:hover {
-  background: rgba(255, 255, 255, 0.3);
-  color: black;
-}
-
-/*.div img: not(.tfclear) {
-	transition: all 2s ease-in-out;
-}
- 
-div:hover {
-	transform: rotate(360deg);
-}
-
-
-
-
-</style>
-
-
-
-
-<!-- CSS for FOOTER BAR -->
- 
-<style type="text/css">
- 
- 
-img {
-  opacity: 0.6;
-  filter: alpha(opacity=40);
-}
- 
-img:hover {
-  opacity: 1;
-  filter: alpha(opacity=40);
-}
- 
- 
-</style>
-
-
-
-
-
-<!-- CSS for SHARE BUTTONS -->
-
-<style type='text/css'>
-/*<![CDATA[*/
-/*@charset "utf-8";
-/* CSS Document */
-/* ---------- ENTYPO ---------- *//* ---------- Digital Hub Inc : http://www.digitalhubinc.com/---------- */
-/* ---------- http://weloveiconfonts.com/ ---------- */
-/*@import url(http://weloveiconfonts.com/api/?family=entypo);
-[class*="entypo-"]:before { font-family: 'entypo', sans-serif;}
-/* ---------- GENERAL ---------- */
-#social-sidebar a { text-decoration: none; }
-#social-sidebar ul,#social-sidebar ul li,#social-sidebar ul li a {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
- 
-/* ---------- Social Sidebar ---------- */
-#social-sidebar {
-    left: 0;z-index:999;
-	margin-top: -220px; /* (li * a:width) / -2 */
-	position: fixed;
-	top: 50%;
-}
-#social-sidebar ul li:first-child a { border-radius: 0 5px 0 0; }
-#social-sidebar ul li:last-child a { border-radius: 0 0 5px 0; }
-#social-sidebar ul li a {
-	background: rgba(0,0,0,0.5);
-	color: #fff;
-	display: block;
-	height: 100px;
-	font-size: 30px;
-	line-height: 100px;
-	position: relative;
-	text-align: center;
-	width: 70px;
-}
-#social-sidebar ul li a:hover span {
-	left: 130%;
-	opacity: 1;
-}
-#social-sidebar ul li a span {
-	border-radius: 3px;
-	line-height: 24px;
-	left: -100%;
-	margin-top: -16px;
-	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	filter: alpha(opacity=0);
-	opacity: 0;
-	padding: 4px 8px;
-	position: absolute;
-	-webkit-transition: opacity .3s, left .4s;
-	-moz-transition: opacity .3s, left .4s;
-	-ms-transition: opacity .3s, left .4s;
-	-o-transition: opacity .3s, left .4s;
-	transition: opacity .3s, left .4s;
-	top: 50%;
-	z-index: -1;
-}
-#social-sidebar ul li a span:before {
-	content: "";
-	display: block;
-	height: 8px;
-	left: -4px;
-	margin-top: -4px;
-	position: absolute;
-	top: 50%;
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-	transform: rotate(45deg);
-	width: 8px;
-	z-index: -2;
-}
-#social-sidebar ul li a[class*="twitter"]:hover,
-#social-sidebar ul li a[class*="twitter"] span,
-#social-sidebar ul li a[class*="twitter"] span:before { background: #6CDFEA; }
-#social-sidebar ul li a[class*="gplus"]:hover,
-#social-sidebar ul li a[class*="gplus"] span,
-#social-sidebar ul li a[class*="gplus"] span:before { background: #E34429; }
-#social-sidebar ul li a[class*="linkedin"]:hover,
-#social-sidebar ul li a[class*="linkedin"] span,
-#social-sidebar ul li a[class*="linkedin"] span:before { background: #0077B5; }
-#social-sidebar ul li a[class*="facebook"]:hover,
-#social-sidebar ul li a[class*="facebook"] span,
-#social-sidebar ul li a[class*="facebook"] span:before { background: #234999; }
-/*]]>*/
-</style> 
-
-
-
-﻿<html>
-
+<link rel="stylesheet" type="text/css" href="styles2.css">
+
+      <!-- CSS -->
+	  <style>
+		html {
+		  scroll-behavior: smooth;
+		}
+		
+		.content {
+		  display: flex;
+		  justify-content: space-between;
+		  max-width: 400px;
+		  margin: 0 auto;
+		  padding: 10px 0;
+		}
+      </style>
+	  <style type="text/css">
+         .blink_text {
+         -webkit-animation-name: blinker;
+         -webkit-animation-duration: 2.5s;
+         -webkit-animation-timing-function: linear;
+         -webkit-animation-iteration-count: infinite;
+         -moz-animation-name: blinker;
+         -moz-animation-duration: 2.5s;
+         -moz-animation-timing-function: linear;
+         -moz-animation-iteration-count: infinite;
+         -ms-animation-name: blinker;
+         -ms-animation-duration: 2.5s;
+         -ms-animation-timing-function: linear;
+         -ms-animation-iteration-count: infinite;
+         }
+         @-moz-keyframes blinker {  
+         0% { opacity: 1.0; }
+         50% { opacity: 0.0; }
+         100% { opacity: 1.0; }
+         }
+         @-webkit-keyframes blinker {  
+         0% { opacity: 1.0; }
+         50% { opacity: 0.0; }
+         100% { opacity: 1.0; }
+         }
+         @-ms-keyframes blinker {  
+         0% { opacity: 1.0; }
+         50% { opacity: 0.0; }
+         100% { opacity: 1.0; }
+         }
+         h1 {
+         text-shadow: 0 0 20px red, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px 
+         #451b0e;
+         } 
+      </style>
+      <!-- CSS styles for menu with sections -->
+      <style type="text/css">
+         ul#menu {
+         list-style:none;
+         padding: 0;
+         position:relative;
+         margin:0;
+         }
+         ul#menu li {
+         display: inline;
+         }
+         ul#menu li a {
+         display: inline;
+         color: white;
+         background-color: black;
+         font-weight: bold;
+         font-size: 125%;
+         padding: 10px 30px;
+         text-decoration: none;
+         border-radius: 4px 4px 0 0;
+         }
+         ul#menu li a:hover {
+         color: black;
+         font-weight: bold;
+         font-size: 150%;
+         background-color: orange;
+         }
+      </style>
+      <!-- CSS styles for standard search box -->
+      <style type="text/css">
+         #tfnewsearch{
+         padding:20px;
+         }
+         .tftextinput{
+         margin: 0;
+         padding: 5px 18px;
+         font: Verdana;
+         font-size:21px;
+         border:1px solid black; 
+         border-top-left-radius: 5px 5px;
+         border-bottom-left-radius: 5px 5px;
+         background-image: url('http://www.knowledgequarter.london/wp-content/uploads/2017/05/books.jpg');
+         background-position: 4px 2px;
+         background-size: 30px 30px;
+         background-repeat: no-repeat;
+         text-indent: 23px;
+         }
+         .tfbutton {
+         margin: 0;
+         padding: 5px 15px;
+         font-size:21px;
+         font-weight: bold;
+         outline: none;
+         cursor: pointer;
+         text-align: center;
+         text-decoration: none;
+         color: #ffffff;
+         border: solid 1px black; 
+         background: black;
+         background: -webkit-gradient(linear, left top, left bottom, from black), to(black));
+         background: -moz-linear-gradient(top, black,  black);
+         border-top-right-radius: 5px 5px;
+         border-bottom-right-radius: 5px 5px;
+         }
+         .tfbutton:hover {
+         text-decoration: none;
+         color: black;
+         background: orange;
+         background: -webkit-gradient(linear, left top, left bottom, from(orange), to(orange));
+         background: -moz-linear-gradient(top,  orange,  orange);
+         background: -ms-linear-gradient(top,  orange,  orange);	
+         }
+         /* Fixes submit button height problem in Firefox */
+         .tfbutton::-moz-focus-inner {
+         border: 0;
+         }
+         .tfclear{
+         clear:both;
+         }
+      </style>
+      <!-- CSS for LARGER CHECKBOX IN BING SEARCH -->
+      <style type="text/css">
+         .L1 {
+         width: 17px;
+         height: 17px;
+         }
+      </style>
+      <!-- CSS for BACKGROUND -->
+      <style>
+         body { 
+         background: url(http://www.knowledgequarter.london/wp-content/uploads/2017/05/books.jpg) no-repeat center center fixed; 
+         -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+         background-size: cover;
+         }
+      </style>
+      <style type="text/css">
+         .cd-fixed-background .cd-content::after {
+         /* phone image on small devices */
+         content: '';
+         display: block;
+         width: 104%;
+         padding: 34% 0;
+         margin: 2em auto 0;
+         }
+         html, body {
+         height: 100%;
+         }
+         .cd-fixed-background {
+         height: 60%;
+         background-repeat: no-repeat;
+         background-size: cover;
+         background-position: center center;
+         background-attachment: fixed;
+         }
+         .cd-fixed-background.img-3 {
+         background-image: url("http://www.calgaryherald.com/news/cms/binary/10271025.jpg?size=sw620x65");
+         }
+      </style>
+      <!-- CSS for NAVIGATION PANE -->
+      <!--
+         <style>
+         
+         
+         #primary_nav_wrap
+         {
+         	margin-top:15px
+         }
+         
+         #primary_nav_wrap ul
+         {
+         	list-style:none;
+         	position:relative;
+         	float:left;
+         	margin:0;
+         	padding:0
+         }
+         
+         #primary_nav_wrap ul a
+         {
+         	display:block;
+         	color:rgba(0,0,0,0.5);
+         	text-decoration:none;
+         	font-weight:700;
+         	font-size:12px;
+         	line-height:32px;
+         	padding:0 15px;
+         	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
+         }
+         
+         #primary_nav_wrap ul li
+         {
+         	position:relative;
+         	float:left;
+         	margin:0;
+         	padding:0
+         }
+         
+         #primary_nav_wrap ul li.current-menu-item
+         {
+         	background:rgba(0,0,0,0.5)
+         }
+         
+         #primary_nav_wrap ul li:hover
+         {
+         	background:rgba(0,0,0,0.5)
+         }
+         
+         #primary_nav_wrap ul ul
+         {
+         	display:none;
+         	position:absolute;
+         	top:100%;
+         	left:0;
+         	background:rgba(0,0,0,0.5);
+         	padding:0
+         }
+         
+         #primary_nav_wrap ul ul li
+         {
+         	float:none;
+         	width:200px
+         }
+         
+         #primary_nav_wrap ul ul a
+         {
+         	line-height:120%;
+         	padding:10px 15px
+         }
+         
+         #primary_nav_wrap ul ul ul
+         {
+         	top:0;
+         	left:100%
+         }
+         
+         #primary_nav_wrap ul li:hover > ul
+         {
+         	display:block
+         }
+         
+         
+         </style>
+         
+         --->
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+      <style>
+         .TheTextOff{
+         color:rgba(255, 255, 255, 0.7);
+         font-family:Arial, Helvetica, sans-serif;
+         font-size:20px;
+         }
+         .TheTextOn{
+         color:yellow;
+         font-family:Arial, Helvetica, sans-serif;
+         font-size:22px;
+         }
+         h10 {
+         position: fixed;
+         width: 59%;
+         }  
+      </style>
+      <!-- CSS for SOURCES HEADERS -->
+      <style type="text/css">
+         h888 {
+         position: fixed;
+         width: 100%;
+         }  
+      </style>
+      <!-- CSS for SCROLL TO TOP -->
+      <style>
+         #toTop {
+         display: block;
+         position: fixed;
+         bottom: 100px;
+         right: 20px;
+         opacity: 1;
+         display:none;
+         cursor: pointer;
+         }
+      </style>
+      <!-- CSS for YELLOW SHADOWS -->
+      <style type="text/css">
+         h2 {
+         text-shadow: 5px 5px 5px yellow;
+         }  
+      </style>
+      <!-- CSS for OUR PARTNERS block -->
+      <style type="text/css">
+         .slider:after {
+         font-size: 140%;
+         text-align: center;
+         color: white;
+         padding-top: 40px;
+         padding-left:  50px;
+         content: 'exploring' url(http://i.stack.imgur.com/KUdfa.png) 'thumbnails..';
+         position:absolute;
+         width:100%; height:100%;
+         top:0; left:0;
+         background:rgba(0,0,0,0.9);
+         opacity:0;   
+         box-sizing:border-box;
+         -moz-box-sizing:border-box; 
+         transition: all 0.5s;
+         -webkit-transition: all 0.5s;
+         -ms-transition: all 0.5s;
+         -moz-transition: all 0.5s;
+         }
+         .slider:hover:after {
+         opacity:0.8;
+         }
+         .slider{
+         width: 640px; /*Same as width of the large image*/
+         position: relative;
+         /*Instead of height we will use padding*/
+         padding-top: 320px; /*That helps bring the labels down*/
+         margin: 50px auto;
+         /*Lets add a shadow*/
+         box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+         }
+         /*Last thing remaining is to add transitions*/
+         .slider>img{
+         position: absolute;
+         left: 0; top: 0;
+         transition: all 0.5s;
+         }
+         .slider input[name='slide_switch'] {
+         display: none;
+         }
+         .slider label {
+         /*Lets add some spacing for the thumbnails*/
+         margin: 18px 0 0 18px;
+         border: 3px solid #999;
+         float: left;
+         cursor: pointer;
+         transition: all 0.5s;
+         /*Default style = low opacity*/
+         opacity: 1;
+         }
+         .slider label img{
+         display: block;
+         }
+         /*Click effects*/
+         .slider input[name='slide_switch']:checked+label {
+         border-color: #666;
+         opacity: 1;
+         }
+         /*Change opacity*/
+         /*Time to work on the main images*/
+         .slider input[name='slide_switch'] ~ img {
+         opacity: 0;
+         transform: scale(1.1);
+         }
+         /*That hides all main images at a 110% size
+         On click the images will be displayed at normal size to complete the effect
+         */
+         .slider input[name='slide_switch']:checked+label+img {
+         opacity: 1;
+         transform: scale(1);
+         }
+         /*Clicking on any thumbnail activates the image related to it*/
+      </style>
+      <!-- CSS for titles margins -->
+      <style type="text/css">
+         <!--
+            .gap { margin-right: 50px; }
+            -->
+      </style>
+      <style type="text/css">
+         <!--
+            .gap { margin-right: 50px; }
+            -->
+      </style>
+      <!-- CSS for SHAKEIMAGES -->
+      <style>
+         .shakeimage {POSITION: relative}
+      </style>
+      <!-- CSS for FIRE SHADOWS -->
+      <style>
+         h222 {
+         text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px 
+         #451b0e;
+         } 
+      </style>
+      <style type="text/css">
+         @-webkit-keyframes pulse_animation {
+         0% { -webkit-transform: scale(1); }
+         20% { -webkit-transform: scale(1); }
+         30% { -webkit-transform: scale(1.08); }
+         40% { -webkit-transform: scale(1); }
+         60% { -webkit-transform: scale(1); }
+         70% { -webkit-transform: scale(1.05); }
+         80% { -webkit-transform: scale(1); }
+         100% { -webkit-transform: scale(1); }
+         }
+         .pulse:hover {
+         -animation-name: 'pulse_animation';
+         -animation-duration: 2500ms;
+         -transform-origin:100% 100%;
+         -animation-iteration-count: infinite;
+         -webkit-animation-name: 'pulse_animation';
+         -webkit-animation-duration: 2500ms;
+         -webkit-transform-origin:70% 70%;
+         -webkit-animation-iteration-count: infinite;
+         -moz-animation-name: 'pulse_animation';
+         -moz-animation-duration: 2500ms;
+         -moz-transform-origin:70% 70%;
+         -moz-animation-iteration-count: infinite;
+         -ms-animation-name: 'pulse_animation';
+         -ms-animation-duration: 2500ms;
+         -ms-transform-origin:70% 70%;
+         -ms-animation-iteration-count: infinite;
+         }
+      </style>
+      <!-- CSS for SOCIAL NETWORKS BUTTONS -->
+      <style>
+         .social {
+         position: relative;
+         width: 50%;
+         top: 50%;
+         text-align: center;
+         transform: translateY(0%);
+         box-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;
+         background-color: rgba(0, 0, 0, 0.5)
+         }
+         .social .link {
+         display: inline-block;
+         vertical-align: middle;
+         position: relative;
+         width: 75px;
+         height: 75px;
+         border-radius: 50%;
+         background-clip: content-box;  
+         padding: -20px;
+         transition: .5s;
+         color: #D7D0BE;
+         margin-left: 30px;
+         margin-right: 30px;
+         text-shadow:
+         0 -20px 0 rgba(0, 0, 0, 0.2),
+         0 1px 0 rgba(255, 255, 255, 0.2);
+         font-size: 70px;
+         }
+         .social .link span {
+         display: block;
+         position: absolute;
+         text-align: center;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         }
+         .social .link:hover {
+         color: black;
+         margin-left: 5px;
+         transform: translateX(10px) rotate(360deg);
+         }
+         .social .link.twitter:hover {
+         background-color: white;
+         }
+         .social .link.facebook:hover {
+         background-color: white;
+         }
+      </style>
+      <!-- CSS for SOME FIXES -->
+      <style>
+         h20 {
+         position: fixed;
+         width: 80%;
+         }  
+      </style>
+      <style>
+         h30 {
+         position: fixed;
+         width: 150%;
+         }  
+      </style>
+      <!-- CSS for BOXES OF SECRETS -->
+      <style type="text/css">
+         body {
+         color: yellow;
+         font: 600 14px/24px "algerian", Verdana;
+         }
+         .box {
+         margin: 1.5em;
+         background: rgba(0,0,0,0.5);
+         border-radius: 6px;
+         cursor: pointer;
+         height: 170px;
+         line-height: 170px;
+         text-align: center;
+         -webkit-transition-property: background;
+         -moz-transition-property: background;
+         -o-transition-property: background;
+         transition-property: background;
+         -webkit-transition-duration: 0.3s;
+         -moz-transition-duration: 0.3s;
+         -o-transition-duration: 0.3s; 
+         transition-duration: 0.3s; 
+         -webkit-transition: 1s ease-in-out;
+         -moz-transition: 1s ease-in-out;
+         -o-transition: 1s ease-in-out;
+         transition: 1s ease-in-out; 
+         -webkit-box-shadow: 19px 21px 41px 0px rgba(0,0,0,0.69);
+         -moz-box-shadow: 19px 21px 41px 0px rgba(0,0,0,0.69);
+         box-shadow: 19px 21px 41px 0px rgba(0,0,0,0.69);
+         border-radius: 34px 34px 34px 34px;
+         -moz-border-radius: 34px 34px 34px 34px;
+         -webkit-border-radius: 34px 34px 34px 34px;
+         border: 6px solid rgba(255, 255, 255, 0.7);
+         width: 170px;
+         }
+         .box:hover {
+         background: rgba(255, 255, 255, 0.3);
+         color: black;
+         }
+         /*.div img: not(.tfclear) {
+         transition: all 2s ease-in-out;
+         }
+         div:hover {
+         transform: rotate(360deg);
+         }
+      </style>
+      <!-- CSS for FOOTER BAR -->
+      <style type="text/css">
+         img {
+         opacity: 0.6;
+         filter: alpha(opacity=40);
+         }
+         img:hover {
+         opacity: 1;
+         filter: alpha(opacity=40);
+         }
+      </style>
+      <!-- CSS for LOADING BAR -->
+      <style>
+         #myProgress {
+         width: 100%;
+         background-color: rgba(0,0,0,0.5);
+         height: 80px;
+         }
+         #myBar {
+         width: 1%;
+         height: 80px;
+         background-image: linear-gradient(to right, black 0%,white 180%), url('./faces.gif');
+         background-blend-mode: color-dodge;
+         background-color: rgba(0,0,0,0.5);
+         }
+      </style>
+      <!-- CSS for SHARE BUTTONS -->
+      <style type='text/css'>
+         /*<![CDATA[*/
+            @charset "utf-8";
+            /* CSS Document */
+            /* ---------- ENTYPO ---------- *//* ---------- Digital Hub Inc : http://www.digitalhubinc.com/---------- */
+            /* ---------- http://weloveiconfonts.com/ ---------- */
+            @import url(http://weloveiconfonts.com/api/?family=entypo);
+            [class*="entypo-"]:before { font-family: 'entypo', sans-serif;}
+            /* ---------- GENERAL ---------- */
+            #social-sidebar a { text-decoration: none; }
+            #social-sidebar ul,#social-sidebar ul li,#social-sidebar ul li a {
+            	list-style: none;
+            	margin: 0;
+            	padding: 0;
+            }
+             
+            /* ---------- Social Sidebar ---------- */
+            #social-sidebar {
+                left: 0;z-index:999;
+            	margin-top: -220px; /* (li * a:width) / -2 */
+            	position: fixed;
+            	top: 50%;
+            }
+            #social-sidebar ul li:first-child a { border-radius: 0 5px 0 0; }
+            #social-sidebar ul li:last-child a { border-radius: 0 0 5px 0; }
+            #social-sidebar ul li a {
+            	background: rgba(0,0,0,0.5);
+            	color: #fff;
+            	display: block;
+            	height: 100px;
+            	font-size: 30px;
+            	line-height: 100px;
+            	position: relative;
+            	text-align: center;
+            	width: 70px;
+            }
+            #social-sidebar ul li a:hover span {
+            	left: 130%;
+            	opacity: 1;
+            }
+            #social-sidebar ul li a span {
+            	border-radius: 3px;
+            	line-height: 24px;
+            	left: -100%;
+            	margin-top: -16px;
+            	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            	filter: alpha(opacity=0);
+            	opacity: 0;
+            	padding: 4px 8px;
+            	position: absolute;
+            	-webkit-transition: opacity .3s, left .4s;
+            	-moz-transition: opacity .3s, left .4s;
+            	-ms-transition: opacity .3s, left .4s;
+            	-o-transition: opacity .3s, left .4s;
+            	transition: opacity .3s, left .4s;
+            	top: 50%;
+            	z-index: -1;
+            }
+            #social-sidebar ul li a span:before {
+            	content: "";
+            	display: block;
+            	height: 8px;
+            	left: -4px;
+            	margin-top: -4px;
+            	position: absolute;
+            	top: 50%;
+            	-webkit-transform: rotate(45deg);
+            	-moz-transform: rotate(45deg);
+            	-ms-transform: rotate(45deg);
+            	-o-transform: rotate(45deg);
+            	transform: rotate(45deg);
+            	width: 8px;
+            	z-index: -2;
+            }
+            #social-sidebar ul li a[class*="twitter"]:hover,
+            #social-sidebar ul li a[class*="twitter"] span,
+            #social-sidebar ul li a[class*="twitter"] span:before { background: #6CDFEA; }
+            #social-sidebar ul li a[class*="gplus"]:hover,
+            #social-sidebar ul li a[class*="gplus"] span,
+            #social-sidebar ul li a[class*="gplus"] span:before { background: #E34429; }
+            #social-sidebar ul li a[class*="linkedin"]:hover,
+            #social-sidebar ul li a[class*="linkedin"] span,
+            #social-sidebar ul li a[class*="linkedin"] span:before { background: #0077B5; }
+            #social-sidebar ul li a[class*="facebook"]:hover,
+            #social-sidebar ul li a[class*="facebook"] span,
+            #social-sidebar ul li a[class*="facebook"] span:before { background: #234999; }
+            /*]]>
+      </style>
+      <style type="text/css">
+         body {
+         overflow-x:hidden;
+         }
+      </style>
 
 <table>
  
@@ -859,23 +706,20 @@ img:hover {
 
 <head>
 
-<h2><font size="5"><center>JavaScript Prompt</center></font></h2>
-
-<center><button onclick="myFunction()"><center>Try it</center></button></center>
-
-<h3><font size="5"><center><p id="demo"></p></center></font></h3>
-
 <script>
-function myFunction() {
-    var txt;
-    var person = prompt("Please enter your name:", "Student");
-    if (person == null || person == "") {
-        txt = "User cancelled the prompt.";
-    } else {
-        txt = "Hello " + person ;
-    }
-    document.getElementById("demo").innerHTML = txt;
-}
+
+var t1=0;
+window.onscroll = scroll1;
+
+function scroll1(){
+             var toTop = document.getElementById('toTop');
+             window.scrollY>400 ? toTop.style.display='Block' :  toTop.style.display='none';
+         	if(window.scrollY>1600){
+         		
+         		toTop.style.display='none';
+         	}
+         }
+
 </script>
 <LINK rel="stylesheet" type="text/css" name="KOKO" href="STYLES.CSS">
 
@@ -891,12 +735,14 @@ function myFunction() {
 DEVELOPMENT <font 
  
 color="yellow">&</font> WEB DESIGN</font></font></font></font></i></b></center></br></p>
-  
+<a href="#"><img id="toTop" src="http://rs300.pbsrc.com/albums/nn22/montira_bucket/arrow/arrow-3.gif~c200" title="Back to top" style="width: 70px; height: 70px;"></a>  
   
 <br><center><ul id="menu">
   
-  <li><a href="quizes.php" target="_blank">Quiz</a></li>
+  <li><a href="quizes.php" target="_blank">Go to quiz</a></li>
   <li><a href="contact_form.php" target="_blank">Contact us</a></li>
+  <li><a href="member.php" target="_blank">Profile</a></li>
+  <li><a href="index.php">Logout</a></li>
   
 </ul></center></br>  
 
@@ -905,7 +751,9 @@ color="yellow">&</font> WEB DESIGN</font></font></font></font></i></b></center><
 
 <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
  
-<br><br><body><center>
+<body>
+
+<center>
  
 <div ng-app="">
  
@@ -920,13 +768,12 @@ border="0" cellpadding="5"><tr><td><input type="checkbox" class="L1" name="sites
 	<div class="tfclear"></div>
 	</div>
  
-
  
 <h1>{{name}}</h1>
  
 </div>
  
-</center></body>
+</center>
  
  
 <br><br>
@@ -937,17 +784,9 @@ border="0" cellpadding="5"><tr><td><input type="checkbox" class="L1" name="sites
 
 
 </head> 
-
-
-
-<body>
-
  
 <section class="cd-fixed-background img-3" data-type="slider-item"></section>
  
- 
-
-<body>
  
 <div id="header"><h2><center>
  
