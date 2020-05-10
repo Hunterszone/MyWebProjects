@@ -38,7 +38,7 @@ if ($action=="")    /* display the contact form */
     ?>
     <input type="hidden" name="action" value="submit">
     <p><font face="algerian" color="green">Your name:
-    <input name="name" type="text" value="" size="30"/></font></p>
+    <input name="name" type="text" value="" size="30" placeholder="<?php echo $_SESSION['SESS_USERNAME'];?>"/></font></p>
     <p><font face="algerian" color="green">Your email:
     <input name="email" type="text" value="" size="30"/></font></p>
     <p><legend><font face="algerian"><font size="4"><font color="green"><u>Send us your feedback:</u></font></font></font></legend></p>
