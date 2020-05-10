@@ -741,7 +741,7 @@ color="yellow">&</font> WEB DESIGN</font></font></font></font></i></b></center><
   
   <li><a href="quizes.php" target="_blank">Go to quiz</a></li>
   <li><a href="contact_form.php" target="_blank">Contact us</a></li>
-  <li><a href="member.php" target="_blank">Profile</a></li>
+  <li><a href="member.php" target="_blank">My Profile</a></li>
   <li><a href="index.php">Logout</a></li>
   
 </ul></center></br>  
