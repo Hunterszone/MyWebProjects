@@ -1,3 +1,8 @@
+<?php
+		require_once('authentication.php');
+		$_SESSION['SESS_USERNAME'] = "";
+?>
+
 <!DOCTYPE html>
 <!--
    To change this license header, choose License Headers in Project Properties.
