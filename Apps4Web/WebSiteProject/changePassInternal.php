@@ -64,7 +64,7 @@ $mail = new PHPMailer();
 $mail->Host = "mail.hmailserver.com"; // Enter your host here
 $mail->SMTPAuth = true;
 $mail->Username = "Administrator"; // Enter your email here
-$mail->Password = "*******"; //Enter your password here
+$mail->Password = "********"; //Enter your password here
 $mail->Port = 25;
 $mail->IsHTML(true);
 $mail->From = "me@example.com";
@@ -81,17 +81,5 @@ echo "<div class='error'>
 </div><br /><br /><br />";
  }
    }
-}else{
+}
 ?>
-<center>
-<form method="post" action="" name="reset"><br /><br />
-<label><strong>Enter Your Email Address:</strong></label><br /><br />
-<input type="email" name="email" placeholder="username@email.com" />
-<br /><br />
-<input type="submit" value="Reset Password"/>
-</form>
-</center>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<?php } ?>

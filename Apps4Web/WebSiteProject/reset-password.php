@@ -1,5 +1,6 @@
 <?php
 include('connection.php');
+require_once('changePassInternal.php');
 
 $error = '';
 
@@ -23,6 +24,7 @@ Click here</a> to reset password.</p>';
   if (true){
   ?>
   <br />
+  <center>
   <form method="post" action="" name="update">
   <input type="hidden" name="action" value="update" />
   <br /><br />
@@ -35,6 +37,7 @@ Click here</a> to reset password.</p>';
   <input type="hidden" name="email" value="<?php echo $email;?>"/>
   <input type="submit" value="Reset Password" />
   </form>
+  </center>
 <?php
 }else{
 $error .= "<h2>Link Expired</h2>
@@ -63,7 +66,6 @@ echo "<div class='error'>".$error."</div><br />";
 }else{
 //$pass1 = md5($pass1);
 mysqli_query($conn, "UPDATE users SET password='$pass1' WHERE email='$email'"); 
-//mysqli_query($conn,"DELETE FROM users WHERE email='$email'");
  
 echo '<div class="error"><p>Congratulations! Your password has been updated successfully.</p>
 <p><a href="http://localhost:8080/login_exec.php">

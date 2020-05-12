@@ -721,8 +721,6 @@ function scroll1(){
          }
 
 </script>
-<LINK rel="stylesheet" type="text/css" name="KOKO" href="STYLES.CSS">
-
 <!-- HTML for ANIMATION, CLOCK, HEADING AND SEARCH ENGINE -->
 
 
@@ -742,7 +740,7 @@ color="yellow">&</font> WEB DESIGN</font></font></font></font></i></b></center><
   <li><a href="quizes.php" target="_blank">Go to quiz</a></li>
   <li><a href="contact_form.php" target="_blank">Contact us</a></li>
   <li><a href="member.php" target="_blank">My Profile</a></li>
-  <li><a href="reset-password.php" target="_blank">Reset pass</a></li>
+  <li><a href="forgotPass.php" target="_blank">Reset pass</a></li>
   <li><a href="index.php">Logout</a></li>
   
 </ul></center></br>  
@@ -923,11 +921,6 @@ style="width:70px;height:70px"></span></a>
  
 </div>
 
-
-
-<link rel="stylesheet" href="../../stylesheets/coloringpage.css" type="text/css" media="screen, projection" />
-<link rel="stylesheet" href="../../stylesheets/coloringpageprint.css" type="text/css" media="print" />
- 
 <p><br><table style="width:98.5%">
 <tr>
 <td>
