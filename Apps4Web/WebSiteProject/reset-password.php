@@ -3,12 +3,12 @@ include('connection.php');
 
 $error = '';
 
-if (isset($_GET["key"]) && isset($_GET["email"]) && isset($_GET["action"]) 
-&& ($_GET["action"]=="reset") && !isset($_POST["action"])){
-  $key = $_GET["key"];
-  $email = $_GET["email"];
+if (isset($_GET['key']) && isset($_GET['email']) && isset($_GET['action']) 
+&& ($_GET['action']=='reset') && !isset($_POST['action'])){
+  $key = $_GET['key'];
+  $email = $_GET['email'];
   $curDate = date("Y-m-d H:i:s");
-  $query = "SELECT * FROM `password_reset_temp` WHERE `key`='".$key."' and `email`='".$email."';";
+  $query = "SELECT * FROM users WHERE email='$email'";
   $result = mysqli_query($conn, $query);
   $row = "";
   if (mysqli_num_rows($result)==0){
@@ -19,9 +19,8 @@ deactivated.</p>
 <p><a href="http://localhost:8080/index.php">
 Click here</a> to reset password.</p>';
  }else{
-  $row = mysqli_fetch_assoc($query);
-  $expDate = $row['expDate'];
-  if ($expDate >= $curDate){
+  $row = mysqli_fetch_assoc($result);
+  if (true){
   ?>
   <br />
   <form method="post" action="" name="update">
@@ -62,13 +61,9 @@ $error.= "<p>Password do not match, both password should be same.<br /><br /></p
   if($error!=""){
 echo "<div class='error'>".$error."</div><br />";
 }else{
-$pass1 = md5($pass1);
-mysqli_query($conn,
-"UPDATE `users` SET `password`='".$pass1."', `trn_date`='".$curDate."' 
-WHERE `email`='".$email."';"
-);
- 
-mysqli_query($conn,"DELETE FROM `password_reset_temp` WHERE `email`='".$email."';");
+//$pass1 = md5($pass1);
+mysqli_query($conn, "UPDATE users SET password='$pass1' WHERE email='$email'"); 
+//mysqli_query($conn,"DELETE FROM users WHERE email='$email'");
  
 echo '<div class="error"><p>Congratulations! Your password has been updated successfully.</p>
 <p><a href="http://localhost:8080/login_exec.php">
