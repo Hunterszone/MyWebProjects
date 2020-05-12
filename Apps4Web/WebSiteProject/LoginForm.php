@@ -12,6 +12,7 @@
     	unset($_SESSION['SESS_MEMBER_ID']);
     	unset($_SESSION['SESS_USERNAME']);
     	unset($_SESSION['SESS_PASSWORD']);
+		unset($_SESSION['SESS_EMAIL']);
         ?>
 
 			<table>
@@ -60,6 +61,10 @@
 										<tr>
 											<td><div align="right"></div></td>
 											<td><input type="submit" value="Login" /></td>
+										</tr>
+										<tr>
+											<td><div align="right"></div></td>
+											<td><a href="forgotPass.php">Forgot password ?</a></td>
 										</tr>
 									</table>
 								</form>
