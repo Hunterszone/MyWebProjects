@@ -1,20 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>jQuery UI Tabs - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script>
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <meta charset="utf-8" />
+    <title>jQuery UI Tabs - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script>
   $(function() {
-    $( "#tabs" ).tabs();
+    $( &quot;#tabs&quot; ).tabs();
   });
-  </script>
-  <!-- CSS for BACKGROUND -->
-
-<STYLE TYPE="text/css">
+  
+</script>
+    <!-- CSS for BACKGROUND -->
+    <style type="text/css">
  
 body { 
 background: url(http://theappwhisperer.com/wp-content/uploads/2012/05/media_1336386288960.png) no-repeat center center fixed; 
@@ -24,261 +26,874 @@ background: url(http://theappwhisperer.com/wp-content/uploads/2012/05/media_1336
 background-size: cover;
 }
  
-</style> 
-<script>
+</style>
+    <script>
 function goBack() {
     window.history.back()
 }
 </script>
-</head>
-<body>
- 
-<div id="tabs">
-  <ul>
-    <li><a href="#tabs-1">PHP</a></li>
-    <li><a href="#tabs-2">PHP Advantages and Disadvantages</a></li>
-    <li><a href="#tabs-3">Syntax</a></li>
-  </ul>
-  <div id="tabs-1">
-      <p style="font-family:courier new" style="text-align:center">  PHP is a server-side scripting language designed primarily for web development but also used as a general-purpose programming language. Originally created by Rasmus Lerdorf in 1994, the PHP reference implementation is now produced by The PHP Development Team.
-      <p style="font-family:courier new" style="text-align:center">PHP originally stood for Personal Home Page, but it now stands for the recursive acronym PHP: Hypertext Preprocessor.</p>
-
-      <p style="font-family:courier new" style="text-align:center">PHP code may be embedded into HTML or HTML5 markup, or it can be used in combination with various web template systems, web content management systems and web frameworks. PHP code is usually processed by a PHP interpreter implemented as a module in the web server or as a Common Gateway Interface (CGI) executable. The web server software combines the results of the interpreted and executed PHP code, which may be any type of data, including images, with the generated web page. PHP code may also be executed with a command-line interface (CLI) and can be used to implement standalone graphical applications.</p>
-
-      <p style="font-family:courier new" style="text-align:center">The standard PHP interpreter, powered by the Zend Engine, is free software released under the PHP License. PHP has been widely ported and can be deployed on most web servers on almost every operating system and platform, free of charge.</p>
-      <p style="font-family:courier new" style="text-align:center"> Early history</p>
-<h1>History Introduction</h1>
-<p style="font-family:courier new" style="text-align:center">Rasmus Lerdorf (left), who wrote the original Common Gateway Interface (CGI) component, together with Andi Gutmans (middle) and Zeev Suraski (right), who rewrote the parser that formed PHP 3.
-
-PHP development began in 1995 when Rasmus Lerdorf wrote several Common Gateway Interface (CGI) programs in C, which he used to maintain his personal homepage. He extended them to work with web forms and to communicate with databases, and called this implementation "Personal Home Page/Forms Interpreter" or PHP/FI.
-
-PHP/FI could help to build simple, dynamic web applications. To accelerate bug reporting and to improve the code, Lerdorf initially announced the release of PHP/FI as "Personal Home Page Tools (PHP Tools) version 1.0" on the Usenet discussion group comp.infosystems.www.authoring.cgi on June 8, 1995. This release already had the basic functionality that PHP has as of 2013. This included Perl-like variables, form handling, and the ability to embed HTML. The syntax resembled that of Perl but was simpler, more limited and less consistent.
-
-Lerdorf did not intend the early PHP to become a new programming language, but it grew organically, with Lerdorf noting in retrospect: "I don’t know how to stop it, there was never any intent to write a programming language. I have absolutely no idea how to write a programming language, I just kept adding the next logical step on the way." A development team began to form and, after months of work and beta testing, officially released PHP/FI 2 in November 1997.
-
-The fact that PHP lacked an original overall design but instead developed organically has led to inconsistent naming of functions and inconsistent ordering of their parameters. In some cases, the function names were chosen to match the lower-level libraries which PHP was "wrapping", while in some very early versions of PHP the length of the function names was used internally as a hash function, so names were chosen to improve the distribution of hash values.
-</p>
-<h1 style="font-family:courier new" style="text-align:center"> PHP 3 and 4 </h1>
-
-<p style="font-family:courier new" style="text-align:center">Zeev Suraski and Andi Gutmans rewrote the parser in 1997 and formed the base of PHP 3, changing the language's name to the recursive acronym PHP: Hypertext Preprocessor. Afterwards, public testing of PHP 3 began, and the official launch came in June 1998. Suraski and Gutmans then started a new rewrite of PHP's core, producing the Zend Engine in 1999. They also founded Zend Technologies in Ramat Gan, Israel.
-
-On May 22, 2000, PHP 4, powered by the Zend Engine 1.0, was released. As of August 2008 this branch reached version 4.4.9. PHP 4 is no longer under development nor will any security updates be released.
-</p>
-<h1 style="font-family:courier new" style="text-align:center"> PHP 5 </h1>
-<p style="font-family:courier new" style="text-align:center">On July 13, 2004, PHP 5 was released, powered by the new Zend Engine II. PHP 5 included new features such as improved support for object-oriented programming, the PHP Data Objects (PDO) extension (which defines a lightweight and consistent interface for accessing databases), and numerous performance enhancements. In 2008 PHP 5 became the only stable version under development. Late static binding had been missing from PHP and was added in version 5.3.
-
-Many high-profile open-source projects ceased to support PHP 4 in new code as of February 5, 2008, because of the GoPHP5 initiative, provided by a consortium of PHP developers promoting the transition from PHP 4 to PHP 5.
-
-Over time, PHP interpreters became available on most existing 32-bit and 64-bit operating systems, either by building them from the PHP source code, or by using pre-built binaries. For the PHP versions 5.3 and 5.4, the only available Microsoft Windows binary distributions were 32-bit x86 builds, requiring Windows 32-bit compatibility mode while using Internet Information Services (IIS) on a 64-bit Windows platform. PHP version 5.5 made the 64-bit x86-64 builds available for Microsoft Windows.
-</p>
-<h1 style="font-family:courier new" style="text-align:center"> PHP 6 and Unicode </h1>
-
-<p style="font-family:courier new" style="text-align:center">PHP has received criticism due to lacking native Unicode support at the core language level, instead only supporting byte strings. In 2005, a project headed by Andrei Zmievski was initiated to bring native Unicode support throughout PHP, by embedding the International Components for Unicode (ICU) library, and representing text strings as UTF-16 internally. Since this would cause major changes both to the internals of the language and to user code, it was planned to release this as version 6.0 of the language, along with other major features then in development.
-
-However, a shortage of developers who understood the necessary changes, and performance problems arising from conversion to and from UTF-16, which is rarely used in a web context, led to delays in the project. As a result, a PHP 5.3 release was created in 2009, with many non-Unicode features back-ported from PHP 6, notably namespaces. In March 2010, the project in its current form was officially abandoned, and a PHP 5.4 release was prepared containing most remaining non-Unicode features from PHP 6, such as traits and closure re-binding.[ Initial hopes were that a new plan would be formed for Unicode integration, but as of 2014 none had been adopted.
-</p>
-<h1 style="font-family:courier new" style="text-align:center">PHP 7 </h1>
-
-<p style="font-family:courier new" style="text-align:center">During 2014 and 2015, a new major PHP version was developed, which was numbered PHP 7. The numbering of this version involved some debate. While the PHP 6 Unicode experiment had never been released, several articles and book titles referenced the PHP 6 name, which might have caused confusion if a new release were to reuse the name. After a vote, the name PHP 7 was chosen.
-
-The foundation of PHP 7 is a PHP branch that was originally dubbed PHP next generation (phpng). It was authored by Dmitry Stogov, Xinchen Hui and Nikita Popov, and aimed to optimize PHP performance by refactoring the Zend Engine to use more compact data structures with improved cache locality while retaining near-complete language compatibility. As of 14 July 2014, WordPress-based benchmarks, which served as the main benchmark suite for the phpng project, showed an almost 100% increase in performance. Changes from php are also expected to make it easier to improve performance in the future, as more compact data structures and other changes are seen as better suited for a successful migration to a just-in-time (JIT) compiler. Because of the significant changes, the reworked Zend Engine is called Zend Engine 3, succeeding Zend Engine 2 used in PHP 5.
-
-Because of major internal changes in phpng, it must receive a new major version number of PHP, rather than a minor PHP 5 release, according to PHP's release process. Major versions of PHP are allowed to break backward-compatibility of code and therefore PHP 7 presented an opportunity for other improvements beyond phpng that require backward-compatibility breaks, including wider use of exceptions, reworking variable syntax to be more consistent and complete, and the deprecation or removal of various legacy features.
-
-PHP 7 also introduced new language features, including return type declarations for functions, which complement the existing parameter type declarations, and support for the scalar types (integer, float, string, and boolean) in parameter and return type declarations.</p>
-  </p>
-<p style="font-family:courier new" style="text-align:center">The PHP language evolved without a written formal specification or standard until 2014, leaving the canonical PHP interpreter as a de facto standard. Since 2014 work has gone on to create a formal PHP specification.</p>
-  </div>
-  <div id="tabs-2">
-      <p style="font-family:courier new" style="text-align:center">Advantages of PHP</p>
+  </head>
+  <body>
+    <div id="tabs">
       <ul>
-          <li style="font-family:courier new" style="text-align:center">Open source: It is developed and maintained by a large group of PHP developers, this will helps in creating a support community, abundant extension library.</li>
-          <li style="font-family:courier new" style="text-align:center">Speed: It is relative fast since it uses much system resource.</li>
-          <li style="font-family:courier new" style="text-align:center">Easy to use: It uses C like syntax, so for those who are familiar with C, it’s very easy for them to pick up and it is very easy to create website scripts.</li>
-          <li style="font-family:courier new" style="text-align:center">Stable: Since it is maintained by many developers, so when bugs are found, it can be quickly fixed.</li>
-          <li style="font-family:courier new" style="text-align:center">Powerful library support: You can easily find functional modules you need such as PDF, Graph etc.</li>
-          <li style="font-family:courier new" style="text-align:center">Built-in database connection modules: You can connect to database easily using PHP, since many websites are data/content driven, so we will use database frequently, this will largely reduce the development time of web apps.</li>
-          <li style="font-family:courier new" style="text-align:center">Can be run on many platforms, including Windows, Linux and Mac, it’s easy for users to find hosting service providers.</li>
+        <li>
+          <a href="#tabs-1">PHP</a>
+        </li>
+        <li>
+          <a href="#tabs-2">PHP Advantages and Disadvantages</a>
+        </li>
+        <li>
+          <a href="#tabs-3">Syntax</a>
+        </li>
       </ul>
-      <p style="font-family:courier new" style="text-align:center">Disadvantages of PHP</p>
-      <ul>
-          <li style="font-family:courier new" style="text-align:center">Security : Since it is open sourced, so all people can see the source code, if there are bugs in the source code, it can be used by people to explore the weakness of PHP.</li>
-          <li style="font-family:courier new" style="text-align:center">Not suitable for large applications: Hard to maintain since it is not very modular.</li>
-          <li style="font-family:courier new" style="text-align:center">Weak type:  Implicit conversion may surprise unwary programmers and lead to unexpected bugs. For example, the strings “1000” and “1e3” compare equal because they are implicitly cast to floating point numbers.</li>
- </p>
-  
-      
-
-</div>
+      <div id="tabs-1">
+        <p style="font-family:courier new; text-align:center">PHP is a server-side scripting language designed primarily for web
+        development but also used as a general-purpose programming language. Originally created by Rasmus Lerdorf in 1994, the PHP
+        reference implementation is now produced by The PHP Development Team.</p>
+        <p style="font-family:courier new; text-align:center">PHP originally stood for Personal Home Page, but it now stands for
+        the recursive acronym PHP: Hypertext Preprocessor.</p>
+        <p style="font-family:courier new; text-align:center">PHP code may be embedded into HTML or HTML5 markup, or it can be used
+        in combination with various web template systems, web content management systems and web frameworks. PHP code is usually
+        processed by a PHP interpreter implemented as a module in the web server or as a Common Gateway Interface (CGI) executable.
+        The web server software combines the results of the interpreted and executed PHP code, which may be any type of data,
+        including images, with the generated web page. PHP code may also be executed with a command-line interface (CLI) and can be
+        used to implement standalone graphical applications.</p>
+        <p style="font-family:courier new; text-align:center">The standard PHP interpreter, powered by the Zend Engine, is free
+        software released under the PHP License. PHP has been widely ported and can be deployed on most web servers on almost every
+        operating system and platform, free of charge.</p>
+        <p style="font-family:courier new; text-align:center">Early history</p>
+        <h1>History Introduction</h1>
+        <p style="font-family:courier new; text-align:center">Rasmus Lerdorf (left), who wrote the original Common Gateway
+        Interface (CGI) component, together with Andi Gutmans (middle) and Zeev Suraski (right), who rewrote the parser that formed
+        PHP 3. PHP development began in 1995 when Rasmus Lerdorf wrote several Common Gateway Interface (CGI) programs in C, which
+        he used to maintain his personal homepage. He extended them to work with web forms and to communicate with databases, and
+        called this implementation &quot;Personal Home Page/Forms Interpreter&quot; or PHP/FI. PHP/FI could help to build simple,
+        dynamic web applications. To accelerate bug reporting and to improve the code, Lerdorf initially announced the release of
+        PHP/FI as &quot;Personal Home Page Tools (PHP Tools) version 1.0&quot; on the Usenet discussion group
+        comp.infosystems.www.authoring.cgi on June 8, 1995. This release already had the basic functionality that PHP has as of
+        2013. This included Perl-like variables, form handling, and the ability to embed HTML. The syntax resembled that of Perl
+        but was simpler, more limited and less consistent. Lerdorf did not intend the early PHP to become a new programming
+        language, but it grew organically, with Lerdorf noting in retrospect: &quot;I don’t know how to stop it, there was never
+        any intent to write a programming language. I have absolutely no idea how to write a programming language, I just kept
+        adding the next logical step on the way.&quot; A development team began to form and, after months of work and beta testing,
+        officially released PHP/FI 2 in November 1997. The fact that PHP lacked an original overall design but instead developed
+        organically has led to inconsistent naming of functions and inconsistent ordering of their parameters. In some cases, the
+        function names were chosen to match the lower-level libraries which PHP was &quot;wrapping&quot;, while in some very early
+        versions of PHP the length of the function names was used internally as a hash function, so names were chosen to improve
+        the distribution of hash values.</p>
+        <h1 style="font-family:courier new; text-align:center">PHP 3 and 4</h1>
+        <p style="font-family:courier new; text-align:center">Zeev Suraski and Andi Gutmans rewrote the parser in 1997 and formed
+        the base of PHP 3, changing the language&#39;s name to the recursive acronym PHP: Hypertext Preprocessor. Afterwards,
+        public testing of PHP 3 began, and the official launch came in June 1998. Suraski and Gutmans then started a new rewrite of
+        PHP&#39;s core, producing the Zend Engine in 1999. They also founded Zend Technologies in Ramat Gan, Israel. On May 22,
+        2000, PHP 4, powered by the Zend Engine 1.0, was released. As of August 2008 this branch reached version 4.4.9. PHP 4 is no
+        longer under development nor will any security updates be released.</p>
+        <h1 style="font-family:courier new; text-align:center">PHP 5</h1>
+        <p style="font-family:courier new; text-align:center">On July 13, 2004, PHP 5 was released, powered by the new Zend Engine
+        II. PHP 5 included new features such as improved support for object-oriented programming, the PHP Data Objects (PDO)
+        extension (which defines a lightweight and consistent interface for accessing databases), and numerous performance
+        enhancements. In 2008 PHP 5 became the only stable version under development. Late static binding had been missing from PHP
+        and was added in version 5.3. Many high-profile open-source projects ceased to support PHP 4 in new code as of February 5,
+        2008, because of the GoPHP5 initiative, provided by a consortium of PHP developers promoting the transition from PHP 4 to
+        PHP 5. Over time, PHP interpreters became available on most existing 32-bit and 64-bit operating systems, either by
+        building them from the PHP source code, or by using pre-built binaries. For the PHP versions 5.3 and 5.4, the only
+        available Microsoft Windows binary distributions were 32-bit x86 builds, requiring Windows 32-bit compatibility mode while
+        using Internet Information Services (IIS) on a 64-bit Windows platform. PHP version 5.5 made the 64-bit x86-64 builds
+        available for Microsoft Windows.</p>
+        <h1 style="font-family:courier new; text-align:center">PHP 6 and Unicode</h1>
+        <p style="font-family:courier new; text-align:center">PHP has received criticism due to lacking native Unicode support at
+        the core language level, instead only supporting byte strings. In 2005, a project headed by Andrei Zmievski was initiated
+        to bring native Unicode support throughout PHP, by embedding the International Components for Unicode (ICU) library, and
+        representing text strings as UTF-16 internally. Since this would cause major changes both to the internals of the language
+        and to user code, it was planned to release this as version 6.0 of the language, along with other major features then in
+        development. However, a shortage of developers who understood the necessary changes, and performance problems arising from
+        conversion to and from UTF-16, which is rarely used in a web context, led to delays in the project. As a result, a PHP 5.3
+        release was created in 2009, with many non-Unicode features back-ported from PHP 6, notably namespaces. In March 2010, the
+        project in its current form was officially abandoned, and a PHP 5.4 release was prepared containing most remaining
+        non-Unicode features from PHP 6, such as traits and closure re-binding.[ Initial hopes were that a new plan would be formed
+        for Unicode integration, but as of 2014 none had been adopted.</p>
+        <h1 style="font-family:courier new; text-align:center">PHP 7</h1>
+        <p style="font-family:courier new; text-align:center">During 2014 and 2015, a new major PHP version was developed, which
+        was numbered PHP 7. The numbering of this version involved some debate. While the PHP 6 Unicode experiment had never been
+        released, several articles and book titles referenced the PHP 6 name, which might have caused confusion if a new release
+        were to reuse the name. After a vote, the name PHP 7 was chosen. The foundation of PHP 7 is a PHP branch that was
+        originally dubbed PHP next generation (phpng). It was authored by Dmitry Stogov, Xinchen Hui and Nikita Popov, and aimed to
+        optimize PHP performance by refactoring the Zend Engine to use more compact data structures with improved cache locality
+        while retaining near-complete language compatibility. As of 14 July 2014, WordPress-based benchmarks, which served as the
+        main benchmark suite for the phpng project, showed an almost 100% increase in performance. Changes from php are also
+        expected to make it easier to improve performance in the future, as more compact data structures and other changes are seen
+        as better suited for a successful migration to a just-in-time (JIT) compiler. Because of the significant changes, the
+        reworked Zend Engine is called Zend Engine 3, succeeding Zend Engine 2 used in PHP 5. Because of major internal changes in
+        phpng, it must receive a new major version number of PHP, rather than a minor PHP 5 release, according to PHP&#39;s release
+        process. Major versions of PHP are allowed to break backward-compatibility of code and therefore PHP 7 presented an
+        opportunity for other improvements beyond phpng that require backward-compatibility breaks, including wider use of
+        exceptions, reworking variable syntax to be more consistent and complete, and the deprecation or removal of various legacy
+        features. PHP 7 also introduced new language features, including return type declarations for functions, which complement
+        the existing parameter type declarations, and support for the scalar types (integer, float, string, and boolean) in
+        parameter and return type declarations.</p>
+        <p style="font-family:courier new; text-align:center">The PHP language evolved without a written formal specification or
+        standard until 2014, leaving the canonical PHP interpreter as a de facto standard. Since 2014 work has gone on to create a
+        formal PHP specification.</p>
+      </div>
+      <div id="tabs-2">
+        <p style="font-family:courier new; text-align:center">Advantages of PHP</p>
+        <ul>
+          <li style="font-family:courier new; text-align:center">Open source: It is developed and maintained by a large group of
+          PHP developers, this will helps in creating a support community, abundant extension library.</li>
+          <li style="font-family:courier new; text-align:center">Speed: It is relative fast since it uses much system
+          resource.</li>
+          <li style="font-family:courier new; text-align:center">Easy to use: It uses C like syntax, so for those who are familiar
+          with C, it’s very easy for them to pick up and it is very easy to create website scripts.</li>
+          <li style="font-family:courier new; text-align:center">Stable: Since it is maintained by many developers, so when bugs
+          are found, it can be quickly fixed.</li>
+          <li style="font-family:courier new; text-align:center">Powerful library support: You can easily find functional modules
+          you need such as PDF, Graph etc.</li>
+          <li style="font-family:courier new; text-align:center">Built-in database connection modules: You can connect to database
+          easily using PHP, since many websites are data/content driven, so we will use database frequently, this will largely
+          reduce the development time of web apps.</li>
+          <li style="font-family:courier new; text-align:center">Can be run on many platforms, including Windows, Linux and Mac,
+          it’s easy for users to find hosting service providers.</li>
+        </ul>
+        <p style="font-family:courier new; text-align:center">Disadvantages of PHP</p>
+        <ul>
+          <li style="font-family:courier new; text-align:center">Security : Since it is open sourced, so all people can see the
+          source code, if there are bugs in the source code, it can be used by people to explore the weakness of PHP.</li>
+          <li style="font-family:courier new; text-align:center">Not suitable for large applications: Hard to maintain since it is
+          not very modular.</li>
+          <li style="font-family:courier new; text-align:center">Weak type: Implicit conversion may surprise unwary programmers and
+          lead to unexpected bugs. For example, the strings “1000” and “1e3” compare equal because they are implicitly cast
+          to floating point numbers.</li>
+        </ul>
+      </div>
       <div id="tabs-3">
-          <h1> Syntax </h1>
-      <p style="font-family:courier new"><p>The following <a href="/wiki/%22Hello,_World!%22_program" title="&quot;Hello, World!&quot; program">"Hello, World!" program</a> is written in PHP code embedded in an <a href="/wiki/HTML" title="HTML">HTML</a> document:</p>
-<div class="mw-highlight mw-content-ltr" dir="ltr">
-<pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>PHP Test<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="hll">        <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="s1">'&lt;p&gt;Hello World&lt;/p&gt;'</span><span class="p">;</span> <span class="cp">?&gt;</span>
-</span>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</pre></div>
-<p>However, as no requirement exists for PHP code to be embedded in HTML, the simplest version of <i>Hello, World!</i> may be written like this, with the closing tag omitted as preferred in files containing pure PHP code<sup id="cite_ref-85" class="reference"><a href="#cite_note-85"></a></sup></p>
-<div class="mw-highlight mw-content-ltr" dir="ltr">
-<pre> <span class="o">&lt;?=</span><span class="s2">"Hello, world"</span><span class="p">;</span>
-</pre></div>
-<p>The PHP interpreter only executes PHP code within its <a href="/wiki/Delimiter" title="Delimiter">delimiters</a>. Anything outside its delimiters is not processed by PHP, although non-PHP text is still subject to <a href="/wiki/Control_structure" class="mw-redirect" title="Control structure">control structures</a> described in PHP code. The most common delimiters are <i>&lt;?php</i> to open and <i>?&gt;</i> to close PHP sections. The shortened form <i>&lt;?</i> also exists. This short delimiter makes script files less portable, since support for them can be disabled in the local PHP configuration and it is therefore discouraged.<sup id="cite_ref-rfc-shortags_86-0" class="reference"><a href="#cite_note-rfc-shortags-86"></a></sup><sup id="cite_ref-basic_syntax_87-0" class="reference"><a href="#cite_note-basic_syntax-87"></a></sup> However, there is no recommendation against the use of the echo short tag <i>&lt;?=</i>.<sup id="cite_ref-88" class="reference"><a href="#cite_note-88"></a></sup> Prior to PHP 5.4.0, this short syntax for <i>echo()</i> only works with the <i>short_open_tag</i> configuration setting enabled, while for PHP 5.4.0 and later it is always available.<sup id="cite_ref-rfc-shortags_86-1" class="reference"><a href="#cite_note-rfc-shortags-86"></a></sup><sup id="cite_ref-89" class="reference"><a href="#cite_note-89"></a></sup><sup id="cite_ref-90" class="reference"><a href="#cite_note-90"></a></sup> The purpose of all these delimiters is to separate PHP code from non-PHP content, such as <a href="/wiki/JavaScript" title="JavaScript">JavaScript</a> code or HTML markup.<sup id="cite_ref-91" class="reference"><a href="#cite_note-91"></a></sup></p>
-<p>The first form of delimiters, <i>&lt;?php</i> and <i>?&gt;</i>, in <a href="/wiki/XHTML" title="XHTML">XHTML</a> and other <a href="/wiki/XML" title="XML">XML</a> documents, creates correctly formed XML processing instructions.<sup id="cite_ref-92" class="reference"><a href="#cite_note-92"></a></sup> This means that the resulting mixture of PHP code and other markup in the server-side file is itself well-formed XML.</p>
-<p><span id="TYPE-HINTING"></span> Variables are prefixed with a <a href="/wiki/Dollar_sign" title="Dollar sign">dollar symbol</a>, and a <a href="/wiki/Primitive_type" class="mw-redirect" title="Primitive type">type</a> does not need to be specified in advance. PHP&nbsp;5 introduced <i>type hinting</i> that allows functions to force their parameters to be objects of a specific class, arrays, interfaces or <a href="/wiki/Callback_function" class="mw-redirect" title="Callback function">callback functions</a>. However, before PHP 7.0, type hints could not be used with scalar types such as integer or string.<sup id="cite_ref-scalar-types_51-2" class="reference"><a href="#cite_note-scalar-types-51"></a></sup></p>
-<p>Unlike function and class names, variable names are case sensitive. Both double-quoted ("") and <a href="/wiki/Heredoc" class="mw-redirect" title="Heredoc">heredoc</a> strings provide the ability to interpolate a variable's value into the string.<sup id="cite_ref-93" class="reference"><a href="#cite_note-93"></a></sup> PHP treats <a href="/wiki/Newline" title="Newline">newlines</a> as <a href="/wiki/Whitespace_character" title="Whitespace character">whitespace</a> in the manner of a <a href="/wiki/Free-form_language" title="Free-form language">free-form language</a>, and statements are terminated by a semicolon.<sup id="cite_ref-94" class="reference"><a href="#cite_note-94"></a></sup> PHP has three types of <a href="/wiki/Comparison_of_programming_languages_(syntax)#Comments" title="Comparison of programming languages (syntax)">comment syntax</a>: <code>/* */</code> marks block and inline comments; <code>//</code> as well as <code>#</code> are used for one-line comments.<sup id="cite_ref-95" class="reference"><a href="#cite_note-95"></a></sup> The <code>echo</code> statement is one of several facilities PHP provides to output text, <i>e.g.</i>, to a web browser.</p>
-<p>In terms of keywords and language syntax, PHP is similar to the C style syntax. <i>if</i> conditions, <i>for</i> and <i>while</i> loops, and function returns are similar in syntax to languages such as C, C++, C#, Java and Perl.</p>
-<p>The following is an example of PHP for loop:</p>
-<div class="mw-highlight mw-content-ltr" dir="ltr">
-<pre><span class="cp">&lt;?php</span> 
-<span class="k">for</span> <span class="p">(</span><span class="nv">$x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$x</span> <span class="o">&lt;=</span> <span class="mi"></span><span class="p">;</span> <span class="nv">$x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"The number is: </span><span class="si">$x</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
-<span class="p">}</span> 
+      <h1>Syntax</h1>
+      <p style="font-family:courier new"></p>
+      <p>The following 
+      <a href="/wiki/%22Hello,_World!%22_program" title="&quot;Hello, World!&quot; program">&quot;Hello, World!&quot; program</a>
+      is written in PHP code embedded in an 
+      <a href="/wiki/HTML" title="HTML">HTML</a> document:</p>
+      <div class="mw-highlight mw-content-ltr" dir="ltr">
+        <pre>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span>
+<span class="nt">html</span>
+<span class="p">&gt;</span>
+    
+<span class="p">&lt;</span>
+<span class="nt">head</span>
+<span class="p">&gt;</span>
+        
+<span class="p">&lt;</span>
+<span class="nt">title</span>
+<span class="p">&gt;</span>PHP Test
+<span class="p">&lt;/</span>
+<span class="nt">title</span>
+<span class="p">&gt;</span>
+    
+<span class="p">&lt;/</span>
+<span class="nt">head</span>
+<span class="p">&gt;</span>
+    
+<span class="p">&lt;</span>
+<span class="nt">body</span>
+<span class="p">&gt;</span>
+<span class="hll">        
+<span class="cp">&lt;?php</span> 
+<span class="k">echo</span> 
+<span class="s1">&#39;&lt;p&gt;Hello World&lt;/p&gt;&#39;</span>
+<span class="p">;</span> 
 <span class="cp">?&gt;</span>
-</pre></div></p>
-
-<p> The PHP interpreter only executes PHP code within its delimiters. Anything outside its delimiters is not processed by PHP, although non-PHP text is still subject to control structures described in PHP code. The most common delimiters are <?php to open and ?> to close PHP sections. The shortened form <? also exists. This short delimiter makes script files less portable, since support for them can be disabled in the local PHP configuration and it is therefore discouraged. However, there is no recommendation against the use of the echo short tag <?=. Prior to PHP 5.4.0, this short syntax for echo() only works with the short_open_tag configuration setting enabled, while for PHP 5.4.0 and later it is always available.[86][89][90] The purpose of all these delimiters is to separate PHP code from non-PHP content, such as JavaScript code or HTML markup.
-
-The first form of delimiters, <?php and ?>, in XHTML and other XML documents, creates correctly formed XML processing instructions. This means that the resulting mixture of PHP code and other markup in the server-side file is itself well-formed XML.
-
-Variables are prefixed with a dollar symbol, and a type does not need to be specified in advance. PHP 5 introduced type hinting that allows functions to force their parameters to be objects of a specific class, arrays, interfaces or callback functions. However, before PHP 7.0, type hints could not be used with scalar types such as integer or string.
-
-Unlike function and class names, variable names are case sensitive. Both double-quoted ("") and heredoc strings provide the ability to interpolate a variable's value into the string. PHP treats newlines as whitespace in the manner of a free-form language, and statements are terminated by a semicolon. PHP has three types of comment syntax: /* */ marks block and inline comments; // as well as # are used for one-line comments. The echo statement is one of several facilities PHP provides to output text, e.g., to a web browser.
-
-In terms of keywords and language syntax, PHP is similar to the C style syntax. if conditions, for and while loops, and function returns are similar in syntax to languages such as C, C++, C#, Java and Perl.
-
-The following is an example of PHP for loop: </p>
-<p> <pre><span class="cp">&lt;?php</span> 
-<span class="k">for</span> <span class="p">(</span><span class="nv">$x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$x</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">;</span> <span class="nv">$x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"The number is: </span><span class="si">$x</span><span class="s2"> &lt;br&gt;"</span><span class="p">;</span>
-<span class="p">}</span> 
-<span class="cp">?&gt;</span>
-</pre></p>
-<h1>Data types</h1>
-<p> 
-
-PHP stores integers in a platform-dependent range, either a 64-bit or 32-bit signed integer equivalent to the C-language long type. Unsigned integers are converted to signed values in certain situations; this behavior is different from that of other programming languages.Integer variables can be assigned using decimal (positive and negative), octal, hexadecimal, and binary notations.
-
-Floating point numbers are also stored in a platform-specific range. They can be specified using floating point notation, or two forms of scientific notation. PHP has a native Boolean type that is similar to the native Boolean types in Java and C++. Using the Boolean type conversion rules, non-zero values are interpreted as true and zero as false, as in Perl and C++.
-
-The null data type represents a variable that has no value; NULL is the only allowed value for this data type.
-
-Variables of the "resource" type represent references to resources from external sources. These are typically created by functions from a particular extension, and can only be processed by functions from the same extension; examples include file, image, and database resources.
-
-Arrays can contain elements of any type that PHP can handle, including resources, objects, and other arrays. Order is preserved in lists of values and in hashes with both keys and values, and the two can be intermingled. PHP also supports strings, which can be used with single quotes, double quotes, nowdoc or heredoc syntax.
-
-The Standard PHP Library (SPL) attempts to solve standard problems and implements efficient data access interfaces and classes.</p>
-<h1> Functions</h1>
-
-<p>PHP defines a large array of functions in the core language and many are also available in various extensions; these functions are well documented in the online PHP documentation. However, the built-in library has a wide variety of naming conventions and associated inconsistencies, as described under history above.
-
-Custom functions may be defined by the developer, e.g.:</p> 
-<p> <pre><span class="k">function</span> <span class="nf">myAge</span><span class="p">(</span><span class="nv">$birthYear</span><span class="p">)</span> <span class="p">{</span>                                  <span class="c1">// defines a function, this one is named "myAge"</span>
-    <span class="nv">$yearsOld</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s1">'Y'</span><span class="p">)</span> <span class="o">-</span> <span class="nv">$birthYear</span><span class="p">;</span>                       <span class="c1">// calculates the age</span>
-    <span class="k">return</span> <span class="nv">$yearsOld</span> <span class="o">.</span> <span class="s1">' year'</span> <span class="o">.</span> <span class="p">(</span><span class="nv">$yearsOld</span> <span class="o">!=</span> <span class="mi">1</span> <span class="o">?</span> <span class="s1">'s'</span> <span class="o">:</span> <span class="s1">''</span><span class="p">);</span> <span class="c1">// returns the age in a descriptive form</span>
-<span class="p">}</span>
-
-<span class="k">echo</span> <span class="s1">'I am currently '</span> <span class="o">.</span> <span class="nx">myAge</span><span class="p">(</span><span class="mi">1981</span><span class="p">)</span> <span class="o">.</span> <span class="s1">' old.'</span><span class="p">;</span>               <span class="c1">// outputs the text concatenated</span>
-                                                              <span class="c1">// with the return value of myAge()</span>
-<span class="c1">// As the result of this syntax, myAge() is called.</span>
-</pre></p>
-<p>
-    <p>In 2017, the output of the above sample program is 'I am currently 36 years old.'</p>
-<p>In lieu of <a href="/wiki/Function_pointer" title="Function pointer">function pointers</a>, functions in PHP can be referenced by a string containing their name. In this manner, normal PHP functions can be used, for example, as <a href="/wiki/Callback_function" class="mw-redirect" title="Callback function">callbacks</a> or within <a href="/wiki/Function_table" class="mw-redirect" title="Function table">function tables</a>.<sup id="cite_ref-variable-functions_101-0" class="reference"><a href="#cite_note-variable-functions-101"></a></sup> User-defined functions may be created at any time without being <a href="/wiki/Function_prototype" title="Function prototype">prototyped</a>.<sup id="cite_ref-functions_100-1" class="reference"><a href="#cite_note-functions-100"></a></sup><sup id="cite_ref-variable-functions_101-1" class="reference"><a href="#cite_note-variable-functions-101"></a></sup> Functions may be defined inside code blocks, permitting a <a href="/wiki/Dynamic_dispatch" title="Dynamic dispatch">run-time decision</a> as to whether or not a function should be defined. There is a <code>function_exists</code> function that determines whether a function with a given name has already been defined. Function calls must use parentheses, with the exception of zero-argument class <a href="/wiki/Constructor_(computer_science)" class="mw-redirect" title="Constructor (computer science)">constructor</a> functions called with the PHP operator <i>new</i>, in which case parentheses are optional.</p>
-<p>Until PHP 5.3, support for <a href="/wiki/Anonymous_functions" class="mw-redirect" title="Anonymous functions">anonymous functions</a> and <a href="/wiki/Closure_(computer_science)" class="mw-redirect" title="Closure (computer science)">closures</a> did not exist in PHP. While <code>create_function()</code> exists since PHP 4.0.1, it is merely a thin wrapper around <code>eval()</code> that allows normal PHP functions to be created during program execution.<sup id="cite_ref-102" class="reference"><a href="#cite_note-102"></a></sup> PHP 5.3 added syntax to define an anonymous function or "closure"<sup id="cite_ref-103" class="reference"><a href="#cite_note-103"></a></sup> which can capture variables from the surrounding scope:</p>
-</p
-<p> <pre><span class="k">function</span> <span class="nf">getAdder</span><span class="p">(</span><span class="nv">$x</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">function</span><span class="p">(</span><span class="nv">$y</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$x</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$x</span> <span class="o">+</span> <span class="nv">$y</span><span class="p">;</span>
-    <span class="p">};</span>
-<span class="p">}</span>
-
-<span class="nv">$adder</span> <span class="o">=</span> <span class="nx">getAdder</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nv">$adder</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// prints "10"</span>
+</span>    
+<span class="p">&lt;/</span>
+<span class="nt">body</span>
+<span class="p">&gt;</span>
+<span class="p">&lt;/</span>
+<span class="nt">html</span>
+<span class="p">&gt;</span>
 </pre>
-      </p
+      </div>
+      <p>However, as no requirement exists for PHP code to be embedded in HTML, the simplest version of 
+      <i>Hello, World!</i> may be written like this, with the closing tag omitted as preferred in files containing pure PHP code
+      <sup id="cite_ref-85" class="reference">
+        <a href="#cite_note-85"></a>
+      </sup></p>
+      <div class="mw-highlight mw-content-ltr" dir="ltr">
+        <pre>
+ 
+<span class="o">&lt;?=</span>
+<span class="s2">&quot;Hello, world&quot;</span>
+<span class="p">;</span>
+</pre>
+      </div>
+      <p>The PHP interpreter only executes PHP code within its 
+      <a href="/wiki/Delimiter" title="Delimiter">delimiters</a>. Anything outside its delimiters is not processed by PHP, although
+      non-PHP text is still subject to 
+      <a href="/wiki/Control_structure" class="mw-redirect" title="Control structure">control structures</a> described in PHP code.
+      The most common delimiters are 
+      <i>&lt;?php</i> to open and 
+      <i>?&gt;</i> to close PHP sections. The shortened form 
+      <i>&lt;?</i> also exists. This short delimiter makes script files less portable, since support for them can be disabled in
+      the local PHP configuration and it is therefore discouraged.
+      <sup id="cite_ref-rfc-shortags_86-0" class="reference">
+        <a href="#cite_note-rfc-shortags-86"></a>
+      </sup>
+      <sup id="cite_ref-basic_syntax_87-0" class="reference">
+        <a href="#cite_note-basic_syntax-87"></a>
+      </sup> However, there is no recommendation against the use of the echo short tag 
+      <i>&lt;?=</i>.
+      <sup id="cite_ref-88" class="reference">
+        <a href="#cite_note-88"></a>
+      </sup> Prior to PHP 5.4.0, this short syntax for 
+      <i>echo()</i> only works with the 
+      <i>short_open_tag</i> configuration setting enabled, while for PHP 5.4.0 and later it is always available.
+      <sup id="cite_ref-rfc-shortags_86-1" class="reference">
+        <a href="#cite_note-rfc-shortags-86"></a>
+      </sup>
+      <sup id="cite_ref-89" class="reference">
+        <a href="#cite_note-89"></a>
+      </sup>
+      <sup id="cite_ref-90" class="reference">
+        <a href="#cite_note-90"></a>
+      </sup> The purpose of all these delimiters is to separate PHP code from non-PHP content, such as 
+      <a href="/wiki/JavaScript" title="JavaScript">JavaScript</a> code or HTML markup.
+      <sup id="cite_ref-91" class="reference">
+        <a href="#cite_note-91"></a>
+      </sup></p>
+      <p>The first form of delimiters, 
+      <i>&lt;?php</i> and 
+      <i>?&gt;</i>, in 
+      <a href="/wiki/XHTML" title="XHTML">XHTML</a> and other 
+      <a href="/wiki/XML" title="XML">XML</a> documents, creates correctly formed XML processing instructions.
+      <sup id="cite_ref-92" class="reference">
+        <a href="#cite_note-92"></a>
+      </sup> This means that the resulting mixture of PHP code and other markup in the server-side file is itself well-formed
+      XML.</p>
       <p>
-          <p>In the example above, <code>getAdder()</code> function creates a closure using passed argument <code class="mw-highlight" id="" style="" dir="ltr"><span class="nv">$x</span></code> (the keyword <code>use</code> imports a variable from the lexical context), which takes an additional argument <code class="mw-highlight" id="" style="" dir="ltr"><span class="nv">$y</span></code>, and returns the created closure to the caller. Such a function is a first-class object, meaning that it can be stored in a variable, passed as a parameter to other functions, etc.<sup id="cite_ref-104" class="reference"><a href="#cite_note-104"></a></sup></p>
-<p>Unusually for a dynamically typed language, PHP supports type declarations on function parameters, which are enforced at runtime. This has been supported for classes and interfaces since PHP&nbsp;5.0, for arrays since PHP&nbsp;5.1, for <a href="/wiki/Callable_object" title="Callable object">"callables"</a> since PHP 5.4, and scalar (integer, float, string and boolean) types since PHP&nbsp;7.0.<sup id="cite_ref-scalar-types_51-3" class="reference"><a href="#cite_note-scalar-types-51"></a></sup> PHP&nbsp;7.0 also has type declarations for function return types, expressed by placing the type name after the list of parameters, preceded by a colon.<sup id="cite_ref-return-types_50-2" class="reference"><a href="#cite_note-return-types-50"></a></sup> For example, the <code>getAdder</code> function from the earlier example could be annotated with types like so in PHP&nbsp;7:</p>
-<p>
-    <pre><span class="k">function</span> <span class="nf">getAdder</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$x</span><span class="p">)</span><span class="o">:</span> <span class="nx">\Closure</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">function</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$y</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$x</span><span class="p">)</span> <span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$x</span> <span class="o">+</span> <span class="nv">$y</span><span class="p">;</span>
-    <span class="p">};</span>
-<span class="p">}</span>
-
-<span class="nv">$adder</span> <span class="o">=</span> <span class="nx">getAdder</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nv">$adder</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>        <span class="c1">// prints "10"</span>
-<span class="k">echo</span> <span class="nv">$adder</span><span class="p">(</span><span class="k">null</span><span class="p">);</span>     <span class="c1">// throws an exception because an incorrect type was passed</span>
-<span class="nv">$adder</span> <span class="o">=</span> <span class="nx">getAdder</span><span class="p">([]);</span> <span class="c1">// would also throw an exception</span>
-</pre>
-</p
-<p> By default, scalar type declarations follow weak typing principles. So, for example, if a parameter's type is int, PHP would allow not only integers, but also convertible numeric strings, floats or booleans to be passed to that function, and would convert them. However, PHP 7 has a "strict typing" mode which, when used, disallows such conversions for function calls and returns within a file.</p>
-<h1> Object-oriented programming </h1>
-<p> <p>Basic <a href="/wiki/Object-oriented_programming" title="Object-oriented programming">object-oriented programming</a> functionality was added in PHP 3 and improved in PHP 4.<sup id="cite_ref-about_PHP_5-8" class="reference"><a href="#cite_note-about_PHP-5">[5]</a></sup> This allowed for PHP to gain further abstraction, making creative tasks easier for programmers using the language. Object handling was completely rewritten for PHP 5, expanding the feature set and enhancing performance.<sup id="cite_ref-php_5_objects_105-0" class="reference"><a href="#cite_note-php_5_objects-105"></a></sup> In previous versions of PHP, objects were handled like <a href="/wiki/Value_type" title="Value type">value types</a>.<sup id="cite_ref-php_5_objects_105-1" class="reference"><a href="#cite_note-php_5_objects-105">[105]</a></sup> The drawback of this method was that code had to make heavy use of PHP's "reference" variables if it wanted to modify an object it was passed rather than creating a copy of it. In the new approach, objects are referenced by <a href="/wiki/Handle_(computing)" title="Handle (computing)">handle</a>, and not by value.</p>
-<p>PHP 5 introduced private and protected <a href="/wiki/Member_variable" title="Member variable">member variables</a> and methods, along with <a href="/wiki/Abstract_type" title="Abstract type">abstract classes</a>, <a href="/wiki/Final_type" class="mw-redirect" title="Final type">final classes</a>, <a href="/wiki/Abstract_method" class="mw-redirect" title="Abstract method">abstract methods</a>, and <a href="/wiki/Final_method" class="mw-redirect" title="Final method">final methods</a>. It also introduced a standard way of declaring <a href="/wiki/Constructor_(computer_science)" class="mw-redirect" title="Constructor (computer science)">constructors</a> and <a href="/wiki/Destructor_(computer_science)" class="mw-redirect" title="Destructor (computer science)">destructors</a>, similar to that of other object-oriented languages such as <a href="/wiki/C%2B%2B" title="C++">C++</a>, and a standard <a href="/wiki/Exception_handling" title="Exception handling">exception handling</a> model. Furthermore, PHP 5 added <a href="/wiki/Interface_(computing)" title="Interface (computing)">interfaces</a> and allowed for multiple interfaces to be implemented. There are special interfaces that allow objects to interact with the runtime system. <a href="/wiki/Object_(computer_science)" title="Object (computer science)">Objects</a> implementing ArrayAccess can be used with <a href="/wiki/Array_data_type" title="Array data type">array</a> syntax and objects implementing <a href="/wiki/Iterator" title="Iterator">Iterator</a> or <a href="/wiki/IteratorAggregate" class="mw-redirect" title="IteratorAggregate">IteratorAggregate</a> can be used with the <code>foreach</code> <a href="/wiki/Language_construct" title="Language construct">language construct</a>. There is no <a href="/wiki/Virtual_table" class="mw-redirect" title="Virtual table">virtual table</a> feature in the engine, so <a href="/wiki/Static_variable" title="Static variable">static variables</a> are bound with a name instead of a reference at compile time.<sup id="cite_ref-zend_engine_2_106-0" class="reference"><a href="#cite_note-zend_engine_2-106"></a></sup></p>
-<p>If the developer creates a copy of an object using the reserved word <code>clone</code>, the Zend engine will check whether a <code>__clone()</code> method has been defined. If not, it will call a default <code>__clone()</code> which will copy the object's properties. If a <code>__clone()</code> method is defined, then it will be responsible for setting the necessary properties in the created object. For convenience, the engine will supply a function that imports the properties of the source object, so the programmer can start with a by-value <a href="https://en.wiktionary.org/wiki/replica" class="extiw" title="wikt:replica">replica</a> of the source object and only override properties that need to be changed.<sup id="cite_ref-107" class="reference"><a href="#cite_note-107"></a></sup></p>
-
-      </p>
-      <p> The following is a basic example of object-oriented programming in PHP: </p>
-      <pre><span class="k">class</span> <span class="nc">Person</span>
+      <span id="TYPE-HINTING"></span> Variables are prefixed with a 
+      <a href="/wiki/Dollar_sign" title="Dollar sign">dollar symbol</a>, and a 
+      <a href="/wiki/Primitive_type" class="mw-redirect" title="Primitive type">type</a> does not need to be specified in advance.
+      PHP�5 introduced 
+      <i>type hinting</i> that allows functions to force their parameters to be objects of a specific class, arrays, interfaces or 
+      <a href="/wiki/Callback_function" class="mw-redirect" title="Callback function">callback functions</a>. However, before PHP
+      7.0, type hints could not be used with scalar types such as integer or string.
+      <sup id="cite_ref-scalar-types_51-2" class="reference">
+        <a href="#cite_note-scalar-types-51"></a>
+      </sup></p>
+      <p>Unlike function and class names, variable names are case sensitive. Both double-quoted (&quot;&quot;) and 
+      <a href="/wiki/Heredoc" class="mw-redirect" title="Heredoc">heredoc</a> strings provide the ability to interpolate a
+      variable&#39;s value into the string.
+      <sup id="cite_ref-93" class="reference">
+        <a href="#cite_note-93"></a>
+      </sup> PHP treats 
+      <a href="/wiki/Newline" title="Newline">newlines</a> as 
+      <a href="/wiki/Whitespace_character" title="Whitespace character">whitespace</a> in the manner of a 
+      <a href="/wiki/Free-form_language" title="Free-form language">free-form language</a>, and statements are terminated by a
+      semicolon.
+      <sup id="cite_ref-94" class="reference">
+        <a href="#cite_note-94"></a>
+      </sup> PHP has three types of 
+      <a href="/wiki/Comparison_of_programming_languages_(syntax)#Comments"
+      title="Comparison of programming languages (syntax)">comment syntax</a>: 
+      <code>/* */</code> marks block and inline comments; 
+      <code>//</code> as well as 
+      <code>#</code> are used for one-line comments.
+      <sup id="cite_ref-95" class="reference">
+        <a href="#cite_note-95"></a>
+      </sup> The 
+      <code>echo</code> statement is one of several facilities PHP provides to output text, 
+      <i>e.g.</i>, to a web browser.</p>
+      <p>In terms of keywords and language syntax, PHP is similar to the C style syntax. 
+      <i>if</i> conditions, 
+      <i>for</i> and 
+      <i>while</i> loops, and function returns are similar in syntax to languages such as C, C++, C#, Java and Perl.</p>
+      <p>The following is an example of PHP for loop:</p>
+      <div class="mw-highlight mw-content-ltr" dir="ltr">
+        <pre>
+<span class="cp">&lt;?php</span> 
+<span class="k">for</span> 
+<span class="p">(</span>
+<span class="nv">$x</span> 
+<span class="o">=</span> 
+<span class="mi">0</span>
+<span class="p">;</span> 
+<span class="nv">$x</span> 
+<span class="o">&lt;=</span> 
+<span class="p">;</span> 
+<span class="nv">$x</span>
+<span class="o">++</span>
+<span class="p">)</span> 
 <span class="p">{</span>
-    <span class="k">public</span> <span class="nv">$firstName</span><span class="p">;</span>
-    <span class="k">public</span> <span class="nv">$lastName</span><span class="p">;</span>
+    
+<span class="k">echo</span> 
+<span class="s2">&quot;The number is: </span>
+<span class="si">$x</span>
+<span class="s2"> &lt;br&gt;&quot;</span>
+<span class="p">;</span>
+<span class="p">}</span> 
+<span class="cp">?&gt;</span>
+</pre>
+      </div>
+      <p>The PHP interpreter only executes PHP code within its delimiters. Anything outside its delimiters is not processed by PHP,
+      although non-PHP text is still subject to control structures described in PHP code. The most common delimiters are
+      <?php to open and ?> to close PHP sections. The shortened form 
+      <? also exists. This short delimiter makes script files less portable, since support for them can be disabled in the local PHP configuration and it is therefore discouraged. However, there is no recommendation against the use of the echo short tag <?=. Prior to PHP 5.4.0, this short syntax for echo() only works with the short_open_tag configuration setting enabled, while for PHP 5.4.0 and later it is always available.[86][89][90] The purpose of all these delimiters is to separate PHP code from non-PHP content, such as JavaScript code or HTML markup.
 
-    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$firstName</span><span class="p">,</span> <span class="nv">$lastName</span> <span class="o">=</span> <span class="s1">''</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// optional second argument</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span> <span class="o">=</span> <span class="nv">$firstName</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastName</span>  <span class="o">=</span> <span class="nv">$lastName</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">greet</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">'Hello, my name is '</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">firstName</span> <span class="o">.</span>
-               <span class="p">((</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastName</span> <span class="o">!=</span> <span class="s1">''</span><span class="p">)</span> <span class="o">?</span> <span class="p">(</span><span class="s1">' '</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lastName</span><span class="p">)</span> <span class="o">:</span> <span class="s1">''</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'.'</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">staticGreet</span><span class="p">(</span><span class="nv">$firstName</span><span class="p">,</span> <span class="nv">$lastName</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">'Hello, my name is '</span> <span class="o">.</span> <span class="nv">$firstName</span> <span class="o">.</span> <span class="s1">' '</span> <span class="o">.</span> <span class="nv">$lastName</span> <span class="o">.</span> <span class="s1">'.'</span><span class="p">;</span>
-    <span class="p">}</span>
+      The first form of delimiters, <?php and ?>
+      , in XHTML and other XML documents, creates correctly formed XML processing instructions. This means that the resulting
+      mixture of PHP code and other markup in the server-side file is itself well-formed XML. Variables are prefixed with a dollar
+      symbol, and a type does not need to be specified in advance. PHP 5 introduced type hinting that allows functions to force
+      their parameters to be objects of a specific class, arrays, interfaces or callback functions. However, before PHP 7.0, type
+      hints could not be used with scalar types such as integer or string. Unlike function and class names, variable names are case
+      sensitive. Both double-quoted (&quot;&quot;) and heredoc strings provide the ability to interpolate a variable&#39;s value
+      into the string. PHP treats newlines as whitespace in the manner of a free-form language, and statements are terminated by a
+      semicolon. PHP has three types of comment syntax: /* */ marks block and inline comments; // as well as # are used for
+      one-line comments. The echo statement is one of several facilities PHP provides to output text, e.g., to a web browser. In
+      terms of keywords and language syntax, PHP is similar to the C style syntax. if conditions, for and while loops, and function
+      returns are similar in syntax to languages such as C, C++, C#, Java and Perl. The following is an example of PHP for
+      loop:</p>
+      <pre>
+<span class="cp">&lt;?php</span> 
+<span class="k">for</span> 
+<span class="p">(</span>
+<span class="nv">$x</span> 
+<span class="o">=</span> 
+<span class="mi">0</span>
+<span class="p">;</span> 
+<span class="nv">$x</span> 
+<span class="o">&lt;=</span> 
+<span class="mi">100</span>
+<span class="p">;</span> 
+<span class="nv">$x</span>
+<span class="o">++</span>
+<span class="p">)</span> 
+<span class="p">{</span>
+    
+<span class="k">echo</span> 
+<span class="s2">&quot;The number is: </span>
+<span class="si">$x</span>
+<span class="s2"> &lt;br&gt;&quot;</span>
+<span class="p">;</span>
+<span class="p">}</span> 
+<span class="cp">?&gt;</span>
+</pre>
+      <h1>Data types</h1>
+      <p>PHP stores integers in a platform-dependent range, either a 64-bit or 32-bit signed integer equivalent to the C-language
+      long type. Unsigned integers are converted to signed values in certain situations; this behavior is different from that of
+      other programming languages.Integer variables can be assigned using decimal (positive and negative), octal, hexadecimal, and
+      binary notations. Floating point numbers are also stored in a platform-specific range. They can be specified using floating
+      point notation, or two forms of scientific notation. PHP has a native Boolean type that is similar to the native Boolean
+      types in Java and C++. Using the Boolean type conversion rules, non-zero values are interpreted as true and zero as false, as
+      in Perl and C++. The null data type represents a variable that has no value; NULL is the only allowed value for this data
+      type. Variables of the &quot;resource&quot; type represent references to resources from external sources. These are typically
+      created by functions from a particular extension, and can only be processed by functions from the same extension; examples
+      include file, image, and database resources. Arrays can contain elements of any type that PHP can handle, including
+      resources, objects, and other arrays. Order is preserved in lists of values and in hashes with both keys and values, and the
+      two can be intermingled. PHP also supports strings, which can be used with single quotes, double quotes, nowdoc or heredoc
+      syntax. The Standard PHP Library (SPL) attempts to solve standard problems and implements efficient data access interfaces
+      and classes.</p>
+      <h1>Functions</h1>
+      <p>PHP defines a large array of functions in the core language and many are also available in various extensions; these
+      functions are well documented in the online PHP documentation. However, the built-in library has a wide variety of naming
+      conventions and associated inconsistencies, as described under history above. Custom functions may be defined by the
+      developer, e.g.:</p>
+      <pre>
+<span class="k">function</span> 
+<span class="nf">myAge</span>
+<span class="p">(</span>
+<span class="nv">$birthYear</span>
+<span class="p">)</span> 
+<span class="p">{</span>                                  
+<span class="c1">// defines a function, this one is named &quot;myAge&quot;</span>
+    
+<span class="nv">$yearsOld</span> 
+<span class="o">=</span> 
+<span class="nb">date</span>
+<span class="p">(</span>
+<span class="s1">&#39;Y&#39;</span>
+<span class="p">)</span> 
+<span class="o">-</span> 
+<span class="nv">$birthYear</span>
+<span class="p">;</span>                       
+<span class="c1">// calculates the age</span>
+    
+<span class="k">return</span> 
+<span class="nv">$yearsOld</span> 
+<span class="o">.</span> 
+<span class="s1">&#39; year&#39;</span> 
+<span class="o">.</span> 
+<span class="p">(</span>
+<span class="nv">$yearsOld</span> 
+<span class="o">!=</span> 
+<span class="mi">1</span> 
+<span class="o">?</span> 
+<span class="s1">&#39;s&#39;</span> 
+<span class="o">:</span> 
+<span class="s1">&#39;&#39;</span>
+<span class="p">);</span> 
+<span class="c1">// returns the age in a descriptive form</span>
 <span class="p">}</span>
 
-<span class="nv">$he</span>    <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">'John'</span><span class="p">,</span> <span class="s1">'Smith'</span><span class="p">);</span>
-<span class="nv">$she</span>   <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">'Sally'</span><span class="p">,</span> <span class="s1">'Davis'</span><span class="p">);</span>
-<span class="nv">$other</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">'iAmine'</span><span class="p">);</span>
-
-<span class="k">echo</span> <span class="nv">$he</span><span class="o">-&gt;</span><span class="na">greet</span><span class="p">();</span> <span class="c1">// prints "Hello, my name is John Smith."</span>
-<span class="k">echo</span> <span class="s1">'&lt;br /&gt;'</span><span class="p">;</span>
-
-<span class="k">echo</span> <span class="nv">$she</span><span class="o">-&gt;</span><span class="na">greet</span><span class="p">();</span> <span class="c1">// prints "Hello, my name is Sally Davis."</span>
-<span class="k">echo</span> <span class="s1">'&lt;br /&gt;'</span><span class="p">;</span>
-
-<span class="k">echo</span> <span class="nv">$other</span><span class="o">-&gt;</span><span class="na">greet</span><span class="p">();</span> <span class="c1">// prints "Hello, my name is iAmine."</span>
-<span class="k">echo</span> <span class="s1">'&lt;br /&gt;'</span><span class="p">;</span>
-
-<span class="k">echo</span> <span class="nx">Person</span><span class="o">::</span><span class="na">staticGreet</span><span class="p">(</span><span class="s1">'Jane'</span><span class="p">,</span> <span class="s1">'Doe'</span><span class="p">);</span> <span class="c1">// prints "Hello, my name is Jane Doe."</span>
+<span class="k">echo</span> 
+<span class="s1">&#39;I am currently &#39;</span> 
+<span class="o">.</span> 
+<span class="nx">myAge</span>
+<span class="p">(</span>
+<span class="mi">1981</span>
+<span class="p">)</span> 
+<span class="o">.</span> 
+<span class="s1">&#39; old.&#39;</span>
+<span class="p">;</span>               
+<span class="c1">// outputs the text concatenated</span>
+                                                              
+<span class="c1">// with the return value of myAge()</span>
+<span class="c1">// As the result of this syntax, myAge() is called.</span>
 </pre>
-      <p>The <a href="/wiki/Visibility_(computer_science)" class="mw-redirect" title="Visibility (computer science)">visibility</a> of PHP properties and methods is defined using the <a href="/wiki/Keyword_(computer_programming)" class="mw-redirect" title="Keyword (computer programming)">keywords</a> <code>public</code>, <code>private</code>, and <code>protected</code>. The default is public, if only <a href="/wiki/Variable_(programming)" class="mw-redirect" title="Variable (programming)">var</a> is used; <code>var</code> is a synonym for <code>public</code>. Items declared <code>public</code> can be accessed everywhere. <code>protected</code> limits access to <a href="/wiki/Inherited_class" class="mw-redirect" title="Inherited class">inherited classes</a> (and to the class that defines the item). <code>private</code> limits visibility only to the class that defines the item.<sup id="cite_ref-108" class="reference"><a href="#cite_note-108"></a></sup> Objects of the same type have access to each other's private and protected members even though they are not the same instance. PHP's member visibility features have sometimes been described as "highly useful."<sup id="cite_ref-109" class="reference"><a href="#cite_note-109"></a></sup> However, they have also sometimes been described as "at best irrelevant and at worst positively harmful."<sup id="cite_ref-110" class="reference"><a href="#cite_note-110"></a></sup></p>
-      <h1> Implementations </h1>
-      <p>The original, only complete and most widely used PHP implementation is powered by the Zend Engine and known simply as PHP. To disambiguate it from other implementations, it is sometimes unofficially referred to as "Zend PHP". The Zend Engine compiles PHP source code on-the-fly into an internal format that it can execute, thus it works as an interpreter. It is also the "reference implementation" of PHP, as PHP has no formal specification, and so the semantics of Zend PHP define the semantics of PHP itself. Due to the complex and nuanced semantics of PHP, defined by how Zend works, it is difficult for competing implementations to offer complete compatibility.
+      <p>In 2017, the output of the above sample program is &#39;I am currently 36 years old.&#39;</p>
+      <p>In lieu of 
+      <a href="/wiki/Function_pointer" title="Function pointer">function pointers</a>, functions in PHP can be referenced by a
+      string containing their name. In this manner, normal PHP functions can be used, for example, as 
+      <a href="/wiki/Callback_function" class="mw-redirect" title="Callback function">callbacks</a> or within 
+      <a href="/wiki/Function_table" class="mw-redirect" title="Function table">function tables</a>.
+      <sup id="cite_ref-variable-functions_101-0" class="reference">
+        <a href="#cite_note-variable-functions-101"></a>
+      </sup> User-defined functions may be created at any time without being 
+      <a href="/wiki/Function_prototype" title="Function prototype">prototyped</a>.
+      <sup id="cite_ref-functions_100-1" class="reference">
+        <a href="#cite_note-functions-100"></a>
+      </sup>
+      <sup id="cite_ref-variable-functions_101-1" class="reference">
+        <a href="#cite_note-variable-functions-101"></a>
+      </sup> Functions may be defined inside code blocks, permitting a 
+      <a href="/wiki/Dynamic_dispatch" title="Dynamic dispatch">run-time decision</a> as to whether or not a function should be
+      defined. There is a 
+      <code>function_exists</code> function that determines whether a function with a given name has already been defined. Function
+      calls must use parentheses, with the exception of zero-argument class 
+      <a href="/wiki/Constructor_(computer_science)" class="mw-redirect" title="Constructor (computer science)">constructor</a>
+      functions called with the PHP operator 
+      <i>new</i>, in which case parentheses are optional.</p>
+      <p>Until PHP 5.3, support for 
+      <a href="/wiki/Anonymous_functions" class="mw-redirect" title="Anonymous functions">anonymous functions</a> and 
+      <a href="/wiki/Closure_(computer_science)" class="mw-redirect" title="Closure (computer science)">closures</a> did not exist
+      in PHP. While 
+      <code>create_function()</code> exists since PHP 4.0.1, it is merely a thin wrapper around 
+      <code>eval()</code> that allows normal PHP functions to be created during program execution.
+      <sup id="cite_ref-102" class="reference">
+        <a href="#cite_note-102"></a>
+      </sup> PHP 5.3 added syntax to define an anonymous function or &quot;closure&quot;
+      <sup id="cite_ref-103" class="reference">
+        <a href="#cite_note-103"></a>
+      </sup> which can capture variables from the surrounding scope:</p>
+      <pre>
+<span class="k">function</span> 
+<span class="nf">getAdder</span>
+<span class="p">(</span>
+<span class="nv">$x</span>
+<span class="p">)</span> 
+<span class="p">{</span>
+    
+<span class="k">return</span> 
+<span class="k">function</span>
+<span class="p">(</span>
+<span class="nv">$y</span>
+<span class="p">)</span> 
+<span class="k">use</span> 
+<span class="p">(</span>
+<span class="nv">$x</span>
+<span class="p">)</span> 
+<span class="p">{</span>
+        
+<span class="k">return</span> 
+<span class="nv">$x</span> 
+<span class="o">+</span> 
+<span class="nv">$y</span>
+<span class="p">;</span>
+    
+<span class="p">};</span>
+<span class="p">}</span>
 
-PHP's single-request-per-script-execution model, and the fact that the Zend Engine is an interpreter, leads to inefficiency; as a result, various products have been developed to help improve PHP performance. In order to speed up execution time and not have to compile the PHP source code every time the web page is accessed, PHP scripts can also be deployed in the PHP engine's internal format by using an opcode cache, which works by caching the compiled form of a PHP script (opcodes) in shared memory to avoid the overhead of parsing and compiling the code every time the script runs. An opcode cache, Zend Opcache, is built into PHP since version 5.5. Another example of a widely used opcode cache is the Alternative PHP Cache (APC), which is available as a PECL extension.
+<span class="nv">$adder</span> 
+<span class="o">=</span> 
+<span class="nx">getAdder</span>
+<span class="p">(</span>
+<span class="mi">8</span>
+<span class="p">);</span>
+<span class="k">echo</span> 
+<span class="nv">$adder</span>
+<span class="p">(</span>
+<span class="mi">2</span>
+<span class="p">);</span> 
+<span class="c1">// prints &quot;10&quot;</span>
+</pre>
+      <p>In the example above, 
+      <code>getAdder()</code> function creates a closure using passed argument 
+      <code class="mw-highlight" id="" style="" dir="ltr">
+        <span class="nv">$x</span>
+      </code> (the keyword 
+      <code>use</code> imports a variable from the lexical context), which takes an additional argument 
+      <code class="mw-highlight" id="" style="" dir="ltr">
+        <span class="nv">$y</span>
+      </code>, and returns the created closure to the caller. Such a function is a first-class object, meaning that it can be
+      stored in a variable, passed as a parameter to other functions, etc.
+      <sup id="cite_ref-104" class="reference">
+        <a href="#cite_note-104"></a>
+      </sup></p>
+      <p>Unusually for a dynamically typed language, PHP supports type declarations on function parameters, which are enforced at
+      runtime. This has been supported for classes and interfaces since PHP�5.0, for arrays since PHP�5.1, for 
+      <a href="/wiki/Callable_object" title="Callable object">&quot;callables&quot;</a> since PHP 5.4, and scalar (integer, float,
+      string and boolean) types since PHP�7.0.
+      <sup id="cite_ref-scalar-types_51-3" class="reference">
+        <a href="#cite_note-scalar-types-51"></a>
+      </sup> PHP�7.0 also has type declarations for function return types, expressed by placing the type name after the list of
+      parameters, preceded by a colon.
+      <sup id="cite_ref-return-types_50-2" class="reference">
+        <a href="#cite_note-return-types-50"></a>
+      </sup> For example, the 
+      <code>getAdder</code> function from the earlier example could be annotated with types like so in PHP�7:</p>
+      <pre>
+<span class="k">function</span> 
+<span class="nf">getAdder</span>
+<span class="p">(</span>
+<span class="nx">int</span> 
+<span class="nv">$x</span>
+<span class="p">)</span>
+<span class="o">:</span> 
+<span class="nx">\Closure</span> 
+<span class="p">{</span>
+    
+<span class="k">return</span> 
+<span class="k">function</span>
+<span class="p">(</span>
+<span class="nx">int</span> 
+<span class="nv">$y</span>
+<span class="p">)</span> 
+<span class="k">use</span> 
+<span class="p">(</span>
+<span class="nv">$x</span>
+<span class="p">)</span> 
+<span class="o">:</span> 
+<span class="nx">int</span> 
+<span class="p">{</span>
+        
+<span class="k">return</span> 
+<span class="nv">$x</span> 
+<span class="o">+</span> 
+<span class="nv">$y</span>
+<span class="p">;</span>
+    
+<span class="p">};</span>
+<span class="p">}</span>
 
-While Zend PHP is still the most popular implementation, several other implementations have been developed. Some of these are compilers or support JIT compilation, and hence offer performance benefits over Zend PHP at the expense of lacking full PHP compatibility. Alternative implementations include the following:
+<span class="nv">$adder</span> 
+<span class="o">=</span> 
+<span class="nx">getAdder</span>
+<span class="p">(</span>
+<span class="mi">8</span>
+<span class="p">);</span>
+<span class="k">echo</span> 
+<span class="nv">$adder</span>
+<span class="p">(</span>
+<span class="mi">2</span>
+<span class="p">);</span>        
+<span class="c1">// prints &quot;10&quot;</span>
+<span class="k">echo</span> 
+<span class="nv">$adder</span>
+<span class="p">(</span>
+<span class="k">null</span>
+<span class="p">);</span>     
+<span class="c1">// throws an exception because an incorrect type was passed</span>
+<span class="nv">$adder</span> 
+<span class="o">=</span> 
+<span class="nx">getAdder</span>
+<span class="p">([]);</span> 
+<span class="c1">// would also throw an exception</span>
+</pre>By default, scalar type declarations follow weak typing principles. So, for example, if a parameter&#39;s type is int, PHP
+would allow not only integers, but also convertible numeric strings, floats or booleans to be passed to that function, and would
+convert them. However, PHP 7 has a &quot;strict typing&quot; mode which, when used, disallows such conversions for function calls
+and returns within a file.
+      <h1>Object-oriented programming</h1>
+      <p>Basic 
+      <a href="/wiki/Object-oriented_programming" title="Object-oriented programming">object-oriented programming</a> functionality
+      was added in PHP 3 and improved in PHP 4.
+      <sup id="cite_ref-about_PHP_5-8" class="reference">
+        <a href="#cite_note-about_PHP-5">[5]</a>
+      </sup> This allowed for PHP to gain further abstraction, making creative tasks easier for programmers using the language.
+      Object handling was completely rewritten for PHP 5, expanding the feature set and enhancing performance.
+      <sup id="cite_ref-php_5_objects_105-0" class="reference">
+        <a href="#cite_note-php_5_objects-105"></a>
+      </sup> In previous versions of PHP, objects were handled like 
+      <a href="/wiki/Value_type" title="Value type">value types</a>.
+      <sup id="cite_ref-php_5_objects_105-1" class="reference">
+        <a href="#cite_note-php_5_objects-105">[105]</a>
+      </sup> The drawback of this method was that code had to make heavy use of PHP&#39;s &quot;reference&quot; variables if it
+      wanted to modify an object it was passed rather than creating a copy of it. In the new approach, objects are referenced by 
+      <a href="/wiki/Handle_(computing)" title="Handle (computing)">handle</a>, and not by value.</p>
+      <p>PHP 5 introduced private and protected 
+      <a href="/wiki/Member_variable" title="Member variable">member variables</a> and methods, along with 
+      <a href="/wiki/Abstract_type" title="Abstract type">abstract classes</a>, 
+      <a href="/wiki/Final_type" class="mw-redirect" title="Final type">final classes</a>, 
+      <a href="/wiki/Abstract_method" class="mw-redirect" title="Abstract method">abstract methods</a>, and 
+      <a href="/wiki/Final_method" class="mw-redirect" title="Final method">final methods</a>. It also introduced a standard way of
+      declaring 
+      <a href="/wiki/Constructor_(computer_science)" class="mw-redirect" title="Constructor (computer science)">constructors</a>
+      and 
+      <a href="/wiki/Destructor_(computer_science)" class="mw-redirect" title="Destructor (computer science)">destructors</a>,
+      similar to that of other object-oriented languages such as 
+      <a href="/wiki/C%2B%2B" title="C++">C++</a>, and a standard 
+      <a href="/wiki/Exception_handling" title="Exception handling">exception handling</a> model. Furthermore, PHP 5 added 
+      <a href="/wiki/Interface_(computing)" title="Interface (computing)">interfaces</a> and allowed for multiple interfaces to be
+      implemented. There are special interfaces that allow objects to interact with the runtime system. 
+      <a href="/wiki/Object_(computer_science)" title="Object (computer science)">Objects</a> implementing ArrayAccess can be used
+      with 
+      <a href="/wiki/Array_data_type" title="Array data type">array</a> syntax and objects implementing 
+      <a href="/wiki/Iterator" title="Iterator">Iterator</a> or 
+      <a href="/wiki/IteratorAggregate" class="mw-redirect" title="IteratorAggregate">IteratorAggregate</a> can be used with the 
+      <code>foreach</code> 
+      <a href="/wiki/Language_construct" title="Language construct">language construct</a>. There is no 
+      <a href="/wiki/Virtual_table" class="mw-redirect" title="Virtual table">virtual table</a> feature in the engine, so 
+      <a href="/wiki/Static_variable" title="Static variable">static variables</a> are bound with a name instead of a reference at
+      compile time.
+      <sup id="cite_ref-zend_engine_2_106-0" class="reference">
+        <a href="#cite_note-zend_engine_2-106"></a>
+      </sup></p>
+      <p>If the developer creates a copy of an object using the reserved word 
+      <code>clone</code>, the Zend engine will check whether a 
+      <code>__clone()</code> method has been defined. If not, it will call a default 
+      <code>__clone()</code> which will copy the object&#39;s properties. If a 
+      <code>__clone()</code> method is defined, then it will be responsible for setting the necessary properties in the created
+      object. For convenience, the engine will supply a function that imports the properties of the source object, so the
+      programmer can start with a by-value 
+      <a href="https://en.wiktionary.org/wiki/replica" class="extiw" title="wikt:replica">replica</a> of the source object and only
+      override properties that need to be changed.
+      <sup id="cite_ref-107" class="reference">
+        <a href="#cite_note-107"></a>
+      </sup></p>
+      <p>The following is a basic example of object-oriented programming in PHP:</p>
+      <pre>
+<span class="k">class</span> 
+<span class="nc">Person</span>
+<span class="p">{</span>
+    
+<span class="k">public</span> 
+<span class="nv">$firstName</span>
+<span class="p">;</span>
+    
+<span class="k">public</span> 
+<span class="nv">$lastName</span>
+<span class="p">;</span>
 
-    HipHop Virtual Machine (HHVM) – developed at Facebook and available as open source, it converts PHP code into a high-level bytecode (commonly known as an intermediate language), which is then translated into x86-64 machine code dynamically at runtime by a just-in-time (JIT) compiler, resulting in up to 6× performance improvements.
-    Parrot – a virtual machine designed to run dynamic languages efficiently; Pipp transforms the PHP source code into the Parrot intermediate representation, which is then translated into the Parrot's bytecode and executed by the virtual machine.
-    Phalanger – compiles PHP into Common Intermediate Language (CIL) bytecode
-    HipHop – developed at Facebook and available as open source, it transforms the PHP scripts into C++ code and then compiles the resulting code, reducing the server load up to 50%. In early 2013, Facebook deprecated it in favor of HHVM due to multiple reasons, including deployment difficulties and lack of support for the whole PHP language, including the create_function() and eval() constructs.
-      </p>
-      </table> </p>
-  </div>
-  </div>
-</div>
- 
- 
-</body>
+    
+<span class="k">public</span> 
+<span class="k">function</span> 
+<span class="fm">__construct</span>
+<span class="p">(</span>
+<span class="nv">$firstName</span>
+<span class="p">,</span> 
+<span class="nv">$lastName</span> 
+<span class="o">=</span> 
+<span class="s1">&#39;&#39;</span>
+<span class="p">)</span> 
+<span class="p">{</span> 
+<span class="c1">// optional second argument</span>
+        
+<span class="nv">$this</span>
+<span class="o">-&gt;</span>
+<span class="na">firstName</span> 
+<span class="o">=</span> 
+<span class="nv">$firstName</span>
+<span class="p">;</span>
+        
+<span class="nv">$this</span>
+<span class="o">-&gt;</span>
+<span class="na">lastName</span>  
+<span class="o">=</span> 
+<span class="nv">$lastName</span>
+<span class="p">;</span>
+    
+<span class="p">}</span>
+
+    
+<span class="k">public</span> 
+<span class="k">function</span> 
+<span class="nf">greet</span>
+<span class="p">()</span> 
+<span class="p">{</span>
+        
+<span class="k">return</span> 
+<span class="s1">&#39;Hello, my name is &#39;</span> 
+<span class="o">.</span> 
+<span class="nv">$this</span>
+<span class="o">-&gt;</span>
+<span class="na">firstName</span> 
+<span class="o">.</span>
+               
+<span class="p">((</span>
+<span class="nv">$this</span>
+<span class="o">-&gt;</span>
+<span class="na">lastName</span> 
+<span class="o">!=</span> 
+<span class="s1">&#39;&#39;</span>
+<span class="p">)</span> 
+<span class="o">?</span> 
+<span class="p">(</span>
+<span class="s1">&#39; &#39;</span> 
+<span class="o">.</span> 
+<span class="nv">$this</span>
+<span class="o">-&gt;</span>
+<span class="na">lastName</span>
+<span class="p">)</span> 
+<span class="o">:</span> 
+<span class="s1">&#39;&#39;</span>
+<span class="p">)</span> 
+<span class="o">.</span> 
+<span class="s1">&#39;.&#39;</span>
+<span class="p">;</span>
+    
+<span class="p">}</span>
+
+    
+<span class="k">public</span> 
+<span class="k">static</span> 
+<span class="k">function</span> 
+<span class="nf">staticGreet</span>
+<span class="p">(</span>
+<span class="nv">$firstName</span>
+<span class="p">,</span> 
+<span class="nv">$lastName</span>
+<span class="p">)</span> 
+<span class="p">{</span>
+        
+<span class="k">return</span> 
+<span class="s1">&#39;Hello, my name is &#39;</span> 
+<span class="o">.</span> 
+<span class="nv">$firstName</span> 
+<span class="o">.</span> 
+<span class="s1">&#39; &#39;</span> 
+<span class="o">.</span> 
+<span class="nv">$lastName</span> 
+<span class="o">.</span> 
+<span class="s1">&#39;.&#39;</span>
+<span class="p">;</span>
+    
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$he</span>    
+<span class="o">=</span> 
+<span class="k">new</span> 
+<span class="nx">Person</span>
+<span class="p">(</span>
+<span class="s1">&#39;John&#39;</span>
+<span class="p">,</span> 
+<span class="s1">&#39;Smith&#39;</span>
+<span class="p">);</span>
+<span class="nv">$she</span>   
+<span class="o">=</span> 
+<span class="k">new</span> 
+<span class="nx">Person</span>
+<span class="p">(</span>
+<span class="s1">&#39;Sally&#39;</span>
+<span class="p">,</span> 
+<span class="s1">&#39;Davis&#39;</span>
+<span class="p">);</span>
+<span class="nv">$other</span> 
+<span class="o">=</span> 
+<span class="k">new</span> 
+<span class="nx">Person</span>
+<span class="p">(</span>
+<span class="s1">&#39;iAmine&#39;</span>
+<span class="p">);</span>
+
+<span class="k">echo</span> 
+<span class="nv">$he</span>
+<span class="o">-&gt;</span>
+<span class="na">greet</span>
+<span class="p">();</span> 
+<span class="c1">// prints &quot;Hello, my name is John Smith.&quot;</span>
+<span class="k">echo</span> 
+<span class="s1">&#39;&lt;br /&gt;&#39;</span>
+<span class="p">;</span>
+
+<span class="k">echo</span> 
+<span class="nv">$she</span>
+<span class="o">-&gt;</span>
+<span class="na">greet</span>
+<span class="p">();</span> 
+<span class="c1">// prints &quot;Hello, my name is Sally Davis.&quot;</span>
+<span class="k">echo</span> 
+<span class="s1">&#39;&lt;br /&gt;&#39;</span>
+<span class="p">;</span>
+
+<span class="k">echo</span> 
+<span class="nv">$other</span>
+<span class="o">-&gt;</span>
+<span class="na">greet</span>
+<span class="p">();</span> 
+<span class="c1">// prints &quot;Hello, my name is iAmine.&quot;</span>
+<span class="k">echo</span> 
+<span class="s1">&#39;&lt;br /&gt;&#39;</span>
+<span class="p">;</span>
+
+<span class="k">echo</span> 
+<span class="nx">Person</span>
+<span class="o">::</span>
+<span class="na">staticGreet</span>
+<span class="p">(</span>
+<span class="s1">&#39;Jane&#39;</span>
+<span class="p">,</span> 
+<span class="s1">&#39;Doe&#39;</span>
+<span class="p">);</span> 
+<span class="c1">// prints &quot;Hello, my name is Jane Doe.&quot;</span>
+</pre>
+      <p>The 
+      <a href="/wiki/Visibility_(computer_science)" class="mw-redirect" title="Visibility (computer science)">visibility</a> of PHP
+      properties and methods is defined using the 
+      <a href="/wiki/Keyword_(computer_programming)" class="mw-redirect" title="Keyword (computer programming)">keywords</a> 
+      <code>public</code>, 
+      <code>private</code>, and 
+      <code>protected</code>. The default is public, if only 
+      <a href="/wiki/Variable_(programming)" class="mw-redirect" title="Variable (programming)">var</a> is used; 
+      <code>var</code> is a synonym for 
+      <code>public</code>. Items declared 
+      <code>public</code> can be accessed everywhere. 
+      <code>protected</code> limits access to 
+      <a href="/wiki/Inherited_class" class="mw-redirect" title="Inherited class">inherited classes</a> (and to the class that
+      defines the item). 
+      <code>private</code> limits visibility only to the class that defines the item.
+      <sup id="cite_ref-108" class="reference">
+        <a href="#cite_note-108"></a>
+      </sup> Objects of the same type have access to each other&#39;s private and protected members even though they are not the
+      same instance. PHP&#39;s member visibility features have sometimes been described as &quot;highly useful.&quot;
+      <sup id="cite_ref-109" class="reference">
+        <a href="#cite_note-109"></a>
+      </sup> However, they have also sometimes been described as &quot;at best irrelevant and at worst positively harmful.&quot;
+      <sup id="cite_ref-110" class="reference">
+        <a href="#cite_note-110"></a>
+      </sup></p>
+      <h1>Implementations</h1>
+      <p>The original, only complete and most widely used PHP implementation is powered by the Zend Engine and known simply as PHP.
+      To disambiguate it from other implementations, it is sometimes unofficially referred to as &quot;Zend PHP&quot;. The Zend
+      Engine compiles PHP source code on-the-fly into an internal format that it can execute, thus it works as an interpreter. It
+      is also the &quot;reference implementation&quot; of PHP, as PHP has no formal specification, and so the semantics of Zend PHP
+      define the semantics of PHP itself. Due to the complex and nuanced semantics of PHP, defined by how Zend works, it is
+      difficult for competing implementations to offer complete compatibility. PHP&#39;s single-request-per-script-execution model,
+      and the fact that the Zend Engine is an interpreter, leads to inefficiency; as a result, various products have been developed
+      to help improve PHP performance. In order to speed up execution time and not have to compile the PHP source code every time
+      the web page is accessed, PHP scripts can also be deployed in the PHP engine&#39;s internal format by using an opcode cache,
+      which works by caching the compiled form of a PHP script (opcodes) in shared memory to avoid the overhead of parsing and
+      compiling the code every time the script runs. An opcode cache, Zend Opcache, is built into PHP since version 5.5. Another
+      example of a widely used opcode cache is the Alternative PHP Cache (APC), which is available as a PECL extension. While Zend
+      PHP is still the most popular implementation, several other implementations have been developed. Some of these are compilers
+      or support JIT compilation, and hence offer performance benefits over Zend PHP at the expense of lacking full PHP
+      compatibility. Alternative implementations include the following: HipHop Virtual Machine (HHVM) – developed at Facebook and
+      available as open source, it converts PHP code into a high-level bytecode (commonly known as an intermediate language), which
+      is then translated into x86-64 machine code dynamically at runtime by a just-in-time (JIT) compiler, resulting in up to 6×
+      performance improvements. Parrot – a virtual machine designed to run dynamic languages efficiently; Pipp transforms the PHP
+      source code into the Parrot intermediate representation, which is then translated into the Parrot&#39;s bytecode and executed
+      by the virtual machine. Phalanger – compiles PHP into Common Intermediate Language (CIL) bytecode HipHop – developed at
+      Facebook and available as open source, it transforms the PHP scripts into C++ code and then compiles the resulting code,
+      reducing the server load up to 50%. In early 2013, Facebook deprecated it in favor of HHVM due to multiple reasons, including
+      deployment difficulties and lack of support for the whole PHP language, including the create_function() and eval()
+      constructs.</p></div>
+    </div>
+  </body>
 </html>
