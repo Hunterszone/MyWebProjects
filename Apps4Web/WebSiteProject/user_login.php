@@ -67,7 +67,7 @@
       border-style: solid;
       border-color: black;
       color: white;
-      font-size: 100%;
+      font-size: 125%;
       font-weight: bold;
       padding: 10px 30px;
       text-decoration: none;
@@ -100,7 +100,7 @@
       color: black;
       background-color: orange;
       font-weight: bold;
-      font-size: 100%;
+      font-size: 125%;
       padding: 10px 30px;
       text-decoration: none;
       border-radius: 4px 4px 0 0;
@@ -112,7 +112,7 @@
       border-color: black;
       color: white;
       font-weight: bold;
-      font-size: 100%;
+      font-size: 125%;
       padding: 10px 30px;
       text-decoration: none;
       border-radius: 4px 4px 0 0;
