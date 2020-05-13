@@ -20,7 +20,7 @@ NB: port number could vary, depends on your preferences
 - create DB **users** and **password_reset_temp**, in order to store your users details and  
 the temp keys, that are generated on password reset
 
-NB: you can also create your own collection of avatars, in order to use the 'upload avatar' engine
+NB: you can also create your own collection of avatars under the **uploads** folder
 
 ## III. Setup SMTP server
 - you can use the **hMailServer** app, in order to prepare your own SMTP Sever and to dispatch emails on user events
