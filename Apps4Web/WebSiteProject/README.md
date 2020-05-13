@@ -1,6 +1,6 @@
 # Custom website for web technologies
 
-## How to deploy locally
+## I. eploy locally
 
 ### 1. Using PHP CLI   
 - Install PHP CLI   
@@ -14,4 +14,15 @@ NB: port number could vary, depends on your preferences
 - put the web site resources into c:\xampp\htdocs ( C or whatever drive it exists in).   
 - access the localhost:8080/index.php in your browser   
 
-NB: port number could vary, depends on your preferences
+NB: port number could vary, depends on your preferences  
+
+## II. Setup DBs
+- create DB **users** and **password_reset_temp**, in order to store your users details and  
+the temp keys, that are generated on password reset
+
+NB: you can also create your own collection of avatars, in order to use the 'upload avatar' engine
+
+## III. Setup SMTP server
+- you can use the hMailServer, in order to prepare your own SMTP Sever and to dispatch emails on user events
+
+NB: change the SMTP server settings accordingly
