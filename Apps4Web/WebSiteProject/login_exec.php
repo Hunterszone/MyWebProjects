@@ -15,7 +15,7 @@
     	//Sanitize the POST values - TODO
     	$username = htmlspecialchars($_POST['username']);
     	$password = htmlspecialchars($_POST['password']);
-		$email = htmlspecialchars($_POST['email']);
+		//$email = htmlspecialchars($_POST['email']);
         
         if (isset($_COOKIE['PrivatePageLogin'])) {
         if ($_COOKIE['PrivatePageLogin'] == md5($password.$nonsense)) {
