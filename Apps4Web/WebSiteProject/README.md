@@ -1,6 +1,6 @@
 # Custom website for web technologies
 
-## I. eploy locally
+## I. How to deploy
 
 ### 1. Using PHP CLI   
 - Install PHP CLI   
@@ -23,6 +23,6 @@ the temp keys, that are generated on password reset
 NB: you can also create your own collection of avatars, in order to use the 'upload avatar' engine
 
 ## III. Setup SMTP server
-- you can use the hMailServer, in order to prepare your own SMTP Sever and to dispatch emails on user events
+- you can use the **hMailServer** app, in order to prepare your own SMTP Sever and to dispatch emails on user events
 
 NB: change the SMTP server settings accordingly
