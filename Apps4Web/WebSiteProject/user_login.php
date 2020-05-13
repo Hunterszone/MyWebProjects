@@ -704,11 +704,11 @@
    </style>
    <table>
 	  <tr>
-		<td>
+		<td><a href="welcome_message.php" target="_blank">
             <?php 
 				require_once('member.php');
 			?>
-        </td>
+        </a></td>
 	  </tr>
       <tr>
         <td>
