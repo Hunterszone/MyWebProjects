@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html >
-<head>
-<style type="text/css">
+<html>
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <style type="text/css">
 .button
 {
-	width: 150px;
-	padding: 10px;
-	background-color: #FF8C00;
-	box-shadow: -8px 8px 10px 3px rgba(0,0,0,0.2);
-    font-weight:bold;
-	text-decoration:none;
+        width: 150px;
+        padding: 10px;
+        background-color: #FF8C00;
+        box-shadow: -8px 8px 10px 3px rgba(0,0,0,0.2);
+		font-weight:bold;
+        text-decoration:none;
 }
 #cover{
     position:fixed;
@@ -29,10 +31,12 @@
     position:relative;
     z-index:10;
     display:none;
-	background: url(http://i.picresize.com/images/2015/04/28/iO4N.jpg) no-repeat;
-	content: "Joe's Task:Joe's Task:Joe's Task:Joe's Task:Joe's Task:Joe's Task:Joe's Task:Joe's Task:Joe's Task:Joe's Task:Joe's Task:Joe's Task:Joe's Task:Joe's Task:Joe's Task:Joe's Task:Joe's Task:Joe's Task:";
-	border:5px solid #cccccc;
-	border-radius:10px;
+        background: url(http://i.picresize.com/images/2015/04/28/iO4N.jpg) no-repeat;
+        content: &quot;Joe&#39;s Task:Joe&#39;s Task:Joe&#39;s Task:Joe&#39;s Task:Joe&#39;s Task:Joe&#39;s Task:Joe&#39;s
+Task:Joe&#39;s Task:Joe&#39;s Task:Joe&#39;s Task:Joe&#39;s Task:Joe&#39;s Task:Joe&#39;s Task:Joe&#39;s Task:Joe&#39;s
+Task:Joe&#39;s Task:Joe&#39;s Task:Joe&#39;s Task:&quot;;
+        border:5px solid #cccccc;
+        border-radius:10px;
 }
 #loginScreen:target, #loginScreen:target + #cover{
     display:block;
@@ -54,26 +58,24 @@
     font-weight:bold;
 }
 </style>
-
-<script type="text/javascript">
+    <script type="text/javascript">
     function load() {
-        location.href = "#loginScreen";
+        location.href = &quot;#loginScreen&quot;;
     }
-	
+        
 window.onload = load();
 
-</script> 
-
-</head>
-<body>
-<!---<div align="center">
-	<br><br><br><br>
-	<a href="#loginScreen" class="button">Click here to Log In</a>
+</script>
+    <title></title>
+  </head>
+  <body>
+    <!---<div align="center">
+        <br><br><br><br>
+        <a href="#loginScreen" class="button">Click here to Log In</a>
 </div>-->
-<div id="loginScreen">
-    <a href="http://localhost:8080/index.php" class="cancel">&times;</a>
-</div>
-<div id="cover" >
-</div>
-</body>
+    <div id="loginScreen">
+      <a href="http://localhost:8080/index.php" class="cancel">×</a>
+    </div>
+    <div id="cover"></div>
+  </body>
 </html>

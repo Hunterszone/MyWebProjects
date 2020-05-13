@@ -568,18 +568,18 @@ class SMTP
 
     /**
      * Calculate an MD5 HMAC hash.
-     * Works like hash_hmac('md5', $data, $key)
+     * Works like hash_hmac('md5', $data, $resetKey)
      * in case that function is not available.
      *
      * @param string $data The data to hash
-     * @param string $key  The key to hash with
+     * @param string $resetKey  The resetKey to hash with
      *
      * @return string
      */
-    protected function hmac($data, $key)
+    protected function hmac($data, $resetKey)
     {
         if (function_exists('hash_hmac')) {
-            return hash_hmac('md5', $data, $key);
+            return hash_hmac('md5', $data, $resetKey);
         }
 
         // The following borrowed from
@@ -591,14 +591,14 @@ class SMTP
         // by Lance Rushing
 
         $bytelen = 64; // byte length for md5
-        if (strlen($key) > $bytelen) {
-            $key = pack('H*', md5($key));
+        if (strlen($resetKey) > $bytelen) {
+            $resetKey = pack('H*', md5($resetKey));
         }
-        $key = str_pad($key, $bytelen, chr(0x00));
+        $resetKey = str_pad($resetKey, $bytelen, chr(0x00));
         $ipad = str_pad('', $bytelen, chr(0x36));
         $opad = str_pad('', $bytelen, chr(0x5c));
-        $k_ipad = $key ^ $ipad;
-        $k_opad = $key ^ $opad;
+        $k_ipad = $resetKey ^ $ipad;
+        $k_opad = $resetKey ^ $opad;
 
         return md5($k_opad . pack('H*', md5($k_ipad . $data)));
     }

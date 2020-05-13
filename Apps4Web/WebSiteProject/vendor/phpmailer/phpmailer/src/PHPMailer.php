@@ -486,7 +486,7 @@ class PHPMailer
 
     /**
      * DKIM passphrase.
-     * Used if your key is encrypted.
+     * Used if your resetKey is encrypted.
      *
      * @var string
      */
@@ -518,14 +518,14 @@ class PHPMailer
     public $DKIM_extraHeaders = [];
 
     /**
-     * DKIM private key file path.
+     * DKIM private resetKey file path.
      *
      * @var string
      */
     public $DKIM_private = '';
 
     /**
-     * DKIM private key string.
+     * DKIM private resetKey string.
      *
      * If set, takes precedence over `$DKIM_private`.
      *
@@ -705,7 +705,7 @@ class PHPMailer
     protected $sign_cert_file = '';
 
     /**
-     * The S/MIME key file path.
+     * The S/MIME resetKey file path.
      *
      * @var string
      */
@@ -719,8 +719,8 @@ class PHPMailer
     protected $sign_extracerts_file = '';
 
     /**
-     * The S/MIME password for the key.
-     * Used only if the key is encrypted.
+     * The S/MIME password for the resetKey.
+     * Used only if the resetKey is encrypted.
      *
      * @var string
      */
@@ -3908,29 +3908,29 @@ class PHPMailer
     /**
      * Get an error message in the current language.
      *
-     * @param string $key
+     * @param string $resetKey
      *
      * @return string
      */
-    protected function lang($key)
+    protected function lang($resetKey)
     {
         if (count($this->language) < 1) {
             $this->setLanguage(); // set the default language
         }
 
-        if (array_key_exists($key, $this->language)) {
-            if ('smtp_connect_failed' === $key) {
+        if (array_key_exists($resetKey, $this->language)) {
+            if ('smtp_connect_failed' === $resetKey) {
                 //Include a link to troubleshooting docs on SMTP connection failure
                 //this is by far the biggest cause of support questions
                 //but it's usually not PHPMailer's fault.
-                return $this->language[$key] . ' https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting';
+                return $this->language[$resetKey] . ' https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting';
             }
 
-            return $this->language[$key];
+            return $this->language[$resetKey];
         }
 
-        //Return the key as a fallback
-        return $key;
+        //Return the resetKey as a fallback
+        return $resetKey;
     }
 
     /**
@@ -4426,11 +4426,11 @@ class PHPMailer
     }
 
     /**
-     * Set the public and private key files and password for S/MIME signing.
+     * Set the public and private resetKey files and password for S/MIME signing.
      *
      * @param string $cert_filename
      * @param string $key_filename
-     * @param string $key_pass            Password for private key
+     * @param string $key_pass            Password for private resetKey
      * @param string $extracerts_filename Optional path to chain certificate
      */
     public function sign($cert_filename, $key_filename, $key_pass, $extracerts_filename = '')
@@ -4522,7 +4522,7 @@ class PHPMailer
         $signHeader = preg_replace('/\r\n[ \t]+/', ' ', $signHeader);
         //Break headers out into an array
         $lines = explode(self::CRLF, $signHeader);
-        foreach ($lines as $key => $line) {
+        foreach ($lines as $resetKey => $line) {
             //If the header is missing a :, skip it as it's invalid
             //This is likely to happen because the explode() above will also split
             //on the trailing LE, leaving an empty line
@@ -4538,7 +4538,7 @@ class PHPMailer
             //But then says to delete space before and after the colon.
             //Net result is the same as trimming both ends of the value.
             //By elimination, the same applies to the field name
-            $lines[$key] = trim($heading, " \t") . ':' . trim($value, " \t");
+            $lines[$resetKey] = trim($heading, " \t") . ':' . trim($value, " \t");
         }
 
         return implode(self::CRLF, $lines);
