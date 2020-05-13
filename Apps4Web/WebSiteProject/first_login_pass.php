@@ -19,9 +19,6 @@ if (!$email) {
    $sel_query = "SELECT * FROM `users` WHERE email='".$email."'";
    $result = mysqli_query($conn,$sel_query);
    $row = mysqli_num_rows($result);
-   if ($row==""){
-   $errmsg .= "<p>No user is registered with this email address!</p>";
-   }
   }
    if($errmsg !=""){
    echo "<div class='error'>".$errmsg."</div>
@@ -77,7 +74,7 @@ if(!$mail->Send()){
 echo "Mailer Error: " . $mail->ErrorInfo;
 }else{
 echo "<div class='error'>
-<p>An email has been sent to you with instructions on how to reset your password.</p>
+<p><center>An email has been sent to you with instructions on how to reset your password.</center></p>
 </div><br /><br /><br />";
  }
    }
