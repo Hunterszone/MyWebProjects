@@ -31,21 +31,21 @@ if (!$email) {
    date("H"), date("i"), date("s"), date("m") ,date("d")+1, date("Y")
    );
    $expDate = date("Y-m-d H:i:s",$expFormat);
-   $key = md5(2418*2 . $email);
+   $resetKey = md5(2418*2 . $email);
    $addKey = substr(md5(uniqid(rand(),1)),3,10);
-   $key = $key . $addKey;
+   $resetKey = $resetKey . $addKey;
 // Insert Temp Table
 mysqli_query($conn,
-"INSERT INTO password_reset_temp (email, key, expDate)
-VALUES ('$email', '$key', '$expDate')");
+"INSERT INTO password_reset_temp (email, resetKey, expDate)
+VALUES ('$email', '$resetKey', '$expDate')");
  
 $output='<p>Dear user,</p>';
 $output.='<p>Please click on the following link to reset your password.</p>';
 $output.='<p>-------------------------------------------------------------</p>';
 $output.='<p><a href="http://localhost:8080/reset-password.php?
-key='.$key.'&email='.$email.'&action=reset" target="_blank">
+resetKey='.$resetKey.'&email='.$email.'&action=reset" target="_blank">
 http://localhost:8080/reset-password.php
-?key='.$key.'&email='.$email.'&action=reset</a></p>'; 
+?resetKey='.$resetKey.'&email='.$email.'&action=reset</a></p>'; 
 $output.='<p>-------------------------------------------------------------</p>';
 $output.='<p>Please be sure to copy the entire link into your browser.
 The link will expire after 1 day for security reason.</p>';
@@ -83,15 +83,30 @@ echo "<div class='error'>
    }
 }else{
 ?>
-<center>
-<form method="post" action="" name="reset"><br /><br />
-<label><strong>Enter Your Email Address:</strong></label><br /><br />
-<input type="email" name="email" placeholder="username@email.com" />
-<br /><br />
-<input type="submit" value="Reset Password"/>
-</form>
-</center>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<?php } ?>
+<html>
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <title></title>
+  </head>
+  <body>
+    <center>
+      <form method="post" action="" name="reset">
+        <br />
+        <br />
+        <label>
+          <strong>Enter Your Email Address:</strong>
+        </label>
+        <br />
+        <br />
+        <input type="email" name="email" placeholder="username@email.com" />
+        <br />
+        <br />
+        <input type="submit" value="Reset Password" />
+      </form>
+    </center>
+    <p> </p>
+    <p> </p>
+    <p> </p><?php } ?>
+  </body>
+</html>
