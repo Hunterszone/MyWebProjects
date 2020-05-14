@@ -40,7 +40,7 @@ if ($action=="")    /* display the contact form */
     <p><font face="algerian" color="green">Your name:
     <input name="name" type="text" value="" size="30" required="" placeholder="<?php echo $_SESSION['SESS_USERNAME'];?>"/></font></p>
     <p><font face="algerian" color="green">Your email:
-    <input name="email" type="text" value="" size="30" required=""/></font></p>
+    <input name="email" type="email" value="" size="30" required=""/></font></p>
     <p><legend><font face="algerian"><font size="4"><font color="green"><u>Send us your feedback:</u></font></font></font></legend></p>
     <textarea ng-model="message" name="message" cols="55" rows="16" maxlength="400" required="" placeholder="UP TO 400 CHARACTERS"></textarea>
     <center><p>
