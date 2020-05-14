@@ -21,7 +21,7 @@ if (isset($_FILES['file']) &&
         if($_FILES['file']['error'] ===  0){
             if($_FILES['file']['size'] < 1000000){            
                 $fileNameNew = "profile".$mem_id.".".$fileActualExt;
-                $fileDestination = 'uploads/'.$fileNameNew;
+                $fileDestination = 'gallery/'.$fileNameNew;
                 move_uploaded_file($_FILES['file']['tmp_name'],$fileDestination);
                 $sql = "UPDATE users SET status = 0 WHERE mem_id ='$mem_id'";
                 $result = mysqli_query($conn, $sql);
