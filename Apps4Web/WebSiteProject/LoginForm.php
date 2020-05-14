@@ -64,7 +64,7 @@
 										</tr>
 										<tr>
 											<td><div align="right"></div></td>
-											<td><a href="forgotPass.php">Forgot password ?</a></td>
+											<td><a href="forgotPass.php" target="_blank">Forgot password ?</a></td>
 										</tr>
 									</table>
 								</form>

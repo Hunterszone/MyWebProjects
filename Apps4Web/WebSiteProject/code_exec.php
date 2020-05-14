@@ -14,6 +14,8 @@
 			echo "<center>";
 			echo "<span style='font-size:20px'>";
             echo "New user registered succesfully!";
+			echo "<br><br>";
+			echo "Redirecting to home page...";
 			echo "</center>";
 			echo "</font>";
 			/* Redirect browser */

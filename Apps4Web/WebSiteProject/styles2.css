@@ -837,4 +837,31 @@ img:hover {
 #social-sidebar ul li a[class*="facebook"] span,
 #social-sidebar ul li a[class*="facebook"] span:before { background: #234999; }
 /*]]>
+
+         ul#menu {
+         list-style:none;
+         padding: 0;
+         position:relative;
+         margin:0;
+         }
+         ul#menu li {
+         display: inline;
+         }
+         ul#menu li a {
+         display: inline;
+         color: white;
+         background-color: black;
+         font-weight: bold;
+         font-size: 125%;
+         padding: 10px 30px;
+         text-decoration: none;
+         border-radius: 4px 4px 0 0;
+         }
+         ul#menu li a:hover {
+         color: black;
+         font-weight: bold;
+         font-size: 150%;
+         background-color: orange;
+         }
+
 </style>

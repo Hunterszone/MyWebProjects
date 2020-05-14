@@ -909,13 +909,13 @@
          <div id='social-sidebar'>
             <ul>
                <li>
-                  <a class='entypo-facebook' target='_blank' title="S H A R E!" onclick="void window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 
+                  <a class='entypo-facebook' target='_blank' title="S H A R E!" onclick="void window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 
                      'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
                   <span>FACEBOOK</span>
                   </a>
                </li>
                <li>
-                  <a class='entypo-twitter' target='_blank' title="S H A R E!" a onclick="void window.open('https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.example.com%2F&original_referer=.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void
+                  <a class='entypo-twitter' target='_blank' title="S H A R E!" a onclick="void window.open('https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.example.com%2F&original_referer=.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void
                      (0)">
                   <span>TWITTER</span>
                   </a>

@@ -1,8 +1,3 @@
-<?php
-		require_once('authentication.php');
-		$_SESSION['SESS_USERNAME'] = "";
-?>
-
 <!DOCTYPE html>
 <!--
    To change this license header, choose License Headers in Project Properties.
@@ -63,31 +58,70 @@
       </style>
       <!-- CSS styles for menu with sections -->
       <style type="text/css">
-         ul#menu {
-         list-style:none;
-         padding: 0;
-         position:relative;
-         margin:0;
-         }
-         ul#menu li {
-         display: inline;
-         }
-         ul#menu li a {
-         display: inline;
-         color: white;
-         background-color: black;
-         font-weight: bold;
-         font-size: 125%;
-         padding: 10px 30px;
-         text-decoration: none;
-         border-radius: 4px 4px 0 0;
-         }
-         ul#menu li a:hover {
-         color: black;
-         font-weight: bold;
-         font-size: 150%;
-         background-color: orange;
-         }
+	.dropbtn {
+      background-color: black;
+      border-style: solid;
+      border-color: black;
+      color: white;
+      font-size: 125%;
+      font-weight: bold;
+      padding: 10px 30px;
+      text-decoration: none;
+      border-radius: 4px 4px 0 0;
+      cursor: pointer;
+      }
+      .dropdown {
+      position: relative;
+      display: inline-block;
+      }
+      .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: black;
+      box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.8);
+      }
+      .dropdown-content button {
+      text-decoration: none;
+      display: block;
+      }
+      .dropdown:hover .dropdown-content {
+      margin-top: 1px;
+      font: 10px;
+      top: 100%;
+      display: block;
+      }
+      .dropdown:hover .dropbtn {
+      border-style: solid;
+      border-color: black;
+      color: black;
+      background-color: orange;
+      font-weight: bold;
+      font-size: 125%;
+      padding: 10px 30px;
+      text-decoration: none;
+      border-radius: 4px 4px 0 0;
+      cursor: pointer;
+      }
+      .nicetoo {
+      background-color: black;
+      border-style: solid;
+      border-color: black;
+      color: white;
+      font-weight: bold;
+      font-size: 125%;
+      padding: 10px 30px;
+      text-decoration: none;
+      border-radius: 4px 4px 0 0;
+      cursor: pointer;
+      }
+      .nicetoo:hover{
+      border-style: solid;
+      border-width: 5px;	
+      border-color: black;
+      color: black;
+      background-color: orange;
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.5), 0 17px 50px 0 rgba(0,0,0,0.19);
+      }
       </style>
       <!-- CSS styles for standard search box -->
       <style type="text/css">
@@ -793,17 +827,27 @@
    </br></p>
    <a href="#"><img id="toTop" src="http://rs300.pbsrc.com/albums/nn22/montira_bucket/arrow/arrow-3.gif~c200" title="Back to top" style="width: 70px; height: 70px;"></a>
    <br>
-   <center>
-      <ul id="menu">
-         <li><a href="SignUp.htm">SIGN UP</a></li>
-         <li><a href="LoginForm.php">SIGN IN</a></li>
-         <li><a href="html.html" target="_blank">HTML</a></li>
-         <li><a href="css.html" target="_blank">CSS</a></li>
-         <li><a href="javascript.html" target="_blank">JavaScript</a></li>
-         <li><a href="php.html" target="_blank">PHP</a></li>
-		 <li><a href="contact_form.php" target="_blank">CONTACT US</a></li>
-      </ul>
-   </center>
+         <center>
+         <button class="nicetoo" onclick="window.location.href='SignUp.htm'")>Sign up</button>
+         <div class="dropdown">
+            <button class="dropbtn">Sign in</button>
+            <div class="dropdown-content">
+               <input type="button" id="but1" class="nicetoo" onclick="window.location.href='LoginForm.php'" value="With credentials">
+               <input type="button" id="but1" class="nicetoo" onclick="window.location.href='generateQR.php'" value="With QR code">
+            </div>
+         </div>
+         <div class="dropdown">
+            <button class="dropbtn">Articles</button>
+            <div class="dropdown-content">
+               <input type="button" id="but1" class="nicetoo" onclick=window.open("html.html") value="HTML">
+               <input type="button" id="but1" class="nicetoo" onclick=window.open("css.html") value="CSS">
+			   <input type="button" id="but1" class="nicetoo" onclick=window.open("javascript.html") value="JS">
+			   <input type="button" id="but1" class="nicetoo" onclick=window.open("php.html") value="PHP">
+            </div>
+         </div>
+         <button class="nicetoo" onclick="window.location.href='contact_form.php'">Contact us</button>
+
+    </center>
    </br>  
    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
    <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
