@@ -24,8 +24,6 @@
                     echo "</div>";
                 //}
             //}
-        }else{
-            echo "Please login to proceed!";
         }
 
         if(isset($_SESSION['mem_id'])){
