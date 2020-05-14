@@ -757,7 +757,7 @@
          </div>
          <button class="nicetoo" onclick=window.open("forgotPass.php")>Reset pass</button>
          <button class="nicetoo" onclick=window.open("contact_form.php")>Contact us</button>
-         <button class="nicetoo" onclick="location.href='./index.php'">Logout</button>
+         <button class="nicetoo" onclick="location.href='index.php'">Logout</button>
       </center>
       </br>  
       <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
