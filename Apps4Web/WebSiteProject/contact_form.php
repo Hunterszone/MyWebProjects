@@ -38,11 +38,11 @@ if ($action=="")    /* display the contact form */
     ?>
     <input type="hidden" name="action" value="submit">
     <p><font face="algerian" color="green">Your name:
-    <input name="name" type="text" value="" size="30" placeholder="<?php echo $_SESSION['SESS_USERNAME'];?>"/></font></p>
+    <input name="name" type="text" value="" size="30" required="" placeholder="<?php echo $_SESSION['SESS_USERNAME'];?>"/></font></p>
     <p><font face="algerian" color="green">Your email:
-    <input name="email" type="text" value="" size="30"/></font></p>
+    <input name="email" type="text" value="" size="30" required=""/></font></p>
     <p><legend><font face="algerian"><font size="4"><font color="green"><u>Send us your feedback:</u></font></font></font></legend></p>
-    <textarea ng-model="message" name="message" cols="55" rows="16" maxlength="400" placeholder="UP TO 400 CHARACTERS"></textarea>
+    <textarea ng-model="message" name="message" cols="55" rows="16" maxlength="400" required="" placeholder="UP TO 400 CHARACTERS"></textarea>
     <center><p>
 		<input type='submit' ng-click="send()" value='Send' style="cursor: pointer;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 		<input type='reset' ng-click="clear()" value='Clear' style="cursor: pointer;">
@@ -55,21 +55,13 @@ else                /* send the submitted data */
     {
     $name=$_REQUEST['name'];
     $email=$_REQUEST['email'];
-    $message=$_REQUEST['message'];
-    if (($name=="")||($email=="")||($message==""))
-        {
-		echo "<center>";
-        echo "All fields are required, please fill <a href='contact_form.php'>the form</a> again.";
-		echo "</center>";
-        }
-    else{        
-        $from="From: $name<$email>\r\nReturn-path: $email";
-        $subject="Message sent using your contact form";
-        mail("k.drenski91@gmail.com", $subject, $message, $from);
-		echo "<center>";
-        echo "Feedback sent! Thank you!";
-		echo "</center>";
-        }
+    $message=$_REQUEST['message'];          
+	$from="From: $name<$email>\r\nReturn-path: $email";
+	$subject="Message sent using your contact form";
+	mail("k.drenski91@gmail.com", $subject, $message, $from);
+	echo "<center>";
+	echo "Feedback sent! Thank you!";
+	echo "</center>";   
     }  
 ?>
 
