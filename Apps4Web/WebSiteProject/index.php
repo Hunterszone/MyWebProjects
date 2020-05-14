@@ -832,8 +832,8 @@
          <div class="dropdown">
             <button class="dropbtn">Sign in</button>
             <div class="dropdown-content">
-               <input type="button" id="but1" class="nicetoo" onclick="window.location.href='LoginForm.php'" value="With credentials">
-               <input type="button" id="but1" class="nicetoo" onclick="window.location.href='generateQR.php'" value="With QR code">
+               <input type="button" id="but1" class="nicetoo" onclick="window.location.href='LoginForm.php'" value="Password">
+               <input type="button" id="but1" class="nicetoo" onclick="window.location.href='generateQR.php'" value="2FA/QR code">
             </div>
          </div>
          <div class="dropdown">
