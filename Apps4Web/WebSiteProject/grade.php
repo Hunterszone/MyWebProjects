@@ -6,7 +6,7 @@
 	
 	<title>PHP Quiz</title>
 	
-	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="//css/styles.css" />
 </head>
 
 <body>
@@ -29,17 +29,48 @@
 
 		<h1>CSS Quiz</h1>
                            <?php
+						   
+	$answer1 = '';
+	$answer2 = '';
+	$answer3 = '';
+	$answer4 = '';
+	$answer5 = '';
+	$answer6 = '';
+	$answer7 = '';
+	$answer8 = '';
+	$answer9 = '';
+	$answer10 = '';
     
-    $answer1  = $_POST['question-1-answers'];
-    $answer2  = $_POST['question-2-answers'];
-    $answer3  = $_POST['question-3-answers'];
-    $answer4  = $_POST['question-4-answers'];
-    $answer5  = $_POST['question-5-answers'];
-    $answer6  = $_POST['question-6-answers'];
-    $answer7  = $_POST['question-7-answers'];
-    $answer8  = $_POST['question-8-answers'];
-    $answer9  = $_POST['question-9-answers'];
+    if (isset($_POST['$answer1'])) {
+    $answer1 = $_POST['question-1-answers'];
+    }
+    if (isset($_POST['$answer2'])) {
+    $answer2 = $_POST['question-2-answers'];
+    }
+    if (isset($_POST['$answer3'])) {
+    $answer3 = $_POST['question-3-answers'];
+    }
+    if (isset($_POST['$answer4'])) {
+    $answer4 = $_POST['question-4-answers'];
+    }
+    if (isset($_POST['$answer5'])) {
+    $answer5 = $_POST['question-5-answers'];
+    }
+    if (isset($_POST['$answer6'])) {
+    $answer6 = $_POST['question-6-answers'];
+    }
+    if (isset($_POST['$answer7'])) {
+    $answer7 = $_POST['question-7-answers'];
+    }
+    if (isset($_POST['$answer8'])) {
+    $answer8 = $_POST['question-8-answers'];
+    }
+    if (isset($_POST['$answer9'])) {
+    $answer9 = $_POST['question-9-answers'];
+    }
+    if (isset($_POST['$answer10'])) {
     $answer10 = $_POST['question-10-answers'];
+    }
 
     $totalCorrect = 0;
     
