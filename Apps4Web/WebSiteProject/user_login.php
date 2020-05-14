@@ -11,7 +11,6 @@
    -->
 <!-- CSS for BLINKING TEXT HEADER WITH FIRE SHADOW -->
 <html>
-   <link rel="stylesheet" type="text/css" href="styles2.css">
    <!-- CSS -->
    <style>
       html {
@@ -800,32 +799,36 @@
       </div>
       <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
       <div class="slider" style="cursor: hand;">
-      <input type="radio" name="slide_switch" id="id1" checked="checked" onclick="window.open('https://nodejs.org/')" />
+      <!-- 1st image -->
+	  <input type="radio" name="slide_switch" id="id1" checked="checked" onclick="window.open('https://wordpress.org/')" />
       <label for="id1">
-      <img src="http://blog.rivaliq.com/wp-content/uploads/2014/01/nodejs_0.png" width="100" height="51.9" />
+      <img src="https://s.w.org/style/images/about/WordPress-logotype-wmark.png" width="100" height="51.9" />
       </label>
-      <img src="http://blog.rivaliq.com/wp-content/uploads/2014/01/nodejs_0.png" width="640" height="320" />
-      <!--Lets show the second image by default on page load-->
+	  <img src="https://s.w.org/style/images/about/WordPress-logotype-wmark.png" width="640" height="320" />
+      <!-- 2nd image -->
       <input type="radio" name="slide_switch" id="id2" onclick="window.open('https://angularjs.org/')" />
       <label for="id2">
       <img src="http://supnig.com/media/pictures/angularjs.png" width="100" height="51.9"/>
       </label>
       <img src="http://supnig.com/media/pictures/angularjs.png" width="640" height="320" />
-      <input type="radio" name="slide_switch" id="id3" onclick="window.open('https://wix.com/')" />
+      <!-- 3rd image -->
+	  <input type="radio" name="slide_switch" id="id3" onclick="window.open('https://wix.com/')" />
       <label for="id3">
-      <img src="http://streetfightmagcom.b.presscdn.com/wp-content/uploads/9bc178_9737c4bcb5cd54861daa2377c139d60b.jpg" width="100" height="51.9" />
+      <img src="https://www.gvate.com/wp-content/uploads/2015/05/New-York-Wix-Service-and-Support.png" width="100" height="51.9" />
       </label>
-      <img src="http://streetfightmagcom.b.presscdn.com/wp-content/uploads/9bc178_9737c4bcb5cd54861daa2377c139d60b.jpg" width="640" height="320" />
-      <input type="radio" name="slide_switch" id="id4" onclick="window.open('http://w3schools.com/')" />
+      <img src="https://www.gvate.com/wp-content/uploads/2015/05/New-York-Wix-Service-and-Support.png" width="640" height="320" />
+      <!-- 4th image -->
+	  <input type="radio" name="slide_switch" id="id4" onclick="window.open('http://w3schools.com/')" />
       <label for="id4">
       <img src="http://mostlywebsites.net/wp-content/uploads/w3schools-logo.jpg" width="100" height="51.9" />
       </label>
       <img src="http://mostlywebsites.net/wp-content/uploads/w3schools-logo.jpg" width="640" height="320" />
-      <input type="radio" name="slide_switch" id="id5" onclick="window.open('https://weebly.com/')" />
+      <!-- 5th image -->
+	  <input type="radio" name="slide_switch" id="id5" onclick="window.open('https://weebly.com/')" />
       <label for="id5">
-      <img src="http://www.spiderwebconnections.com/wp-content/uploads/2012/11/weebly.jpg" width="100" height="51.9" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Weebly_logo.svg/1280px-Weebly_logo.svg.png" width="100" height="51.9" />
       </label>
-      <img src="http://www.spiderwebconnections.com/wp-content/uploads/2012/11/weebly.jpg" width="640" height="320" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Weebly_logo.svg/1280px-Weebly_logo.svg.png" width="640" height="320" />
       </div>
       </center>
       <br><br>
