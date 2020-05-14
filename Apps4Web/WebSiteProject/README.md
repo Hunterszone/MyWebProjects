@@ -26,3 +26,7 @@ NB: you can also create your own collection of avatars under the **uploads** fol
 - you can use the **hMailServer** app, in order to prepare your own SMTP Sever and to dispatch emails on user events
 
 NB: change the SMTP server settings accordingly
+
+## IV. QR authentication
+- you can also authenticate, using a mobile app for scanning QR codes and  
+another one for the generation of temporary login combinations
