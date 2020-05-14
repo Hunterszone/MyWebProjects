@@ -25,7 +25,7 @@
                 //}
             //}
         }else{
-            echo "There are no users yet!";
+            echo "Please login to proceed!";
         }
 
         if(isset($_SESSION['mem_id'])){
