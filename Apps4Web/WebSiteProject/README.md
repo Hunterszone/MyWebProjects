@@ -29,4 +29,4 @@ NB: change the SMTP server settings accordingly
 
 ## IV. QR authentication
 - you can also authenticate, using a mobile app for scanning QR codes and  
-another one for the generation of temporary login combinations
+another one for the generation of a one-time pass code
