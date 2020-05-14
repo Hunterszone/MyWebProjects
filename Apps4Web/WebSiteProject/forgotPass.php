@@ -99,7 +99,7 @@ echo "<div class='error'>
         </label>
         <br />
         <br />
-        <input type="email" name="email" placeholder="username@email.com" />
+        <input type="email" name="email" placeholder="username@email.com" required="" />
         <br />
         <br />
         <input type="submit" value="Reset Password" />
