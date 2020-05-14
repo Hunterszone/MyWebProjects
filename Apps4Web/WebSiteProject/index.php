@@ -845,7 +845,7 @@
 			   <input type="button" id="but1" class="nicetoo" onclick=window.open("php.html") value="PHP">
             </div>
          </div>
-         <button class="nicetoo" onclick="window.location.href='contact_form.php'">Contact us</button>
+         <button class="nicetoo" onclick=window.open("contact_form.php")>Contact us</button>
 
     </center>
    </br>  
