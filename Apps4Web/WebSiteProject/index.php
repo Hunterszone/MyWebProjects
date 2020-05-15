@@ -1,3 +1,11 @@
+<?php 
+
+	//Include connection details
+	/*require_once('connection.php');
+	require_once('keep_alive.php');*/
+	
+?>
+
 <!DOCTYPE html>
 <!--
    To change this license header, choose License Headers in Project Properties.
