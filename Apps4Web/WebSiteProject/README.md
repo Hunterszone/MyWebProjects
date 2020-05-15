@@ -24,9 +24,11 @@ NB: you can also create your own collection of avatars under the **uploads** fol
 
 ## III. Setup SMTP server
 - you can use the **hMailServer** app, in order to prepare your own SMTP Sever and to dispatch emails on user events
+- for this project I use the **PHPMailer** library
 
-NB: change the SMTP server settings accordingly
+NB: set the SMTP settings in your hMailServer and your **php.ini**
 
 ## IV. QR authentication
 - you can also authenticate, using a mobile app for scanning QR codes and  
 another one for the generation of a one-time pass code
+- for this project I use the **sonata-project/GoogleAuthenticator** library
