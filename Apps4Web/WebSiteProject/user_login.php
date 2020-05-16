@@ -746,7 +746,7 @@
       <a href="#"><img id="toTop" src="http://rs300.pbsrc.com/albums/nn22/montira_bucket/arrow/arrow-3.gif~c200" title="Back to top" style="width: 70px; height: 70px;"></a>  
       <br>
       <center>
-         <button class="nicetoo" onclick=window.open("quizes.php")>Go to quiz</button>
+         <button class="nicetoo" onclick=window.open("quizes.php")>Start quiz</button>
          <button class="nicetoo" onclick=window.open("welcome_message.php")>My Profile</button>
          <div class="dropdown">
             <button class="dropbtn">Upload</button>
@@ -755,7 +755,7 @@
                <input type="button" id="but1" class="nicetoo" onclick=window.open("avatar_upload.html") value="Avatar">
             </div>
          </div>
-         <button class="nicetoo" onclick=window.open("forgotPass.php")>Reset pass</button>
+         <button class="nicetoo" onclick=window.open("forgotPass.php")>New pass</button>
          <button class="nicetoo" onclick=window.open("contact_form.php")>Contact us</button>
          <button class="nicetoo" onclick="location.href='index.php'">Logout</button>
       </center>
