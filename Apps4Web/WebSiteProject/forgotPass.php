@@ -106,5 +106,18 @@ echo "<div class='error'>
       </form>
     </center>
 <?php } ?>
+
+<STYLE TYPE="text/css">
+
+body { 
+background: url(book-carousel.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+</style> 	
+
   </body>
 </html>
