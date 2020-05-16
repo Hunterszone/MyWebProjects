@@ -86,5 +86,18 @@ Click here</a> to reset password.</p>';
            } 
         }
         ?>
+		
+<STYLE TYPE="text/css">
+
+body { 
+background: url(book-carousel.jpg) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+</style> 	
+
   </body>
 </html>
