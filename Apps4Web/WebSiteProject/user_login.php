@@ -877,19 +877,19 @@
       <tr>
          <br>
          <div class="social">
-            <a href="https://twitter.com/PageOnlineXS" class="link facebook" target="_blank"><span class="fa fa-facebook"><img 
-               src="http://icons.iconarchive.com/icons/uiconstock/flatin-social/256/facebook-icon.png" title="Facebook" alt="HTML5 Icon" style="width:70px;height:70px"></span></a>
-            <a href="https://twitter.com/PageOnlineXS" class="link twitter" target="_blank"><span class="fa fa-cover"><img 
-               src="http://icons.iconarchive.com/icons/uiconstock/flatin-social/256/twitter-2-icon.png" title="Twitter" alt="HTML5 Icon" style="width:70px;height:70px"></span></a>
-            <a href="https://twitter.com/PageOnlineXS" class="link twitter" target="_blank"><span class="fa fa-cover"><img 
+            <a href="https://twitter.com/PageOnlineXS" class="link facebook" target="_blank"><img 
+               src="http://icons.iconarchive.com/icons/uiconstock/flatin-social/256/facebook-icon.png" title="Facebook" alt="HTML5 Icon" style="width:70px;height:70px"></a>
+            <a href="https://twitter.com/PageOnlineXS" class="link twitter" target="_blank"><img 
+               src="http://icons.iconarchive.com/icons/uiconstock/flatin-social/256/twitter-2-icon.png" title="Twitter" alt="HTML5 Icon" style="width:70px;height:70px"></a>
+            <a href="https://twitter.com/PageOnlineXS" class="link twitter" target="_blank"><img 
                src="http://icons.iconarchive.com/icons/uiconstock/flatin-social/256/linkedin-icon.png" title="LinkedIn" alt="HTML5 Icon" 
-               style="width:70px;height:70px"></span></a>
-            <a href="https://www.youtube.com/embed/36mitS3tpIo" class="link twitter" target="_blank"><span class="fa fa-cover"><img 
+               style="width:70px;height:70px"></a>
+            <a href="https://www.youtube.com/embed/36mitS3tpIo" class="link twitter" target="_blank"><img 
                src="http://icons.iconarchive.com/icons/uiconstock/flatin-social/256/youtube-icon.png" 
-               title="YouTube" alt="HTML5 Icon" style="width:70px;height:70px"></span></a>
-            <a href="https://twitter.com/PageOnlineXS" class="link twitter" target="_blank"><span class="fa fa-cover"><img 
+               title="YouTube" alt="HTML5 Icon" style="width:70px;height:70px"></a>
+            <a href="https://twitter.com/PageOnlineXS" class="link twitter" target="_blank"><img 
                src="http://icons.iconarchive.com/icons/uiconstock/flatin-social/256/google-plus-icon.png" title="Google +" alt="HTML5 Icon" 
-               style="width:70px;height:70px"></span></a>
+               style="width:70px;height:70px"></a>
          </div>
          <p><br>
          <table style="width:98.5%">
