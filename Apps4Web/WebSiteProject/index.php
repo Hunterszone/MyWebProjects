@@ -838,11 +838,11 @@
    <a href="#"><img id="toTop" src="http://rs300.pbsrc.com/albums/nn22/montira_bucket/arrow/arrow-3.gif~c200" title="Back to top" style="width: 70px; height: 70px;"></a>
    <br>
          <center>
-         <button class="nicetoo" onclick="window.location.href='SignUp.htm'")><i class="fa fa-user-plus"></i> Sign up</button>
+         <button class="nicetoo" onclick="window.location.href='signUp.htm'")><i class="fa fa-user-plus"></i> Sign up</button>
          <div class="dropdown">
             <button class="dropbtn"><i class="fa fa-sign-in"></i> Sign in</button>
             <div class="dropdown-content">
-               <input type="button" id="but1" class="nicetoo" onclick="window.location.href='LoginForm.php'" value="Password">
+               <input type="button" id="but1" class="nicetoo" onclick="window.location.href='login_form.php'" value="Password">
                <input type="button" id="but1" class="nicetoo" onclick="window.location.href='generateQR.php'" value="2FA/QR code">
             </div>
          </div>
