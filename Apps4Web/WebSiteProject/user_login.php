@@ -12,6 +12,9 @@
 <!-- CSS for BLINKING TEXT HEADER WITH FIRE SHADOW -->
 <html>
    <!-- CSS -->
+   <!-- Add icon library -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
    <style>
       html {
       scroll-behavior: smooth;
@@ -746,18 +749,18 @@
       <a href="#"><img id="toTop" src="http://rs300.pbsrc.com/albums/nn22/montira_bucket/arrow/arrow-3.gif~c200" title="Back to top" style="width: 70px; height: 70px;"></a>  
       <br>
       <center>
-         <button class="nicetoo" onclick=window.open("quizes.php")>Start quiz</button>
-         <button class="nicetoo" onclick=window.open("welcome_message.php")>My Profile</button>
+         <button class="nicetoo" onclick=window.open("quizes.php")><i class="fa fa-book"></i> Start quiz</button>
+         <button class="nicetoo" onclick=window.open("welcome_message.php")><i class="fa fa-home"></i> My Profile</button>
          <div class="dropdown">
-            <button class="dropbtn">Upload</button>
+            <button class="dropbtn"><i class="fa fa-upload"></i> Upload</button>
             <div class="dropdown-content">
                <input type="button" id="but1" class="nicetoo" onclick=window.open("file_upload.html") value="Files">
                <input type="button" id="but1" class="nicetoo" onclick=window.open("avatar_upload.html") value="Avatar">
             </div>
          </div>
-         <button class="nicetoo" onclick=window.open("forgotPass.php")>New pass</button>
-         <button class="nicetoo" onclick=window.open("contact_form.php")>Contact us</button>
-         <button class="nicetoo" onclick="location.href='index.php'">Logout</button>
+         <button class="nicetoo" onclick=window.open("forgotPass.php")><i class="fa fa-unlock"></i> New pass</button>
+         <button class="nicetoo" onclick=window.open("contact_form.php")><i class="fa fa-comments"></i> Contact us</button>
+         <button class="nicetoo" onclick="location.href='index.php'"><i class="fa fa-sign-out"></i> Logout</button>
       </center>
       </br>  
       <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />

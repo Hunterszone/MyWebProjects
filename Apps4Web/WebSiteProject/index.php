@@ -15,7 +15,9 @@
 <!-- CSS for BLINKING TEXT HEADER WITH FIRE SHADOW -->
 <html>
    <head>
-      <!-- CSS -->
+    <!-- CSS -->
+	<!-- Add icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	  <style>
 		html {
 		  scroll-behavior: smooth;
@@ -836,16 +838,16 @@
    <a href="#"><img id="toTop" src="http://rs300.pbsrc.com/albums/nn22/montira_bucket/arrow/arrow-3.gif~c200" title="Back to top" style="width: 70px; height: 70px;"></a>
    <br>
          <center>
-         <button class="nicetoo" onclick="window.location.href='SignUp.htm'")>Sign up</button>
+         <button class="nicetoo" onclick="window.location.href='SignUp.htm'")><i class="fa fa-user-plus"></i> Sign up</button>
          <div class="dropdown">
-            <button class="dropbtn">Sign in</button>
+            <button class="dropbtn"><i class="fa fa-sign-in"></i> Sign in</button>
             <div class="dropdown-content">
                <input type="button" id="but1" class="nicetoo" onclick="window.location.href='LoginForm.php'" value="Password">
                <input type="button" id="but1" class="nicetoo" onclick="window.location.href='generateQR.php'" value="2FA/QR code">
             </div>
          </div>
          <div class="dropdown">
-            <button class="dropbtn">Articles</button>
+            <button class="dropbtn"><i class="fa fa-book"></i> Articles</button>
             <div class="dropdown-content">
                <input type="button" id="but1" class="nicetoo" onclick=window.open("html.html") value="HTML">
                <input type="button" id="but1" class="nicetoo" onclick=window.open("css.html") value="CSS">
@@ -853,7 +855,7 @@
 			   <input type="button" id="but1" class="nicetoo" onclick=window.open("php.html") value="PHP">
             </div>
          </div>
-         <button class="nicetoo" onclick=window.open("contact_form.php")>Contact us</button>
+         <button class="nicetoo" onclick=window.open("contact_form.php")><i class="fa fa-comments"></i> Contact us</button>
 
     </center>
    </br>  
