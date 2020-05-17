@@ -27,7 +27,7 @@
 </div>
 	<div id="page-wrap">
 
-		<h1>CSS Quiz</h1>
+		<h1>HTML Quiz</h1>
                            <?php
     
      if (isset($_POST['$answer1'])) {
