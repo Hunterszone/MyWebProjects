@@ -754,8 +754,8 @@
          <div class="dropdown">
             <button class="dropbtn"><i class="fa fa-upload"></i> Upload</button>
             <div class="dropdown-content">
-               <input type="button" id="but1" class="nicetoo" onclick=window.open("file_upload.html") value="Files">
-               <input type="button" id="but1" class="nicetoo" onclick=window.open("avatar_upload.html") value="Avatar">
+               <input type="button" id="but1" class="nicetoo" onclick="location.href='file_upload.html'" value="Files">
+               <input type="button" id="but1" class="nicetoo" onclick="location.href='avatar_upload.html'" value="Avatar">
             </div>
          </div>
          <button class="nicetoo" onclick=window.open("forgotPass.php")><i class="fa fa-unlock"></i> New pass</button>

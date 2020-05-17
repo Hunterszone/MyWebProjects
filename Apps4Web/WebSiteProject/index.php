@@ -840,7 +840,7 @@
          <center>
          <button class="nicetoo" onclick="window.location.href='signUp.htm'")><i class="fa fa-user-plus"></i> Sign up</button>
          <div class="dropdown">
-            <button class="dropbtn"><i class="fa fa-sign-in"></i> Sign in</button>
+            <button class="dropbtn"><i class="fa fa-sign-in"></i> Login</button>
             <div class="dropdown-content">
                <input type="button" id="but1" class="nicetoo" onclick="window.location.href='login_form.php'" value="Password">
                <input type="button" id="but1" class="nicetoo" onclick="window.location.href='generateQR.php'" value="2FA/QR code">
