@@ -758,8 +758,8 @@
                <input type="button" id="but1" class="nicetoo" onclick="location.href='avatar_upload.html'" value="Avatar">
             </div>
          </div>
-         <button class="nicetoo" onclick=window.open("forgotPass.php")><i class="fa fa-unlock"></i> New pass</button>
-         <button class="nicetoo" onclick=window.open("contact_form.php")><i class="fa fa-comments"></i> Contact us</button>
+         <button class="nicetoo" onclick="location.href='forgotPass.php'"><i class="fa fa-unlock"></i> New pass</button>
+         <button class="nicetoo" onclick="location.href='contact_form.php'"><i class="fa fa-comments"></i> Contact us</button>
          <button class="nicetoo" onclick="location.href='index.php'"><i class="fa fa-sign-out"></i> Logout</button>
       </center>
       </br>  
