@@ -749,7 +749,7 @@
       <a href="#"><img id="toTop" src="http://rs300.pbsrc.com/albums/nn22/montira_bucket/arrow/arrow-3.gif~c200" title="Back to top" style="width: 70px; height: 70px;"></a>  
       <br>
       <center>
-         <button class="nicetoo" onclick=window.open("quizes.php")><i class="fa fa-book"></i> Start quiz</button>
+         <button class="nicetoo" onclick="location.href='quizes.php'"><i class="fa fa-book"></i> Start quiz</button>
          <button class="nicetoo" onclick=window.open("welcome_message.php")><i class="fa fa-home"></i> My Profile</button>
          <div class="dropdown">
             <button class="dropbtn"><i class="fa fa-upload"></i> Upload</button>

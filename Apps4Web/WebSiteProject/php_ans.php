@@ -119,7 +119,7 @@
 		<TR><TD ALIGN=Center>
 The Quiz has finished
 
-<p><a href="php_quiz2.php" target="_blank">Start Second Quiz</a>
+<p><a href="php_quiz2.php">Start Second Quiz</a>
         
         </TD></TR>	
        

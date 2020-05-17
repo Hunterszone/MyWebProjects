@@ -27,7 +27,7 @@
 </div>
 	<div id="page-wrap">
 
-		<h1>CSS Quiz</h1>
+		<h1>HTML Quiz</h1>
                            <?php
     if (isset($_POST['$answer1'])) {
     $answer1 = $_POST['question-1-answers'];
@@ -119,7 +119,7 @@
 	<TR><TD ALIGN=Center>
 The Quiz has finished
 
-<p><a href="html_quiz2.php" target="_blank">Start Second Quiz</a>
+<p><a href="html_quiz2.php">Start Second Quiz</a>
         
         </TD></TR>
       	

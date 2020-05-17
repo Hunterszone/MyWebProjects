@@ -87,8 +87,7 @@ echo "<div class='error'><br><br><br><br>
   <head>
     <meta name="generator"
     content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
-    <title></title>
-  </head>
+    <title>New password</title>
     			<table>
 				<tr>
 					<td>
@@ -136,5 +135,6 @@ background-size: cover;
 
 </style> 	
 
-  </body>
+    </body>
+  </head>
 </html>

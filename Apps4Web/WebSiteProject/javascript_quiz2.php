@@ -200,7 +200,7 @@ function Goahead (number){
 <TR><TD ALIGN=Center>
 The Quiz has finished
 <BR>Percentage of correct responses: <?php print $percentaje ; ?> %
-<p><a href="index.php" target="_blank">Home Page</a>
+<p><a href="index.php">Home Page</a>
 
     
     <TR><TD ALIGN=Center>

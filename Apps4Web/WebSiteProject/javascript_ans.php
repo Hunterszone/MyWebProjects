@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	
-	<title>PHP Quiz</title>
+	<title>JS Quiz</title>
 	
 	<link rel="stylesheet" type="text/css" href="//css/styles.css" />
 </head>
@@ -120,7 +120,7 @@
 	<TR><TD ALIGN=Center>
 The Quiz has finished
 
-<p><a href="javascript_quiz2.php" target="_blank">Start Second Quiz</a>
+<p><a href="javascript_quiz2.php">Start Second Quiz</a>
         
         </TD></TR>	
 	</div>

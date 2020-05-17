@@ -7,6 +7,7 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 <head>
+	<title>Contact Us</title>
     <script type="text/javascript">
 
         var app = angular.module("myNoteApp", []);

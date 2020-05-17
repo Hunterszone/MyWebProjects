@@ -188,7 +188,7 @@ The Quiz has finished
 <p><A HREF="<?php print $address; ?>">Home Page</a>
 <TR><TD ALIGN=Center>
 
-<p><a href="html_quiz3.php" target="_blank">Start Third Quiz</a>
+<p><a href="html_quiz3.php">Start Third Quiz</a>
         
         </TD></TR>
 <?php } ?>
