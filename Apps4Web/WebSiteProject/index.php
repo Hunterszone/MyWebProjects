@@ -15,6 +15,7 @@
 <!-- CSS for BLINKING TEXT HEADER WITH FIRE SHADOW -->
 <html>
    <head>
+   <title>Home</title>
     <!-- CSS -->
 	<!-- Add icon library -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -855,8 +856,7 @@
 			   <input type="button" id="but1" class="nicetoo" onclick=window.open("php.html") value="PHP">
             </div>
          </div>
-         <button class="nicetoo" onclick=window.open("contact_form.php")><i class="fa fa-comments"></i> Contact us</button>
-
+         <button class="nicetoo" onclick="window.location.href='contact_form.php'"><i class="fa fa-comments"></i> Contact us</button>
     </center>
    </br>  
    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
