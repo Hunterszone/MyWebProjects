@@ -14,6 +14,8 @@
                 echo "!</p>";
 				echo "<p>Your personal ID is: " . htmlspecialchars($_SESSION['SESS_MEMBER_ID'], ENT_QUOTES, 'UTF-8');
                 echo "</p>";
+				echo "<p>Your password is: " . htmlspecialchars($_SESSION['SESS_PASSWORD'], ENT_QUOTES, 'UTF-8');
+                echo "</p>";
                 echo "<p>Your email is: " . htmlspecialchars($_SESSION['SESS_EMAIL'], ENT_QUOTES, 'UTF-8');
                 echo "</p>";
                 echo "<p>Your hostname is: " . htmlspecialchars($_SERVER['SERVER_NAME'], ENT_QUOTES, 'UTF-8');
