@@ -836,7 +836,7 @@
    <p><br>
    <center><b><i><font face="algerian"><font size="6"><font color="white">YOUR PLACE <font color="yellow">FOR</font> WEB DEVELOPMENT <font color="yellow"></font><font color="yellow">&</font>WEB DESIGN</font></font></font></font></i></b></center>
    </br></p>
-   <a href="#"><img id="toTop" src="http://rs300.pbsrc.com/albums/nn22/montira_bucket/arrow/arrow-3.gif~c200" title="Back to top" style="width: 70px; height: 70px;"></a>
+   <a href="#"><img id="toTop" src="gallery/scroll-to-top.gif" title="Back to top" style="width: 70px; height: 70px;"></a>
    <br>
          <center>
          <button class="nicetoo" onclick="window.location.href='signUp.htm'")><i class="fa fa-user-plus"></i> Sign up</button>

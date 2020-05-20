@@ -746,7 +746,7 @@
             color="yellow">&</font> WEB DESIGN</font></font></font></font></i></b>
       </center>
       </br></p>
-      <a href="#"><img id="toTop" src="http://rs300.pbsrc.com/albums/nn22/montira_bucket/arrow/arrow-3.gif~c200" title="Back to top" style="width: 70px; height: 70px;"></a>  
+      <a href="#"><img id="toTop" src="gallery/scroll-to-top.gif" title="Back to top" style="width: 70px; height: 70px;"></a>
       <br>
       <center>
          <button class="nicetoo" onclick="location.href='quizes.php'"><i class="fa fa-book"></i> Start quiz</button>
