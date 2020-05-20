@@ -856,7 +856,13 @@
 			   <input type="button" id="but1" class="nicetoo" onclick=window.open("php.html") value="PHP">
             </div>
          </div>
-         <button class="nicetoo" onclick="window.location.href='contact_form.php'"><i class="fa fa-comments"></i> Contact us</button>
+		 <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-comments"></i> Contacts us</button>
+            <div class="dropdown-content">
+               <input type="button" id="but1" class="nicetoo" onclick=window.open("contact_form.php") value="Feedback">
+               <input type="button" id="but1" class="nicetoo" onclick=window.open("phpBB3/index.php") value="Forum">
+            </div>
+         </div>
     </center>
    </br>  
    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
