@@ -66,6 +66,10 @@
 											<td><div align="right"></div></td>
 											<td><a href="forgotPass.php" target="_blank">Forgot password ?</a></td>
 										</tr>
+										<tr>
+											<td><div align="right"></div></td>
+											<td><a href="mailto:k.drenski91@gmail.com" target="_blank">Contact administrator</a></td>
+										</tr>
 									</table>
 								</form>
 							</body>

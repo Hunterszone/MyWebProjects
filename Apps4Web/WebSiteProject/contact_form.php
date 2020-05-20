@@ -64,6 +64,9 @@ else                /* send the submitted data */
 	mail("k.drenski91@gmail.com", $subject, $message, $from);
 	echo "<center>";
 	echo "Feedback sent! Thank you!";
+	echo "<p>";
+	echo "If you experience any troubles, please <a href='mailto:k.drenski91@gmail.com'> contact administrator</a>";
+    echo "</p>";
 	echo "</center>";   
     }  
 ?>
