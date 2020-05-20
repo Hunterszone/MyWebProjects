@@ -8,7 +8,7 @@
 <?php } else { 
     if (isset($_FILES['file']) &&
     ($_FILES['file']['error'] == UPLOAD_ERR_OK)) {
-        $newPath = 'C:\\xampp\\htdocs\\' . basename($_FILES['file']['name']);
+        $newPath = $_SERVER['DOCUMENT_ROOT'] . '\\uploads\\' . basename($_FILES['file']['name']);
         if (move_uploaded_file($_FILES['file']['tmp_name'], $newPath)) {
             print "File saved to $newPath";
         } else {
