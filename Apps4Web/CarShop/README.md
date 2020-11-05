@@ -7,3 +7,6 @@
 * There is also an option to buy the desired brand, model or part for a certain price, which could possibly redirect to an online warehouse or a car selling platform, in order to ease a future deal for the selected item.
 
 * As this is still a prototype, any future ideas or suggestions are greatly welcome.
+
+## Screenshots
+![Screenshot](images/scr1.png)
