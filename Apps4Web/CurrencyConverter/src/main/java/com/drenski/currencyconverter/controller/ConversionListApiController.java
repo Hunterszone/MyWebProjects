@@ -19,8 +19,12 @@ public class ConversionListApiController {
 	 * http://localhost:8080/history?date=2019-03-07&currency=USD,AUD,CAD,PLN,MXN
 	 */
 
+	private ConversionListApiService service;
+	
 	@Autowired
-	ConversionListApiService service;
+	public ConversionListApiController(ConversionListApiService service) {
+		this.service = service;
+	}
 
 	private String[] conversionListResults;
 	private String template = "List from %s for currencies %s : ";
@@ -28,7 +32,7 @@ public class ConversionListApiController {
 	@GetMapping("/history")
 	public String conversionRate(@RequestParam(value = "date", defaultValue = "2010-03-07") String date,
 			@RequestParam(value = "currency", defaultValue = "BGN") String currency) {
-		conversionListResults = service.extractConversionListData(date, currency);
+		conversionListResults = this.service.extractConversionListData(date, currency);
 		try {
 			DbConnWithH2.initDbConn();
 		} catch (SQLException e) {

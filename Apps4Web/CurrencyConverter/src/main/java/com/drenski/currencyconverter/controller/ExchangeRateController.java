@@ -18,8 +18,12 @@ public class ExchangeRateController {
 	 * Test sample: http://localhost:8080/exchange?source=USD&target=BGN
 	 */
 
+	private ExchangeRateService service;
+	
 	@Autowired
-	ExchangeRateService service;
+	public ExchangeRateController(ExchangeRateService service) {
+		this.service = service;
+	}
 
 	private String[] exchangeResults;
 	private String template = "Exchange rate of %s for 1 %s is: ";
@@ -27,7 +31,7 @@ public class ExchangeRateController {
 	@GetMapping("/exchange")
 	public String exchangeRate(@RequestParam(value = "source", defaultValue = "USD") String source,
 			@RequestParam(value = "target", defaultValue = "BGN") String target) {
-		exchangeResults = service.extractExchangeData(source, target);
+		exchangeResults = this.service.extractExchangeData(source, target);
 		try {
 			DbConnWithH2.initDbConn();
 		} catch (SQLException e) {

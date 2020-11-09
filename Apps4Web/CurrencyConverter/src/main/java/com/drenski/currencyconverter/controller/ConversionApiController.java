@@ -19,8 +19,12 @@ public class ConversionApiController {
 	 * (NB: requires paid subscription to work !!!)
 	 */
 
+	private ConversionApiService service;
+
 	@Autowired
-	ConversionApiService service;
+	public ConversionApiController(ConversionApiService service) {
+		this.service = service;
+	}
 
 	private String[] conversionResults;
 	private String template = "Conversion rate from %s to %s for amount %s is: ";
@@ -29,7 +33,7 @@ public class ConversionApiController {
 	public String conversionRate(@RequestParam(value = "source", defaultValue = "USD") String source,
 			@RequestParam(value = "target", defaultValue = "BGN") String target,
 			@RequestParam(value = "amount", defaultValue = "10") String amount) {
-		conversionResults = service.extractConversionData(source, target, amount);
+		conversionResults = this.service.extractConversionData(source, target, amount);
 		try {
 			DbConnWithH2.initDbConn();
 		} catch (SQLException e) {
