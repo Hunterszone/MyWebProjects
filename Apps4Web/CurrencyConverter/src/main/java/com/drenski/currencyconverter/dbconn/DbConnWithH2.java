@@ -33,7 +33,7 @@ public class DbConnWithH2 {
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
 			System.out.println("Connected database successfully...");
 
-			// Empty DB before operations - optional
+			// Empty DB table before operations - optional
 //			preparedStatement = conn.prepareStatement("DELETE FROM responses WHERE 1");
 //			preparedStatement.executeUpdate();
 

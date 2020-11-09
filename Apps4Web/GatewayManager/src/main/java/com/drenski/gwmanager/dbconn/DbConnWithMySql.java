@@ -37,7 +37,7 @@ public class DbConnWithMySql {
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
 			System.out.println("Connected database successfully...");
 
-			// Empty DB before operations
+			// Empty DB table before operations
 			preparedStatement = conn.prepareStatement("DELETE FROM devices WHERE 1");
 			preparedStatement.executeUpdate();
 
