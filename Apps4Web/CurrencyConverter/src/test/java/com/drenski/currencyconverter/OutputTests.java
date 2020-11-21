@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
@@ -24,6 +25,7 @@ public class OutputTests {
 		mocks = new SampleMocks();
 	}
 
+	@Ignore
 	@Test
 	public void testModifiedOutput() {
 
