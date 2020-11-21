@@ -11,4 +11,8 @@ public class HelperStructures {
 	public static List<String> outputs = new ArrayList<>();
 	public static Map<String, String> endpointsAndOutputs = new HashMap<>();
 
+	public static boolean isNullOrEmpty(String param) { 
+	    return param == null || param.trim().length() == 0;
+	}
+
 }

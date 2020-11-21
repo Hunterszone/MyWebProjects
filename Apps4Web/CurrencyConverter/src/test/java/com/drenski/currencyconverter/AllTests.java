@@ -4,11 +4,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ InputTest.class, OutputTest.class })
+@Suite.SuiteClasses({ InputTests.class, OutputTests.class })
 
 public class AllTests {
 	public static Class<?>[] getClasses() {
-		Class<?>[] allClasses = { InputTest.class, OutputTest.class };
+		Class<?>[] allClasses = { InputTests.class, OutputTests.class };
 		return allClasses;
 	}
 }
