@@ -17,7 +17,7 @@ public class DbConnWithH2 {
 
 	// JDBC driver name and database URL
 	private static final String JDBC_DRIVER = "org.h2.Driver";
-	private static final String DB_URL = "jdbc:h2:mem:testdb;DATABASE_TO_UPPER=false";
+	private static final String DB_URL = "jdbc:h2:mem:testdb;DATABASE_TO_UPPER=false;DB_CLOSE_DELAY=-1;IGNORECASE=TRUE";
 
 	// Database credentials
 	private static final String USER = "sa";
