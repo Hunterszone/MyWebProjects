@@ -10,7 +10,7 @@ import com.drenski.currencyconverter.service.HelperStructures;
 
 public class DbConnWithH2 {
 	// API extraction
-	private static Map<String, String> endpointAndOutput;
+	private static Map<String, String> endpointAndOutput = HelperStructures.endpointsAndOutputs;
 
 	// JDBC driver name and database URL
 	private static final String JDBC_DRIVER = "org.h2.Driver";
@@ -37,19 +37,14 @@ public class DbConnWithH2 {
 //			preparedStatement = conn.prepareStatement("DELETE FROM responses WHERE 1");
 //			preparedStatement.executeUpdate();
 
-			while (counter < HelperStructures.endpoints.size()) {
-				// STEP 3: Execute a query
-				endpointAndOutput = HelperStructures.endpointsAndOutputs;
-				preparedStatement = conn.prepareStatement("INSERT INTO responses (ENDPOINT, OUTPUT) " + "VALUES (?,?)");
-				preparedStatement.setString(1, endpointAndOutput.keySet().iterator().next());
-				System.out.println("ENDPOINT added: " + endpointAndOutput.keySet().iterator().next());
-				preparedStatement.setString(2, endpointAndOutput.get(endpointAndOutput.keySet().iterator().next()));
-				System.out.println(
-						"OUTPUT added: " + endpointAndOutput.get(endpointAndOutput.keySet().iterator().next()));
-				preparedStatement.executeUpdate();
-				System.out.println("Records inserted into table!");
-				counter++;
-			}
+			// STEP 3: Execute a query
+			preparedStatement = conn.prepareStatement("INSERT INTO responses (ENDPOINT, OUTPUT) " + "VALUES (?,?)");
+			preparedStatement.setString(1, endpointAndOutput.keySet().iterator().next());
+			System.out.println("ENDPOINT added: " + endpointAndOutput.keySet().iterator().next());
+			preparedStatement.setString(2, endpointAndOutput.get(endpointAndOutput.keySet().iterator().next()));
+			System.out.println("OUTPUT added: " + endpointAndOutput.get(endpointAndOutput.keySet().iterator().next()));
+			preparedStatement.executeUpdate();
+			System.out.println("Records inserted into table!");
 
 			// STEP 4: Clean-up environment
 			preparedStatement.close();
