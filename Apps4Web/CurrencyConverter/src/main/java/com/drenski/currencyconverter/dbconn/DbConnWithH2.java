@@ -21,9 +21,10 @@ public class DbConnWithH2 {
 	private static final String PASS = "";
 
 	public static void initDbConn() throws SQLException {
+		
 		Connection conn = null;
 		PreparedStatement preparedStatement = null;
-		int counter = 0;
+		
 		try {
 			// STEP 1: Register JDBC driver
 			Class.forName(JDBC_DRIVER);
