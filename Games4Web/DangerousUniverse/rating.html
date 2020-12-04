@@ -2,76 +2,39 @@
 
 <style>
 
-form .stars {
-  background: url("images/stars.png") repeat-x 0 0;
-  width: 150px;
-  margin: 0 auto;
-}
-
-form .stars input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  filter: alpha(opacity=0);
-}
-form .stars input[type="radio"].star-5:checked ~ span {
-  width: 100%;
-}
-form .stars input[type="radio"].star-4:checked ~ span {
-  width: 80%;
-}
-form .stars input[type="radio"].star-3:checked ~ span {
-  width: 60%;
-}
-form .stars input[type="radio"].star-2:checked ~ span {
-  width: 40%;
-}
-form .stars input[type="radio"].star-1:checked ~ span {
-  width: 20%;
-}
-form .stars label {
-  display: block;
-  width: 30px;
-  height: 30px;
-  margin: 0!important;
-  padding: 0!important;
-  text-indent: -999em;
-  float: left;
-  position: relative;
-  z-index: 10;
-  background: transparent!important;
+form .redS {
+  background: url("images/redStar.png");
+  width: 125px;
+  height: 125px;
   cursor: pointer;
 }
-form .stars label:hover ~ span {
-  background-position: 0 -30px;
+
+form .orangeS {
+  background: url("images/orangeStar.png");
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
 }
-form .stars label.star-5:hover ~ span {
-  width: 100% !important;
+
+form .yellowS {
+  background: url("images/star.png");
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
 }
-form .stars label.star-4:hover ~ span {
-  width: 80% !important;
+
+form .greenS {
+  background: url("images/greenStar.png");
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
 }
-form .stars label.star-3:hover ~ span {
-  width: 60% !important;
-}
-form .stars label.star-2:hover ~ span {
-  width: 40% !important;
-}
-form .stars label.star-1:hover ~ span {
-  width: 20% !important;
-}
-form .stars span {
-  display: block;
-  width: 0;
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 30px;
-  background: url("images/stars.png") repeat-x 0 -60px;
-  -webkit-transition: -webkit-width 0.5s;
-  -moz-transition: -moz-width 0.5s;
-  -ms-transition: -ms-width 0.5s;
-  -o-transition: -o-width 0.5s;
-  transition: width 0.5s;
+
+form .darkGreenS {
+  background: url("images/darkGreen.png");
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
 }
 
 </style>
@@ -92,23 +55,31 @@ function thankyou(){
 
 <body background="images/background.jpg">
 
-<p><center><font size="6"><font color="yellow">Rate us using the stars below:</font></font></center></p>
+<p></br>
+	<center><font size="6"><font color="yellow">Rate us using the stars below:</font></font></center>
+</p>
 
-<form id="ratingsForm">
-	<div class="stars">
-		<input type="radio" name="star" class="star-1" id="star-1" onclick="thankyou();" />
-		<label class="star-1" for="star-1">1</label>
-		<input type="radio" name="star" class="star-2" id="star-2" onclick="thankyou();" />
-		<label class="star-2" for="star-2">2</label>
-		<input type="radio" name="star" class="star-3" id="star-3" onclick="thankyou();" />
-		<label class="star-3" for="star-3">3</label>
-		<input type="radio" name="star" class="star-4" id="star-4" onclick="thankyou();" />
-		<label class="star-4" for="star-4">4</label>
-		<input type="radio" name="star" class="star-5" id="star-5" onclick="thankyou();" />
-		<label class="star-5" for="star-5">5</label>
+<form id="ratingsForm" action="code_exec.php" method="post">
+<center><table>
+<tr>
+	<th>
+		<button class="redS" name="star" class="star-1" id="star-1" value="poor" onclick="thankyou();" />
+	</th>
+	<th>
+		<button class="orangeS" name="star" class="star-2" id="star-2" value="weak" onclick="thankyou();" />
+	</th>
+	<th>
+		<button class="yellowS" name="star" class="star-3" id="star-3" value="so-so" onclick="thankyou();" />
+	</th>
+	<th>
+		<button class="greenS" name="star" class="star-4" id="star-4" value="good" onclick="thankyou();" />
+	</th>	
+	<th>
+		<button class="darkGreenS" name="star" class="star-5" id="star-5" value="awesome" onclick="thankyou();" />
+	</th>
 		<span></span>
-	</div>
-  
+	</th>
+</tr>
 </form>
 
 </body>
