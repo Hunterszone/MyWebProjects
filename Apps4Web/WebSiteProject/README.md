@@ -20,7 +20,14 @@ NB: Port numbers could vary, depends on your preferences
 NB: port number could vary, depends on your preferences  
 
 ## II. Setup DB
-- Create DB, called **phpwebsite**, with tables **users** and **password_reset_temp**,  
+- Create DB, called **phpwebsite**, with tables **users**, having following structure:
+
+![users-table-struct](uploads/users-table-struct.png)
+
+and **password_reset_temp**, having following structure: 
+
+![password_reset_temp-table-struct](uploads/password_reset_temp-table-struct.png)
+
 in order to store your users details and the temp keys, that are generated on password reset  
 
 **WARNING: Always set a default value to INT columns in your table(s)!**  
