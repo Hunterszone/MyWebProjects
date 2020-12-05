@@ -517,6 +517,7 @@ function updateGameArea() {
 			myScore.text = "#PTS COUNTER:" + myGameArea.frameNo * 0 + 0 + 0 + 0 + 0;
 			myScore.update();
 			var sound = document.getElementById("sound8");
+			sound.volume = 0.02;
 			sound.play();
 			myAudio.pause();
 			myLives = new component(27, 27, "images/dead.png", 120, 0, "image", "text");
