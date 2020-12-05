@@ -36,7 +36,7 @@
 
 <p></br>
 	<center><font size="6"><font color="yellow">Thank you for voting!</font></font>
-			<font size="6"><font color="yellow">You think we are <?php echo $_POST['star'] ?>!</font></font>
+			<font size="6"><font color="yellow">You gave us <?php echo $_POST['star'] ?>!</font></font>
 		<p>
 			<a href="./game1.html">
 			   <input type="button" style="cursor: pointer;" value="Back2Game!" />
