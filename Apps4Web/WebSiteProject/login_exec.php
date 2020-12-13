@@ -59,11 +59,17 @@
     		if(mysqli_num_rows($result) > 0) {
     			//Login Successful
     			session_regenerate_id();
-    			$member = mysqli_fetch_assoc($result);
-    			$_SESSION['SESS_MEMBER_ID'] = $member['mem_id'];
+				$member = mysqli_fetch_assoc($result);
+    			$mem_id= $member['mem_id'];
+    			$cookiehash = password_hash($password, PASSWORD_DEFAULT);
+				$cookieQry = "UPDATE users SET login_session='$cookiehash' WHERE mem_id='$mem_id'";
+				$_SESSION['SESS_MEMBER_ID'] = $member['mem_id'];
     			$_SESSION['SESS_USERNAME']  = $member['username'];
     			$_SESSION['SESS_PASSWORD']  = $member['password'];
 				$_SESSION['SESS_EMAIL']  = $member['email'];
+				$_SESSION['USER_IS_LOGGEDIN'] = $member['login_session'];
+				setcookie($member,$cookiehash,time()+3600*24*365,'/','.thatbaddesign.freevar.com');
+				mysqli_query($conn,$cookieQry);
     			session_write_close();
     			header("location: website.php");
     			exit();

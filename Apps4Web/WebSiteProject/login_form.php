@@ -59,6 +59,13 @@
 											<td><input type="password" name="password" type="text" /></td>
 										</tr>
 										<tr>
+											<td><div align="right">Remember me</div></td>
+											<td><input type="checkbox" name="remember" id="remember"
+												<?php if(isset($_COOKIE['USER_IS_LOGGEDIN'])) { ?> checked
+												<?php } ?> />
+											</td>
+										</tr>
+										<tr>
 											<td><div align="right"></div></td>
 											<td><input type="submit" value="Login" /></td>
 										</tr>
