@@ -22,7 +22,7 @@ public class ConversionListApiController {
 	private ConversionListApiService service;
 	
 	@Autowired
-	public ConversionListApiController(ConversionListApiService service) {
+	public ConversionListApiController(final ConversionListApiService service) {
 		this.service = service;
 	}
 

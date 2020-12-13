@@ -21,7 +21,7 @@ public class ExchangeRateController {
 	private ExchangeRateService service;
 	
 	@Autowired
-	public ExchangeRateController(ExchangeRateService service) {
+	public ExchangeRateController(final ExchangeRateService service) {
 		this.service = service;
 	}
 
