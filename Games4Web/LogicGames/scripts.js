@@ -177,8 +177,9 @@ function gameTwo() {
 	document.write('<body background="images/hangman.jpg" />');
 	
     document.write('<style>.nice {background-color: #03AD07;border-style: solid;border-color: black;color: white;padding: 12px 24px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 6px;cursor: pointer;width: 190px;height: 50px;)</style>');
+	
+	document.write('<center><button id="plays" class="nice" onclick="gameTwo();">Play again?</button><button class="nice" id="plays2" onclick="hintword();">Hint</button><button class="nice" id="plays3" onclick="console.log(generateSecret());">Generator</button></center>');
 
-    document.write('<center><button id="plays" class="nice" onclick="gameTwo();">Play again?</button></center>');
 }
 
 
