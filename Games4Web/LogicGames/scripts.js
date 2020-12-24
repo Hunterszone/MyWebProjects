@@ -318,16 +318,16 @@ function hintword() {
 		
 		hintWordTwo();
 		
-		var vocalsCounter = 0;
-		var vocals = ["a", "o", "u", "e", "i"];
+		var vowelsCounter = 0;
+		var vowels = ["a", "o", "u", "e", "i"];
 		
 		for(i = 0; i < secretText.length; i++) {
-			if(vocals.includes(secretText[i])) {
-				vocalsCounter++;
+			if(vowels.includes(secretText[i])) {
+				vowelsCounter++;
 			}
 		}
 		
-		var msg2 = "The word has " + vocalsCounter + " vocals."
+		var msg2 = "The word has " + vowelsCounter + " vowels."
 		
         alert(msg2);
         
