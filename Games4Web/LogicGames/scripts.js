@@ -2,12 +2,14 @@ var attempt = 0;
 var secretText = "decadence";
 var request = new XMLHttpRequest()
 var data;
+var partOfSp = "";
+
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
-function parseApiData() {
+function parseRandWord() {
 
     request.open('GET', 'https://random-word-api.herokuapp.com/word', true)
     request.onload = function() {
@@ -25,9 +27,33 @@ function parseApiData() {
     request.send()
 }
 
+function parsePartOfSpeech() {
+
+	var parsedWord = "https://api.dictionaryapi.dev/api/v2/entries/en/" + secretText;
+	
+    request.open('GET', parsedWord, true)
+    request.onload = function() {
+        // Begin accessing JSON data here
+        data = JSON.parse(this.response)
+
+        if (request.status >= 200 && request.status < 400) {
+            partOfSp = data[0].meanings[0].partOfSpeech;
+            console.log(data[0])
+        } else {
+            console.log('error')
+        }
+    }
+
+    request.send()
+	
+	return partOfSp.toUpperCase();
+}
+
 function generateSecret() {
 
-    parseApiData();
+	attempt = 0;
+    
+	parseRandWord();
 
     //alert(secretText);
 
@@ -43,19 +69,19 @@ function gameTwo() {
 
     document.open();
 
-    var word = prompt("Enter a suggestion: ");
+    console.log("Secret: " + secretText);
+
+	var word = prompt("Enter a suggestion: ");
 
     var wordToLower = word.toLowerCase();
 
-    console.log("Secret: " + secretText);
-
     var stack = [];
 
-    var counter = -1;
+    var wordAsterisks = [];
+
+	var counter = -1;
 
     var low = secretText.toLowerCase();
-
-    var wordAsterisks = [];
 
     for (i = 0; i < secretText.length; i++) {
         wordAsterisks[i] = '*';
@@ -278,22 +304,48 @@ function hintword() {
 
     if (attempt == 1) {
 
-        alert("The word is oposite to PROGRESS, but not exactly..Hint attempt No. " + attempt);
-
         hintWordOne();
+		
+		var msg1 = "The word has " + secretText.length + " letters."
+
+        alert(msg1);
+
     }
 
 
 
     if (attempt == 2) {
-        alert("When something is rolling back and could not be stopped..Hint attempt No. " + attempt);
-        hintWordTwo();
+		
+		hintWordTwo();
+		
+		var vocalsCounter = 0;
+		var vocals = ["a", "o", "u", "e", "i"];
+		
+		for(i = 0; i < secretText.length; i++) {
+			if(vocals.includes(secretText[i])) {
+				vocalsCounter++;
+			}
+		}
+		
+		var msg2 = "The word has " + vocalsCounter + " vocals."
+		
+        alert(msg2);
+        
     }
 
 
     if (attempt == 3) {
-        alert("The German word for it is Dekadenz..Hint attempt No. " + attempt + ". No more hints!");
-        hintWordThree();
+        
+		hintWordThree();
+		
+		var firstLetter = secretText[0];
+		var lastLetter = secretText[secretText.length-1];
+				
+		var msg3 = "The first letter is " + firstLetter.toUpperCase() + 
+				   " and the last letter is " + lastLetter.toUpperCase() + 
+				   ". Part of speech: " + parsePartOfSpeech();
+		
+		alert(msg3);
     }
 
 
