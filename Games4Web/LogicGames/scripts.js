@@ -2,7 +2,7 @@ var attempt = 0;
 var secretText = "decadence";
 var request = new XMLHttpRequest()
 var data;
-var partOfSp = "";
+var partOfSp = "NOUN";
 
 
 function getRandomInt(max) {
