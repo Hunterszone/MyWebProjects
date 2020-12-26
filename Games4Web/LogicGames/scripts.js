@@ -2,9 +2,10 @@ var attempt = 0;
 var secretText = "decadence";
 var request = new XMLHttpRequest()
 var data;
-var partOfSp = "NOUN";
-
-
+var partOfSp = "noun";
+var wordDefinition = "Moral or cultural decline as characterized by excessive indulgence in pleasure or luxury.";
+var parsedWord;
+	
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
@@ -18,6 +19,7 @@ function parseRandWord() {
 
         if (request.status >= 200 && request.status < 400) {
             secretText = data[0];
+			parseWordAttributes();
             //console.log(data[0].word)
         } else {
             console.log('error')
@@ -25,50 +27,55 @@ function parseRandWord() {
     }
 
     request.send()
+	
+	return secretText;
 }
 
-function parsePartOfSpeech() {
+function parseWordAttributes() {
 
-	var parsedWord = "https://api.dictionaryapi.dev/api/v2/entries/en/" + secretText;
+	if (request.status >= 200 && request.status < 400) {
+		parsedWord = "https://api.dictionaryapi.dev/api/v2/entries/en/" + secretText;		
+		
+		request.open('GET', parsedWord, true)
+		
+		request.onload = function() {
+			// Begin accessing JSON data here
+			data = JSON.parse(this.response)
+			wordDefinition = data[0].meanings[0].definitions[0].definition;
+			partOfSp = data[0].meanings[0].partOfSpeech;
+					
+			if (request.status >= 200 && request.status < 400) {
+				console.log(data[0])
+			} else {
+				wordDefinition = "Definition is missing!";
+				partOfSp = "Part of speech info is missing!";
+				console.log('error')
+			}
+		}
+
+		request.send()
+		
+	}
 	
-    request.open('GET', parsedWord, true)
-    request.onload = function() {
-        // Begin accessing JSON data here
-        data = JSON.parse(this.response)
-
-        if (request.status >= 200 && request.status < 400) {
-            partOfSp = data[0].meanings[0].partOfSpeech;
-            console.log(data[0])
-        } else {
-            console.log('error')
-        }
-    }
-
-    request.send()
-	
-	return partOfSp.toUpperCase();
+	return wordDefinition + " Part of speech: " + partOfSp.toUpperCase();
 }
 
 function generateSecret() {
 
 	attempt = 0;
-    
+	
 	parseRandWord();
 
     //alert(secretText);
-
+	
     document.write('<p><font color="red" size="4"><center><b>New word was generated!</b></center></font>');
-
-    return secretText;
-
 }
 
 
-
 function gameTwo() {
-
+	
     document.open();
-
+	
     console.log("Secret: " + secretText);
 
 	var word = prompt("Enter a suggestion: ");
@@ -301,7 +308,6 @@ function loadPage() {
 }
 
 function hintword() {
-    attempt++;
 
     if (attempt == 1) {
 
@@ -312,8 +318,6 @@ function hintword() {
         alert(msg1);
 
     }
-
-
 
     if (attempt == 2) {
 		
@@ -334,7 +338,6 @@ function hintword() {
         
     }
 
-
     if (attempt == 3) {
         
 		hintWordThree();
@@ -344,12 +347,10 @@ function hintword() {
 				
 		var msg3 = "The first letter is " + firstLetter.toUpperCase() + 
 				   " and the last letter is " + lastLetter.toUpperCase() + 
-				   ". Part of speech: " + parsePartOfSpeech();
+				   ". Definition: " + parseWordAttributes();
 		
 		alert(msg3);
     }
-
-
 
     if (attempt == 4) {
         document.write("<br>");
@@ -372,5 +373,6 @@ function hintword() {
 
         attempt = 0;
     }
-
+	
+	attempt++;
 }
