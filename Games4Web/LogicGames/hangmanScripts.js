@@ -138,44 +138,6 @@ function gameTwo() {
     }
 
 
-
-    var result = prompt("Please confirm your suggestion");
-
-    if (result === null) {
-
-        document.write('<font color="#f836bd" size="4"><center><b>SUGGESTION NOT VERIFIED!</b></center></font>');
-
-		document.write('<style>body{background-size: 100%;}</style>');
-
-		document.write('<body background="images/hangman.jpg" />');
-		
-        document.write('<style>.nice {background-color: #03AD07;border-style: solid;border-color: black;color: white;padding: 12px 24px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 6px;cursor: pointer;width: 190px;height: 50px;)</style>');
-
-        document.write('<center><button id="plays" class="nice" onclick="gameTwo();">Play again?</button><button class="nice" id="plays2" onclick="hintword();">Hint</button><button class="nice" id="plays3" onclick="console.log(generateSecret());">Generator</button></center>');
-
-        return;
-
-    }
-
-
-
-    if (result != word) {
-        document.write('<font color="#f836bd" size="4"><center><br><b>CONFIRMATION FAILED!</b></center></font>');
-		
-		document.write('<style>body{background-size: 100%;}</style>');
-
-        document.write('<body background="images/hangman.jpg" />');
-
-        document.write('<style>.nice {background-color: #03AD07;border-style: solid;border-color: black;color: white;padding: 12px 24px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 6px;cursor: pointer;width: 190px;height: 50px;)</style>');
-
-        document.write('<center><button id="plays4" class="nice" onclick="gameTwo();">Play again?</button><button class="nice" id="plays5" onclick="hintword();">Hint</button><button class="nice" id="plays6" onclick="console.log(generateSecret());">Generator</button></center>');
-
-        return;
-
-    }
-
-
-
     document.write("<br>");
 
 	document.write('<style>body{background-size: 100%;}</style>');
