@@ -6,10 +6,6 @@ var partOfSp = "noun";
 var wordDefinition = "Moral or cultural decline as characterized by excessive indulgence in pleasure or luxury.";
 var wordSynonyms;
 var parsedWord;
-	
-function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-}
 
 function parseRandWord() {
 
@@ -72,10 +68,10 @@ function generateSecret() {
 }
 
 function gameTwo() {
-	
+		
     document.open();
-	
-    console.log("Secret: " + secretText);
+		
+	console.log("Secret: " + secretText);
 
 	var word = prompt("Enter a suggestion: ");
 
@@ -112,25 +108,28 @@ function gameTwo() {
 
                 var wordAsterisksToLower = wordAsterisks.join(',').replace(/,/g, '').split();
 
-                document.write('<p><font color="red" size="4"><center><b> Comparisson No: </b></center></font>' + '<font color="red" size="4"><center><b>' + (counter + 1) + '</b></center></font>' + '<font color="yellow" size="4"><center><b>The following letter and position match: On position</b></center></font>' + '<font color="yellow" size="4"><center><b>' + (counter + 1) + '</b></center></font>' + '<font color="yellow" size="4"><center><b> is letter </b></center></font>' + '<font color="pink" size="4"><center><b>' + stack.toUpperCase() + '</b></center></font></p>');
+                document.write('<p><font color="white" size="4"><center><b> Comparisson No: </b></center></font>' + '<font color="white" size="4"><center><b>' + (counter + 1) + '</b></center></font>' + '<font color="yellow" size="4"><center><b>The following letter and position match: On position</b></center></font>' + '<font color="yellow" size="4"><center><b>' + (counter + 1) + '</b></center></font>' + '<font color="yellow" size="4"><center><b> is letter </b></center></font>' + '<font color="pink" size="4"><center><b>' + stack.toUpperCase() + '</b></center></font></p>');
 
                 document.write("\n\n");
 
-                document.write('<p><font color="orange" size="4"><center><b>' + wordAsterisksToLower.map(function(x) {
+                document.write('<p><font color="cyan" size="4"><center><b>' + wordAsterisksToLower.map(function(x) {
                     return x.toUpperCase()
                 }) + '</b></center></font></p>');
             }
 
         }
 
-
-
         if (wordToLower == low) {
-            document.write('<font color="orange" size="4"><center><b>\nA PERFECT MATCH! YOU WON!</b></center></font>');
+			
+			document.write('<audio id="celebrateSound" src="sounds/victory.wav" preload="auto"></audio>');
+      
+			var sound = document.getElementById("celebrateSound");
+			sound.play();
+			perfectMatch();
+			
+            document.write('<font color="cyan" size="4"><center><b>\nA PERFECT MATCH! YOU WON!</b></center></font>');
 
-            document.write('<center><table><tr><th><button class="nice" onclick="perfectMatch();">Celebrate!</button></th></tr></table></center>');
-        } else {
-            document.write('<font color="orange" size="4"><center><br><b>\nYOU ARE NOW CLOSER!</b></center></font>');
+            //document.write('<center><table><tr><th><button class="nice" onclick="perfectMatch();">Celebrate!</button></th></tr></table></center>');
         }
 
     } else if (!isNaN(wordToLower)) {
@@ -142,22 +141,13 @@ function gameTwo() {
 
 	document.write('<style>body{background-size: 100%;}</style>');
 
-	document.write('<body background="images/hangman.jpg" />');
+	document.write('<body background="images/hangman2.jpg" />');
 	
     document.write('<style>.nice {background-color: #03AD07;border-style: solid;border-color: black;color: white;padding: 12px 24px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 6px;cursor: pointer;width: 190px;height: 50px;)</style>');
 	
 	document.write('<center><button id="plays" class="nice" onclick="gameTwo();">Play again?</button><button class="nice" id="plays2" onclick="hintword();">Hint</button><button class="nice" id="plays3" onclick="console.log(generateSecret());">Generator</button></center>');
-
-}
-
-
-
-function movingButt() {
-    document.getElementById("drag5").style.display = "inline-block";
-
-    document.getElementById("drag6").style.display = "inline-block";
-
-    document.getElementById("drag13").style.display = "inline-block";
+	
+	document.write('<br><center><textarea id="hintWord" name="hintWord" rows="5" cols="50">Hints will be displayed here</textarea></center><br>');
 
 }
 
@@ -172,7 +162,8 @@ function hintWordOne() {
 }
 
 function hintWordTwo() {
-    var msg = new SpeechSynthesisUtterance();
+    
+	var msg = new SpeechSynthesisUtterance();
 
     msg.text = "Hint number two!";
 
@@ -182,7 +173,8 @@ function hintWordTwo() {
 }
 
 function hintWordThree() {
-    var msg = new SpeechSynthesisUtterance();
+    
+	var msg = new SpeechSynthesisUtterance();
 
     msg.text = "Hint number three!";
 
@@ -192,9 +184,22 @@ function hintWordThree() {
 }
 
 function perfectMatch() {
-    var msg = new SpeechSynthesisUtterance();
+    
+	var msg = new SpeechSynthesisUtterance();
 
     msg.text = "Congratulations! A perfect match!";
+
+    msg.lang = 'en-GB';
+
+    speechSynthesis.speak(msg);
+
+}
+
+function gameOver() {
+	
+    var msg = new SpeechSynthesisUtterance();
+
+    msg.text = "You lost! Game over!";
 
     msg.lang = 'en-GB';
 
@@ -230,44 +235,6 @@ function drop(ev) {
 }
 
 
-
-
-function loadPage() {
-
-    var elem = document.getElementById("myBar");
-
-    var width = 0;
-
-    var id = setInterval(frame, 50);
-
-    function frame() {
-
-        if (width >= 100) {
-
-            clearInterval(id);
-
-            document.getElementById("myBar").style.display = "none";
-
-            document.getElementById("myP").style.display = "none";
-
-        } else {
-
-            width++;
-
-            elem.style.width = width + '%';
-
-            var num = width * 1 / 1;
-
-            num = num.toFixed(0)
-
-            document.getElementById("demo").innerHTML = num;
-
-        }
-
-    }
-
-}
-
 function hintword() {
 
     if (attempt == 1) {
@@ -275,8 +242,8 @@ function hintword() {
         hintWordOne();
 		
 		var msg1 = "The word has " + secretText.length + " letters."
-
-        alert(msg1);
+			
+		document.getElementById('hintWord').innerHTML = "Hint 1: " + msg1;
 
     }
 
@@ -295,7 +262,7 @@ function hintword() {
 		
 		var msg2 = "The word has " + vowelsCounter + " vowels."
 		
-        alert(msg2);
+		document.getElementById('hintWord').innerHTML = "Hint 2: " + msg2;
         
     }
 
@@ -310,27 +277,26 @@ function hintword() {
 				   " and the last letter is " + lastLetter.toUpperCase() + 
 				   ". Definition: " + parseWordAttributes() + "! Could be plural or 3rd person.";
 		
-		alert(msg3);
+		document.getElementById('hintWord').innerHTML = "Hint 3: " + msg3;
     }
 
     if (attempt == 4) {
+		
+		document.write('<audio id="lossSound" src="sounds/highsc.wav" preload="auto"></audio>');
+      
+		var soundLoss = document.getElementById("lossSound");
+		soundLoss.play();
+		gameOver();
+		
         document.write("<br>");
 		
 		document.write('<style>body{background-size: 100%;}</style>');
 
-        document.write('<body background="images/hangman.jpg" />');
+        document.write('<body background="images/hangman2.jpg" />');
 
         document.write('<font color="yellow" size="4"><center><b>No more hints! Game over!</b></center></font>');
 
         document.write('<style>.nice {background-color: #03AD07;border-style: solid;border-color: black;color: white;padding: 12px 24px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 6px;cursor: pointer;width: 190px;height: 50px;)</style>');
-
-        document.write('<center><table><tr><th><button class="nice" onclick="gameTwo();">Play again?</button></th></tr></table></center>');
-
-        document.getElementById("plays4").style.display = "none";
-
-        document.getElementById("plays5").style.display = "none";
-
-        document.getElementById("plays6").style.display = "none";
 
         attempt = 0;
     }
