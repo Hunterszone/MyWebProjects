@@ -4,6 +4,7 @@ var request = new XMLHttpRequest()
 var data;
 var partOfSp = "noun";
 var wordDefinition = "Moral or cultural decline as characterized by excessive indulgence in pleasure or luxury.";
+var wordSynonyms;
 var parsedWord;
 	
 function getRandomInt(max) {
@@ -32,8 +33,9 @@ function parseRandWord() {
 }
 
 function parseWordAttributes() {
-
-	if (request.status >= 200 && request.status < 400) {
+	
+	if (request.status >= 200 && request.status < 400 && secretText.localeCompare("undefined") != 0) {
+		
 		parsedWord = "https://api.dictionaryapi.dev/api/v2/entries/en/" + secretText;		
 		
 		request.open('GET', parsedWord, true)
@@ -42,22 +44,20 @@ function parseWordAttributes() {
 			// Begin accessing JSON data here
 			data = JSON.parse(this.response)
 			wordDefinition = data[0].meanings[0].definitions[0].definition;
+			console.log(data[0].meanings[0].definitions[0].synonyms);
+			wordSynonyms = data[0].meanings[0].definitions[0].synonyms.join();
 			partOfSp = data[0].meanings[0].partOfSpeech;
-					
-			if (request.status >= 200 && request.status < 400) {
-				console.log(data[0])
-			} else {
-				wordDefinition = "Definition is missing!";
-				partOfSp = "Part of speech info is missing!";
-				console.log('error')
-			}
-		}
-
+			console.log(data[0]);
+		} 
 		request.send()
-		
+	} else {
+		wordDefinition = "Definition is missing!";
+		partOfSp = "Part of speech info is missing!";
+		wordSynonyms = "SYNONYMS INFO IS MISSING!";
+		console.log('error')
 	}
 	
-	return wordDefinition + " Part of speech: " + partOfSp.toUpperCase();
+	return wordDefinition.toUpperCase() + " Part of speech: " + partOfSp.toUpperCase() + "!" + " Synonyms: " + wordSynonyms;
 }
 
 function generateSecret() {
@@ -68,9 +68,8 @@ function generateSecret() {
 
     //alert(secretText);
 	
-    document.write('<p><font color="red" size="4"><center><b>New word was generated!</b></center></font>');
+    alert("New word was generated!");
 }
-
 
 function gameTwo() {
 	
@@ -347,7 +346,7 @@ function hintword() {
 				
 		var msg3 = "The first letter is " + firstLetter.toUpperCase() + 
 				   " and the last letter is " + lastLetter.toUpperCase() + 
-				   ". Definition: " + parseWordAttributes();
+				   ". Definition: " + parseWordAttributes() + "! Could be plural or 3rd person.";
 		
 		alert(msg3);
     }
