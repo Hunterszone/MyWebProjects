@@ -5,7 +5,7 @@
 	// DB connection
     $host = 'localhost';
 	$user = 'root';
-    $pass = '';
+    $pass = 'root';
     $db = 'dangerous';
 	$prefix = "";
 	$fallback_address = "game1.html";
