@@ -119,9 +119,9 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['1/5', '2/5', '3/5', '4/5', '5/5'],
+        labels: ['1/5 (poor)', '2/5 (weak)', '3/5 (average)', '4/5 (good)', '5/5 (excellent)'],
         datasets: [{
-            label: 'Total votes: ' + parseInt(counterS1 + counterS2 + counterS3 + counterS4 + counterS5),
+            label: parseInt(counterS1 + counterS2 + counterS3 + counterS4 + counterS5) + ' votes',
             data: [counterS1, counterS2, counterS3, counterS4, counterS5],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -141,12 +141,27 @@ var myChart = new Chart(ctx, {
         }]
     },
     options: {
+		legend: {
+                labels: {
+                    fontColor: "yellow",
+                    fontSize: 18
+                }
+        },
         scales: {
             yAxes: [{
                 ticks: {
+					fontColor: "yellow",
                     beginAtZero: true
                 }
-            }]
+            }],
+			xAxes: [{
+                    ticks: {
+                        fontColor: "yellow",
+                        fontSize: 14,
+                        stepSize: 1,
+                        beginAtZero: true
+                    }
+                }]
         }
     }
 });
