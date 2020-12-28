@@ -4,8 +4,10 @@ var request = new XMLHttpRequest()
 var data;
 var partOfSp = "noun";
 var wordDefinition = "Moral or cultural decline as characterized by excessive indulgence in pleasure or luxury.";
-var wordSynonyms;
+var wordSynonyms = "";
 var parsedWord;
+var meanings;
+var definitions;
 
 function parseRandWord() {
 
@@ -30,7 +32,7 @@ function parseRandWord() {
 
 function parseWordAttributes() {
 	
-	if (request.status >= 200 && request.status < 400 && secretText.localeCompare("undefined") != 0) {
+	if (request.status >= 200 && request.status < 400) {
 		
 		parsedWord = "https://api.dictionaryapi.dev/api/v2/entries/en/" + secretText;		
 		
@@ -39,13 +41,24 @@ function parseWordAttributes() {
 		request.onload = function() {
 			// Begin accessing JSON data here
 			data = JSON.parse(this.response)
-			wordDefinition = data[0].meanings[0].definitions[0].definition;
-			console.log(data[0].meanings[0].definitions[0].synonyms);
-			wordSynonyms = data[0].meanings[0].definitions[0].synonyms.join();
-			partOfSp = data[0].meanings[0].partOfSpeech;
+			meanings = data[0].meanings[0];
+			definitions = data[0].meanings[0].definitions[0];
+			
+			if(typeof meanings !== 'undefined' ||
+			   typeof definitions !== 'undefined') {
+				wordDefinition = data[0].meanings[0].definitions[0].definition;
+				wordSynonyms = data[0].meanings[0].definitions[0].synonyms.join();
+				partOfSp = data[0].meanings[0].partOfSpeech;
+			} else {
+				wordDefinition = "Definition is missing!";
+				wordSynonyms = "SYNONYMS INFO IS MISSING!";
+				partOfSp = "Part of speech info is missing!";
+			}
 			console.log(data[0]);
 		} 
+		
 		request.send()
+		
 	} else {
 		wordDefinition = "Definition is missing!";
 		partOfSp = "Part of speech info is missing!";
@@ -53,7 +66,7 @@ function parseWordAttributes() {
 		console.log('error')
 	}
 	
-	return wordDefinition.toUpperCase() + " Part of speech: " + partOfSp.toUpperCase() + "!" + " Synonyms: " + wordSynonyms;
+	return wordDefinition.toUpperCase() + " \nPart of speech: " + partOfSp.toUpperCase() + "!" + " \nSynonyms: " + wordSynonyms;
 }
 
 function generateSecret() {
@@ -93,10 +106,22 @@ function gameTwo() {
 
         //document.write('<font color="yellow" size="4"><center><b>The word matches the required length!</b></center></font>');
 
-        document.write('<font color="yellow" size="4"><center><b>Your suggestion is: </b></center></font>' + '<font color="cyan" size="4"><center><b>' + wordToLower.toUpperCase() + '</b></center></font>');
+        document.write('<font color="yellow" size="4"><center><b>Your suggestion is: </b></center></font>' + '<font color="cyan" size="4"><center><b>' + wordToLower.toUpperCase() + '</b></center></font>');		
+
+		document.write("<br>");
+
+		document.write('<style>body{background-size: 100%;}</style>');
+
+		document.write('<body background="images/hangman2.jpg" />');
+		
+		document.write('<style>.nice {background-color: #03AD07;border-style: solid;border-color: black;color: white;padding: 12px 24px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 6px;cursor: pointer;width: 190px;height: 50px;)</style>');
+		
+		document.write('<center><button id="plays" class="nice" onclick="gameTwo();">Play again?</button><button class="nice" id="plays2" onclick="hintword();">Hint</button><button class="nice" id="plays3" onclick="console.log(generateSecret());">Generator</button></center>');
+		
+		document.write('<br><center><textarea id="hintWord" name="hintWord" rows="10" cols="50">Hints will be displayed here</textarea></center><br>');
+
 
         for (i = 0; i < wordToLower.length; i++) {
-            //console.log(word[i])
 
             counter++;
 
@@ -108,16 +133,17 @@ function gameTwo() {
 
                 var wordAsterisksToLower = wordAsterisks.join(',').replace(/,/g, '').split();
 
-                document.write('<p><font color="white" size="4"><center><b> Comparisson No: </b></center></font>' + '<font color="white" size="4"><center><b>' + (counter + 1) + '</b></center></font>' + '<font color="yellow" size="4"><center><b>The following letter and position match: On position</b></center></font>' + '<font color="yellow" size="4"><center><b>' + (counter + 1) + '</b></center></font>' + '<font color="yellow" size="4"><center><b> is letter </b></center></font>' + '<font color="pink" size="4"><center><b>' + stack.toUpperCase() + '</b></center></font></p>');
-
-                document.write("\n\n");
-
-                document.write('<p><font color="cyan" size="4"><center><b>' + wordAsterisksToLower.map(function(x) {
-                    return x.toUpperCase()
-                }) + '</b></center></font></p>');
             }
 
         }
+		
+		document.write('<p><font color="yellow" size="4"><center><b>The following letters match: </b></center></font></p>');
+
+		document.write("\n\n");
+
+		document.write('<p><font color="cyan" size="4"><center><b>' + wordAsterisksToLower.map(function(x) {
+			return x.toUpperCase()
+		}) + '</b></center></font></p>');
 
         if (wordToLower == low) {
 			
@@ -127,27 +153,26 @@ function gameTwo() {
 			sound.play();
 			perfectMatch();
 			
-            document.write('<font color="cyan" size="4"><center><b>\nA PERFECT MATCH! YOU WON!</b></center></font>');
+            document.write('<font color="yellow" size="4"><center><b>\nA PERFECT MATCH! YOU WON!</b></center></font>');
 
             //document.write('<center><table><tr><th><button class="nice" onclick="perfectMatch();">Celebrate!</button></th></tr></table></center>');
         }
 
-    } else if (!isNaN(wordToLower)) {
+    } else {
         document.write('<font color="yellow" size="4"><center><br><br><b>Looking for a word...</b></center></font>');
+		
+		document.write("<br>");
+
+		document.write('<style>body{background-size: 100%;}</style>');
+
+		document.write('<body background="images/hangman2.jpg" />');
+		
+		document.write('<style>.nice {background-color: #03AD07;border-style: solid;border-color: black;color: white;padding: 12px 24px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 6px;cursor: pointer;width: 190px;height: 50px;)</style>');
+		
+		document.write('<center><button id="plays" class="nice" onclick="gameTwo();">Play again?</button><button class="nice" id="plays2" onclick="hintword();">Hint</button><button class="nice" id="plays3" onclick="console.log(generateSecret());">Generator</button></center>');
+		
+		document.write('<br><center><textarea id="hintWord" name="hintWord" rows="10" cols="50">Hints will be displayed here</textarea></center><br>');
     }
-
-
-    document.write("<br>");
-
-	document.write('<style>body{background-size: 100%;}</style>');
-
-	document.write('<body background="images/hangman2.jpg" />');
-	
-    document.write('<style>.nice {background-color: #03AD07;border-style: solid;border-color: black;color: white;padding: 12px 24px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 6px;cursor: pointer;width: 190px;height: 50px;)</style>');
-	
-	document.write('<center><button id="plays" class="nice" onclick="gameTwo();">Play again?</button><button class="nice" id="plays2" onclick="hintword();">Hint</button><button class="nice" id="plays3" onclick="console.log(generateSecret());">Generator</button></center>');
-	
-	document.write('<br><center><textarea id="hintWord" name="hintWord" rows="5" cols="50">Hints will be displayed here</textarea></center><br>');
 
 }
 
@@ -275,7 +300,7 @@ function hintword() {
 				
 		var msg3 = "The first letter is " + firstLetter.toUpperCase() + 
 				   " and the last letter is " + lastLetter.toUpperCase() + 
-				   ". Definition: " + parseWordAttributes() + "! Could be plural or 3rd person.";
+				   ". \nDefinition: " + parseWordAttributes() + "! Could be plural or 3rd person.";
 		
 		document.getElementById('hintWord').innerHTML = "Hint 3: " + msg3;
     }
@@ -290,16 +315,16 @@ function hintword() {
 		
         document.write("<br>");
 		
-		document.write('<style>body{background-size: 100%;}</style>');
-
-        document.write('<body background="images/hangman2.jpg" />');
-
         document.write('<font color="yellow" size="4"><center><b>No more hints! Game over!</b></center></font>');
-
-        document.write('<style>.nice {background-color: #03AD07;border-style: solid;border-color: black;color: white;padding: 12px 24px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 6px;cursor: pointer;width: 190px;height: 50px;)</style>');
 
         attempt = 0;
     }
 	
+	document.write('<style>body{background-size: 100%;}</style>');
+
+    document.write('<body background="images/hangman2.jpg" />');
+	
+    document.write('<style>.nice {background-color: #03AD07;border-style: solid;border-color: black;color: white;padding: 12px 24px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 6px;cursor: pointer;width: 190px;height: 50px;)</style>');
+
 	attempt++;
 }
