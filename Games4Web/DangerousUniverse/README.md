@@ -1,6 +1,6 @@
 # README - check it out!
 
-### Link: https://me4gaming.com/DangerousUniverse/game1.html or http://me4gaming.mygamesonline.org/DangerousUniverse/game1.html
+### Link: https://thatbaddesign.freevar.com/DangerousUniverse/game1.html
 
 ### Main techniques: moving sprites, collisions detection, frame-rate dependency, mobile version
 
