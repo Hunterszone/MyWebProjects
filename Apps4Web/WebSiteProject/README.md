@@ -32,7 +32,7 @@ and **password_reset_temp**, having following structure:
 
 in order to store your users details and the temp keys, that are generated on password reset  
 
-**WARNING: Always set a default value to INT columns in your table(s)!**  
+**IMPORTANT: Set the length for the PASSWORD column to 255 and always set a default value to INT columns, that are not PK!**  
 
 NB: You can also create your own collection of avatars under the **uploads** folder
 
