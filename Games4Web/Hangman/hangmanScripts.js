@@ -212,7 +212,7 @@ function perfectMatch() {
     
 	var msg = new SpeechSynthesisUtterance();
 
-    msg.text = "Congratulations! A perfect match!";
+    msg.text = "Congratulations! The word is " + secretText;
 
     msg.lang = 'en-GB';
 
