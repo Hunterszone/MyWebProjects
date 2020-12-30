@@ -1,5 +1,7 @@
 # Custom website for web technologies
 
+## Current URL: http://thatbaddesign.freevar.com/
+
 ## I. How to deploy
 
 ### 1. Manual setup
