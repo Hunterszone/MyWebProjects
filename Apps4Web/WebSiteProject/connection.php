@@ -3,7 +3,7 @@
 	// DB connection
     $host = 'localhost';
 	$user = 'root';
-    $pass = '';
+    $pass = 'root';
     $db = 'phpwebsite';
 	$prefix = "";
     $conn = new mysqli($host, $user, $pass, $db, 3306) or die("Could not connect to the database");
