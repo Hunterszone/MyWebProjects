@@ -118,7 +118,7 @@ function gameTwo() {
 		
 		document.write('<center><button id="plays" class="nice" onclick="gameTwo();">Play again?</button><button class="nice" id="plays2" onclick="hintword();">Hint</button><button class="nice" id="plays3" onclick="console.log(generateSecret());">Generator</button></center>');
 		
-		document.write('<br><center><textarea id="hintWord" name="hintWord" rows="10" cols="50">Hints will be displayed here</textarea></center><br>');
+		document.write('<br><center><textarea readonly id="hintWord" name="hintWord" rows="10" cols="50">Hints will be displayed here</textarea></center><br>');
 
 
         for (i = 0; i < wordToLower.length; i++) {
@@ -171,7 +171,7 @@ function gameTwo() {
 		
 		document.write('<center><button id="plays" class="nice" onclick="gameTwo();">Play again?</button><button class="nice" id="plays2" onclick="hintword();">Hint</button><button class="nice" id="plays3" onclick="console.log(generateSecret());">Generator</button></center>');
 		
-		document.write('<br><center><textarea id="hintWord" name="hintWord" rows="10" cols="50">Hints will be displayed here</textarea></center><br>');
+		document.write('<br><center><textarea readonly id="hintWord" name="hintWord" rows="10" cols="50">Hints will be displayed here</textarea></center><br>');
     }
 
 }
