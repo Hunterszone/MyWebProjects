@@ -8,12 +8,14 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.net.UnknownHostException;
+import java.sql.SQLException;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
 
+import com.drenski.currencyconverter.dbconn.DbConnWithH2;
 import com.drenski.currencyconverter.handler.ApiHandler;
 
 @Service
@@ -72,6 +74,13 @@ public class ExchangeRateService implements ApiHandler {
 
 		HelperStructures.outputs.add(jsonRespBlock);
 		HelperStructures.endpointsAndOutputs.put(HelperStructures.endpoints.get(0), HelperStructures.outputs.get(0));
+		
+		try {
+			DbConnWithH2.initDbConn();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		return new String[] { source.toString(), target.toString() };
 	}
