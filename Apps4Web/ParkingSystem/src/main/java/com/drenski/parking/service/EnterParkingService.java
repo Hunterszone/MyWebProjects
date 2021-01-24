@@ -29,51 +29,50 @@ public class EnterParkingService implements ApiHandler {
 
 		for (int i = 0; i < CreateParkingController.parkLev; i++) {
 
-			levels[i] = new ParkingLevel();
-			property.setParkingLevel(levels[i]);
-
+			levels[EnterParkingController.lvl] = new ParkingLevel();
+			property.setParkingLevel(levels[EnterParkingController.lvl]);
+			
 			if (vehicle.getVehicleType() == null || vehicle.getVehicleType().isEmpty()) {
 				vehicle.setVehicleType(EnterParkingController.vehType);
 				log.debug("getVehicleType: " + vehicle.getVehicleType());
 				if (vehicle.getVehicleType().equalsIgnoreCase("car")) {
 					property.getParkingLevel().setNum_of_occupied_places_for_cars(1);
-					CreateParkingController.spotsForCars -= property.getParkingLevel()
+					EnterParkingController.occupiedSpotsForCars += property.getParkingLevel()
 							.getNum_of_occupied_places_for_cars();
-//					EnterParkingController.entId += 1;
-					if (CreateParkingController.spotsForCars == 0) {
+					if ((CreateParkingController.spotsForCars - EnterParkingController.occupiedSpotsForCars) == 0) {
 						return "No available spots for cars!";
 					}
 				}
 				if (vehicle.getVehicleType().equalsIgnoreCase("bus")) {
 					property.getParkingLevel().setNum_of_occupied_places_for_buses(1);
-					CreateParkingController.spotsForBuses -= property.getParkingLevel()
+					EnterParkingController.occupiedSpotsForBuses += property.getParkingLevel()
 							.getNum_of_occupied_places_for_buses();
-//					EnterParkingController.entId += 1;
-					if (CreateParkingController.spotsForBuses == 0) {
+					if ((CreateParkingController.spotsForBuses - EnterParkingController.occupiedSpotsForBuses) == 0) {
 						return "No available spots for buses!";
 					}
 				}
 				if (vehicle.getVehicleType().equalsIgnoreCase("motor")) {
 					property.getParkingLevel().setNum_of_occupied_places_for_motors(1);
-					CreateParkingController.spotsForMotors -= property.getParkingLevel()
+					EnterParkingController.occupiedSpotsForMotors += property.getParkingLevel()
 							.getNum_of_occupied_places_for_motors();
-//					EnterParkingController.entId += 1;
-					if (CreateParkingController.spotsForMotors == 0) {
+					if ((CreateParkingController.spotsForMotors - EnterParkingController.occupiedSpotsForMotors) == 0) {
 						return "No available spots for motors!";
 					}
 				}
-				if(CreateParkingController.spotsForCars <= 0 && 
-						CreateParkingController.spotsForBuses <= 0 && 
-						CreateParkingController.spotsForMotors <= 0) {
-					return "This parking level is fully occupied!";
+				if(CreateParkingController.spotsForCars - EnterParkingController.occupiedSpotsForCars <= 0 && 
+						CreateParkingController.spotsForBuses - EnterParkingController.occupiedSpotsForBuses <= 0 && 
+						CreateParkingController.spotsForMotors - EnterParkingController.occupiedSpotsForMotors <= 0) {
+					return "Parking level " + EnterParkingController.lvl + " is fully occupied!";
 				}
 			}
 		}
 
 		return String.format(
-				"Vehicle type: %s, entrance ID: %s, spots left - for cars: %s, for buses: %s, for motors: %s",
-				vehicle.getVehicleType(), EnterParkingController.entId, CreateParkingController.spotsForCars,
-				CreateParkingController.spotsForBuses, CreateParkingController.spotsForMotors);
+				"Vehicle type: %s, entrance ID: %s, spots left on level %s - for cars: %s, for buses: %s, for motors: %s",
+				vehicle.getVehicleType(), EnterParkingController.entId, EnterParkingController.lvl, 
+				CreateParkingController.spotsForCars - EnterParkingController.occupiedSpotsForCars,
+				CreateParkingController.spotsForBuses - EnterParkingController.occupiedSpotsForBuses, 
+				CreateParkingController.spotsForMotors - EnterParkingController.occupiedSpotsForMotors);
 	}
 
 	@Override

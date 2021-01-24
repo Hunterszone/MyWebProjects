@@ -60,7 +60,7 @@ public class CreateParkingService implements ApiHandler {
 			log.debug("getNum_of_exits: " + property.getNum_of_exits());
 		}
 
-		return String.format("Parking levels: %s, num of spots per level - cars: %s, buses: %s, motors: %s, num of entrances: %s, num of exits: %s",
+		return String.format("Parking levels: %s, num of available spots per level - cars: %s, buses: %s, motors: %s, num of entrances: %s, num of exits: %s",
 				CreateParkingController.parkLev, 
 				vehiclesPerLevel.get("cars"), 
 				vehiclesPerLevel.get("buses"),

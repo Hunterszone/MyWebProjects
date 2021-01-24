@@ -24,6 +24,10 @@ public class EnterParkingController {
 
 	public static String vehType;
 	public static int entId;
+	public static int lvl;
+	public static int occupiedSpotsForCars = 0; 
+	public static int occupiedSpotsForBuses = 0; 
+	public static int occupiedSpotsForMotors = 0;
 
 	@Autowired
 	public EnterParkingController(final EnterParkingService service) {
@@ -31,13 +35,19 @@ public class EnterParkingController {
 	}
 
 	@GetMapping("/enterParking")
-	public String enterParking(@RequestParam(value = "vehicleType", defaultValue = "car") String vehicleType,
+	public String enterParking(@RequestParam(value = "level", defaultValue = "1") int level,
+			@RequestParam(value = "vehicleType", defaultValue = "car") String vehicleType,
 			@RequestParam(value = "entranceId", defaultValue = "1") int entranceId) {
 
 		vehType = vehicleType;
 		entId = entranceId;
+		lvl = level;
 
 		entranceData = this.service.extractData();
+		
+		if (entranceData.equals(null)) {
+			return "error";
+		}
 
 		return entranceData;
 	}
