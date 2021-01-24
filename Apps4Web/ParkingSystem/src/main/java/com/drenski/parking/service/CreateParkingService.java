@@ -18,7 +18,7 @@ import com.drenski.parking.model.ParkingProperties;
 @Service
 public class CreateParkingService implements ApiHandler {
 
-	private static Logger log = Logger.getLogger(JsonParserService.class.getName());
+	private static Logger log = Logger.getLogger(CreateParkingService.class.getName());
 
 	@Override
 	public String getAPIResponse() {
@@ -35,21 +35,22 @@ public class CreateParkingService implements ApiHandler {
 			if (property.getParkingLevel().getNum_of_free_places_for_cars() == 0) {
 				property.getParkingLevel().setNum_of_free_places_for_cars(CreateParkingController.spotsForCars);
 				vehiclesPerLevel.put("cars", property.getParkingLevel().getNum_of_free_places_for_cars());
-				log.debug("getNum_of_free_places_for_cars_per_level: " + property.getParkingLevel().getNum_of_free_places_for_cars());
 			}
 
 			if (property.getParkingLevel().getNum_of_free_places_for_buses() == 0) {
 				property.getParkingLevel().setNum_of_free_places_for_buses(CreateParkingController.spotsForBuses);
 				vehiclesPerLevel.put("buses", property.getParkingLevel().getNum_of_free_places_for_buses());
-				log.debug("getNum_of_free_places_for_buses_per_level: " + property.getParkingLevel().getNum_of_free_places_for_buses());
 			}
 
 			if (property.getParkingLevel().getNum_of_free_places_for_motors() == 0) {
 				property.getParkingLevel().setNum_of_free_places_for_motors(CreateParkingController.spotsForMotors);
 				vehiclesPerLevel.put("motors", property.getParkingLevel().getNum_of_free_places_for_motors());
-				log.debug("getNum_of_free_places_for_motors_per_level: " + property.getParkingLevel().getNum_of_free_places_for_motors());
 			}
 		}
+		
+		log.debug("getNum_of_free_places_for_cars_per_level: " + property.getParkingLevel().getNum_of_free_places_for_cars());
+		log.debug("getNum_of_free_places_for_buses_per_level: " + property.getParkingLevel().getNum_of_free_places_for_buses());
+		log.debug("getNum_of_free_places_for_motors_per_level: " + property.getParkingLevel().getNum_of_free_places_for_motors());		
 
 		if (property.getNum_of_entrances() == 0) {
 			property.setNum_of_entrances(CreateParkingController.numOfEntr);

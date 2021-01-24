@@ -18,7 +18,7 @@ import com.drenski.parking.model.Vehicle;
 @Service
 public class EnterParkingService implements ApiHandler {
 
-	private static Logger log = Logger.getLogger(JsonParserService.class.getName());
+	private static Logger log = Logger.getLogger(EnterParkingService.class.getName());
 
 	@Override
 	public String getAPIResponse() {
@@ -34,7 +34,6 @@ public class EnterParkingService implements ApiHandler {
 			
 			if (vehicle.getVehicleType() == null || vehicle.getVehicleType().isEmpty()) {
 				vehicle.setVehicleType(EnterParkingController.vehType);
-				log.debug("getVehicleType: " + vehicle.getVehicleType());
 				if (vehicle.getVehicleType().equalsIgnoreCase("car")) {
 					property.getParkingLevel().setNum_of_occupied_places_for_cars(1);
 					EnterParkingController.occupiedSpotsForCars += property.getParkingLevel()
@@ -65,6 +64,9 @@ public class EnterParkingService implements ApiHandler {
 					return "Parking level " + EnterParkingController.lvl + " is fully occupied!";
 				}
 			}
+
+			log.debug("getVehicleType: " + vehicle.getVehicleType());
+
 		}
 
 		return String.format(

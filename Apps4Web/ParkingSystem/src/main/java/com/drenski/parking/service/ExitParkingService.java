@@ -19,7 +19,7 @@ import com.drenski.parking.model.Vehicle;
 @Service
 public class ExitParkingService implements ApiHandler {
 
-	private static Logger log = Logger.getLogger(JsonParserService.class.getName());
+	private static Logger log = Logger.getLogger(ExitParkingService.class.getName());
 
 	@Override
 	public String getAPIResponse() {
@@ -35,7 +35,6 @@ public class ExitParkingService implements ApiHandler {
 
 			if (vehicle.getVehicleType() == null || vehicle.getVehicleType().isEmpty()) {
 				vehicle.setVehicleType(ExitParkingController.vehType);
-				log.debug("getVehicleType: " + vehicle.getVehicleType());
 				if (vehicle.getVehicleType().equalsIgnoreCase("car")) {
 					property.getParkingLevel().setNum_of_free_places_for_cars(1);
 					ExitParkingController.availableSpotsForCars += property.getParkingLevel()
@@ -61,6 +60,9 @@ public class ExitParkingService implements ApiHandler {
 					}
 				}
 			}
+			
+			log.debug("getVehicleType: " + vehicle.getVehicleType());
+			
 		}
 
 		return String.format(
