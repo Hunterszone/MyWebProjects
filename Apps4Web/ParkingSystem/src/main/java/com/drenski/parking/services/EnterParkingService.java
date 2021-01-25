@@ -1,4 +1,4 @@
-package com.drenski.parking.service;
+package com.drenski.parking.services;
 
 import java.sql.SQLException;
 
@@ -9,9 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.drenski.parking.controller.CreateParkingController;
 import com.drenski.parking.controller.EnterParkingController;
-import com.drenski.parking.dbconn.DbConnWithH2;
 import com.drenski.parking.handler.ApiHandler;
-import com.drenski.parking.model.Vehicle;
+import com.drenski.parking.models.Vehicle;
 
 @Service
 public class EnterParkingService implements ApiHandler {
@@ -80,12 +79,7 @@ public class EnterParkingService implements ApiHandler {
 			e.printStackTrace();
 		}
 
-		try {
-			DbConnWithH2.initDbConn();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		DbConnWithH2.initDbConn();
 
 		return jsonRespBlock;
 	}

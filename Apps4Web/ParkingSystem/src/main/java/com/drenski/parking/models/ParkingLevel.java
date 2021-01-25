@@ -1,32 +1,52 @@
-package com.drenski.parking.model;
+package com.drenski.parking.models;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "PARKING_LEVEL")
 public class ParkingLevel {
+	
+	@Id
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 
-	@JsonProperty(value = "level_num")
+	@Column
 	private int level_num;
 	
-	@JsonProperty(value = "num_of_free_places_for_cars")
+	@Column
 	private int num_of_free_places_for_cars;
 	
-	@JsonProperty(value = "num_of_occupied_places_for_cars")
+	@Column
 	private int num_of_occupied_places_for_cars;
 	
-	@JsonProperty(value = "num_of_free_places_for_buses")
+	@Column
 	private int num_of_free_places_for_buses;
 	
-	@JsonProperty(value = "num_of_occupied_places_for_buses")
+	@Column
 	private int num_of_occupied_places_for_buses;
 	
-	@JsonProperty(value = "num_of_free_places_for_motors")
+	@Column
 	private int num_of_free_places_for_motors;
 	
-	@JsonProperty(value = "num_of_occupied_places_for_motors")
+	@Column
 	private int num_of_occupied_places_for_motors;
 	
 	public ParkingLevel() {
 	
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getLevel_num() {

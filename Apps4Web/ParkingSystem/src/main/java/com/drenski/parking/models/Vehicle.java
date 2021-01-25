@@ -1,4 +1,4 @@
-package com.drenski.parking.model;
+package com.drenski.parking.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

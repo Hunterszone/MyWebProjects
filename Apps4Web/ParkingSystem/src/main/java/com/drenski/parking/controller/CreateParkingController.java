@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.drenski.parking.service.CreateParkingService;
+import com.drenski.parking.services.CreateParkingService;
 
 @RestController
 public class CreateParkingController {

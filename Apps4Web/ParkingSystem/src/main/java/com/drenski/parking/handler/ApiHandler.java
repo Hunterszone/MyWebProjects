@@ -1,6 +1,6 @@
 package com.drenski.parking.handler;
 
-import com.drenski.parking.model.ParkingProperties;
+import com.drenski.parking.models.ParkingProperties;
 
 public interface ApiHandler extends GettingResponseHandler, ExtractionHandler {
 
