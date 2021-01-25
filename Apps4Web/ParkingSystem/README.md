@@ -4,7 +4,7 @@ Spring Boot-based REST API for managing slots in parking levels for different ve
 # How to use:
 
 ## With H2 in-memory DB: 
-Run the applcation from within your preffered IDE. On startup a DB table, called RESPONSES, is created. Yon can access it under **http://localhost:8888/h2-console**  
+Run the applcation from within your preffered IDE. On startup a DB table, called PARKING_LEVEL, is created. Yon can access it under **http://localhost:8888/h2-console**  
 
 ## If no DB is configured and/or you dont have an IDE: 
 Just double-click the pre-built JAR artifact, that is on top level inside the app dir. Then access Localhost on port **8888** with the endpoints, provided inside the controllers (if you want to address another port, do it within the **application.properties** under the **resources** folder) 
