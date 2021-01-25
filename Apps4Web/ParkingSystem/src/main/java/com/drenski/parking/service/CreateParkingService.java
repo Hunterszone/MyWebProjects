@@ -13,7 +13,6 @@ import com.drenski.parking.controller.CreateParkingController;
 import com.drenski.parking.dbconn.DbConnWithH2;
 import com.drenski.parking.handler.ApiHandler;
 import com.drenski.parking.model.ParkingLevel;
-import com.drenski.parking.model.ParkingProperties;
 
 @Service
 public class CreateParkingService implements ApiHandler {
@@ -23,34 +22,29 @@ public class CreateParkingService implements ApiHandler {
 	@Override
 	public String getAPIResponse() {
 
-		ParkingProperties property = new ParkingProperties();
 		ParkingLevel[] levels = new ParkingLevel[CreateParkingController.parkLev];
-		Map<String, Integer> vehiclesPerLevel = new HashMap<String, Integer>(); 
-		
-		for(int i = 0; i < CreateParkingController.parkLev; i++) {
-			
+		Map<String, Integer> vehiclesPerLevel = new HashMap<String, Integer>();
+
+		for (int i = 0; i < CreateParkingController.parkLev; i++) {
 			levels[i] = new ParkingLevel();
+			levels[i].setNum_of_free_places_for_cars(CreateParkingController.spotsForCars);
+			levels[i].setNum_of_free_places_for_buses(CreateParkingController.spotsForBuses);
+			levels[i].setNum_of_free_places_for_motors(CreateParkingController.spotsForMotors);
 			property.setParkingLevel(levels[i]);
-			
-			if (property.getParkingLevel().getNum_of_free_places_for_cars() == 0) {
-				property.getParkingLevel().setNum_of_free_places_for_cars(CreateParkingController.spotsForCars);
-				vehiclesPerLevel.put("cars", property.getParkingLevel().getNum_of_free_places_for_cars());
-			}
-
-			if (property.getParkingLevel().getNum_of_free_places_for_buses() == 0) {
-				property.getParkingLevel().setNum_of_free_places_for_buses(CreateParkingController.spotsForBuses);
-				vehiclesPerLevel.put("buses", property.getParkingLevel().getNum_of_free_places_for_buses());
-			}
-
-			if (property.getParkingLevel().getNum_of_free_places_for_motors() == 0) {
-				property.getParkingLevel().setNum_of_free_places_for_motors(CreateParkingController.spotsForMotors);
-				vehiclesPerLevel.put("motors", property.getParkingLevel().getNum_of_free_places_for_motors());
-			}
 		}
-		
-		log.debug("getNum_of_free_places_for_cars_per_level: " + property.getParkingLevel().getNum_of_free_places_for_cars());
-		log.debug("getNum_of_free_places_for_buses_per_level: " + property.getParkingLevel().getNum_of_free_places_for_buses());
-		log.debug("getNum_of_free_places_for_motors_per_level: " + property.getParkingLevel().getNum_of_free_places_for_motors());		
+
+		vehiclesPerLevel.put("cars", property.getParkingLevel().getNum_of_free_places_for_cars());
+
+		vehiclesPerLevel.put("buses", property.getParkingLevel().getNum_of_free_places_for_buses());
+
+		vehiclesPerLevel.put("motors", property.getParkingLevel().getNum_of_free_places_for_motors());
+
+		log.debug("getNum_of_free_places_for_cars_per_level: "
+				+ property.getParkingLevel().getNum_of_free_places_for_cars());
+		log.debug("getNum_of_free_places_for_buses_per_level: "
+				+ property.getParkingLevel().getNum_of_free_places_for_buses());
+		log.debug("getNum_of_free_places_for_motors_per_level: "
+				+ property.getParkingLevel().getNum_of_free_places_for_motors());
 
 		if (property.getNum_of_entrances() == 0) {
 			property.setNum_of_entrances(CreateParkingController.numOfEntr);
@@ -61,13 +55,10 @@ public class CreateParkingService implements ApiHandler {
 			log.debug("getNum_of_exits: " + property.getNum_of_exits());
 		}
 
-		return String.format("Parking levels: %s, num of available spots per level - cars: %s, buses: %s, motors: %s, num of entrances: %s, num of exits: %s",
-				CreateParkingController.parkLev, 
-				vehiclesPerLevel.get("cars"), 
-				vehiclesPerLevel.get("buses"),
-				vehiclesPerLevel.get("motors"),
-				property.getNum_of_entrances(),
-				property.getNum_of_exits());
+		return String.format(
+				"Parking levels: %s, num of available spots per level - cars: %s, buses: %s, motors: %s, num of entrances: %s, num of exits: %s",
+				CreateParkingController.parkLev, vehiclesPerLevel.get("cars"), vehiclesPerLevel.get("buses"),
+				vehiclesPerLevel.get("motors"), property.getNum_of_entrances(), property.getNum_of_exits());
 	}
 
 	@Override
