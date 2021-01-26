@@ -1,4 +1,4 @@
-package com.drenski.parking.handler;
+package com.drenski.parking.handlers;
 
 import com.drenski.parking.models.ParkingProperties;
 

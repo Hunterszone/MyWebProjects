@@ -7,9 +7,9 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
 
-import com.drenski.parking.controller.CreateParkingController;
-import com.drenski.parking.controller.ExitParkingController;
-import com.drenski.parking.handler.ApiHandler;
+import com.drenski.parking.controllers.CreateParkingController;
+import com.drenski.parking.controllers.ExitParkingController;
+import com.drenski.parking.handlers.ApiHandler;
 import com.drenski.parking.models.Vehicle;
 
 @Service

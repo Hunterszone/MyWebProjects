@@ -1,4 +1,4 @@
-package com.drenski.parking.controller;
+package com.drenski.parking.controllers;
 
 import javax.servlet.http.HttpServletRequest;
 

@@ -1,4 +1,4 @@
-package com.drenski.parking.controller;
+package com.drenski.parking.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

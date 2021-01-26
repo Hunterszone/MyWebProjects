@@ -24,6 +24,9 @@ public class ParkingLevelService {
     	parkingLevel.setNum_of_free_places_for_cars(100);
     	parkingLevel.setNum_of_free_places_for_buses(59);
     	parkingLevel.setNum_of_free_places_for_motors(23);
+    	parkingLevel.setNum_of_occupied_places_for_cars(12);
+    	parkingLevel.setNum_of_occupied_places_for_buses(12);
+    	parkingLevel.setNum_of_occupied_places_for_motors(12);
         return parkingRepository.save(parkingLevel);
     }
     
