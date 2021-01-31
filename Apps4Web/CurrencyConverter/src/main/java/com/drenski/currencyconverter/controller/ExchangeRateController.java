@@ -16,15 +16,14 @@ public class ExchangeRateController {
 	 * Test sample: http://localhost:8888/exchange?source=USD&target=BGN
 	 */
 
-	private ExchangeRateService service;
+	private ExchangeRateService service;	
+	private String[] exchangeResults;
+	private String template = "Exchange rate of %s for 1 %s is: ";
 	
 	@Autowired
 	public ExchangeRateController(final ExchangeRateService service) {
 		this.service = service;
 	}
-
-	private String[] exchangeResults;
-	private String template = "Exchange rate of %s for 1 %s is: ";
 
 	@GetMapping("/exchange")
 	public String exchangeRate(@RequestParam(value = "source", defaultValue = "USD") String source,
