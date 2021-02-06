@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.drenski.parking.services.ParkingLevelService;
+import com.drenski.parking.services.ParkingService;
 
 @Configuration
 @ComponentScan(basePackages={"com.drenski.parking.*"})

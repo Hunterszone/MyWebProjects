@@ -15,27 +15,30 @@ public class ParkingLevel {
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
-	@Column
-	private int level_num;
 	
-	@Column
-	private int num_of_free_places_for_cars;
+	@Column(name = "entrances")
+	private int numOfEntrances;
 	
-	@Column
-	private int num_of_occupied_places_for_cars;
+	@Column(name = "exits")
+	private int numOfExits;
 	
-	@Column
-	private int num_of_free_places_for_buses;
+	@Column(name = "freeSlotsForCars")
+	private int numOfFreeSlotsForCars;
 	
-	@Column
-	private int num_of_occupied_places_for_buses;
+	@Column(name = "occupiedSlotsForCars")
+	private int numOfOccupiedSlotsForCars;
 	
-	@Column
-	private int num_of_free_places_for_motors;
+	@Column(name = "freeSlotsForBuses")
+	private int numOfFreeSlotsForBuses;
 	
-	@Column
-	private int num_of_occupied_places_for_motors;
+	@Column(name = "occupiedSlotsForBuses")
+	private int numOfOccupiedSlotsForBuses;
+	
+	@Column(name = "freeSlotsForMotors")
+	private int numOfFreeSlotsForMotors;
+	
+	@Column(name = "occupiedSlotsForMotors")
+	private int numOfOccupiedSlotsForMotors;
 	
 	public ParkingLevel() {
 	
@@ -49,60 +52,68 @@ public class ParkingLevel {
 		this.id = id;
 	}
 
-	public int getLevel_num() {
-		return level_num;
+	public int getNumOfEntrances() {
+		return numOfEntrances;
 	}
 
-	public void setLevel_num(int level_num) {
-		this.level_num = level_num;
+	public void setNumOfEntrances(int numOfEntrances) {
+		this.numOfEntrances = numOfEntrances;
 	}
 
-	public int getNum_of_free_places_for_cars() {
-		return num_of_free_places_for_cars;
+	public int getNumOfExits() {
+		return numOfExits;
 	}
 
-	public void setNum_of_free_places_for_cars(int num_of_free_places_for_cars) {
-		this.num_of_free_places_for_cars = num_of_free_places_for_cars;
+	public void setNumOfExits(int numOfExits) {
+		this.numOfExits = numOfExits;
 	}
 
-	public int getNum_of_free_places_for_buses() {
-		return num_of_free_places_for_buses;
+	public int getNumOfFreeSlotsForCars() {
+		return numOfFreeSlotsForCars;
 	}
 
-	public void setNum_of_free_places_for_buses(int num_of_free_places_for_buses) {
-		this.num_of_free_places_for_buses = num_of_free_places_for_buses;
+	public void setNumOfFreeSlotsForCars(int numOfFreeSlotsForCars) {
+		this.numOfFreeSlotsForCars = numOfFreeSlotsForCars;
 	}
 
-	public int getNum_of_free_places_for_motors() {
-		return num_of_free_places_for_motors;
+	public int getNumOfOccupiedSlotsForCars() {
+		return numOfOccupiedSlotsForCars;
 	}
 
-	public void setNum_of_free_places_for_motors(int num_of_free_places_for_motors) {
-		this.num_of_free_places_for_motors = num_of_free_places_for_motors;
+	public void setNumOfOccupiedSlotsForCars(int numOfOccupiedSlotsForCars) {
+		this.numOfOccupiedSlotsForCars = numOfOccupiedSlotsForCars;
 	}
 
-	public int getNum_of_occupied_places_for_cars() {
-		return num_of_occupied_places_for_cars;
+	public int getNumOfFreeSlotsForBuses() {
+		return numOfFreeSlotsForBuses;
 	}
 
-	public void setNum_of_occupied_places_for_cars(int num_of_occupied_places_for_cars) {
-		this.num_of_occupied_places_for_cars = num_of_occupied_places_for_cars;
+	public void setNumOfFreeSlotsForBuses(int numOfFreeSlotsForBuses) {
+		this.numOfFreeSlotsForBuses = numOfFreeSlotsForBuses;
 	}
 
-	public int getNum_of_occupied_places_for_buses() {
-		return num_of_occupied_places_for_buses;
+	public int getNumOfOccupiedSlotsForBuses() {
+		return numOfOccupiedSlotsForBuses;
 	}
 
-	public void setNum_of_occupied_places_for_buses(int num_of_occupied_places_for_buses) {
-		this.num_of_occupied_places_for_buses = num_of_occupied_places_for_buses;
+	public void setNumOfOccupiedSlotsForBuses(int numOfOccupiedSlotsForBuses) {
+		this.numOfOccupiedSlotsForBuses = numOfOccupiedSlotsForBuses;
 	}
 
-	public int getNum_of_occupied_places_for_motors() {
-		return num_of_occupied_places_for_motors;
+	public int getNumOfFreeSlotsForMotors() {
+		return numOfFreeSlotsForMotors;
 	}
 
-	public void setNum_of_occupied_places_for_motors(int num_of_occupied_places_for_motors) {
-		this.num_of_occupied_places_for_motors = num_of_occupied_places_for_motors;
+	public void setNumOfFreeSlotsForMotors(int numOfFreeSlotsForMotors) {
+		this.numOfFreeSlotsForMotors = numOfFreeSlotsForMotors;
 	}
-	
+
+	public int getNumOfOccupiedSlotsForMotors() {
+		return numOfOccupiedSlotsForMotors;
+	}
+
+	public void setNumOfOccupiedSlotsForMotors(int numOfOccupiedSlotsForMotors) {
+		this.numOfOccupiedSlotsForMotors = numOfOccupiedSlotsForMotors;
+	}
+
 }

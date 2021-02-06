@@ -1,6 +1,5 @@
 package com.drenski.parking.services;
 
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,43 +20,43 @@ public class CreateParkingService implements ApiHandler {
 	@Override
 	public String getAPIResponse() {
 
-		ParkingLevel[] levels = new ParkingLevel[CreateParkingController.parkLev];
+		property.setNumOfLevels(CreateParkingController.parkLev);
 		Map<String, Integer> vehiclesPerLevel = new HashMap<String, Integer>();
 
-		for (int i = 0; i < CreateParkingController.parkLev; i++) {
-			levels[i] = new ParkingLevel();
-			levels[i].setNum_of_free_places_for_cars(CreateParkingController.spotsForCars);
-			levels[i].setNum_of_free_places_for_buses(CreateParkingController.spotsForBuses);
-			levels[i].setNum_of_free_places_for_motors(CreateParkingController.spotsForMotors);
-			property.setParkingLevel(levels[i]);
+		for (int i = 0; i < property.getNumOfLevels(); i++) {
+			property.setParkingLevel(new ParkingLevel());
+			property.getParkingLevel().setNumOfFreeSlotsForCars(CreateParkingController.spotsForCars);
+			property.getParkingLevel().setNumOfFreeSlotsForBuses(CreateParkingController.spotsForBuses);
+			property.getParkingLevel().setNumOfFreeSlotsForMotors(CreateParkingController.spotsForMotors);
 		}
 
-		vehiclesPerLevel.put("cars", property.getParkingLevel().getNum_of_free_places_for_cars());
+		vehiclesPerLevel.put("cars", property.getParkingLevel().getNumOfFreeSlotsForCars());
 
-		vehiclesPerLevel.put("buses", property.getParkingLevel().getNum_of_free_places_for_buses());
+		vehiclesPerLevel.put("buses", property.getParkingLevel().getNumOfFreeSlotsForBuses());
 
-		vehiclesPerLevel.put("motors", property.getParkingLevel().getNum_of_free_places_for_motors());
+		vehiclesPerLevel.put("motors", property.getParkingLevel().getNumOfFreeSlotsForMotors());
 
-		log.debug("getNum_of_free_places_for_cars_per_level: "
-				+ property.getParkingLevel().getNum_of_free_places_for_cars());
-		log.debug("getNum_of_free_places_for_buses_per_level: "
-				+ property.getParkingLevel().getNum_of_free_places_for_buses());
-		log.debug("getNum_of_free_places_for_motors_per_level: "
-				+ property.getParkingLevel().getNum_of_free_places_for_motors());
+		log.debug("getNumOfFreeSlotsForCars per level: "
+				+ property.getParkingLevel().getNumOfFreeSlotsForCars());
+		log.debug("getNumOfFreeSlotsForBuses per level: "
+				+ property.getParkingLevel().getNumOfFreeSlotsForBuses());
+		log.debug("getNumOfFreeSlotsForMotors per level: "
+				+ property.getParkingLevel().getNumOfFreeSlotsForMotors());
 
-		if (property.getNum_of_entrances() == 0) {
-			property.setNum_of_entrances(CreateParkingController.numOfEntr);
-			log.debug("getNum_of_entrances: " + property.getNum_of_entrances());
+		if (property.getParkingLevel().getNumOfEntrances() == 0) {
+			property.getParkingLevel().setNumOfEntrances(CreateParkingController.numOfEntr);
+			log.debug("getNumOfEntrances: " + property.getParkingLevel().getNumOfEntrances());
 		}
-		if (property.getNum_of_exits() == 0) {
-			property.setNum_of_exits(CreateParkingController.numOfEx);
-			log.debug("getNum_of_exits: " + property.getNum_of_exits());
+		
+		if (property.getParkingLevel().getNumOfExits() == 0) {
+			property.getParkingLevel().setNumOfExits(CreateParkingController.numOfEx);
+			log.debug("getNumOfExits: " + property.getParkingLevel().getNumOfExits());
 		}
 
 		return String.format(
 				"Parking levels: %s, num of available spots per level - cars: %s, buses: %s, motors: %s, num of entrances: %s, num of exits: %s",
 				CreateParkingController.parkLev, vehiclesPerLevel.get("cars"), vehiclesPerLevel.get("buses"),
-				vehiclesPerLevel.get("motors"), property.getNum_of_entrances(), property.getNum_of_exits());
+				vehiclesPerLevel.get("motors"), property.getParkingLevel().getNumOfEntrances(), property.getParkingLevel().getNumOfExits());
 	}
 
 	@Override

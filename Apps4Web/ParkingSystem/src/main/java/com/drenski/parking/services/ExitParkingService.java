@@ -1,7 +1,5 @@
 package com.drenski.parking.services;
 
-import java.sql.SQLException;
-
 import org.apache.log4j.Logger;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -10,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.drenski.parking.controllers.CreateParkingController;
 import com.drenski.parking.controllers.ExitParkingController;
 import com.drenski.parking.handlers.ApiHandler;
+import com.drenski.parking.models.ParkingLevel;
 import com.drenski.parking.models.Vehicle;
 
 @Service
@@ -21,29 +20,30 @@ public class ExitParkingService implements ApiHandler {
 	public String getAPIResponse() {
 
 		Vehicle vehicle = new Vehicle();
+		property.setParkingLevel(new ParkingLevel());
 
 		if (vehicle.getVehicleType() == null || vehicle.getVehicleType().isEmpty()) {
 			vehicle.setVehicleType(ExitParkingController.vehType);
 			if (vehicle.getVehicleType().equalsIgnoreCase("car")) {
-				property.getParkingLevel().setNum_of_free_places_for_cars(1);
+				property.getParkingLevel().setNumOfFreeSlotsForCars(1);
 				ExitParkingController.availableSpotsForCars += property.getParkingLevel()
-						.getNum_of_free_places_for_cars();
+						.getNumOfFreeSlotsForCars();
 				if (ExitParkingController.availableSpotsForCars == CreateParkingController.spotsForCars) {
 					return "All car spots on this level are available!";
 				}
 			}
 			if (vehicle.getVehicleType().equalsIgnoreCase("bus")) {
-				property.getParkingLevel().setNum_of_free_places_for_buses(1);
+				property.getParkingLevel().setNumOfFreeSlotsForBuses(1);
 				ExitParkingController.availableSpotsForBuses += property.getParkingLevel()
-						.getNum_of_free_places_for_buses();
+						.getNumOfFreeSlotsForBuses();
 				if (ExitParkingController.availableSpotsForBuses == CreateParkingController.spotsForBuses) {
 					return "All bus spots on this level are available!";
 				}
 			}
 			if (vehicle.getVehicleType().equalsIgnoreCase("motor")) {
-				property.getParkingLevel().setNum_of_free_places_for_motors(1);
+				property.getParkingLevel().setNumOfFreeSlotsForMotors(1);
 				ExitParkingController.availableSpotsForMotors += property.getParkingLevel()
-						.getNum_of_free_places_for_motors();
+						.getNumOfFreeSlotsForMotors();
 				if (ExitParkingController.availableSpotsForMotors == CreateParkingController.spotsForMotors) {
 					return "All motor spots on this level are available!";
 				}

@@ -13,7 +13,8 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.drenski.parking.models.ParkingLevel;
-import com.drenski.parking.services.ParkingLevelService;
+import com.drenski.parking.models.ParkingProperties;
+import com.drenski.parking.services.ParkingService;
 
 @RunWith( SpringJUnit4ClassRunner.class )
 @ContextConfiguration(classes = { TestConfiguration.class }, locations = {"classpath:/beans.xml"}, loader = AnnotationConfigContextLoader.class)
@@ -23,19 +24,19 @@ import com.drenski.parking.services.ParkingLevelService;
 public class ParkingServiceUnitTest {
 
     @Autowired
-    private ParkingLevelService parkingLevelService;
+    private ParkingService parkingService;
     
 	@Test
-	public void saveParkingLevelDetails() {
-		ParkingLevel parkingLevel = parkingLevelService.save();
+	public void saveParkingDetails() {
+		ParkingProperties parking = parkingService.save();
 
-		Assert.assertEquals(parkingLevel.getLevel_num(), 3);
+		Assert.assertEquals(parking.getNumOfLevels(), 3);
 	}
 	
 	@Test
 	public void updateParkingLevelDetails() {
-		ParkingLevel parkingLevel = parkingLevelService.update();
+		ParkingProperties parking = parkingService.update();
 
-		Assert.assertEquals(parkingLevel.getLevel_num(), 5);
+		Assert.assertEquals(parking.getNumOfLevels(), 5);
 	}
 }
