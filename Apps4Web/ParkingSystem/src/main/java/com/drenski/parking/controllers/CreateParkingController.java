@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.drenski.parking.dto.ParkingDto;
 import com.drenski.parking.models.ParkingProperties;
 import com.drenski.parking.services.CreateParkingService;
 
@@ -17,8 +16,23 @@ import com.drenski.parking.services.CreateParkingService;
 public class CreateParkingController {
 
 	/*
-	 * Test sample without parameters: http://localhost:8888/createParking
-	 * Test sample with parameters: http://localhost:8888/createParking?parkingLevels=2&numOfSpotsForCars=20&numOfSpotsForBuses=5&numOfSpotsForMotors=10&numOfEntries=3&numOfExits=4
+	 * Example request body:
+	 * {  
+		    "id": 1,
+		    "numOfLevels": 3,
+		    "parkingLevel" :
+		       {
+		            "id": 1,
+		            "numOfEntrances": 4,
+		            "numOfExits": 6,
+		            "numOfFreeSlotsForCars": 4,
+		            "numOfOccupiedSlotsForCars": 66,
+		            "numOfFreeSlotsForBuses": 23,
+		            "numOfOccupiedSlotsForBuses": 50,
+		            "numOfFreeSlotsForMotors": 31,
+		            "occupiedSlotsForMotors": 12
+		        }
+		} 
 	 */
 
 	private CreateParkingService service;
