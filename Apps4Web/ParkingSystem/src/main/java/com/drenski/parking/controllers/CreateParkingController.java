@@ -1,13 +1,19 @@
 package com.drenski.parking.controllers;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.drenski.parking.dto.ParkingDto;
+import com.drenski.parking.models.ParkingProperties;
 import com.drenski.parking.services.CreateParkingService;
 
 @RestController
+@RequestMapping(path = "/", produces = MediaType.APPLICATION_JSON_VALUE)
 public class CreateParkingController {
 
 	/*
@@ -25,26 +31,25 @@ public class CreateParkingController {
 		this.service = service;
 	}
 
-	@GetMapping("/createParking")
-	public String createParking(@RequestParam(value = "parkingLevels", defaultValue = "3") int parkingLevels,
-			@RequestParam(value = "numOfSpotsForCars", defaultValue = "10") int numOfSpotsForCars, 
-			@RequestParam(value = "numOfSpotsForBuses", defaultValue = "8") int numOfSpotsForBuses,
-			@RequestParam(value = "numOfSpotsForMotors", defaultValue = "6") int numOfSpotsForMotors,
-			@RequestParam(value = "numOfEntries", defaultValue = "2") int numOfEntries, 
-			@RequestParam(value = "numOfExits", defaultValue = "2") int numOfExits) {
+	@PostMapping(path = "/createParking")
+	public String createParking(@RequestBody ParkingProperties parkingDetails) {
 		
-		parkLev = parkingLevels;
-		spotsForCars = numOfSpotsForCars;
-		spotsForBuses = numOfSpotsForBuses;
-		spotsForMotors = numOfSpotsForMotors;
-		numOfEntr = numOfEntries;
-		numOfEx = numOfExits;
+		parkLev = parkingDetails.getNumOfLevels();
+		spotsForCars = parkingDetails.getParkingLevel().getNumOfFreeSlotsForCars();
+		spotsForBuses = parkingDetails.getParkingLevel().getNumOfFreeSlotsForBuses();
+		spotsForMotors = parkingDetails.getParkingLevel().getNumOfFreeSlotsForMotors();
+		numOfEntr = parkingDetails.getParkingLevel().getNumOfEntrances();
+		numOfEx = parkingDetails.getParkingLevel().getNumOfExits();
 		
-		parkingData = this.service.extractData();
+		String returnValue = new String();
+        
+        parkingData = this.service.extractData();
+        BeanUtils.copyProperties(parkingData, returnValue);
 		
 		if (parkingData.equals(null)) {
 			return "error";
 		}
-		return parkingData;
+		
+		return returnValue;
 	}
 }

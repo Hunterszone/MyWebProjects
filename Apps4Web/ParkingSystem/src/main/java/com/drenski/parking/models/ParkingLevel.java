@@ -7,37 +7,50 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 @Table(name = "PARKING_LEVEL")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ParkingLevel {
 	
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonProperty(value = "id")
 	private int id;
 	
 	@Column(name = "entrances")
+	@JsonProperty(value = "numOfEntrances")
 	private int numOfEntrances;
 	
 	@Column(name = "exits")
+	@JsonProperty(value = "numOfExits")
 	private int numOfExits;
 	
 	@Column(name = "freeSlotsForCars")
+	@JsonProperty(value = "numOfFreeSlotsForCars")
 	private int numOfFreeSlotsForCars;
 	
 	@Column(name = "occupiedSlotsForCars")
+	@JsonProperty(value = "numOfOccupiedSlotsForCars")
 	private int numOfOccupiedSlotsForCars;
 	
 	@Column(name = "freeSlotsForBuses")
+	@JsonProperty(value = "numOfFreeSlotsForBuses")
 	private int numOfFreeSlotsForBuses;
 	
 	@Column(name = "occupiedSlotsForBuses")
+	@JsonProperty(value = "numOfOccupiedSlotsForBuses")
 	private int numOfOccupiedSlotsForBuses;
 	
 	@Column(name = "freeSlotsForMotors")
+	@JsonProperty(value = "numOfFreeSlotsForMotors")
 	private int numOfFreeSlotsForMotors;
 	
 	@Column(name = "occupiedSlotsForMotors")
+	@JsonProperty(value = "numOfOccupiedSlotsForMotors")
 	private int numOfOccupiedSlotsForMotors;
 	
 	public ParkingLevel() {

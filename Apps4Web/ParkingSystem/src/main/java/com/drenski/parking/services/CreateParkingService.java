@@ -20,7 +20,7 @@ public class CreateParkingService implements ApiHandler {
 	@Override
 	public String getAPIResponse() {
 
-		property.setNumOfLevels(CreateParkingController.parkLev);
+		property.setNumOfLevels(3);
 		Map<String, Integer> vehiclesPerLevel = new HashMap<String, Integer>();
 
 		for (int i = 0; i < property.getNumOfLevels(); i++) {

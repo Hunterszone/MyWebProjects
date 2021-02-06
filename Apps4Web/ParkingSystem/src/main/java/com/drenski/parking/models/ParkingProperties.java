@@ -7,18 +7,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity(name = "PARKING")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ParkingProperties {
 	
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonProperty(value = "id")
 	private int id;
 			
 	@Column
+	@JsonProperty(value = "numOfLevels")
 	private int numOfLevels;
 	
 	@Transient
+	@JsonProperty(value = "parkingLevel")
 	private ParkingLevel parkingLevel;
 		
 	public ParkingProperties() {}
