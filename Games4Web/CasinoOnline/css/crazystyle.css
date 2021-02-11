@@ -1,0 +1,493 @@
+
+
+* { box-sizing: border-box; }
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  font-family: 'Chivo', sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+/*NAVIGATION*/
+
+.navbar {
+  background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-bottom: solid 3px #fff;
+}
+
+.nav-link, .navbar-brand {
+  color: #f4f4f4;
+  cursor: pointer;
+}
+
+.nav-link {
+  margin-right: 1em !important;
+}
+
+.nav-link:hover {
+  color: yellow;
+  font-weight: bold;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.navbar-toggler {
+  background: #fff !important;
+}
+
+/*bankroll navigation bar */
+
+#bankroll {
+  font-weight: bold;
+  font-size: 24px;
+  padding-top: 4px;
+  color: #fff;
+}
+
+#deposit{
+  background-color: #fff;
+  font-weight: bold;
+  color: black;
+}
+
+#deposit:hover{
+  background-color: yellow;
+}
+
+/*jackpot navigation bar */
+
+.flash {
+  color:#f2f;
+  -webkit-animation: flash linear 6s infinite;
+  animation: flash linear 6s infinite;
+  padding-left: 30px;
+  padding-top: 3px;
+}
+
+/*container for the slot machine game*/
+
+#crazy{
+  width: 48%;
+  height: 100%;
+  padding-top: 78px;
+}
+
+/*footer*/
+
+#footer{
+  padding-top: 30px;
+}
+
+/*invisible elements */
+
+#invisible{
+  display: none;
+}
+
+/*spin button and betsizing spinbox*/
+
+#playbutton{
+background-color: #000;
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 40px;
+border-radius: 50%;
+}
+
+#playbutton:hover{
+  cursor: grab;
+  color: black;
+  background-color: yellow;
+}
+
+#playbutton:active {
+  transform: translateY(5px);
+  border: none;
+}
+
+#increasebet{
+  background-color: #000;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#increasebet:hover{
+  cursor: grab;
+  color: black;
+  background-color: yellow;
+}
+
+#decreasebet{
+  background-color: #000;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#decreasebet:hover{
+  cursor: grab;
+  color: black;
+  background-color: yellow;
+}
+
+#currentbet{
+  color: #fff;
+}
+
+/*special event hidden. This event will be revealed under specific circumstances and hidden again once reached the end  */
+
+#specialchest{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+
+#specialchest p {
+  color: #fff;
+  font-weight: bold;
+  -webkit-animation: flash linear 6s infinite;
+  animation: flash linear 6s infinite;
+  font-size: 20px;
+}
+
+#secondchest{
+  margin: 20px;
+}
+#thirdchest{
+  margin-right: 20px;
+}
+
+#continue{
+  margin-left: 20px;
+  visibility: hidden;
+}
+
+
+/*game elements 3d model cells etc*/
+
+.scene {
+  margin: 40px 0;
+  position: relative;
+  width: 210px;
+  height: 140px;
+  margin: 80px auto;
+  perspective: 1000px;
+}
+
+/*reel1*/
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(-288px);
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.carousel__cell {
+  position: absolute;
+  width: 190px;
+  height: 120px;
+  left: 10px;
+  top: 10px;
+  line-height: 116px;
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  transition: transform 1s, opacity 1s;
+}
+
+/*reel2*/
+.carousel2 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(-288px);
+  transform-style: preserve-3d;
+  transition: transform 3s;
+}
+
+.carousel__cell2 {
+  position: absolute;
+  width: 190px;
+  height: 120px;
+  left: 10px;
+  top: 10px;
+  line-height: 116px;
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  transition: transform 1s, opacity 1s;
+}
+/*reel3*/
+.carousel3 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(-288px);
+  transform-style: preserve-3d;
+  transition: transform 4s;
+}
+
+.carousel__cell3 {
+  position: absolute;
+  width: 190px;
+  height: 120px;
+  left: 10px;
+  top: 10px;
+  line-height: 116px;
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  transition: transform 1s, opacity 1s;
+}
+/*pictures inside the reels*/
+
+.carousel__cell:nth-child(9n+1) { background-image: url(../img/bar.jpg);  }
+.carousel__cell:nth-child(9n+2) { background-image: url(../img/gold.jpg); }
+.carousel__cell:nth-child(9n+3) { background-image: url(../img/bikini.jpg); }
+.carousel__cell:nth-child(9n+4) { background-image: url(../img/money.jpg); }
+.carousel__cell:nth-child(9n+5) { background-image: url(../img/uncle.jpg); }
+.carousel__cell:nth-child(9n+6) { background-image: url(../img/jackpot1.jpg); }
+.carousel__cell:nth-child(9n+7) { background-image: url(../img/lambo.jpg); }
+.carousel__cell:nth-child(9n+8) { background-image: url(../img/ferrari.jpg); }
+.carousel__cell:nth-child(9n+0) { background-image: url(../img/diamond.jpg); }
+
+.carousel__cell:nth-child(1) { transform: rotateY(  0deg) translateZ(288px); }
+.carousel__cell:nth-child(2) { transform: rotateY( 40deg) translateZ(288px); }
+.carousel__cell:nth-child(3) { transform: rotateY( 80deg) translateZ(288px); }
+.carousel__cell:nth-child(4) { transform: rotateY(120deg) translateZ(288px); }
+.carousel__cell:nth-child(5) { transform: rotateY(160deg) translateZ(288px); }
+.carousel__cell:nth-child(6) { transform: rotateY(200deg) translateZ(288px); }
+.carousel__cell:nth-child(7) { transform: rotateY(240deg) translateZ(288px); }
+.carousel__cell:nth-child(8) { transform: rotateY(280deg) translateZ(288px); }
+.carousel__cell:nth-child(9) { transform: rotateY(320deg) translateZ(288px); }
+
+
+.carousel__cell2:nth-child(9n+1) { background-image: url(../img/bar.jpg); }
+.carousel__cell2:nth-child(9n+2) { background-image: url(../img/gold.jpg); }
+.carousel__cell2:nth-child(9n+3) { background-image: url(../img/bikini.jpg); }
+.carousel__cell2:nth-child(9n+4) { background-image: url(../img/money.jpg); }
+.carousel__cell2:nth-child(9n+5) { background-image: url(../img/uncle.jpg); }
+.carousel__cell2:nth-child(9n+6) { background-image: url(../img/jackpot1.jpg); }
+.carousel__cell2:nth-child(9n+7) { background-image: url(../img/lambo.jpg); }
+.carousel__cell2:nth-child(9n+8) { background-image: url(../img/ferrari.jpg); }
+.carousel__cell2:nth-child(9n+0) { background-image: url(../img/diamond.jpg); }
+
+.carousel__cell2:nth-child(1) { transform: rotateY( 0deg) translateZ(288px); }
+.carousel__cell2:nth-child(2) { transform: rotateY( 40deg) translateZ(288px); }
+.carousel__cell2:nth-child(3) { transform: rotateY( 80deg) translateZ(288px); }
+.carousel__cell2:nth-child(4) { transform: rotateY(120deg) translateZ(288px); }
+.carousel__cell2:nth-child(5) { transform: rotateY(160deg) translateZ(288px); }
+.carousel__cell2:nth-child(6) { transform: rotateY(200deg) translateZ(288px); }
+.carousel__cell2:nth-child(7) { transform: rotateY(240deg) translateZ(288px); }
+.carousel__cell2:nth-child(8) { transform: rotateY(280deg) translateZ(288px); }
+.carousel__cell2:nth-child(9) { transform: rotateY(320deg) translateZ(288px); }
+
+.carousel__cell3:nth-child(9n+1) { background-image: url(../img/bar.jpg); }
+.carousel__cell3:nth-child(9n+2) { background-image: url(../img/gold.jpg); }
+.carousel__cell3:nth-child(9n+3) { background-image: url(../img/bikini.jpg); }
+.carousel__cell3:nth-child(9n+4) { background-image: url(../img/money.jpg); }
+.carousel__cell3:nth-child(9n+5) { background-image: url(../img/uncle.jpg); }
+.carousel__cell3:nth-child(9n+6) { background-image: url(../img/jackpot1.jpg); }
+.carousel__cell3:nth-child(9n+7) { background-image: url(../img/lambo.jpg);}
+.carousel__cell3:nth-child(9n+8) { background-image: url(../img/ferrari.jpg); }
+.carousel__cell3:nth-child(9n+0) { background-image: url(../img/diamond.jpg); }
+
+.carousel__cell3:nth-child(1) { transform: rotateY(  0deg) translateZ(288px); }
+.carousel__cell3:nth-child(2) { transform: rotateY( 40deg) translateZ(288px); }
+.carousel__cell3:nth-child(3) { transform: rotateY( 80deg) translateZ(288px); }
+.carousel__cell3:nth-child(4) { transform: rotateY(120deg) translateZ(288px); }
+.carousel__cell3:nth-child(5) { transform: rotateY(160deg) translateZ(288px); }
+.carousel__cell3:nth-child(6) { transform: rotateY(200deg) translateZ(288px); }
+.carousel__cell3:nth-child(7) { transform: rotateY(240deg) translateZ(288px); }
+.carousel__cell3:nth-child(8) { transform: rotateY(280deg) translateZ(288px); }
+.carousel__cell3:nth-child(9) { transform: rotateY(320deg) translateZ(288px); }
+
+
+.carousel-options {
+  text-align: center;
+  position: relative;
+  bottom: 0;
+}
+
+/*responsivness*/
+
+/* Extra small devices (phones, 600px and down) this is optimization for iphone 5 the smallest possible device */
+@media only screen and (max-width: 600px) {
+  body{
+    width: 100%;
+    height: 120vh;
+  }
+  #jackpot{
+    display: none;
+  }
+  #crazy{
+    width: 100%;
+    height: 100%;
+  }
+  #info{
+    display: none;
+  }
+  #decreasebet{
+    font-size: 13px;
+  }
+  #increasebet{
+    font-size: 13px;
+  }
+  #playbutton{
+    font-size: 18px;
+  }
+  #currentbet{
+    font-size: 13px;
+  }
+  #specialchest p{
+    font-size: 12px;
+  }
+  #uncle{
+    padding-left: 5px;
+  }
+  #continue{
+    font-size: 10px;
+  }
+  .carousel__cell:nth-child(9n+1) {background-image: url(../img/rsz_bar.jpg);
+  }
+  .carousel__cell2:nth-child(9n+1) {background-image: url(../img/rsz_bar.jpg);
+  }
+  .carousel__cell3:nth-child(9n+1) {background-image: url(../img/rsz_bar.jpg);
+  }
+  .carousel__cell:nth-child(9n+3) { background-image: url(../img/rsz_bikini.jpg);
+  }
+  .carousel__cell2:nth-child(9n+3) { background-image: url(../img/rsz_bikini.jpg);
+  }
+  .carousel__cell3:nth-child(9n+3) { background-image: url(../img/rsz_bikini.jpg);
+  }
+  .carousel__cell:nth-child(9n+5) { background-image: url(../img/rsz_uncle.jpg);
+  }
+  .carousel__cell2:nth-child(9n+5) { background-image: url(../img/rsz_uncle.jpg);
+  }
+  .carousel__cell3:nth-child(9n+5) { background-image: url(../img/rsz_uncle.jpg);
+  }
+  .carousel__cell:nth-child(9n+6) { background-image: url(../img/rsz_jackpot1.jpg);
+  }
+  .carousel__cell2:nth-child(9n+6) { background-image: url(../img/rsz_jackpot1.jpg);
+  }
+  .carousel__cell3:nth-child(9n+6) { background-image: url(../img/rsz_jackpot1.jpg);
+  }
+  .carousel__cell:nth-child(9n+7) { background-image: url(../img/rsz_lambo.jpg);
+  }
+  .carousel__cell2:nth-child(9n+7) { background-image: url(../img/rsz_lambo.jpg);
+  }
+  .carousel__cell3:nth-child(9n+7) { background-image: url(../img/rsz_lambo.jpg);
+  }
+  .carousel__cell:nth-child(9n+8) { background-image: url(../img/rsz_ferrari.jpg);
+  }
+  .carousel__cell2:nth-child(9n+8) { background-image: url(../img/rsz_ferrari.jpg);
+  }
+  .carousel__cell3:nth-child(9n+8) { background-image: url(../img/rsz_ferrari.jpg);
+  }
+  .carousel__cell:nth-child(9n+0) { background-image: url(../img/rsz_diamond.jpg);
+  }
+  .carousel__cell2:nth-child(9n+0) { background-image: url(../img/rsz_diamond.jpg);
+  }
+  .carousel__cell3:nth-child(9n+0) { background-image: url(../img/rsz_diamond.jpg);
+  }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1400px) {
+  #crazy{
+    padding-top: 50px;
+    width: 40%;
+    height: 46vh;
+    margin-top: 100px;
+  }
+}
+
+/*fancy headings*/
+
+x-sign {
+  --interval: 1s;
+  font-size: 30px;
+  text-shadow:
+    0 0 10px var(--color1),
+    0 0 20px var(--color2),
+    0 0 40px var(--color3),
+    0 0 80px var(--color4);
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker steps(100) var(--interval) 1s infinite;
+}
+
+x-sign:nth-of-type(1) {
+  color: tomato;
+  --color1: orangered;
+  --color2: firebrick;
+  --color3: maroon;
+  --color4: darkred;
+  font-family: Yellowtail;
+}
+
+@keyframes flicker {
+  50% {
+    color: white;
+    filter: saturate(200%) hue-rotate(20deg);
+  }
+}
+
+#info{
+  font-size: 150%;
+}
+

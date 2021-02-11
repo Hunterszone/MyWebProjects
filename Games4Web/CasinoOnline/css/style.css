@@ -1,0 +1,620 @@
+
+
+* { box-sizing: border-box; }
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #f4f4f4;
+  font-family: 'Chivo', sans-serif;
+  font-weight: 300;
+}
+
+ h1, h2, h3, h4, h5, h6 {
+   font-family: 'Playfair Display', serif;
+   font-weight: 700;
+   font-style: italic;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+/*NAVIGATION*/
+
+.navbar {
+  background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-bottom: solid 5px #fff;
+}
+
+.nav-link, .navbar-brand {
+  color: #f4f4f4;
+  cursor: pointer;
+}
+
+.nav-link {
+  margin-right: 1em !important;
+}
+
+.nav-link:hover {
+  color: yellow;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.navbar-toggler {
+  background: #fff !important;
+}
+
+/*Play button in the background*/
+
+#buttonmain {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+}
+
+#header{
+  background-image: url(../img/casino1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  border-bottom: 3px solid #fff;
+}
+
+/*about text area */
+
+#About{
+  background: #000000;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: url('https://www.casino.org/blog/wp-content/uploads/millenials-gambling.jpg') no-repeat center center/cover;
+}
+
+#About:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.7);
+	box-shadow: inset 150px 100px 250px #000000, inset -120px -100px 250px #000000;
+}
+
+.description{
+  position: relative;
+	z-index: 2;
+	width: 65%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	align-items: left;
+	text-align: left;
+  padding-top: 9em;
+}
+
+#About h1{
+  color: #ffffff;
+  font-size: 60px;
+  padding-top: 50px;
+}
+
+#About p{
+  color: #ffffff;
+  font-size: 20px;
+}
+
+/*deposit button top navbar menu*/
+
+#bankroll {
+  font-weight: bold;
+  font-size: 24px;
+  padding-top: 4px;
+  color: #fff;
+}
+
+#deposit{
+  background-color: #fff;
+  font-weight: bold;
+  color: black;
+}
+
+#deposit:hover{
+  background-color: yellow;
+}
+
+#jackpot{
+  color: #f2f;
+}
+
+/*magical numbers section*/
+
+#Genie {
+  background-image: url(../img/blackhole.jpg);
+  width: 100%;
+  height: 100%;
+  font-family: arial, sans-serif;
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  padding-top: 180px;
+}
+
+#button{
+  background-color: #000;
+  border: 3px #fff solid;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 50%;
+  font-size: 30px;
+}
+
+#button:hover{
+  background-color: yellow;
+  color: black;
+}
+
+/*special event button hidden until specific event occurs*/
+
+#special {
+  margin: 10px;
+  visibility: hidden;
+}
+
+/*jackpot animation */
+
+.flash {
+  color: #fff;
+  -webkit-animation: flash linear 6s infinite;
+  animation: flash linear 6s infinite;
+  padding-left: 30px;
+  padding-top: 3px;
+}
+
+
+@-webkit-keyframes flash {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*css random generated number animation*/
+
+.animated {
+  animation-iteration-count: 4;
+}
+
+/*spin primary default background, this background will be activated after winning*/
+
+.spin {
+  background-image: url(../img/BG.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*animation triggered by winning, eye catching animation needs to provide excitement for the gambler*/
+
+.win {
+  background-color: red;
+  -webkit-animation-name: example;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s;
+  /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 10s;
+}
+
+.infowin {
+  font-size: 100px;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  0% {
+    background-image: url(../img/BG.jpg);
+  }
+
+  25% {
+      background-image: url(../img/gold.jpg);
+  }
+
+  50% {
+      background-image: url(../img/money.jpg);
+  }
+
+  100% {
+      background-image: url(../img/BG.jpg);
+  }
+}
+
+/* Standard syntax */
+@keyframes example {
+  0% {
+      background-image: url(../img/BG.jpg);
+  }
+
+  25% {
+      background-image: url(../img/gold.jpg);
+  }
+
+  50% {
+      background-image: url(../img/money.jpg);
+  }
+
+  100% {
+      background-image: url(../img/BG.jpg);
+  }
+}
+
+/*svg animation will be hidden until spin function is clicked by the player */
+
+#svg {
+  width: 150px;
+  height: 150px;
+  visibility: hidden;
+  margin: auto;
+}
+
+/*information tab*/
+
+#info {
+  color: #f2f;
+  -webkit-animation: flash linear 6s infinite;
+  animation: flash linear 6s infinite;
+  margin: 20px;
+}
+
+/*Responsivenes*/
+
+@media only screen and (max-width: 600px) {
+  #buttonmain {
+    position: relative;
+  }
+  #jackpot{
+    display: none;
+  }
+  .infowin{
+    font-size: 40px;
+  }
+  #Genie{
+    padding-top: 100px;
+  }
+  #info{
+    font-size: 24px;
+  }
+  #info1{
+    font-size: 20px;
+  }
+  .spincarousel{
+    perspective: 100px;
+  }
+  #jackpotstars{
+    font-size: 70px;
+  }
+  .carousel{
+    position: relative;
+    bottom: 50px;
+  }
+  #About h2{
+    font-size: 20px;
+  }
+  #About{
+    height: 120vh;
+    padding-left:5px;
+    padding-right: 5px;
+  }
+  #fancy2{
+    display: none;
+  }
+  #About h1{
+    font-size: 30px;
+  }
+  #About p{
+    font-size: 15px;
+  }
+}
+
+@media(min-width: 600px) and (max-width: 1200px) {
+  #jackpot{
+    display: none;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+  #About h1{
+    font-size: 35px;
+  }
+  #About p{
+    font-size: 20px;
+  }
+  #About{
+    height: 120vh;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .description{
+    width: 50%;
+  }
+}
+
+
+/*jackpot animation css for the game magical numbers*/
+
+.wrapper {
+  overflow: hidden;
+  background-image: url(../img/jackpot.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sliding-jackpot {
+  background-image: url(../img/BG.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: slide 30s linear;
+}
+
+@keyframes slide{
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(-1692px, 0, 0);
+  }
+}
+
+/*STARS OF FORTUNE game */
+
+#carousel{
+  background-image: url(../img/BG1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  padding-top: 130px;
+  overflow: hidden;
+  border-top: 3px solid #fff;
+}
+
+.scene {
+  margin: 40px 0;
+  position: relative;
+  width: 210px;
+  height: 140px;
+  margin: 80px auto;
+  perspective: 100px;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: translateZ(-288px);
+  transform-style: preserve-3d;
+  transition: transform 13s;
+}
+
+.carousel__cell {
+  position: absolute;
+  width: 190px;
+  height: 120px;
+  left: 10px;
+  top: 10px;
+  border: 2px solid black;
+  border-radius: 50%;
+  line-height: 116px;
+  font-size: 70px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px #000 ;
+  text-align: center;
+  transition: transform 5s, opacity 1s;
+}
+
+.carousel__cell:nth-child(9n+1) { background: hsla(  0, 0%, 0%, 1); }
+.carousel__cell:nth-child(9n+2) { background: hsla( 40, 100%, 50%, 0.8); }
+.carousel__cell:nth-child(9n+3) { background: hsla( 80, 100%, 50%, 0.8); }
+.carousel__cell:nth-child(9n+4) { background: hsla(120, 100%, 50%, 0.8); }
+.carousel__cell:nth-child(9n+5) { background: hsla(160, 100%, 50%, 0.8); }
+.carousel__cell:nth-child(9n+6) { background: hsla(200, 100%, 50%, 0.8); }
+.carousel__cell:nth-child(9n+7) { background: hsla(240, 100%, 50%, 0.8); }
+.carousel__cell:nth-child(9n+8) { background: hsla(280, 100%, 50%, 0.8); }
+.carousel__cell:nth-child(9n+0) { background: hsla(320, 100%, 50%, 0.8); }
+
+.carousel__cell:nth-child(1) { transform: rotateY(  0deg) translateZ(288px); }
+.carousel__cell:nth-child(2) { transform: rotateY( 40deg) translateZ(288px); }
+.carousel__cell:nth-child(3) { transform: rotateY( 80deg) translateZ(288px); }
+.carousel__cell:nth-child(4) { transform: rotateY(120deg) translateZ(288px); }
+.carousel__cell:nth-child(5) { transform: rotateY(160deg) translateZ(288px); }
+.carousel__cell:nth-child(6) { transform: rotateY(200deg) translateZ(288px); }
+.carousel__cell:nth-child(7) { transform: rotateY(240deg) translateZ(288px); }
+.carousel__cell:nth-child(8) { transform: rotateY(280deg) translateZ(288px); }
+.carousel__cell:nth-child(9) { transform: rotateY(320deg) translateZ(288px); }
+
+.carousel-options {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+/*these features are hidden since I dont need them now, I might need them in the future, but i cant delete them because it would effect functionality*/
+
+.orientation{
+  visibility: hidden;
+}
+
+.cells{
+  visibility: hidden;
+}
+
+/*carousel win animation "laser effect from the ship coming to the player"*/
+
+.carouselwin{
+  margin: 40px 0;
+  position: relative;
+  width: 210px;
+  height: 140px;
+  margin: 80px auto;
+  perspective: 1px;
+  -webkit-animation: flash linear 5s 4;
+  animation: flash linear 5s 4;
+}
+
+/*replacing scene class while spinning*/
+
+.spincarousel{
+  margin: 40px 0;
+  position: relative;
+  width: 210px;
+  height: 140px;
+  margin: 80px auto;
+  perspective: 100px;
+}
+
+/*info area for the game stars of the fortune*/
+
+#info1{
+  color: #000000;
+  text-shadow: 2px 2px #f2f;
+  -webkit-animation: flash linear 6s infinite;
+  animation: flash linear 6s infinite;
+  font-weight: bold;
+}
+
+/*jackpot area for the stars of the fortune*/
+
+#jackpotstars{
+  font-size: 80px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px black;
+  -webkit-animation: flash linear 1s infinite;
+  animation: flash linear 1s infinite;
+}
+
+/*play button stars of fortune*/
+
+#playbutton{
+  position: relative;
+  bottom: 70px;
+  border: #fff 1px solid;
+  border-radius: 50%;
+  font-size: 30px;
+  background-color: #000;
+  border: 3px #fff solid;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#playbutton:hover{
+  cursor: grab;
+  color: black;
+  background-color: yellow;
+}
+
+/*fancy headings*/
+
+x-sign {
+  --interval: 1s;
+  font-size: 30px;
+  text-shadow:
+    0 0 10px var(--color1),
+    0 0 20px var(--color2),
+    0 0 40px var(--color3),
+    0 0 80px var(--color4);
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker steps(100) var(--interval) 1s infinite;
+}
+
+x-sign:nth-of-type(1) {
+  color: yellow;
+  --color1: yellow;
+  --color2: lime;
+  --color3: green;
+  --color4: darkgreen;
+  font-family: Monoton;
+}
+
+@keyframes flicker {
+  50% {
+    color: white;
+    filter: saturate(200%) hue-rotate(20deg);
+  }
+}
+
+/*fancy headings*/
+
+#fancy{
+  font-size: 60px;
+}
+
+#fancy1{
+  font-size: 300%;
+  padding-bottom: 10px;
+}
+#fancy2{
+    font-size: 44px;
+}
+
+/*footer*/
+
+#footer{
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#footer ul li a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#footer ul li a:hover{
+  color: yellow;
+  font-weight: bold;
+}
