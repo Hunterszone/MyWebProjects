@@ -33,6 +33,8 @@
         <li class="nav-item">
 		<li class="nav-item">
           <a class="nav-link " data-value="WheelOfFortune" href="WheelOfFortune/index.html#WheelOfFortune">Wheel of fortune</a> </li>
+		 <li class="nav-item">
+          <a class="nav-link " data-value="PokerJs" href="PokerJS/index.html#PokerJs" target="_blank">Texas Hold'em</a> </li>
           <li class="nav-item">
 			<a class="nav-link " data-value="Crazy" href="crazy.html">Slot machine</a> </li>
 
@@ -43,16 +45,21 @@
   <!-- header background img -->
   <header id=header>
     <!--<img class="img-fluid" src="img/casino1.jpg">-->
-    <button id=buttonmain onclick="location.href='#carousel'" type="button" class="btn btn-warning">Play now</button>
+			<div>
+					<!--<button onclick="location.href='#carousel'" style="text-decoration:none;" type="button" class="fancy">PLAY NOW</button>-->
+					<input type="image" onclick="location.href='#carousel'" class="fancy" src="img/playNow.png" />
+
+			</div>
+	   <!--<button id=buttonmain onclick="location.href='#carousel'" type="button" class="btn btn-warning">Play now</button>-->
   </header>
 
 
   <div class="container-fluid  About" id=About>
     <div class="description">
     <x-sign id=fancy>
-      LUCKY CASINO
+      ONLINE CASINO
     </x-sign>
-    <h1>Welcome to Lucky Casino. Good luck and have fun!</h1>
+    <h1>Welcome to Online Casino. Good luck and have fun!</h1>
     <p>Deposit first. Choose the game you want to play. Remember progressive jackpot increases with each and every single spin!</p>
     </div>
   </div>
@@ -144,7 +151,7 @@
 
   <!-- Footer -->
   <footer id=footer class="page-footer font-small stylish-color-dark pt-4">
-
+  
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
 
@@ -155,7 +162,7 @@
         <div class="col-md-4 mx-auto">
 
           <!-- Content -->
-          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Lucky Casino</h5>
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Casino Online</h5>
           <p>For help, support and advice about problem gambling please contact the National Gambling Helpline on 0808 8020 133 or via the NetLine.</p>
 
         </div>
@@ -196,6 +203,9 @@
 
     <!-- Call to action -->
     <ul class="list-unstyled list-inline text-center py-2">
+	  <li class="list-inline-item">
+			<a href="#"><img id="toTop" src="img/scroll-to-top.gif" title="Back to top" style="width: 70px; height: 70px;"></a>
+	  </li>
       <li class="list-inline-item">
         <h5 class="mb-1">Register for free</h5>
       </li>

@@ -34,6 +34,8 @@
 				<li class="nav-item">
 				  <a class="nav-link " data-value="WheelOfFortune" href="#">Wheel of fortune</a> </li>
 				<li class="nav-item">
+				<li class="nav-item">
+				  <a class="nav-link " data-value="PokerJs" href="../PokerJS/index.html#PokerJs" target="_blank">Texas Hold'em</a> </li>
 				  <a class="nav-link " data-value="Crazy" href="../crazy.html">Slot machine</a> </li>
 
 			  </ul>
@@ -198,7 +200,6 @@
             {
 				win = multiplier * 5;
 				bankroll -= initialbet;
-				jackpot += bankroll;
 				document.getElementById("jackpot").innerHTML = "Current jackpot: £" + (jackpotmoney + bankroll);
                 // Ensure that spinning can't be clicked again while already running.
                 if (wheelSpinning == false) {
