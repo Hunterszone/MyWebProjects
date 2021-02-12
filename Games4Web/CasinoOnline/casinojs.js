@@ -401,7 +401,7 @@ playmusic();
     selectedIndex = Math.floor(Math.random() * 100);
     rotateCarousel();
     if (jackpot.includes(selectedIndex)) {
-      bankroll += jackpotmoney;
+      bankroll = jackpotmoney;
       jackpotmoney = 50000;  //resetting jackpot after hitting the one
       document.getElementById("bankroll").innerHTML = "£" + bankroll;
       document.getElementById("jackpot").innerHTML = "Please contact support";
