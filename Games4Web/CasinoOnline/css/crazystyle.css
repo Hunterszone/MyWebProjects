@@ -139,7 +139,7 @@ border-radius: 50%;
 }
 
 #increasebet:hover{
-  cursor: grab;
+  cursor: pointer;
   color: black;
   background-color: yellow;
 }
@@ -154,7 +154,7 @@ border-radius: 50%;
 }
 
 #decreasebet:hover{
-  cursor: grab;
+  cursor: pointer;
   color: black;
   background-color: yellow;
 }

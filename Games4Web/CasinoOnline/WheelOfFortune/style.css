@@ -5,7 +5,15 @@
 body {
   padding: 0;
   margin: 0;
-  background: #f4f4f4;
+  //background: #f4f4f4;
+  background-image: url("../img/wheelOfFortune.jpg"); 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  border-bottom: 3px solid #fff;
   font-family: 'Chivo', sans-serif;
   font-weight: 300;
 }

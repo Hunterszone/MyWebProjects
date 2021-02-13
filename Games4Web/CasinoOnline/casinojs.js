@@ -99,7 +99,7 @@ function randomnumber() {
           bankroll -= 1;
           jackpotmoney += 1;
           document.getElementById("bankroll").innerHTML = "£" + bankroll;
-          document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+          document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
           document.getElementById("number").className = 'animated pulse';
           document.getElementById("svg").style.visibility = 'hidden';
         } else {
@@ -112,7 +112,7 @@ function randomnumber() {
       document.getElementById("number").className = 'animated bounceInDown';
       if (jackpot.includes(result)) {
         document.getElementById("Genie").className = 'sliding-jackpot';
-        bankroll += jackpotmoney;
+        bankroll = jackpotmoney;
         jackpotmoney = 50000;  //resetting jackpot after hitting the one
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
         document.getElementById("jackpot").innerHTML = "Please contact support";
@@ -129,10 +129,8 @@ function randomnumber() {
         document.getElementById("info").className = 'infowin';
         audio4.pause();
         playmusic5();
-        if (bankroll != "0") {
-          bankroll += 10;
-          document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        }
+        bankroll += 10;
+        document.getElementById("bankroll").innerHTML = "£" + bankroll;
         clearInterval(interval);
       } else if (smallwin.includes(result)) {
         document.getElementById("info").innerHTML = "WIN!!!!!";
@@ -140,10 +138,8 @@ function randomnumber() {
         document.getElementById("info").className = 'infowin';
         audio4.pause();
         playmusic5();
-        if (bankroll != "0") {
-          bankroll += 2;
-          document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        }
+        bankroll += 2;
+        document.getElementById("bankroll").innerHTML = "£" + bankroll;        
         clearInterval(interval);
       };
 
@@ -290,37 +286,37 @@ playmusic();
         bankroll -= 3;
         jackpotmoney += 5;
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+        document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
         document.getElementById("scene").className = 'scene';
       } else if (selectedIndex === 1) {
         bankroll -= 3;
         jackpotmoney += 5;
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+        document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
         document.getElementById("scene").className = 'scene';
       } else if (selectedIndex === 2) {
         bankroll -= 3;
         jackpotmoney += 5;
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+        document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
         document.getElementById("scene").className = 'scene';
       } else if (selectedIndex === 3) {
         bankroll -= 3;
         jackpotmoney += 5;
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+        document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
         document.getElementById("scene").className = 'scene';
       } else if (selectedIndex === 4) {
         bankroll -= 3;
         jackpotmoney += 5;
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+        document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
         document.getElementById("scene").className = 'scene';
       } else if (selectedIndex === 5) {
         bankroll += 3;
         jackpotmoney += 5;
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+        document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
         document.getElementById("scene").className = 'carouselwin';
         document.getElementById("info1").innerHTML = "Good job young padawan!! Big win !!";
         audio.pause();
@@ -329,13 +325,13 @@ playmusic();
         bankroll -= 3;
         jackpotmoney += 5;
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+        document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
         document.getElementById("scene").className = 'scene';
       } else if (selectedIndex === 7) {
         bankroll += 3;
         jackpotmoney += 5;
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+        document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
         document.getElementById("scene").className = 'carouselwin';
         document.getElementById("info1").innerHTML = "Lasers did not stop you! Big win !!";
         audio.pause();
@@ -344,13 +340,13 @@ playmusic();
         bankroll -= 3;
         jackpotmoney += 5;
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+        document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
         document.getElementById("scene").className = 'scene';
       } else if (selectedIndex === 9) {
         bankroll += 3;
         jackpotmoney += 5;
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+        document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
         document.getElementById("scene").className = 'carouselwin';
         document.getElementById("info1").innerHTML = "Force is with you!! £8 in your pocket!!";
         audio.pause();
@@ -359,13 +355,13 @@ playmusic();
         bankroll -= 3;
         jackpotmoney += 5;
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+        document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
         document.getElementById("scene").className = 'scene';
       } else if (selectedIndex === 11) {
         bankroll += 15;
         jackpotmoney += 5;
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+        document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
         document.getElementById("scene").className = 'carouselwin';
         document.getElementById("info1").innerHTML = "Good job captain, your ship is faster than the speed of light!!";
         audio.pause();
@@ -374,13 +370,13 @@ playmusic();
         bankroll -= 3;
         jackpotmoney += 5;
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+        document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
         document.getElementById("scene").className = 'scene';
       } else if (selectedIndex === 13) {
         bankroll += 495;
         jackpotmoney += 5;
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+        document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
         document.getElementById("scene").className = 'carouselwin';
         document.getElementById("info1").innerHTML = "HUGE PAYOUT!! YOU DESTROYED THE ENTIRE FLEET";
         audio.pause();
@@ -389,7 +385,7 @@ playmusic();
         bankroll += 15;
         jackpotmoney += 5;
         document.getElementById("bankroll").innerHTML = "£" + bankroll;
-        document.getElementById("jackpot").innerHTML = ' Current jackpot is' + ' ' + jackpotmoney;
+        document.getElementById("jackpot").innerHTML = 'Jackpot is' + ' ' + jackpotmoney;
         document.getElementById("scene").className = 'carouselwin';
         document.getElementById("info1").innerHTML = "Amazing, your ship is faster than the speed of light!!";
         audio.pause();
@@ -477,6 +473,12 @@ function animateResultCount2(number, target) {
       number++
     }, 1);
   }
+}
+
+function cashOut() {
+	alert('You cashed out: ' + bankroll);
+	bankroll = 0;
+	document.getElementById("bankroll").innerHTML = "£" + bankroll;
 }
 
 //fancy headings

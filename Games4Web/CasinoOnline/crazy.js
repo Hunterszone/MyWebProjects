@@ -26,6 +26,26 @@ function playmusic4() {
   audio.play();
 }
 
+function playmusic5() {
+  var audio = document.getElementById("audio5");
+  audio.play();
+}
+
+function playmusic6() {
+  var audio = document.getElementById("audio6");
+  audio.play();
+}
+
+function playmusic7() {
+  var audio = document.getElementById("audio7");
+  audio.play();
+}
+
+function playmusic8() {
+  var audio = document.getElementById("audio8");
+  audio.play();
+}
+
 /*jquery to activate deposit function once button bet clicked*/
 
 $(document).ready(function() {
@@ -131,49 +151,49 @@ nextButton.addEventListener('click', function() {
           win = multiplier * 2000
           bankroll += win;
           document.getElementById("bankroll").innerHTML = "£" + bankroll;
-          document.getElementById("info").innerHTML = "Massive payout, crazy cool jackpot mate!!!";
+          document.getElementById("info").innerHTML = "It's a jackpot!!!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 1 && selectedIndex2 === 1 && selectedIndex3 === 1) {
           win = multiplier * 1000
           bankroll += win;
           document.getElementById("bankroll").innerHTML = "£" + bankroll;
-          document.getElementById("info").innerHTML = "Massive payout, this is crazy!!!";
+          document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 2 && selectedIndex2 === 2 && selectedIndex3 === 2) {
           win = multiplier * 100
           bankroll += win;
           document.getElementById("bankroll").innerHTML = "£" + bankroll;
-          document.getElementById("info").innerHTML = "Massive payout, this is crazy!!!";
+          document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 3 && selectedIndex2 === 3 && selectedIndex3 === 3) {
           win = multiplier * 50
           bankroll += win;
           document.getElementById("bankroll").innerHTML = "£" + bankroll;
-          document.getElementById("info").innerHTML = "Massive payout, this is crazy!!!";
+          document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 4 && selectedIndex2 === 4 && selectedIndex3 === 4) {
           win = multiplier * 80
           bankroll += win;
           document.getElementById("bankroll").innerHTML = "£" + bankroll;
-          document.getElementById("info").innerHTML = "Massive payout, this is crazy!!!";
+          document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 5 && selectedIndex2 === 5 && selectedIndex3 === 5) {
           win = multiplier * 200
           bankroll += win;
           document.getElementById("bankroll").innerHTML = "£" + bankroll;
-          document.getElementById("info").innerHTML = "Massive payout, this is crazy!!!";
+          document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 6 && selectedIndex2 === 6 && selectedIndex3 === 6) {
           win = multiplier * 500
           bankroll += win;
           document.getElementById("bankroll").innerHTML = "£" + bankroll;
-          document.getElementById("info").innerHTML = "Massive payout, this is crazy!!!";
+          document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 7 && selectedIndex2 === 7 && selectedIndex3 === 7) {
@@ -184,18 +204,18 @@ nextButton.addEventListener('click', function() {
           win = multiplier * 20
           bankroll += win;
           document.getElementById("bankroll").innerHTML = "£" + bankroll;
-          document.getElementById("info").innerHTML = "Massive payout, this is crazy!!!";
+          document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 9 && selectedIndex2 === 9 && selectedIndex3 === 9) {
           win = multiplier * 5000
           bankroll += win;
           document.getElementById("bankroll").innerHTML = "£" + bankroll;
-          document.getElementById("info").innerHTML = "Massive payout, this is crazy!!!";
+          document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === selectedIndex2 || selectedIndex2 === selectedIndex3) { //this is special event "uncle scroove"
-          document.getElementById("info").innerHTML = "NICELY DONE enjoy your free gift from uncle scroove!";
+          document.getElementById("info").innerHTML = "NICELY DONE!";
           document.getElementById("specialchest").style.visibility = 'visible';
           var randomprice = 0;
           var randomprice1 = 0;
@@ -208,7 +228,7 @@ nextButton.addEventListener('click', function() {
               document.getElementById("firstchest").innerHTML = "£" + randomprice;
               document.getElementById("secondchest").innerHTML = "£" + randomprice1;
               document.getElementById("thirdchest").innerHTML = "£" + randomprice2;
-              document.getElementById("specialchest_info").innerHTML = "WELL DONE!" + " " + "£" + randomprice + " in your pocket now press continue!";
+              document.getElementById("specialchest_info").innerHTML = "WELL DONE!" + " " + "£" + randomprice + " in your pocket, now press continue!";
               bankroll += randomprice;
               document.getElementById("bankroll").innerHTML = "£" + bankroll;
               document.getElementById("continue").style.visibility = 'visible';
@@ -225,7 +245,7 @@ nextButton.addEventListener('click', function() {
               document.getElementById("firstchest").innerHTML = "£" + randomprice;
               document.getElementById("secondchest").innerHTML = "£" + randomprice1;
               document.getElementById("thirdchest").innerHTML = "£" + randomprice2;
-              document.getElementById("specialchest_info").innerHTML = "WELL DONE!" + " " + "£" + randomprice1 + " in your pocket now press continue!";
+              document.getElementById("specialchest_info").innerHTML = "WELL DONE!" + " " + "£" + randomprice1 + " in your pocket, now press continue!";
               bankroll += randomprice1;
               document.getElementById("bankroll").innerHTML = "£" + bankroll;
               document.getElementById("continue").style.visibility = 'visible';
@@ -242,7 +262,7 @@ nextButton.addEventListener('click', function() {
               document.getElementById("firstchest").innerHTML = "£" + randomprice;
               document.getElementById("secondchest").innerHTML = "£" + randomprice1;
               document.getElementById("thirdchest").innerHTML = "£" + randomprice2;
-              document.getElementById("specialchest_info").innerHTML = "WELL DONE!" + " " + "£" + randomprice2 + " in your pocket now press continue!";
+              document.getElementById("specialchest_info").innerHTML = "WELL DONE!" + " " + "£" + randomprice2 + " in your pocket, now press continue!";
               bankroll += randomprice2;
               document.getElementById("bankroll").innerHTML = "£" + bankroll;
               document.getElementById("continue").style.visibility = 'visible';
@@ -270,7 +290,7 @@ nextButton.addEventListener('click', function() {
           win = multiplier * 5;
           bankroll -= win;
           jackpotmoney += win;
-          document.getElementById("jackpot").innerHTML = "Current jackpot:" + "£" + jackpotmoney;
+          document.getElementById("jackpot").innerHTML = "Jackpot:" + "£" + jackpotmoney;
           document.getElementById("bankroll").innerHTML = "£" + bankroll;
         }
         return;
@@ -480,6 +500,12 @@ function onOrientationChange() {
   isHorizontal = checkedRadio.value == 'horizontal';
   rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
   changeCarousel();
+}
+
+function cashOut() {
+	alert('You cashed out: ' + bankroll);
+	bankroll = 0;
+	document.getElementById("bankroll").innerHTML = "£" + bankroll;
 }
 
 // set initials  this will put all 3 reel equal in the beginning
