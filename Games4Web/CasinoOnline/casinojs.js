@@ -28,8 +28,10 @@ function playmusic5(){
        var audio = document.getElementById("audio5");
        audio.play();
 };
-
-
+function playmusic6(){
+       var audio = document.getElementById("audio6");
+       audio.play();
+};
 
 
 /*jquery to activate deposit function once button bet clicked*/
@@ -479,6 +481,7 @@ function cashOut() {
 	alert('You cashed out: ' + bankroll);
 	bankroll = 0;
 	document.getElementById("bankroll").innerHTML = "£" + bankroll;
+	playmusic6();
 }
 
 //fancy headings

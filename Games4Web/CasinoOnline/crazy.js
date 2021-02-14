@@ -46,6 +46,11 @@ function playmusic8() {
   audio.play();
 }
 
+function playmusic9() {
+  var audio = document.getElementById("audio9");
+  audio.play();
+}
+
 /*jquery to activate deposit function once button bet clicked*/
 
 $(document).ready(function() {
@@ -506,6 +511,7 @@ function cashOut() {
 	alert('You cashed out: ' + bankroll);
 	bankroll = 0;
 	document.getElementById("bankroll").innerHTML = "£" + bankroll;
+	playmusic9();
 }
 
 // set initials  this will put all 3 reel equal in the beginning
