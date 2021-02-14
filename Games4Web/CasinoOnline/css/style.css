@@ -614,7 +614,7 @@ html{
 }
 
 #playbutton:hover{
-  cursor: grab;
+  cursor: pointer;
   color: black;
   background-color: yellow;
 }
