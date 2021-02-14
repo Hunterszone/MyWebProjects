@@ -482,6 +482,7 @@ var Game = (function () {
         this.pot = 0;
         var lastWithChips = this.getLastWithChips();
         if (lastWithChips) {
+			playmusic13();
             this.redraw(true, winners);
             window.setTimeout(function () {
                 window.alert((lastWithChips.isHuman ? "You " : lastWithChips.name) + " won the game and claimed a pot of " + winners[0].chips + " chips! Everyone else has been eliminated.");
@@ -1156,4 +1157,41 @@ function testApp() {
         return cards;
     }
 }
+
+
+function playmusic7(){
+       var audio = document.getElementById("audio7");
+       audio.play();
+};
+
+function playmusic8(){
+       var audio = document.getElementById("audio8");
+       audio.play();
+};
+
+function playmusic9(){
+       var audio = document.getElementById("audio9");
+       audio.play();
+};
+
+function playmusic10(){
+       var audio = document.getElementById("audio10");
+       audio.play();
+};
+
+function playmusic11(){
+       var audio = document.getElementById("audio11");
+       audio.play();
+};
+
+function playmusic12(){
+       var audio = document.getElementById("audio12");
+       audio.play();
+};
+
+function playmusic13(){
+       var audio = document.getElementById("audio13");
+       audio.play();
+};
+
 //# sourceMappingURL=poker.js.map

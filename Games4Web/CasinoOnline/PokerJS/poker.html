@@ -26,22 +26,30 @@
 <canvas id="canvas" width="1200" height="600" id="canvas"></canvas>
 
 <center>
-<button id="continueNextRound">Continue to the next round</button>
-<button id="continue">Continue</button>
+<button id="continueNextRound" onclick="playmusic12();">Continue to the next round</button>
+<button id="continue" onclick="playmusic12();">Continue</button>
 </center>
 <br/>
 <table border="1">
   <tr>
-    <td><button id="check">Check</button></td>
-    <td><button id="call">Call</button></td>
-    <td><button id="raise">Bet</button> <input id="raiseAmount" type="number" min="2" style="width: 60px"/> chips</td>
-    <td><button id="allin">All In!</button></td>
-    <td><button id="fold">Fold</button></td>
+    <td><button id="check" onclick="playmusic7();">Check</button></td>
+    <td><button id="call" onclick="playmusic8();">Call</button></td>
+    <td><button id="raise" onclick="playmusic9();">Bet</button> <input id="raiseAmount" type="number" min="2" style="width: 60px"/> chips</td>
+    <td><button id="allin" onclick="playmusic10();">All In!</button></td>
+    <td><button id="fold" onclick="playmusic11();">Fold</button></td>
   </tr>
 </table>
 <div>Message Log</div>
 <textarea id="messageLog" readonly rows="7" style="width:1200px"></textarea>
 </center>
+
+<audio id="audio7" src="../mp3/check.mp3" ></audio>
+<audio id="audio8" src="../mp3/call.mp3" ></audio>
+<audio id="audio9" src="../mp3/raise.mp3" ></audio>
+<audio id="audio10" src="../mp3/allIn.mp3" ></audio>
+<audio id="audio11" src="../mp3/fold.mp3" ></audio>
+<audio id="audio12" src="../mp3/shuffle.mp3" ></audio>
+<audio id="audio13" src="../mp3/victory.wav" ></audio>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
