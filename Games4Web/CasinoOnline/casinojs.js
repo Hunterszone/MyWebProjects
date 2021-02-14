@@ -8,6 +8,7 @@ var jackpotmoney = 50000; //this will be initial jackpot incrementing with each 
 var audio = document.createElement("AUDIO")
 document.body.appendChild(audio);
 audio.src = "mp3/jazz.mp3"
+audio.volume = 0.1;
 
 document.body.addEventListener("mousemove", function () {
     audio.play()
