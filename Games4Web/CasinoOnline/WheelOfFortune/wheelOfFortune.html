@@ -17,15 +17,17 @@
 		<nav class="navbar navbar-expand-lg fixed-top ">
 			<button id=deposit type="button" class="btn btn-lg navbar-brand" name="button">Deposit</button>
 			<button id=deposit type="button" class="btn btn-lg navbar-brand" name="button" onclick="cashOut();">CashOut</button>
-			<h2 id=bankroll class="nav-brand">£ 0</h2>
-			<h2 class="flash nav-brand" id=jackpot>Jackpot: £50000</h2>
+			<h2 id=bankroll class="nav-brand">$ 0</h2>
+			<h2 class="flash nav-brand" id=jackpot>Jackpot: $50000</h2>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse " id="navbarSupportedContent">
 			  <ul class="navbar-nav mr-4">
-				<li class="nav-item">
-				  <a class="nav-link" data-value="About" href="../index.html">Home</a> </li>
+				<!--<li class="nav-item">
+				  <a class="nav-link" data-value="About" href="../index.html">Home</a> </li>-->
+				 <li class="nav-item">
+				  <a class="nav-link " data-value="EWallet" href="../EWallet/ewallet.html">E-Wallet</a>
 				<li class="nav-item">
 				  <a class="nav-link " data-value="Genie" href="../index.html#Genie">Magical numbers</a>
 				</li>
@@ -74,7 +76,7 @@
 					  <button class="btn btn-lg btn-success" id=increasebet>Increase bet</button>
 					  <button class="btn btn-lg btn-success" id=decreasebet>Decrease bet</button>
 					  </br></br>
-					  <p style="color:white" id=currentbet>Current bet: £5</p>
+					  <p style="color:white" id=currentbet>Current bet: $5</p>
 					  </br>
 					  <p style="color:red">HANDICAP: BET X2!</p>
   				    </div>
@@ -91,7 +93,7 @@
   <audio id="audio5" src="../mp3/darkhorse.mp3" ></audio>
   <audio id="audio6" src="../mp3/darkhorsewin.mp3" ></audio>
   <audio id="audio7" src="../mp3/explosion.wav" ></audio>
-  <audio id="audio8" src="../mp3/starwars.mp3" ></audio>
+  <audio id="audio8" src="../mp3/winJackpot.mp3" ></audio>
   <audio id="audio9" src="../mp3/coin.mp3" ></audio>
         <script>
 			
@@ -206,7 +208,7 @@
             {
 				win = multiplier * 5;
 				bankroll -= initialbet;
-				document.getElementById("jackpot").innerHTML = "Jackpot: £" + (jackpotmoney + bankroll);
+				document.getElementById("jackpot").innerHTML = "Jackpot: $" + (jackpotmoney + bankroll);
                 // Ensure that spinning can't be clicked again while already running.
                 if (wheelSpinning == false) {
                     // Based on the power level selected adjust the number of spins for the wheel, the more times is has
@@ -259,23 +261,26 @@
                     alert('Sorry but you loose a turn.');
 					resetWheel();
                 } else if (indicatedSegment.text == 'BANKRUPT') {
+					stopmusic5();
 					playmusic7();
                     alert('Oh no, you have gone BANKRUPT!');
-					document.getElementById("bankroll").innerHTML = "£" + 0;
+					document.getElementById("bankroll").innerHTML = "$" + 0;
 					bankroll = 0;
 					resetWheel();
                 } else if (indicatedSegment.text == 'JACKPOT') {
+					stopmusic5();
 					playmusic8();
                     alert('Congratulations, its a JACKPOT!');
-					document.getElementById("bankroll").innerHTML = "£" + 50000;
+					document.getElementById("bankroll").innerHTML = "$" + 50000;
 					bankroll = 50000;
-					document.getElementById("jackpot").innerHTML = "Jackpot: £" + 0;
+					document.getElementById("jackpot").innerHTML = "Jackpot: $" + 0;
 					jackpot = 0;
 					jackpotmoney = 0;
 					resetWheel();
                 } else {
-					document.getElementById("bankroll").innerHTML = "£" + indicatedSegment.text;
+					document.getElementById("bankroll").innerHTML = "$" + indicatedSegment.text;
 					bankroll = indicatedSegment.text;
+					stopmusic5();
 					playmusic6();
                     alert("You have won " + indicatedSegment.text);
 					resetWheel();
@@ -288,13 +293,14 @@
 			images[0].src = 'spin_on.png';
 
 			document.images[0].addEventListener('click', function() {
+			  stopmusic6();
 			  playmusic5();
 			  resetWheel();
 			  if (bankroll < 5) {
-				alert(" minimum bet for this game is £10, deposit first please")
+				alert(" minimum bet for this game is $10, deposit first please")
 			  } else {
 				startSpin();
-				document.getElementById("bankroll").innerHTML = "£" + bankroll;
+				document.getElementById("bankroll").innerHTML = "$" + bankroll;
 			  }
 			});
 			

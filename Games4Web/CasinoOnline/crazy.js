@@ -31,9 +31,21 @@ function playmusic5() {
   audio.play();
 }
 
+function stopmusic5() {
+  var audio = document.getElementById("audio5");
+  audio.pause();
+  audio.currentTime = 0;
+}
+
 function playmusic6() {
   var audio = document.getElementById("audio6");
   audio.play();
+}
+
+function stopmusic6() {
+  var audio = document.getElementById("audio6");
+  audio.pause();
+  audio.currentTime = 0;
 }
 
 function playmusic7() {
@@ -63,12 +75,12 @@ $(document).ready(function() {
 
 function deposit() {
   do {
-    var deposit = parseFloat(window.prompt("Please enter your deposit, maximum deposit is £100, minimum deposit £1, if you dont want to deposit please refresh this page"), 10);
+    var deposit = parseFloat(window.prompt("Please enter your deposit, maximum deposit is $100, minimum deposit $1, if you dont want to deposit please refresh this page"), 10);
   } while (isNaN(deposit) || deposit > 100 || deposit < 1); //for now I will use prompt to deposit in the future I might implement something like a link to paypal, after successful deposit credit will be added to the bankroll
   deposit = parseFloat(deposit);
   bankroll = parseFloat(bankroll);
   bankroll = deposit + bankroll;
-  document.getElementById("bankroll").innerHTML = "£" + bankroll;
+  document.getElementById("bankroll").innerHTML = "$" + bankroll;
 };
 
 //betting function
@@ -81,14 +93,14 @@ var win = 0; //global variable, this will be trigerred by playing the game and b
 $(document).ready(function() {
   $('#decreasebet').click(function() {
     betdecrease();
-    document.getElementById("currentbet").innerHTML = "Current bet: " + "£" + initialbet
+    document.getElementById("currentbet").innerHTML = "Current bet: " + "$" + initialbet
   });
 });
 
 $(document).ready(function() {
   $('#increasebet').click(function() {
     betincrease();
-    document.getElementById("currentbet").innerHTML = "Current bet: " + "£" + initialbet
+    document.getElementById("currentbet").innerHTML = "Current bet: " + "$" + initialbet
   });
 });
 
@@ -131,16 +143,18 @@ function rotateCarousel() {
 var nextButton = document.querySelector('.next-button2');
 
 nextButton.addEventListener('click', function() {
-  $('#playbutton').attr("disabled", "disabled");
-  $('#deposit').attr("disabled", "disabled");
+  //$('#playbutton').attr("disabled", "disabled");
+  //$('#deposit').attr("disabled", "disabled");
   document.getElementById("info").innerHTML = "Crazy cool jackpot";
   playmusic();
+  playmusic4();
   if (bankroll < 5) {
-    alert(" minimum bet for this game is £5, deposit first please")
+    alert(" minimum bet for this game is $5, deposit first please")
   } else {
 
     var startTime = new Date().getTime();
     var interval = setInterval(function() {
+		playmusic4();
       if (new Date().getTime() - startTime > 5000) {
         clearInterval(interval);
         selectedIndex = Math.floor(Math.random() * 9) + 1;
@@ -152,70 +166,70 @@ nextButton.addEventListener('click', function() {
         console.log(selectedIndex);
         console.log(selectedIndex2);
         console.log(selectedIndex3);
-        if (selectedIndex === 0 && selectedIndex2 === 0 && selectedIndex3 === 0) {
+        if (selectedIndex === 0 && selectedIndex2 === 0 && selectedIndex3 === 0) {	
           win = multiplier * 2000
           bankroll += win;
-          document.getElementById("bankroll").innerHTML = "£" + bankroll;
+          document.getElementById("bankroll").innerHTML = "$" + bankroll;
           document.getElementById("info").innerHTML = "It's a jackpot!!!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 1 && selectedIndex2 === 1 && selectedIndex3 === 1) {
           win = multiplier * 1000
           bankroll += win;
-          document.getElementById("bankroll").innerHTML = "£" + bankroll;
+          document.getElementById("bankroll").innerHTML = "$" + bankroll;
           document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 2 && selectedIndex2 === 2 && selectedIndex3 === 2) {
           win = multiplier * 100
           bankroll += win;
-          document.getElementById("bankroll").innerHTML = "£" + bankroll;
+          document.getElementById("bankroll").innerHTML = "$" + bankroll;
           document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 3 && selectedIndex2 === 3 && selectedIndex3 === 3) {
           win = multiplier * 50
           bankroll += win;
-          document.getElementById("bankroll").innerHTML = "£" + bankroll;
+          document.getElementById("bankroll").innerHTML = "$" + bankroll;
           document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 4 && selectedIndex2 === 4 && selectedIndex3 === 4) {
           win = multiplier * 80
           bankroll += win;
-          document.getElementById("bankroll").innerHTML = "£" + bankroll;
+          document.getElementById("bankroll").innerHTML = "$" + bankroll;
           document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 5 && selectedIndex2 === 5 && selectedIndex3 === 5) {
           win = multiplier * 200
           bankroll += win;
-          document.getElementById("bankroll").innerHTML = "£" + bankroll;
+          document.getElementById("bankroll").innerHTML = "$" + bankroll;
           document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 6 && selectedIndex2 === 6 && selectedIndex3 === 6) {
           win = multiplier * 500
           bankroll += win;
-          document.getElementById("bankroll").innerHTML = "£" + bankroll;
+          document.getElementById("bankroll").innerHTML = "$" + bankroll;
           document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 7 && selectedIndex2 === 7 && selectedIndex3 === 7) {
           win = multiplier * 300
           bankroll += win;
-          document.getElementById("bankroll").innerHTML = "£" + bankroll;
+          document.getElementById("bankroll").innerHTML = "$" + bankroll;
         } else if (selectedIndex === 8 && selectedIndex2 === 8 && selectedIndex3 === 8) {
           win = multiplier * 20
           bankroll += win;
-          document.getElementById("bankroll").innerHTML = "£" + bankroll;
+          document.getElementById("bankroll").innerHTML = "$" + bankroll;
           document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
         } else if (selectedIndex === 9 && selectedIndex2 === 9 && selectedIndex3 === 9) {
           win = multiplier * 5000
           bankroll += win;
-          document.getElementById("bankroll").innerHTML = "£" + bankroll;
+          document.getElementById("bankroll").innerHTML = "$" + bankroll;
           document.getElementById("info").innerHTML = "Massive payout!";
           audio.pause();
           playmusic3();
@@ -227,15 +241,16 @@ nextButton.addEventListener('click', function() {
           var randomprice2 = 0;
           $(document).ready(function() {
             $('#firstchest').click(function() {
+			  playmusic4();
               randomprice = Math.floor(Math.random() * 100) + 1;
               randomprice1 = Math.floor(Math.random() * 100) + 1;
               randomprice2 = Math.floor(Math.random() * 100) + 1;
-              document.getElementById("firstchest").innerHTML = "£" + randomprice;
-              document.getElementById("secondchest").innerHTML = "£" + randomprice1;
-              document.getElementById("thirdchest").innerHTML = "£" + randomprice2;
-              document.getElementById("specialchest_info").innerHTML = "WELL DONE!" + " " + "£" + randomprice + " in your pocket, now press continue!";
+              document.getElementById("firstchest").innerHTML = "$" + randomprice;
+              document.getElementById("secondchest").innerHTML = "$" + randomprice1;
+              document.getElementById("thirdchest").innerHTML = "$" + randomprice2;
+              document.getElementById("specialchest_info").innerHTML = "WELL DONE!" + " " + "$" + randomprice + " in your pocket, now press continue!";
               bankroll += randomprice;
-              document.getElementById("bankroll").innerHTML = "£" + bankroll;
+              document.getElementById("bankroll").innerHTML = "$" + bankroll;
               document.getElementById("continue").style.visibility = 'visible';
               $('#firstchest').attr("disabled", "disabled");
               $('#secondchest').attr("disabled", "disabled");
@@ -244,15 +259,16 @@ nextButton.addEventListener('click', function() {
           });
           $(document).ready(function() {
             $('#secondchest').click(function() {
+			  playmusic4();
               randomprice = Math.floor(Math.random() * 100) + 1;
               randomprice1 = Math.floor(Math.random() * 100) + 1;
               randomprice2 = Math.floor(Math.random() * 100) + 1;
-              document.getElementById("firstchest").innerHTML = "£" + randomprice;
-              document.getElementById("secondchest").innerHTML = "£" + randomprice1;
-              document.getElementById("thirdchest").innerHTML = "£" + randomprice2;
-              document.getElementById("specialchest_info").innerHTML = "WELL DONE!" + " " + "£" + randomprice1 + " in your pocket, now press continue!";
+              document.getElementById("firstchest").innerHTML = "$" + randomprice;
+              document.getElementById("secondchest").innerHTML = "$" + randomprice1;
+              document.getElementById("thirdchest").innerHTML = "$" + randomprice2;
+              document.getElementById("specialchest_info").innerHTML = "WELL DONE!" + " " + "$" + randomprice1 + " in your pocket, now press continue!";
               bankroll += randomprice1;
-              document.getElementById("bankroll").innerHTML = "£" + bankroll;
+              document.getElementById("bankroll").innerHTML = "$" + bankroll;
               document.getElementById("continue").style.visibility = 'visible';
               $('#firstchest').attr("disabled", "disabled");
               $('#secondchest').attr("disabled", "disabled");
@@ -261,15 +277,16 @@ nextButton.addEventListener('click', function() {
           });
           $(document).ready(function() {
             $('#thirdchest').click(function() {
+			  playmusic4();	
               randomprice = Math.floor(Math.random() * 100) + 1;
               randomprice1 = Math.floor(Math.random() * 100) + 1;
               randomprice2 = Math.floor(Math.random() * 100) + 1;
-              document.getElementById("firstchest").innerHTML = "£" + randomprice;
-              document.getElementById("secondchest").innerHTML = "£" + randomprice1;
-              document.getElementById("thirdchest").innerHTML = "£" + randomprice2;
-              document.getElementById("specialchest_info").innerHTML = "WELL DONE!" + " " + "£" + randomprice2 + " in your pocket, now press continue!";
+              document.getElementById("firstchest").innerHTML = "$" + randomprice;
+              document.getElementById("secondchest").innerHTML = "$" + randomprice1;
+              document.getElementById("thirdchest").innerHTML = "$" + randomprice2;
+              document.getElementById("specialchest_info").innerHTML = "WELL DONE!" + " " + "$" + randomprice2 + " in your pocket, now press continue!";
               bankroll += randomprice2;
-              document.getElementById("bankroll").innerHTML = "£" + bankroll;
+              document.getElementById("bankroll").innerHTML = "$" + bankroll;
               document.getElementById("continue").style.visibility = 'visible';
               $('#firstchest').attr("disabled", "disabled");
               $('#secondchest').attr("disabled", "disabled");
@@ -295,8 +312,8 @@ nextButton.addEventListener('click', function() {
           win = multiplier * 5;
           bankroll -= win;
           jackpotmoney += win;
-          document.getElementById("jackpot").innerHTML = "Jackpot:" + "£" + jackpotmoney;
-          document.getElementById("bankroll").innerHTML = "£" + bankroll;
+          document.getElementById("jackpot").innerHTML = "Jackpot:" + "$" + jackpotmoney;
+          document.getElementById("bankroll").innerHTML = "$" + bankroll;
         }
         return;
       }
@@ -310,14 +327,14 @@ nextButton.addEventListener('click', function() {
       if (selectedIndex === 0) { //not working properly need to change it
         bankroll += jackpotmoney;
         jackpotmoney = 50000; //resetting jackpot after hitting the one
-        document.getElementById("bankroll").innerHTML = "£" + bankroll;
+        document.getElementById("bankroll").innerHTML = "$" + bankroll;
         document.getElementById("jackpot").innerHTML = "Please contact support";
         clearInterval(interval);
       }
     }, 1000);
   };
-  setTimeout('$("#playbutton").removeAttr("disabled")', 5000);
-  setTimeout('$("#deposit").removeAttr("disabled")', 5000);
+  //setTimeout('$("#playbutton").removeAttr("disabled")', 5000);
+  //setTimeout('$("#deposit").removeAttr("disabled")', 5000);
 });
 
 var cellsRange = document.querySelector('.cells-range');
@@ -510,7 +527,7 @@ function onOrientationChange() {
 function cashOut() {
 	alert('You cashed out: ' + bankroll);
 	bankroll = 0;
-	document.getElementById("bankroll").innerHTML = "£" + bankroll;
+	document.getElementById("bankroll").innerHTML = "$" + bankroll;
 	playmusic9();
 }
 
