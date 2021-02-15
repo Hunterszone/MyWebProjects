@@ -86,19 +86,19 @@ form .darkGreenS {
 <center><table>
 <tr>
 	<th>
-		<button class="redS" name="star" class="star-1" id="star-1" value="1/5" onclick="thankyou();" />
+		<button class="redS" name="star" class="star-1" id="star-1" value="1/5" />
 	</th>
 	<th>
-		<button class="orangeS" name="star" class="star-2" id="star-2" value="2/5" onclick="thankyou();" />
+		<button class="orangeS" name="star" class="star-2" id="star-2" value="2/5" />
 	</th>
 	<th>
-		<button class="yellowS" name="star" class="star-3" id="star-3" value="3/5" onclick="thankyou();" />
+		<button class="yellowS" name="star" class="star-3" id="star-3" value="3/5" />
 	</th>
 	<th>
-		<button class="greenS" name="star" class="star-4" id="star-4" value="4/5" onclick="thankyou();" />
+		<button class="greenS" name="star" class="star-4" id="star-4" value="4/5" />
 	</th>	
 	<th>
-		<button class="darkGreenS" name="star" class="star-5" id="star-5" value="5/5" onclick="thankyou();" />
+		<button class="darkGreenS" name="star" class="star-5" id="star-5" value="5/5" />
 	</th>
 		<span></span>
 	</th>
