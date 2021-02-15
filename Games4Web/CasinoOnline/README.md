@@ -20,6 +20,10 @@ BET4MORE casino enables gamblers to play and wager on casino games through the I
 
 NB: This project should simulate real online casino. Progressive jackpot is increasing by playing all games.
 
+## TBD: 
+- E-Wallet for each player  
+- Multiple payment methods  
+
 ## AUTHOR: 
 
 Konstantin Drenski
