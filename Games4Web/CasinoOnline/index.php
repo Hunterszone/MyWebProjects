@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+	
+    require('EWallet/connection.php');
+	
+?>
+	
+	
 <html lang="en" dir="ltr">
 
 <head>
@@ -14,6 +20,7 @@
 
 <body>
   <!-- navbar -->
+			
   <nav class="navbar navbar-expand-lg fixed-top ">
     <button id=deposit type="button" class="btn btn-lg navbar-brand" name="button">Deposit</button>
 	<button id=deposit type="button" class="btn btn-lg navbar-brand" name="button" onclick="cashOut();">CashOut</button>
@@ -26,13 +33,14 @@
       <ul class="navbar-nav mr-4">
         <!--<li class="nav-item">
           <a class="nav-link" data-value="About" href="#">Home</a> </li>-->
-		  <li class="nav-item">
-          <a class="nav-link " data-value="EWallet" href="EWallet/ewallet.html">E-Wallet</a>
+		<form id="navBarForm" action="EWallet/ewallet.php" method="post">
+			  <button name="bankroll" data-value="EWallet" value="">E-Wallet</button>
+		</form>
         <li class="nav-item">
           <a class="nav-link " data-value="Genie" href="#Genie">Magical numbers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " data-value="Carousel" href="#carousel">Stars of fortune</a> </li>
+          <a class="nav-link " data-value="Carousel" href="../home.html#carousel">Stars of fortune</a> </li>
         <li class="nav-item">
 		<li class="nav-item">
           <a class="nav-link " data-value="WheelOfFortune" href="WheelOfFortune/wheelOfFortune.html#WheelOfFortune">Wheel of fortune</a> </li>
@@ -40,18 +48,15 @@
 			<a class="nav-link " data-value="Crazy" href="slotMachine.html">Slot machine</a> </li>
 		<li class="nav-item">
           <a class="nav-link " data-value="PokerJs" href="PokerJS/poker.html#PokerJs">Texas Hold'em</a> </li>
-
-
       </ul>
     </div>
   </nav>
-
   <!-- header background img -->
   <header id=header>
     <!--<img class="img-fluid" src="img/casino1.jpg">-->
 			<div>
 					<!--<button onclick="location.href='#carousel'" style="text-decoration:none;" type="button" class="fancy">PLAY NOW</button>-->
-					<input type="image" onclick="location.href='#carousel'" class="fancy" src="img/playNow.png" />
+					<input type="image" onclick="location.href='#Genie'" class="fancy" src="img/playNow.png" />
 
 			</div>
 	   <!--<button id=buttonmain onclick="location.href='#carousel'" type="button" class="btn btn-warning">Play now</button>-->
@@ -68,63 +73,6 @@
     </div>
   </div>
 
-  <!-- Stars of fortune game -->
-
-
-    <div class="Carousel container-fluid" id=carousel>
-        <div class="starswin col-12 col-6-medium col-12-small text-center">
-          <x-sign class="col text-center" id=fancy2>
-            Stars of fortune
-          </x-sign>
-          <h1 id=info1>Stars are waiting for you. May the odds be in your favor.</h1>
-          <h1 id=jackpotstars></h1>
-        </div>
-        <div class="scene col-12 col-6-medium col-12-small" id=scene>
-          <div class="carousel">
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$8</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$8</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$8</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$20</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$500</div>
-            <div class="carousel__cell">$20</div>
-          </div>
-        </div>
-        <div class="carousel-options col-12 col-6-medium col-12-small text-center">
-          <div class="cells">
-    <p>
-      <label>
-        Cells
-        <input class="cells-range" type="range" min="3" max="15" value="15" />
-      </label>
-    </p>
-  </div>
-    <p>
-      <button class="next-button btn btn-primary btn-lg text-center" id=playbutton>Play</button>
-    </p>
-    <div class="orientation col-12 col-6-medium col-12-small text-center">
-    <p>
-      Orientation:
-      <label>
-        <input type="radio" name="orientation" value="horizontal" checked />
-        horizontal
-      </label>
-      <label>
-        <input type="radio" name="orientation" value="vertical" />
-        vertical
-      </label>
-    </p>
-    </div>
-  </div>
-    </div>
 
   <!--  Magical numbers game-->
   <div class="wrapper">

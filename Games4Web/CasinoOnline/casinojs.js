@@ -10,6 +10,15 @@ document.body.appendChild(audio);
 audio.src = "mp3/jazz.mp3"
 audio.volume = 0.1;
 
+$(document).ready(function(){
+ $("button").click(changeBtnText);
+});
+function changeBtnText( event ) {
+  if (event.target.value === "") {        
+    event.target.value = bankroll; 
+  } 
+}
+
 document.body.addEventListener("mousemove", function () {
     audio.play()
 })

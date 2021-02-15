@@ -1,5 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+	
+    require('connection.php');
+	
+		//Create array to store validation errors
+		$errmsg_arr = array();
+	 
+		//Validation error flag
+		$errflag = false;
+		
+        $money = $_POST['cash'];
+		$query = "INSERT INTO wallet (amount) VALUES('$money')";
+        $result = mysqli_query($conn,$query);
+			
+	$conn->close();
+
+?>
+
+<html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>E-wallet</title>
@@ -12,13 +30,15 @@
 		}
 	</script>
 </head>
+
 <body>
 	<div class="wallet-container text-center">
 		<p class="page-title"><i class="fa fa-align-left"></i><a href="#" onclick="print();">My E-wallet</a></p>
 
 		<div class="amount-box text-center">
 			<img src="https://lh3.googleusercontent.com/ohLHGNvMvQjOcmRpL4rjS3YQlcpO0D_80jJpJ-QA7-fQln9p3n7BAnqu3mxQ6kI4Sw" alt="wallet">
-			<p>Total Balance : <?php echo $_POST['bankroll'] ?>$ </p>
+			<p>Total Balance : <?php echo $_POST['bankroll'] ?> $</p>
+			<!--<p id=bankroll class="amount">$ 0</p>-->
 		</div>
 
 		<div class="btn-group text-center">
@@ -64,4 +84,3 @@
 <script src="../crazy.js"></script>
 <script src="../casinojs.js"></script>
 </body>
-</html>
