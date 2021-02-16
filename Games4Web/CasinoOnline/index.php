@@ -52,9 +52,9 @@
           <a class="nav-link " data-value="Carousel" href="home.html#carousel">Stars of fortune</a> </li>
         <li class="nav-item">
 		<li class="nav-item">
-          <a class="nav-link " data-value="WheelOfFortune" href="WheelOfFortune/wheelOfFortune.html#WheelOfFortune">Wheel of fortune</a> </li>
+          <a class="nav-link " data-value="WheelOfFortune" href="WheelOfFortune/wheelOfFortune.php#WheelOfFortune">Wheel of fortune</a> </li>
 		<li class="nav-item">
-			<a class="nav-link " data-value="Crazy" href="slotMachine.html">Slot machine</a> </li>
+			<a class="nav-link " data-value="Crazy" href="slotMachine.php">Slot machine</a> </li>
 		<li class="nav-item">
           <a class="nav-link " data-value="PokerJs" href="PokerJS/poker.html#PokerJs">Texas Hold'em</a> </li>
       </ul>
@@ -67,10 +67,8 @@
   <header id=header>
     <!--<img class="img-fluid" src="img/casino1.jpg">-->
 			<div>
-					<!--<button onclick="location.href='#carousel'" style="text-decoration:none;" type="button" class="fancy">PLAY NOW</button>-->
-					
-				  <input type="image" onclick="location.href='#Genie'" class="fancy" src="img/playNow.png" />
-										
+					<!--<button onclick="location.href='#carousel'" style="text-decoration:none;" type="button" class="fancy">PLAY NOW</button>-->	
+				<input type="image" onclick="location.href='#Genie'" class="fancy" src="img/playNow.png" />
 			</div>
 	   <!--<button id=buttonmain onclick="location.href='#carousel'" type="button" class="btn btn-warning">Play now</button>-->
   </header>

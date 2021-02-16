@@ -24,13 +24,8 @@
 	<link rel="stylesheet" href="E-wallet.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script>
-		function print(){
-			console.log("Bankroll: " + <?php echo $_POST['bankroll'] ?>);
-		}
-		
+	<script>		
 		var calc = parseInt("<?php echo $_POST['bankroll'] ?>") / 4;
-		console.log("Calc: " + calc);
 		
 		window.onload = function() {
        //when the document is finished loading, replace everything
@@ -49,7 +44,7 @@
 		<p class="page-title"><i class="fa fa-align-left"></i><a href="#" onclick="print();">My E-wallet</a></p>
 
 		<div class="amount-box text-center">
-			<img src="https://lh3.googleusercontent.com/ohLHGNvMvQjOcmRpL4rjS3YQlcpO0D_80jJpJ-QA7-fQln9p3n7BAnqu3mxQ6kI4Sw" alt="wallet">
+			<img src="../img/wallet.png" alt="wallet">
 			<h4><p>Total Balance : <?php echo $_POST['bankroll'] ?> $</p></h4>
 			<!--<p id=bankroll class="amount">$ 0</p>-->
 		</div>

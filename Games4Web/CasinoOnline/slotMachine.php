@@ -1,3 +1,21 @@
+<?php
+	
+    require('EWallet/connection.php');
+	
+	//Create array to store validation errors
+	$errmsg_arr = array();
+	 
+	//Validation error flag
+	$errflag = false;
+	
+	$queryDeposit = "SELECT * FROM wallet AS w WHERE w.amount !='' ORDER BY id DESC limit 1";
+    $resultDeposit = mysqli_query($conn,$queryDeposit);
+	$row = mysqli_fetch_array($resultDeposit);
+
+	$conn->close();
+	
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -20,7 +38,7 @@
     <button id=deposit type="button" class="btn btn-lg navbar-brand" name="button">Deposit</button>
 	<button id=deposit class="btn btn-lg navbar-brand" name="bankroll" data-value="EWallet" value="">E-Wallet</button>
 	<!--<button id=deposit type="button" class="btn btn-lg navbar-brand" name="button" onclick="cashOut();">CashOut</button>-->
-    <h2 id=bankroll class="nav-brand">$ 0</h2>
+    <h2 id=bankroll class="nav-brand">Credit: $ <?php echo end($row) ?></h2>
     <h2 class="flash nav-brand" id=jackpot>Jackpot: $50000</h2>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -34,7 +52,7 @@
           <a class="nav-link " data-value="Carousel" href="home.html#carousel">Stars of fortune</a> </li>
         <li class="nav-item">
 		<li class="nav-item">
-          <a class="nav-link " data-value="WheelOfFortune" href="WheelOfFortune/wheelOfFortune.html#WheelOfFortune">Wheel of fortune</a> </li>
+          <a class="nav-link " data-value="WheelOfFortune" href="WheelOfFortune/wheelOfFortune.php#WheelOfFortune">Wheel of fortune</a> </li>
 		<li class="nav-item">		
 		  <a class="nav-link " data-value="Crazy" href="#">Slot machine</a> </li>
 		<li class="nav-item">
@@ -173,9 +191,6 @@
 </div>
 
 
-
-
-
     <audio id="audio" src="mp3/darkhorse.mp3" ></audio>
     <audio id="audio2" src="mp3/duel.mp3" ></audio>
     <audio id="audio3" src="mp3/coin.mp3" ></audio>
@@ -192,8 +207,4 @@
 
   </body>
 
-  </html>
-
-
-
-
+</html>

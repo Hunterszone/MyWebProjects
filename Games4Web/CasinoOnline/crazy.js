@@ -4,6 +4,7 @@ var bankroll = 1; //initial bankroll
 
 var jackpotmoney = 50000; //this will be initial jackpot incrementing with each and every single spin(progressive), after hitting a jackpot it will reset itself to 50000. You can win the jackpot by playing any game
 
+// wallet amount
 $(document).ready(function(){
  $("button").click(changeBtnText);
 });
@@ -14,7 +15,6 @@ function changeBtnText( event ) {
 }
 
 //music
-
 function playmusic() {
   var audio = document.getElementById("audio");
   audio.play();
