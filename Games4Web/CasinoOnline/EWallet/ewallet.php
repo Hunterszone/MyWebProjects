@@ -8,7 +8,7 @@
 		//Validation error flag
 		$errflag = false;
 		
-        $money = $_POST['cash'];
+        $money = $_POST['bankroll'];
 		$query = "INSERT INTO wallet (amount) VALUES('$money')";
         $result = mysqli_query($conn,$query);
 			
@@ -61,7 +61,7 @@
 				<div class="row text-center">
 					<div class="col-md-3">
 						<i class="fa fa-home"></i>
-						<a href="../home.html">Home</a>
+						<a href="../index.php">Home</a>
 					</div>
 
 					<div class="col-md-3">

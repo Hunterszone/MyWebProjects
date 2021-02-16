@@ -2,6 +2,18 @@
 	
     require('EWallet/connection.php');
 	
+	//Create array to store validation errors
+	$errmsg_arr = array();
+	 
+	//Validation error flag
+	$errflag = false;
+	
+	$queryDeposit = "SELECT * FROM wallet AS w WHERE w.amount !='' ORDER BY id DESC limit 1";
+    $resultDeposit = mysqli_query($conn,$queryDeposit);
+	$row = mysqli_fetch_array($resultDeposit);
+
+	$conn->close();
+	
 ?>
 	
 	
@@ -15,7 +27,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">  
 </head>
 
 <body>
@@ -25,8 +37,8 @@
   <nav class="navbar navbar-expand-lg fixed-top ">
     <button id=deposit type="button" class="btn btn-lg navbar-brand" name="button">Deposit</button>
 	<button id=deposit class="btn btn-lg navbar-brand" name="bankroll" data-value="EWallet" value="">E-Wallet</button>
-    <h2 id=bankroll class="nav-brand">$ 0</h2>
-	<!--<button id=deposit type="button" class="btn btn-lg navbar-brand" name="button" onclick="cashOut();">CashOut</button>-->
+    <h2 id=bankroll class="nav-brand">$ <?php echo end($row) ?></h2>
+  <!--<button id=deposit type="button" class="btn btn-lg navbar-brand" name="button" onclick="cashOut();">CashOut</button>-->
     <h2 class="flash nav-brand" id=jackpot>Jackpot: $50000</h2>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
