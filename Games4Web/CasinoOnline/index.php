@@ -20,21 +20,20 @@
 
 <body>
   <!-- navbar -->
-			
+		
+<form id="navBarForm" action="EWallet/ewallet.php" method="post">
   <nav class="navbar navbar-expand-lg fixed-top ">
     <button id=deposit type="button" class="btn btn-lg navbar-brand" name="button">Deposit</button>
-	<button id=deposit type="button" class="btn btn-lg navbar-brand" name="button" onclick="cashOut();">CashOut</button>
+	<button id=deposit class="btn btn-lg navbar-brand" name="bankroll" data-value="EWallet" value="">E-Wallet</button>
     <h2 id=bankroll class="nav-brand">$ 0</h2>
+	<!--<button id=deposit type="button" class="btn btn-lg navbar-brand" name="button" onclick="cashOut();">CashOut</button>-->
     <h2 class="flash nav-brand" id=jackpot>Jackpot: $50000</h2>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav mr-4">
-        <form id="navBarForm" action="EWallet/ewallet.php" method="post">
-			  <button class="btn btn-success" name="bankroll" data-value="EWallet" value="">E-Wallet</button>
-		</form>
-        <li class="nav-item">
+		<li class="nav-item">
           <a class="nav-link " data-value="Genie" href="#Genie">Magical numbers</a>
         </li>
         <li class="nav-item">
@@ -49,6 +48,8 @@
       </ul>
     </div>
   </nav>
+</form>
+        
   <!-- header background img -->
   <header id=header>
     <!--<img class="img-fluid" src="img/casino1.jpg">-->

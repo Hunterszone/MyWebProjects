@@ -1,6 +1,6 @@
 //Global
 
-var bankroll = "0"; //initial bankroll
+var bankroll = 0; //initial bankroll
 
 var jackpotmoney = 50000; //this will be initial jackpot incrementing with each and every single spin(progressive), after hitting a jackpot it will reset itself to 50000. You can win the jackpot by playing any game
 
@@ -63,8 +63,8 @@ $(document).ready(function() {
 
 function deposit() {
   do {
-    var deposit = parseFloat(window.prompt("Please enter your deposit, maximum deposit is $100, minimum deposit $1, if you dont want to deposit please refresh this page"), 10);
-  } while (isNaN(deposit) || deposit > 100 || deposit < 1); //for now I will use prompt to deposit in the future I might implement something like a link to paypal, after successful deposit credit will be added to the bankroll
+    var deposit = parseFloat(window.prompt("Please enter your deposit, minimum deposit is $1"), 10);
+  } while (isNaN(deposit) || deposit < 1); //for now I will use prompt to deposit in the future I might implement something like a link to paypal, after successful deposit credit will be added to the bankroll
   deposit = parseFloat(deposit);
   bankroll = parseFloat(bankroll);
   bankroll = deposit + bankroll;

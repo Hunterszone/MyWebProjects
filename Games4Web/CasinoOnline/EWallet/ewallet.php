@@ -26,7 +26,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script>
 		function print(){
-			console.log("Bankroll: " + bankroll);
+			console.log("Bankroll: " + <?php echo $_POST['bankroll'] ?>);
 		}
 	</script>
 </head>
@@ -37,12 +37,12 @@
 
 		<div class="amount-box text-center">
 			<img src="https://lh3.googleusercontent.com/ohLHGNvMvQjOcmRpL4rjS3YQlcpO0D_80jJpJ-QA7-fQln9p3n7BAnqu3mxQ6kI4Sw" alt="wallet">
-			<p>Total Balance : <?php echo $_POST['bankroll'] ?> $</p>
+			<h4><p>Total Balance : <?php echo $_POST['bankroll'] ?> $</p></h4>
 			<!--<p id=bankroll class="amount">$ 0</p>-->
 		</div>
 
 		<div class="btn-group text-center">
-			<button type="button" class="btn btn-outline-light">Add Money</button>
+			<button name="bankroll" class="btn btn-outline-light" onclick="deposit();" value="">Add Money</button>
 			<button type="button" class="btn btn-outline-light">Widthdraw</button>
 			</div>
 
