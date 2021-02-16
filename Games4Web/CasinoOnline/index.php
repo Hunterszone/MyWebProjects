@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
 </head>
 
 <body>
@@ -37,7 +37,7 @@
   <nav class="navbar navbar-expand-lg fixed-top ">
     <button id=deposit type="button" class="btn btn-lg navbar-brand" name="button">Deposit</button>
 	<button id=deposit class="btn btn-lg navbar-brand" name="bankroll" data-value="EWallet" value="">E-Wallet</button>
-    <h2 id=bankroll class="nav-brand">$ <?php echo end($row) ?></h2>
+    <h2 id=bankroll class="nav-brand">Credit: $ <?php echo end($row) ?></h2>
   <!--<button id=deposit type="button" class="btn btn-lg navbar-brand" name="button" onclick="cashOut();">CashOut</button>-->
     <h2 class="flash nav-brand" id=jackpot>Jackpot: $50000</h2>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,7 +49,7 @@
           <a class="nav-link " data-value="Genie" href="#Genie">Magical numbers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " data-value="Carousel" href="../home.html#carousel">Stars of fortune</a> </li>
+          <a class="nav-link " data-value="Carousel" href="home.html#carousel">Stars of fortune</a> </li>
         <li class="nav-item">
 		<li class="nav-item">
           <a class="nav-link " data-value="WheelOfFortune" href="WheelOfFortune/wheelOfFortune.html#WheelOfFortune">Wheel of fortune</a> </li>
@@ -63,12 +63,14 @@
 </form>
         
   <!-- header background img -->
+  
   <header id=header>
     <!--<img class="img-fluid" src="img/casino1.jpg">-->
 			<div>
 					<!--<button onclick="location.href='#carousel'" style="text-decoration:none;" type="button" class="fancy">PLAY NOW</button>-->
-					<input type="image" onclick="location.href='#Genie'" class="fancy" src="img/playNow.png" />
-
+					
+				  <input type="image" onclick="location.href='#Genie'" class="fancy" src="img/playNow.png" />
+										
 			</div>
 	   <!--<button id=buttonmain onclick="location.href='#carousel'" type="button" class="btn btn-warning">Play now</button>-->
   </header>
@@ -77,7 +79,7 @@
   <div class="container-fluid  About" id=About>
     <div class="description">
     <x-sign id=fancy>
-      BET4MORE CASINO
+      1$ BONUS PER DEPOSIT!
     </x-sign>
     <h1>Welcome to BET4MORE casino. Good luck and have fun!</h1>
     <p>Deposit first. Choose the game you want to play. Remember progressive jackpot increases with each and every single spin!</p>
@@ -219,7 +221,6 @@
   </footer>
   <!-- Footer -->
 
-
   <audio id="audio" src="mp3/suspense.mp3" ></audio>
   <audio id="audio2" src="mp3/duel.mp3" ></audio>
   <audio id="audio3" src="mp3/gucci.mp3" ></audio>
@@ -227,12 +228,12 @@
   <audio id="audio5" src="mp3/darkhorsewin.mp3" ></audio>
   <audio id="audio6" src="mp3/coin.mp3" ></audio>
 
-
-
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
   <script src="casinojs.js"></script>
+  <script src="crazy.js"></script>
 
 </body>
 

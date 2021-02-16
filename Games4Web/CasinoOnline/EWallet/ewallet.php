@@ -28,6 +28,19 @@
 		function print(){
 			console.log("Bankroll: " + <?php echo $_POST['bankroll'] ?>);
 		}
+		
+		var calc = parseInt("<?php echo $_POST['bankroll'] ?>") / 4;
+		console.log("Calc: " + calc);
+		
+		window.onload = function() {
+       //when the document is finished loading, replace everything
+       //between the <a ...> </a> tags with the value of splitText
+		   document.getElementById("myScore").innerHTML="$ " + calc;
+		   document.getElementById("myScore2").innerHTML="$ " + calc;
+		   document.getElementById("myScore3").innerHTML="$ " + calc;
+		   document.getElementById("myScore4").innerHTML="$ " + calc;
+		} 
+		
 	</script>
 </head>
 
@@ -42,19 +55,19 @@
 		</div>
 
 		<div class="btn-group text-center">
-			<button name="bankroll" class="btn btn-outline-light" onclick="deposit();" value="">Add Money</button>
-			<button type="button" class="btn btn-outline-light">Widthdraw</button>
+			<!--<button id=deposit type="button" name="button" class="btn btn-outline-light">Add Money</button>-->
+			<button type="button" class="btn btn-outline-light" onclick="window.location.href='https://www.payoneer.com/raf/?rid=62510A8E-D0B3-4483-98C5-A8E0938653B9'" target="_blank">Widthdraw</button>
 			</div>
 
 			<div class="txn-history">
 				<p><b>History</b></p>
-				<p class="txn-list">Payment to xyz shop<span class="debit-amount">-$100</span></p>
+				<p class="txn-list">Balance for Magical numbers<span id="myScore" class="credit-amount"></span></p>
 
-				<p class="txn-list">Payment to abc shop<span class="debit-amount">-$150</span></p>
+				<p class="txn-list">Balance for Stars of fortune<span id="myScore2" class="credit-amount"></span></p>
 
-				<p class="txn-list">Credit From abc ltd<span class="credit-amount">+$300</span></p>
+				<p class="txn-list">Balance for Wheel of fortune<span id="myScore3" class="credit-amount"></span></p>
 
-				<p class="txn-list">Transfer From John Doe<span class="credit-amount">+$100</span></p>
+				<p class="txn-list">Balance for slot machine<span id="myScore4" class="credit-amount"></span></p>
 			</div>
 
 			<div class="footer-menu">
@@ -66,17 +79,17 @@
 
 					<div class="col-md-3">
 						<i class="fa fa-inbox"></i>
-						<a href="../home.html">Inbox</a>
+						<a href="https://www.mailinator.com/v4/public/inboxes.jsp?to=BET4MORE" target="_blank">Inbox</a>
 					</div>
 
 					<div class="col-md-3">
 						<i class="fa fa-university"></i>
-						<a href="../home.html">Bank</a>
+						<a href="https://www.payoneer.com/raf/?rid=62510A8E-D0B3-4483-98C5-A8E0938653B9" target="_blank">Bank</a>
 					</div>
 
 					<div class="col-md-3">
 						<i class="fa fa-bell"></i>
-						<a href="../home.html">Alerts</a>
+						<a href="http://alert-generator.feedsynews.com/" target="_blank">Alerts</a>
 					</div>
 				</div>
 			</div>
