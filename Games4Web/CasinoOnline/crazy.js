@@ -1,6 +1,6 @@
 //Global
 
-var bankroll = 1; //initial bankroll
+var bankroll = getRandomInt(300); //initial bankroll
 
 var jackpotmoney = 50000; //this will be initial jackpot incrementing with each and every single spin(progressive), after hitting a jackpot it will reset itself to 50000. You can win the jackpot by playing any game
 
@@ -8,10 +8,15 @@ var jackpotmoney = 50000; //this will be initial jackpot incrementing with each 
 $(document).ready(function(){
  $("button").click(changeBtnText);
 });
+
 function changeBtnText( event ) {
   if (event.target.value === "") {        
     event.target.value = bankroll; 
   } 
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
 }
 
 //music
@@ -69,6 +74,11 @@ function playmusic8() {
 
 function playmusic9() {
   var audio = document.getElementById("audio9");
+  audio.play();
+}
+
+function playmusic10() {
+  var audio = document.getElementById("audio10");
   audio.play();
 }
 
@@ -163,7 +173,7 @@ nextButton.addEventListener('click', function() {
 
     var startTime = new Date().getTime();
     var interval = setInterval(function() {
-		playmusic4();
+		playmusic10();
       if (new Date().getTime() - startTime > 5000) {
         clearInterval(interval);
         selectedIndex = Math.floor(Math.random() * 9) + 1;
