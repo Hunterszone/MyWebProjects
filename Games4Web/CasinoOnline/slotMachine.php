@@ -196,6 +196,7 @@
     <audio id="audio3" src="mp3/coin.mp3" ></audio>
 	<audio id="audio4" src="mp3/tick.mp3" ></audio>
 	<audio id="audio9" src="mp3/coin.mp3" ></audio>
+	<audio id="audio10" src="mp3/slotTurn.mp3" ></audio>
 
 
 
