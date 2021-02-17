@@ -51,8 +51,9 @@
         <li class="nav-item">
           <a class="nav-link " data-value="Carousel" href="home.html#carousel">Stars of fortune</a> </li>
         <li class="nav-item">
-		<li class="nav-item">
           <a class="nav-link " data-value="WheelOfFortune" href="WheelOfFortune/wheelOfFortune.php#WheelOfFortune">Wheel of fortune</a> </li>
+		<li class="nav-item">
+          <a class="nav-link " data-value="Roulette" href="Roulette/index.html#Roulette">Casino Roulette</a> </li>
 		<li class="nav-item">		
 		  <a class="nav-link " data-value="Crazy" href="#">Slot machine</a> </li>
 		<li class="nav-item">
