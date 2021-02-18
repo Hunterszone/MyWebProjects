@@ -317,11 +317,16 @@ const chipSelection = () => {
 
 chipSelection();
 
+// generate random bankroll
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 //Chips placing start
 var betSum = 0;
-var cashSum = 1000;
+var cashSum = getRandomInt(300); //initial bankroll
 var minBet = 5;
-var maxBet = 1000;
+var maxBet = cashSum;
 var areaChipCount = 0;
 var bankSum = cashSum;
 $(".cash-total").html(`${cashSum}.00`);

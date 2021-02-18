@@ -28,9 +28,7 @@
 		var calc = parseInt("<?php echo $_POST['bankroll'] ?>") / 4;
 		
 		window.onload = function() {
-       //when the document is finished loading, replace everything
-       //between the <a ...> </a> tags with the value of splitText
-		   document.getElementById("myScore").innerHTML="$ " + calc;
+    	   document.getElementById("myScore").innerHTML="$ " + calc;
 		   document.getElementById("myScore2").innerHTML="$ " + calc;
 		   document.getElementById("myScore3").innerHTML="$ " + calc;
 		   document.getElementById("myScore4").innerHTML="$ " + calc;

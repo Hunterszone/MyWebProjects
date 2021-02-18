@@ -54,7 +54,7 @@
 		<li class="nav-item">
           <a class="nav-link " data-value="WheelOfFortune" href="WheelOfFortune/wheelOfFortune.php#WheelOfFortune">Wheel of fortune</a> </li>
 		<li class="nav-item">
-          <a class="nav-link " data-value="Roulette" href="Roulette/index.html#Roulette">Casino Roulette</a> </li>
+          <a class="nav-link " data-value="Roulette" href="Roulette/roulette.php#Roulette">Casino Roulette</a> </li>
 			<a class="nav-link " data-value="Crazy" href="slotMachine.php">Slot machine</a> </li>
 		<li class="nav-item">
           <a class="nav-link " data-value="PokerJs" href="PokerJS/poker.html#PokerJs">Texas Hold'em</a> </li>

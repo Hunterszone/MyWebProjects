@@ -1,3 +1,21 @@
+<?php
+	
+    require('../EWallet/connection.php');
+	
+	//Create array to store validation errors
+	$errmsg_arr = array();
+	 
+	//Validation error flag
+	$errflag = false;
+	
+	$queryDeposit = "SELECT * FROM wallet AS w WHERE w.amount !='' ORDER BY id DESC limit 1";
+    $resultDeposit = mysqli_query($conn,$queryDeposit);
+	$row = mysqli_fetch_array($resultDeposit);
+
+	$conn->close();
+	
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,6 +25,16 @@
     <title>Roulette</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
+	<script>		
+		var calc = parseInt("<?php echo end($row) ?>");
+		
+		window.onload = function() {
+    	   //document.getElementById("myScore").innerHTML="$" + calc;
+		   document.getElementById("myScore2").innerHTML=calc;
+		   //document.getElementById("myScore").className = "text-color";
+		} 
+		
+	</script>
   </head>
   <body class="index">
     <div class="website-wrapper" id="website-wrapper">
@@ -23,7 +51,8 @@
           <div class="game-name">ROULETTE</div>
           <div class="min-max-bet">
             <div class="min-bet bet-size"><span class="text-color">MIN:</span> $5.00</div>
-            <div class="max-bet bet-size"><span class="text-color">MAX:</span> $1000.00</div>
+			<!--<div class="max-bet bet-size"><span class="text-color">MAX:</span></div>-->
+            <div id=myScore class="max-bet bet-size"></div>
           </div>
         </div>
         <div class="roulette-wheel-container">
@@ -279,8 +308,8 @@
 
         <div class="money-container">
           <div class="cash-area area">
-            <div class="text"><span>CASH</span> $</div>
-            <div class="cash-total"></div>
+			<div class="text"><span>CASH</span> $</div>
+            <div id=myScore2 class="cash-total"></div>
           </div>
 		  <div>
 			<input type="image" onclick="location.href='../index.php'" src="images/lobby.png" />
@@ -293,15 +322,15 @@
 
         <!-- Alert messages start ---------------------------------------------------------------->
         <div class="alert-message-container alert-bets">
-          <div class="alert-message">PLEASE PLACE YOUR BETS</div>
+          <div class="alert-message">PLEASE PLACE YOUR BETS!</div>
         </div>
 
         <div class="alert-message-container alert-money">
-          <div class="alert-message">NOT ENOUGH MONEY</div>
+          <div class="alert-message">NOT ENOUGH MONEY!</div>
         </div>
 
         <div class="alert-message-container alert-max-bet">
-          <div class="alert-message">YOU SHOULD NOT EXCEED MAXIMUM BET OF $1000</div>
+          <div class="alert-message">MAXIMUM BET EXCEEDED!</div>
         </div>
 
         <div class="alert-message-container alert-spin-result">
@@ -335,6 +364,10 @@
     <!-- Script Source -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" data-auto-replace-svg="nest"></script>
+
     <script src="js/scripts.js"></script>
+    <script src="../casinojs.js"></script>
+    <script src="../crazy.js"></script>
+
   </body>
 </html>
