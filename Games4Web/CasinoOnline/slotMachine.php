@@ -60,6 +60,12 @@
           <a class="nav-link " data-value="PokerJs" href="PokerJS/poker.html#PokerJs">Texas Hold'em</a> </li>
       </ul>
     </div>
+	<li class="list-inline-item">
+		<a href="#!" class="btn btn-warning btn-rounded"><b>Sign in</b></a>
+	</li>
+	<li class="list-inline-item">
+		<a href="#!" class="btn btn-warning btn-rounded"><b>Sign up</b></a>
+	</li>
   </nav>
 </form>
 
