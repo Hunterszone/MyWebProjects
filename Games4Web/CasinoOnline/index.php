@@ -37,7 +37,7 @@
   <nav class="navbar navbar-expand-lg fixed-top ">
     <button id=deposit type="button" class="btn btn-lg navbar-brand" name="button">Deposit</button>
 	<button id=deposit class="btn btn-lg navbar-brand" name="bankroll" data-value="EWallet" value="">E-Wallet</button>
-    <h2 id=bankroll class="nav-brand">Credit: $ <?php echo end($row) ?></h2>
+	<h2 id=bankroll class="nav-brand">Credit: $ <?php echo end($row) ?></h2>
   <!--<button id=deposit type="button" class="btn btn-lg navbar-brand" name="button" onclick="cashOut();">CashOut</button>-->
     <h2 class="flash nav-brand" id=jackpot>Jackpot: $50000</h2>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,6 +60,12 @@
           <a class="nav-link " data-value="PokerJs" href="PokerJS/poker.html#PokerJs">Texas Hold'em</a> </li>
       </ul>
     </div>
+	<li class="list-inline-item">
+		<a href="#!" class="btn btn-warning btn-rounded"><b>Sign in</b></a>
+	</li>
+	<li class="list-inline-item">
+		<a href="#!" class="btn btn-warning btn-rounded"><b>Sign up</b></a>
+	</li>	
   </nav>
 </form>
         
@@ -169,12 +175,6 @@
 	  <li class="list-inline-item">
 			<a href="#"><img id="toTop" src="img/scroll-to-top.gif" title="Back to top" style="width: 70px; height: 70px;"></a>
 	  </li>
-      <li class="list-inline-item">
-        <h5 class="mb-1">Register for free</h5>
-      </li>
-      <li class="list-inline-item">
-        <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
-      </li>
     </ul>
     <!-- Call to action -->
 
