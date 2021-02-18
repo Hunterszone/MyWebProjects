@@ -61,10 +61,10 @@
       </ul>
     </div>
 	<li class="list-inline-item">
-		<a href="#!" class="btn btn-warning btn-rounded"><b>Sign in</b></a>
+		<a href="#!" class="btn btn-success btn-rounded"><b>Sign in</b></a>
 	</li>
 	<li class="list-inline-item">
-		<a href="#!" class="btn btn-warning btn-rounded"><b>Sign up</b></a>
+		<a href="#!" class="btn btn-primary btn-rounded"><b>Sign up</b></a>
 	</li>
   </nav>
 </form>

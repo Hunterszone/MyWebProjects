@@ -58,10 +58,15 @@
 				<li class="nav-item">
 				<li><a class="nav-link " data-value="Crazy" href="../slotMachine.php">Slot machine</a> </li>
 				<li class="nav-item">
-				  <a class="nav-link " data-value="PokerJs" href="../PokerJS/poker.html#PokerJs">Texas Hold'em</a> </li>
-				  
+				  <a class="nav-link " data-value="PokerJs" href="../PokerJS/poker.html#PokerJs">Texas Hold'em</a> </li>				  
 			  </ul>
 			</div>
+			<li class="list-inline-item">
+				<a href="#!" class="btn btn-success btn-rounded"><b>Sign in</b></a>
+			</li>
+			<li class="list-inline-item">
+				<a href="#!" class="btn btn-primary btn-rounded"><b>Sign up</b></a>
+			</li>
    	    </nav>
 </form>
 		<br><br><br>
