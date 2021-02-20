@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @ComponentScan("com.drenski.country.*")
 @EntityScan("com.drenski.country.*")
-@EnableJpaRepositories(basePackages = "com.drenski.country.repositories")
+@EnableJpaRepositories(basePackages = "com.drenski.country.*")
 public class CountryApplication {
 
 	public static void main(String[] args) {

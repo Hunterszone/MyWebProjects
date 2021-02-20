@@ -1,4 +1,4 @@
-package com.drenski.country.entities;
+package com.drenski.country.entity;
 
 import java.time.LocalDateTime;
 

@@ -13,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.drenski.country.entities.Country;
-import com.drenski.country.repositories.CountryRepository;
+import com.drenski.country.entity.Country;
+import com.drenski.country.repository.CountryRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {TestConfiguration.class})

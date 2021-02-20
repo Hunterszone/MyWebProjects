@@ -1,4 +1,4 @@
-package com.drenski.country.models;
+package com.drenski.country.entity;
 
 import java.io.Serializable;
 

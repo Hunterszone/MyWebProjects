@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.drenski.country.services.DeleteCountryService;
+import com.drenski.country.service.DeleteCountryService;
 
 @RestController
 public class DeleteCountryController {
@@ -20,11 +20,10 @@ public class DeleteCountryController {
 	public DeleteCountryController(final DeleteCountryService service) {
 		this.service = service;
 	}
-	
-	@DeleteMapping("/countries/{id}")
-    public void delete(@PathVariable String id) {
 
-        Long userId = Long.parseLong(id);
-        service.deleteById(userId);
-    }
+	@DeleteMapping("/countries/{id}")
+	public void delete(@PathVariable Long id) {
+
+		service.deleteById(id);
+	}
 }

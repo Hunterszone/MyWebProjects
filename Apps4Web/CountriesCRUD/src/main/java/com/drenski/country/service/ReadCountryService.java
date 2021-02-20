@@ -1,4 +1,4 @@
-package com.drenski.country.services;
+package com.drenski.country.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +7,8 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.drenski.country.entities.Country;
-import com.drenski.country.repositories.CountryRepository;
+import com.drenski.country.entity.Country;
+import com.drenski.country.repository.CountryRepository;
 
 @Service
 public class ReadCountryService {

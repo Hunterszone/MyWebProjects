@@ -1,9 +1,9 @@
-package com.drenski.country.repositories;
+package com.drenski.country.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.drenski.country.entities.Country;
+import com.drenski.country.entity.Country;
 
 @Repository
 public interface CountryRepository extends CrudRepository<Country, Long> {

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.drenski.country.entities.Country;
-import com.drenski.country.services.ReadCountryService;
+import com.drenski.country.entity.Country;
+import com.drenski.country.service.ReadCountryService;
 
 @RestController
 public class ReadCountryController {

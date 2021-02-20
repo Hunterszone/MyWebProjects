@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.drenski.country.entities.Country;
-import com.drenski.country.repositories.CountryRepository;
+import com.drenski.country.entity.Country;
+import com.drenski.country.repository.CountryRepository;
 
 @Component
-public class CLRunner implements CommandLineRunner {
+public class CountryInitializer implements CommandLineRunner {
 
-    private static final Logger logger = Logger.getLogger(CLRunner.class.getName());
+    private static final Logger logger = Logger.getLogger(CountryInitializer.class.getName());
 
     @Autowired
     private CountryRepository countryRepository;
