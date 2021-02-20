@@ -1,4 +1,4 @@
-package com.drenski.country.controllers;
+package com.drenski.country.controller;
 
 import java.util.List;
 
