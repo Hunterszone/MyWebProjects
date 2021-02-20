@@ -1,0 +1,6 @@
+2021-01-22 17:48:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DEVICES" not found; SQL statement:
+INSERT INTO devices (GATEWAY, DEVICE) VALUES (?,?) [42102-199]
+2021-01-22 17:51:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DEVICES" not found; SQL statement:
+INSERT INTO DEVICES (GATEWAY, DEVICE) VALUES (?,?) [42102-199]
