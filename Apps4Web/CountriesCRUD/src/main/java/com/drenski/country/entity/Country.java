@@ -2,6 +2,7 @@ package com.drenski.country.entity;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,20 +16,24 @@ public class Country {
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private long id;
 			
 //	@Id
-	@Column
+	@Column(name = "idX")
+	@Basic(optional=true)
 	private int idFromX;
 	
 //	@Id
-	@Column
+	@Column(name = "idY")
+	@Basic(optional=true)
 	private int idFromY;
 	
 //	@Id
-	@Column
+	@Column(name = "idZ")
+	@Basic(optional=true)
 	private int idFromZ;	
 	
+//	@Id
 	@Column
 	private String abbreviation;
 	
@@ -48,11 +53,11 @@ public class Country {
 		this.abbreviation = abbreviation;
 	}
 	
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
