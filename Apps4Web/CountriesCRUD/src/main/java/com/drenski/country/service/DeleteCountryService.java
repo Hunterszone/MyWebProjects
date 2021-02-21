@@ -11,7 +11,7 @@ public class DeleteCountryService {
 	@Autowired
 	private CountryRepository countryRepository;
 
-	public void deleteById(Long userId) {
+	public void deleteById(String userId) {
 
 		countryRepository.deleteById(userId);
 	}

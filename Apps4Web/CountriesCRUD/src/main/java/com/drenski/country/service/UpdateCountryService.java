@@ -12,7 +12,7 @@ public class UpdateCountryService {
 	@Autowired
 	private CountryRepository countryRepository;
 
-	public Country updateCountryById(Long id, Country newCountry) {
+	public Country updateCountryById(String id, Country newCountry) {
 
 		return countryRepository.findById(id).map(country -> {
 			country.setName(newCountry.getName());

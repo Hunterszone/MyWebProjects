@@ -1,7 +1,6 @@
 package com.drenski.country.tests;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
@@ -25,43 +24,63 @@ public class CountryUnitTests {
 	private CountryRepository countryRepository;
 
 	@Test
-	public void testACountriesSize() {
+	public void testA_CountriesSize() {
 
 		List<Country> countries = (List<Country>) countryRepository.findAll();
 
-        assertThat(countries.size()).isEqualTo(3);  
+        assertThat(countries.size()).isEqualTo(countryRepository.count());  
 	}
 	
 	@Test
-	public void testBMatchingCountry() {
-
-		Country country = new Country();
-		country.setName("Germany");
-		country.setAbbreviation("GER");
-
-		List<Country> countries = (List<Country>) countryRepository.findAll();
-
-	    assertThat(countries.get(0)).isEqualTo(country);
-	}
+	public void testB_AddCountry() {
 	
-	@Test
-	public void testCIncrement() {
 		Country country = new Country();
 
 		country.setName("Senegal");
 		country.setAbbreviation("SEN");
 		countryRepository.save(country);
 
-        assertEquals(4, countryRepository.count());
+		List<Country> countries = (List<Country>) countryRepository.findAll();
+		
+		assertThat(countries.size()).isEqualTo(countryRepository.count());
 	}
 	
 	@Test
-	public void testDecrement() {
+	public void testC_UpdateCountry() {
+		
+		Country newCountry = new Country();
 
-		System.out.println("Country is: " + countryRepository.findById((long) 1));
-		countryRepository.deleteById((long) 1);
+		newCountry.setName("Canada");
+		newCountry.setAbbreviation("CAN");
+		
+		List<Country> oldCountries = (List<Country>) countryRepository.findAll();
 
-        assertEquals(3, countryRepository.count());
+		countryRepository.findById("fz:country:02").map(country -> {
+			country.setName(newCountry.getName());
+			country.setAbbreviation(newCountry.getAbbreviation());
+			return countryRepository.save(country);
+		}).orElseGet(() -> {
+			newCountry.setId("fz:country:05");
+			return countryRepository.save(newCountry);
+		});
+		
+		List<Country> newCountries = (List<Country>) countryRepository.findAll();
+		
+		for(Country cOld : oldCountries) {
+			for(Country cNew : newCountries) {
+				assertThat(cOld.getId().equals(cNew.getId()));							
+			}
+		}
+	}
+	
+	@Test
+	public void testD_DeleteCountry() {
+
+		countryRepository.deleteById("fz:country:01");
+
+		List<Country> countries = (List<Country>) countryRepository.findAll();
+
+		assertThat(countries.size()).isEqualTo(countryRepository.count());
 	}
 
 }

@@ -28,7 +28,7 @@ public class ReadCountryService {
 		return countries;
 	}
 
-	public void readById(Long userId) {
+	public void readById(String userId) {
 
 		countryRepository.findById(userId);
 	}

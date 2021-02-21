@@ -22,8 +22,8 @@ public class DeleteCountryController {
 	}
 
 	@DeleteMapping("/countries/{id}")
-	public void delete(@PathVariable Long id) {
-
+	public void delete(@PathVariable String id) {
+		
 		service.deleteById(id);
 	}
 }

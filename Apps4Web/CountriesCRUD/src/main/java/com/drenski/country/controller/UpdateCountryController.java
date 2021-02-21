@@ -30,7 +30,7 @@ public class UpdateCountryController {
 	}
 
 	@PutMapping("/countries/{id}")
-	Country updateCountry(@RequestBody Country newCountry, @PathVariable Long id) {
+	Country updateCountry(@RequestBody Country newCountry, @PathVariable String id) {
 
 		countryData = this.service.updateCountryById(id, newCountry);
 

@@ -37,7 +37,6 @@ public class ReadCountryController {
 	@GetMapping("/countries/{id}")
 	public void read(@PathVariable String id) {
 
-		 Long userId = Long.parseLong(id);
-		 service.readById(userId);
+		 service.readById(id);
     }
 }
