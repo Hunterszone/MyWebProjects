@@ -28,9 +28,9 @@ public class ReadCountryService {
 		return countries;
 	}
 
-	public void readById(String userId) {
+	public Country readById(String userId) {
 
-		countryRepository.findById(userId);
+		return countryRepository.findById(userId).orElse(null);
 	}
 
 }
