@@ -22,13 +22,17 @@ The API has predictable resource-oriented URLs, accepts form-encoded request bod
 ## Useful examples:
 - For reading: http://localhost:8888/countries with HTTP **GET** verb
 - For creation: http://localhost:8888/createCountry with HTTP **POST** verb and following request body, e.g.:
+```
 {  
     "name": "Angola",
     "abbreviation": "ANG"
 }
+```
 - For update, e.g.: http://localhost:8888/countries/fz:country:04 with HTTP **PUT** verb and following request body, e.g.:
+```
 {  
     "name": "Bulgaria",
     "abbreviation": "BGR"
 }
+```
 - For deletion, e.g.: http://localhost:8888/countries/fz:country:02 with HTTP **DELETE** verb
