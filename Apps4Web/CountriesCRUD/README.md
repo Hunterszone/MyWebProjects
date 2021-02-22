@@ -21,7 +21,7 @@ The API has predictable resource-oriented URLs, accepts form-encoded request bod
 
 ## Useful examples:
 - For reading (HTTP **GET**): http://localhost:8888/countries or by id, e.g.: http://localhost:8888/countries/fz:country:02  
-- For creation: http://localhost:8888/createCountry with HTTP **POST** verb and following request body, e.g.:
+- For creation (HTTP **POST**): http://localhost:8888/createCountry and following request body, e.g.:
 ```
 {  
     "name": "Angola",
@@ -35,4 +35,4 @@ The API has predictable resource-oriented URLs, accepts form-encoded request bod
     "abbreviation": "BGR"
 }
 ```
-- For deletion(HTTP **DELETE**), e.g.: http://localhost:8888/countries/fz:country:02
+- For deletion (HTTP **DELETE**), e.g.: http://localhost:8888/countries/fz:country:02
