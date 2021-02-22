@@ -14,8 +14,7 @@ import com.drenski.country.service.ReadCountryService;
 public class ReadCountryController {
 
 	/*
-	 * Test sample without parameters: http://localhost:8888/countries
-	 * Test sample with parameters: http://localhost:8888/countries/{id}
+	 * Test sample: http://localhost:8888/countries
 	 */
 
 	private ReadCountryService service;
