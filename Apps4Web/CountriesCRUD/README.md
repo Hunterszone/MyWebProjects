@@ -20,7 +20,7 @@ Import the JSON collection into Postman and you will see the pre-built endpoints
 The API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes.
 
 ## Useful examples:
-- For reading: http://localhost:8888/countries with HTTP **GET** verb
+- For reading (HTTP **GET**): http://localhost:8888/countries or by id, e.g.: http://localhost:8888/countries/fz:country:02  
 - For creation: http://localhost:8888/createCountry with HTTP **POST** verb and following request body, e.g.:
 ```
 {  
@@ -28,11 +28,11 @@ The API has predictable resource-oriented URLs, accepts form-encoded request bod
     "abbreviation": "ANG"
 }
 ```
-- For update, e.g.: http://localhost:8888/countries/fz:country:04 with HTTP **PUT** verb and following request body, e.g.:
+- For updates (HTTP **PUT**), e.g.: http://localhost:8888/countries/fz:country:04 and following request body, e.g.:
 ```
 {  
     "name": "Bulgaria",
     "abbreviation": "BGR"
 }
 ```
-- For deletion, e.g.: http://localhost:8888/countries/fz:country:02 with HTTP **DELETE** verb
+- For deletion(HTTP **DELETE**), e.g.: http://localhost:8888/countries/fz:country:02
