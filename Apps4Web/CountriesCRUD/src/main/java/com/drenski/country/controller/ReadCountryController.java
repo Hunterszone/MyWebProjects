@@ -15,6 +15,7 @@ public class ReadCountryController {
 
 	/*
 	 * Test sample: http://localhost:8888/countries
+	 * Test sample: http://localhost:8888/countries/{id}
 	 */
 
 	private ReadCountryService service;
