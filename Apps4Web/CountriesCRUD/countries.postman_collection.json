@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "GET countries",
+			"name": "GET all countries",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -19,6 +19,26 @@
 					"port": "8888",
 					"path": [
 						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET country by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/countries/fz:country:04",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"countries",
+						"fz:country:04"
 					]
 				}
 			},
@@ -39,14 +59,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8888/createCountry",
+					"raw": "http://localhost:8888/countries",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8888",
 					"path": [
-						"createCountry"
+						"countries"
 					]
 				}
 			},
