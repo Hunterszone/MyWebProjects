@@ -15,7 +15,7 @@ import com.drenski.country.service.CreateCountryService;
 public class CreateCountryController {
 
 	/*
-	 * Test sample: http://localhost:8888/createCountry
+	 * Test sample: http://localhost:8888/countries
 	 *
 	 * Example request body:
 	 * {  
@@ -34,7 +34,7 @@ public class CreateCountryController {
 		this.service = service;
 	}
 
-	@PostMapping(path = "/createCountry")
+	@PostMapping(path = "/countries")
 	public Country createCountry(@RequestBody Country countryDetails) {
 		
 		name = countryDetails.getName();
