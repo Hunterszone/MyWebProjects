@@ -37,7 +37,7 @@ public class JiraTicketUnitTests {
 	@Test
 	public void sampleOutputIsNotNullTest() {
 
-		mocks.setSampleOutput(HelperStructures.outputs);
+		mocks.setSampleOutput(HelperStructures.output);
 		
 		assertNotNull("Output is null!", mocks.getSampleOutput());
 	}
@@ -45,7 +45,7 @@ public class JiraTicketUnitTests {
 	@Test
 	public void outputJsonTest() {
 
-		mocks.setSampleOutput(HelperStructures.outputs);
+		mocks.setSampleOutput(HelperStructures.output);
 		
 		assertArrayEquals(mocks.getSampleOutput(), service.extractData(1, "json"));
 	}
@@ -53,7 +53,7 @@ public class JiraTicketUnitTests {
 	@Test
 	public void outputXmlTest() {
 	
-		mocks.setSampleOutput(HelperStructures.outputs);
+		mocks.setSampleOutput(HelperStructures.output);
 		
 		assertArrayEquals(mocks.getSampleOutput(), service.extractData(1, "xml"));
 	}

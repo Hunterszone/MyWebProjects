@@ -97,8 +97,8 @@ public class ExtractDataService {
 		}
 		
 		for (int i = 0; i < params.length; i++) {
-			HelperStructures.outputs[i] = params[i];
-			System.out.println("Parameter: " + HelperStructures.outputs[i]);
+			HelperStructures.output[i] = params[i];
+			System.out.println("Parameter: " + HelperStructures.output[i]);
 		}
 		
 		return params;
