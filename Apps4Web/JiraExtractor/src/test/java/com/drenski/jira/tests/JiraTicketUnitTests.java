@@ -29,7 +29,9 @@ public class JiraTicketUnitTests {
 	@Test
 	public void serviceInputIsNotNullTest() {
 		
-		assertNotNull("Output is null!", service.extractData(1, "json"));
+		mocks.setSampleInput(service.extractData(1, "json"));
+		
+		assertNotNull("Input is null!", mocks.getSampleInput());
 	}
 	
 	@Test
