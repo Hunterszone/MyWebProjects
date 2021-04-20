@@ -839,7 +839,7 @@
    <a href="#"><img id="toTop" src="gallery/scroll-to-top.gif" title="Back to top" style="width: 70px; height: 70px;"></a>
    <br>
          <center>
-         <button class="nicetoo" onclick="window.location.href='signUp.htm'")><i class="fa fa-user-plus"></i> Sign up</button>
+         <button class="nicetoo" onclick="window.location.href='signUp.html'")><i class="fa fa-user-plus"></i> Sign up</button>
          <div class="dropdown">
             <button class="dropbtn"><i class="fa fa-sign-in"></i> Login</button>
             <div class="dropdown-content">
@@ -850,10 +850,10 @@
          <div class="dropdown">
             <button class="dropbtn"><i class="fa fa-book"></i> Articles</button>
             <div class="dropdown-content">
-               <input type="button" id="but1" class="nicetoo" onclick=window.open("html.html") value="HTML">
-               <input type="button" id="but1" class="nicetoo" onclick=window.open("css.html") value="CSS">
-			   <input type="button" id="but1" class="nicetoo" onclick=window.open("javascript.html") value="JS">
-			   <input type="button" id="but1" class="nicetoo" onclick=window.open("php.html") value="PHP">
+               <input type="button" id="but1" class="nicetoo" onclick=window.open("./articles/html.html") value="HTML">
+               <input type="button" id="but1" class="nicetoo" onclick=window.open("./articles/css.html") value="CSS">
+			   <input type="button" id="but1" class="nicetoo" onclick=window.open("./articles/javascript.html") value="JS">
+			   <input type="button" id="but1" class="nicetoo" onclick=window.open("./articles/php.html") value="PHP">
             </div>
          </div>
 		 <div class="dropdown">
