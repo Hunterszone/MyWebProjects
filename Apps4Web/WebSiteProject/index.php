@@ -843,7 +843,7 @@
          <div class="dropdown">
             <button class="dropbtn"><i class="fa fa-sign-in"></i> Login</button>
             <div class="dropdown-content">
-               <input type="button" id="but1" class="nicetoo" onclick="window.location.href='login_form.php'" value="Password">
+               <input type="button" id="but1" class="nicetoo" onclick="window.location.href='./forms/login_form.php'" value="Password">
                <input type="button" id="but1" class="nicetoo" onclick="window.location.href='generateQR.php'" value="2FA/QR code">
             </div>
          </div>
@@ -859,7 +859,7 @@
 		 <div class="dropdown">
             <button class="dropbtn"><i class="fa fa-comments"></i> Contact us</button>
             <div class="dropdown-content">
-               <input type="button" id="but1" class="nicetoo" onclick=window.open("contact_form.php") value="Feedback">
+               <input type="button" id="but1" class="nicetoo" onclick=window.open("./forms/contact_form.php") value="Feedback">
                <input type="button" id="but1" class="nicetoo" onclick=window.open("phpBB3/index.php") value="Forum">
             </div>
          </div>
