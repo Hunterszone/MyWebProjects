@@ -1,6 +1,6 @@
 <?php
 
-		require_once('authentication.php');
+		require_once('../authentication.php');
 		echo "Welcome, " . htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
 			
 ?>
@@ -20,7 +20,7 @@ and open the template in the editor.
 	<table>
 				<tr>
 					<td>
-						<a href="user_login.php">
+						<a href="../user_login.php">
 							<div id="milkyway">
 								<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" height="200" width="auto">
 									<param name="wmode" value="transparent">
@@ -63,22 +63,22 @@ background-size: cover;
     <h2>List of Tests</h2>
     
         <div>
-            <div class="lead"><a href="html_quiz.php" target="_blank">HTML</a></div>
+            <div class="lead"><a href="./html/html_quiz.php" target="_blank">HTML</a></div>
         </div>
         <hr/>
     
         <div>
-            <div class="lead"><a href="quiz.php" target="_blank">CSS</a></div>
+            <div class="lead"><a href="./quiz.php" target="_blank">CSS</a></div>
         </div>
         <hr/>
     
         <div>
-            <div class="lead"><a href="javascript_quiz.php" target="_blank">JavaScript</a></div>
+            <div class="lead"><a href="./js/javascript_quiz.php" target="_blank">JavaScript</a></div>
         </div>
         <hr/>
     
        <div>
-           <div class="lead"><a href="php_quiz.php" target="_blank">PHP</a></div>
+           <div class="lead"><a href="./php/php_quiz.php" target="_blank">PHP</a></div>
         </div>
         <hr/>
     </body>

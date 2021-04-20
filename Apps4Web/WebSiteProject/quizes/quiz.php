@@ -30,7 +30,7 @@ and open the template in the editor.
 
 		<h1>CSS QUIZ</h1>
 		
-		<form action="grade.php" method="post" id="quiz">
+		<form action="./grade.php" method="post" id="quiz">
 		
             <ol>
             

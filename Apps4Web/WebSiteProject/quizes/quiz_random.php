@@ -1,7 +1,7 @@
 <html>
 <body>
 <head><center><h1> Quiz 101</h1></center></head>
-<form action="results_random.php" method="post">
+<form action="./results_random.php" method="post">
   <?php
 if (isset($_POST['cmdSubmit'])) {
 
