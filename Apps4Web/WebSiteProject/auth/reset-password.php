@@ -1,5 +1,5 @@
 <?php
-include('connection.php');
+include('../connection.php');
 
 $error = '';
 
@@ -81,7 +81,7 @@ Click here</a> to reset password.</p>';
         mysqli_query($conn, "UPDATE users SET password='$pass1' WHERE email='$email'"); 
          
         echo '<div class="error"><p>Congratulations! Your password has been updated successfully.</p>
-        <p><a href="http://localhost:8080/login_exec.php">
+        <p><a href="http://localhost:8080/auth/login_exec.php">
         Click here</a> to Login.</p></div><br />';
            } 
         }

@@ -4,7 +4,7 @@
     	session_start();
      
     	//Include database connection details
-    	require_once('connection.php');
+    	require_once('../connection.php');
      
     	//Create array to store validation errors
     	$errmsg_arr = array();
@@ -45,7 +45,7 @@
     	if($errflag) {
     		$_SESSION['ERRMSG_ARR'] = $errmsg_arr;
     		session_write_close();
-    		header("location: ./forms/login_form.php");
+    		header("location: ../forms/login_form.php");
     		exit();
     	}  
     	//Create query, but first use hashing algorithm for the password
@@ -71,7 +71,7 @@
 				setcookie($member,$cookiehash,time()+3600*24*365,'/','.thatbaddesign.freevar.com');
 				mysqli_query($conn,$cookieQry);
     			session_write_close();
-    			header("location: website.php");
+    			header("location: ../website.php");
     			exit();
     		}else {
     			//Login failed -> error message
@@ -80,7 +80,7 @@
     			if($errflag) {
     				$_SESSION['ERRMSG_ARR'] = $errmsg_arr;
     				session_write_close();
-    				header("location: ./forms/login_form.php");
+    				header("location: ../forms/login_form.php");
     				exit();
     			}
     		}

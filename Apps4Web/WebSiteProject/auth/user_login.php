@@ -1,5 +1,5 @@
 <?php
-   require_once('authentication.php');
+   require_once('./authentication.php');
    echo "Welcome, " . htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
    	
    ?>
@@ -706,9 +706,9 @@
    </style>
    <table>
 	  <tr>
-		<td><a href="welcome_message.php" target="_blank">
+		<td><a href="../welcome_message.php" target="_blank">
             <?php 
-				require_once('member.php');
+				require_once('../member.php');
 			?>
         </a></td>
 	  </tr>
@@ -749,24 +749,24 @@
       <a href="#"><img id="toTop" src="gallery/scroll-to-top.gif" title="Back to top" style="width: 70px; height: 70px;"></a>
       <br>
       <center>
-         <button class="nicetoo" onclick="location.href='quizes.php'"><i class="fa fa-book"></i> Start quiz</button>
-         <button class="nicetoo" onclick=window.open("welcome_message.php")><i class="fa fa-home"></i> My Profile</button>
+         <button class="nicetoo" onclick="location.href='../quizes/quizes.php'"><i class="fa fa-book"></i> Start quiz</button>
+         <button class="nicetoo" onclick=window.open("../welcome_message.php")><i class="fa fa-home"></i> My Profile</button>
          <div class="dropdown">
             <button class="dropbtn"><i class="fa fa-upload"></i> Upload</button>
             <div class="dropdown-content">
-               <input type="button" id="but1" class="nicetoo" onclick="location.href='file_upload.html'" value="Files">
-               <input type="button" id="but1" class="nicetoo" onclick="location.href='avatar_upload.html'" value="Avatar">
+               <input type="button" id="but1" class="nicetoo" onclick="location.href='../file_upload.html'" value="Files">
+               <input type="button" id="but1" class="nicetoo" onclick="location.href='../avatar_upload.html'" value="Avatar">
             </div>
          </div>
-         <button class="nicetoo" onclick="location.href='forgotPass.php'"><i class="fa fa-unlock"></i> New pass</button>
+         <button class="nicetoo" onclick="location.href='./forgotPass.php'"><i class="fa fa-unlock"></i> New pass</button>
          <div class="dropdown">
             <button class="dropbtn"><i class="fa fa-comments"></i> Contact us</button>
             <div class="dropdown-content">
-               <input type="button" id="but1" class="nicetoo" onclick=window.open("./forms/contact_form.php") value="Feedback">
-               <input type="button" id="but1" class="nicetoo" onclick=window.open("phpBB3/index.php") value="Forum">
+               <input type="button" id="but1" class="nicetoo" onclick=window.open("../forms/contact_form.php") value="Feedback">
+               <input type="button" id="but1" class="nicetoo" onclick=window.open("../phpBB3/index.php") value="Forum">
             </div>
          </div>
-         <button class="nicetoo" onclick="location.href='index.php'"><i class="fa fa-sign-out"></i> Logout</button>
+         <button class="nicetoo" onclick="location.href='../index.php'"><i class="fa fa-sign-out"></i> Logout</button>
       </center>
       </br>  
       <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />

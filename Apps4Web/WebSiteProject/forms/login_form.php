@@ -18,7 +18,7 @@
 			<table>
 				<tr>
 					<td>
-						<a href="index.php">
+						<a href="../index.php">
 							<div id="milkyway">
 								<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" height="200" width="auto">
 									<param name="wmode" value="transparent">
@@ -33,7 +33,7 @@
 									</tr>
 								</table>    
 
-								<form name="loginform" action="login_exec.php" method="post">
+								<form name="loginform" action="../auth/login_exec.php" method="post">
 									<table width="309" border="0" align="center" cellpadding="2" cellspacing="5">
 										<tr>
 											<td colspan="2">
