@@ -1,5 +1,5 @@
 <?php
-		require_once('authentication.php');
+		require_once('../auth/authentication.php');
 		if($_SESSION['SESS_USERNAME'] != "") {			
 			echo "Welcome, " . htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
 		}
@@ -21,7 +21,7 @@
     </script>
 </head>
 
-<body background="book-carousel.jpg" ng-app="myNoteApp" ng-controller="myNoteCtrl">
+<body background="../img/book-carousel.jpg" ng-app="myNoteApp" ng-controller="myNoteCtrl">
 
 <fieldset>
 <p><center>
