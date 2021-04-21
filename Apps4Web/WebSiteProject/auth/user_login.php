@@ -605,7 +605,7 @@
       #myBar {
       width: 1%;
       height: 80px;
-      background-image: linear-gradient(to right, black 0%,white 180%), url('./faces.gif');
+      background-image: linear-gradient(to right, black 0%,white 180%), url('../img/faces.gif');
       background-blend-mode: color-dodge;
       background-color: rgba(0,0,0,0.5);
       }

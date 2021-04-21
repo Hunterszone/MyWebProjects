@@ -610,7 +610,7 @@
          #myBar {
          width: 1%;
          height: 80px;
-         background-image: linear-gradient(to right, black 0%,white 180%), url('./faces.gif');
+         background-image: linear-gradient(to right, black 0%,white 180%), url('../img/faces.gif');
          background-blend-mode: color-dodge;
          background-color: rgba(0,0,0,0.5);
          }
@@ -839,7 +839,7 @@
    <a href="#"><img id="toTop" src="gallery/scroll-to-top.gif" title="Back to top" style="width: 70px; height: 70px;"></a>
    <br>
          <center>
-         <button class="nicetoo" onclick="window.location.href='./auth/SignUp.html'")><i class="fa fa-user-plus"></i> Sign up</button>
+         <button class="nicetoo" onclick="window.location.href='./auth/SignUp.php'")><i class="fa fa-user-plus"></i> Sign up</button>
          <div class="dropdown">
             <button class="dropbtn"><i class="fa fa-sign-in"></i> Login</button>
             <div class="dropdown-content">
