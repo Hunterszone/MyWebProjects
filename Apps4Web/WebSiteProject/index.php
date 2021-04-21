@@ -75,6 +75,9 @@
                   <span>LINKEDIN</span>
                </a>
          </div>
+         <div class="partners">
+
+         </div>
          <img class="scroll-up" src="./img/arrowup.gif" alt="Go to top">
       </div>
       
