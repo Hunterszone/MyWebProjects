@@ -1,6 +1,6 @@
 <?php
 
-		require_once('../authentication.php');
+		require_once('../auth/authentication.php');
 		echo "Welcome, " . htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
 			
 ?>
