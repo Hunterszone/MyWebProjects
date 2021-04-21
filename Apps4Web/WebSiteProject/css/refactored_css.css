@@ -4,8 +4,8 @@
 body {
     margin: 0;
     padding: 0;
-    color: #eb7434;
     background-color: #292827;
+    color: #eb7434;
     font-family: 'Lato', sans-serif;
 }
 
@@ -35,7 +35,7 @@ button:hover {
 
 .header h1 {
     color: #000000;
-    font-size: 4em;
+    font-size: 3em;
     font-family: 'Algerian';
     text-shadow: 0 0 5px #fff,
                  0 0 10px #fff, 
@@ -60,6 +60,7 @@ button:hover {
 }
 
 .dropdown {
+    margin: 2em 0 0 0;
     position: relative;
     display: inline-block;
   }
@@ -88,7 +89,7 @@ button:hover {
     z-index: 1;
     text-align: center;
     top: 40px;
-    left: 10px;
+    left: 0px;
     background: #eb7434;
     overflow-x: hidden;
     padding: 8px 0;
@@ -137,6 +138,7 @@ button:hover {
     flex-flow: row wrap;
     justify-content: center;
     margin: 3em 0 3em 0;
+    padding: 3em 0 3em 0;
     gap: 3em;
 }
 
