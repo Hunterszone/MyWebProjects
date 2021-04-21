@@ -1,5 +1,5 @@
 <?php
-    	require_once('authentication.php');
+    	require_once('auth/authentication.php');
 		echo "Welcome, " . htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
 
     ?>
@@ -22,7 +22,7 @@
 
 	<body background="book-carousel.jpg">
 		<p align="center" class="style1">Login successful</p>
-		<p align="center" class="style2"><a href="user_login.php">Go to user profile</a></p>
+		<p align="center" class="style2"><a href="auth/user_login.php">Go to user profile</a></p>
 		<p align="center" class="style2"><a href="index.php">Logout</a></p>
 
 		<!-- CSS for BACKGROUND -->

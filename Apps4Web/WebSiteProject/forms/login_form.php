@@ -71,7 +71,7 @@
 										</tr>
 										<tr>
 											<td><div align="right"></div></td>
-											<td><a href="forgotPass.php" target="_blank">Forgot password ?</a></td>
+											<td><a href="../auth/forgotPass.php" target="_blank">Forgot password ?</a></td>
 										</tr>
 										<tr>
 											<td><div align="right"></div></td>

@@ -1,5 +1,5 @@
 <?php           
-                require_once('authentication.php');
+                require_once('auth\authentication.php');
                 require_once('member.php');
 				require_once('geoplugin.class.php');
 	
