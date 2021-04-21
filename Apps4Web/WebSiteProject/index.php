@@ -53,7 +53,6 @@
         
 		<div class="sidebar">
             <a href="javascript:window.print()"><img src="http://icons.iconarchive.com/icons/avosoft/warm-toolbar/256/print-icon.png" alt="print this page" id="print-button" title="Print" style="width:40px;height:40px" /></a>
-            <a href="#"><img src="http://icons.iconarchive.com/icons/icojam/blue-bits/256/arrow-up-icon.png" title="Back to top" style="width:40px;height:40px"/></a>
             <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" target="_blank"><img src="http://icons.iconarchive.com/icons/graphicloads/seo-services/256/creative-icon.png" title="Creative Commons" style="width:40px;height:40px" /></a>
             <a href="http://www.smashingmagazine.com/feed/" target="_blank"><img src="http://icons.iconarchive.com/icons/graphics-vibe/simple-rounded-social/256/rss-feed-icon.png" alt="[Valid RSS]" title="RSS feeds" style="width:40px;height:40px" /></a>
 		</div>
@@ -75,7 +74,8 @@
                <span>LINKEDIN</span>
             </a>
          </div>
-         <a name="http://cdn.flaticon.com/png/256/60583.png"></а> 
+
+      <img class="scroll-up" src="./img/arrowup.gif" alt="Go to top">
 
          <!-- JAVA SCRIPT -->
       <script type="text/javascript">
@@ -86,7 +86,27 @@
          
            ga('create', 'UA-57030474-1', 'auto');
            ga('send', 'pageview');
-         
+           
+           //Get the button:
+           scrollButton = document.getElementsByClassName("scroll-up")[0];
+           scrollButton.addEventListener('click', topFunction);
+
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+               if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                  scrollButton.style.display = "block";
+               } else {
+                  scrollButton.style.display = "none";
+               }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+               document.body.scrollTop = 0; // For Safari
+               document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            }
       </script>
    </body>
 </html>
