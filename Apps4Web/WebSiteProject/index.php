@@ -24,7 +24,7 @@
 			      <button type="button" onclick=window.open("./articles/php.html") value="PHP">PHP</button>
             </div>
          </div>
-		 <div class="dropdown">
+		   <div class="dropdown">
             <button class="dropbtn"> Contact us</button>
             <div class="dropdown-content">
                <button type="button" onclick=window.open("./forms/contact_form.php") value="Feedback">Feedback</button>
@@ -39,16 +39,16 @@
          <button onclick="window.location.href='./auth/SignUp.html'")>Sign up</button>
       </div>
 
-      <div ng-app="">
+      <div class="search-boxes">
          <!-- HTML for SEARCH BAR -->
          <div id="tfheader">
             <form method="get" action="http://www.google.com/search" target="_blank">
-               <input type="search" ng-model="name" class="tftextinput" name="q" id="s" placeholder="Google results" size="56" maxlength="120"><input type="submit" value="Search" class="tfbutton" id="searchsubmit" class="searchsubmit" />
+               <input type="search" ng-model="name" class="tftextinput" name="q" id="searchbar" placeholder="Google results" size="56" maxlength="120"><input type="submit" value="Search" class="tfbutton" id="searchsubmit" class="searchsubmit" />
                <div>
                   <input type="checkbox" class="L1" name="sitesearch" value="bing.com" unchecked /><font size="5"> Bing results</font>
                </div>
             </form>
-         <div class="tfclear"></div>
+         </div>
       </div>
         
 		<div class="content">
