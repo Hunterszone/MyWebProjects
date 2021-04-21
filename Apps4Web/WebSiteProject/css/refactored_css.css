@@ -36,6 +36,13 @@ button:hover {
 .header h1 {
     font-size: 4em;
     font-family: 'Algerian';
+    text-shadow: 0 0 5px #fff,
+                 0 0 10px #fff, 
+                 0 0 20px red, 
+                 0 0 30px orange, 
+                 0 0 40px orange, 
+                 0 0 55px orange, 
+                 0 0 70px yellow;
 }
 
 .header h2 {
