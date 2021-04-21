@@ -1,7 +1,7 @@
 <?php
 		
 	//Include auth details
-	require_once('authentication.php');
+	require_once('./auth/authentication.php');
 		
 		$username = $_SESSION['SESS_USERNAME'];
     	$password = $_SESSION['SESS_PASSWORD'];
@@ -28,7 +28,7 @@
 			if(mysqli_num_rows($result) > 0) {
     			//Login Successful
     			/*$usernametoken =*/ mysqli_fetch_assoc($result);
-				header("location: user_login.php");
+				header("location: ./auth/user_login.php");
 			}
 			/*if (hash_equals(implode("",$usernametoken), $token)) {
 				header("location: user_login.php");

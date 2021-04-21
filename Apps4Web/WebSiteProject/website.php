@@ -20,17 +20,17 @@
 		</style>
 	</head>
 
-	<body background="book-carousel.jpg">
+	<body background="./img/book-carousel.jpg">
 		<p align="center" class="style1">Login successful</p>
-		<p align="center" class="style2"><a href="user_login.php">Go to user profile</a></p>
-		<p align="center" class="style2"><a href="index.php">Logout</a></p>
+		<p align="center" class="style2"><a href="./auth/user_login.php">Go to user profile</a></p>
+		<p align="center" class="style2"><a href="./index.php">Logout</a></p>
 
 		<!-- CSS for BACKGROUND -->
 
 		<style type="text/css">
 
 body { 
-background-image: url("book-carousel.jpg") no-repeat center center fixed;
+background-image: url("./img/book-carousel.jpg") no-repeat center center fixed;
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;

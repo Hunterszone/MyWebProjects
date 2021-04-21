@@ -63,6 +63,6 @@
 	
 	else {
 		header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404);
-		include("firstPage.php");
+		include("./firstPage.php");
 	}
 ?>

@@ -1,7 +1,7 @@
 <?php
 session_start();
-include_once 'connection.php';
-include_once 'login_exec.php';
+include_once './connection.php';
+include_once './auth/login_exec.php';
 
 $_SESSION['SESS_MEMBER_ID'] = $member['mem_id'];
 

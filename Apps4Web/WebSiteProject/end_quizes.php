@@ -1,5 +1,5 @@
 <?php
-   require_once('authentication.php');
+   require_once('./auth/authentication.php');
    echo "Welcome, " . htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
    	
    ?>
@@ -34,7 +34,7 @@ background-size: cover;
     <table>
       <tr>
         <td>
-          <a href="user_login.php">
+          <a href="./auth/user_login.php">
             <div id="milkyway">
               <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" height="200" width="auto">
                 <param name="wmode" value="transparent" />

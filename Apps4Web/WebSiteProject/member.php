@@ -1,6 +1,6 @@
 <?php
 		
-		include_once 'connection.php';
+		include_once './connection.php';
 		$username = htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
         $sql = "SELECT * FROM users WHERE username='$username'";
         $result = mysqli_query($conn, $sql);
@@ -15,10 +15,10 @@
                 //while($rowimg = mysqli_fetch_assoc($resultimg)){
                     echo "<div class=container>";
                         if($mem_id == $row['mem_id']){
-                            echo "<img src= 'gallery/profile".$mem_id.".jpg'>";
+                            echo "<img src= './gallery/profile".$mem_id.".jpg'>";
                         }else{
 
-                            echo "<img src='gallery/pd.jpg'>";
+                            echo "<img src='./gallery/pd.jpg'>";
                         }
                         echo "<p>".$row['username']."</p>";
                     echo "</div>";
@@ -30,7 +30,7 @@
             if ($_SESSION['mem_id'] == 1){
                 echo "You are logged in as user #1";
             }
-            echo "<form action='upload.php' method='POST'enctype='mutlipart/form-data'>
+            echo "<form action='./upload.php' method='POST'enctype='mutlipart/form-data'>
             <input type='file' name='file'>
             <button type='submit' name='upload_submit'>Upload</button></form>";
         }
