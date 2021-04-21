@@ -1,5 +1,9 @@
 <?php           
+<<<<<<< HEAD
                 require_once('./auth/authentication.php');
+=======
+                require_once('auth\authentication.php');
+>>>>>>> 1a171fb303d0cfff509c8dcbee6b96527d64c22e
                 require_once('member.php');
 				require_once('geoplugin.class.php');
 	

@@ -42,9 +42,9 @@ VALUES ('$email', '$resetKey', '$expDate')");
 $output='<p>Dear user,</p>';
 $output.='<p>Please click on the following link to reset your password.</p>';
 $output.='<p>-------------------------------------------------------------</p>';
-$output.='<p><a href="http://localhost:8080/reset-password.php?
+$output.='<p><a href="http://localhost:8080/auth/reset-password.php?
 resetKey='.$resetKey.'&email='.$email.'&action=reset" target="_blank">
-http://localhost:8080/reset-password.php
+http://localhost:8080/auth/reset-password.php
 ?resetKey='.$resetKey.'&email='.$email.'&action=reset</a></p>'; 
 $output.='<p>-------------------------------------------------------------</p>';
 $output.='<p>Please be sure to copy the entire link into your browser.

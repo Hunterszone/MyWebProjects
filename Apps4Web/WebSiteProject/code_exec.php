@@ -1,6 +1,11 @@
  <?php
+<<<<<<< HEAD
     require('./connection.php');
 	require_once('./auth/first_login_pass.php');
+=======
+    require('connection.php');
+	require_once('auth\first_login_pass.php');
+>>>>>>> 1a171fb303d0cfff509c8dcbee6b96527d64c22e
     //if(isset($_POST['username']) && isset($_POST['password'])){
 		
         $username = $_POST['username'];
