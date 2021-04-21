@@ -22,13 +22,9 @@
 
 	<body background="./img/book-carousel.jpg">
 		<p align="center" class="style1">Login successful</p>
-<<<<<<< HEAD
-		<p align="center" class="style2"><a href="./auth/user_login.php">Go to user profile</a></p>
-		<p align="center" class="style2"><a href="./index.php">Logout</a></p>
-=======
+
 		<p align="center" class="style2"><a href="auth/user_login.php">Go to user profile</a></p>
 		<p align="center" class="style2"><a href="index.php">Logout</a></p>
->>>>>>> 1a171fb303d0cfff509c8dcbee6b96527d64c22e
 
 		<!-- CSS for BACKGROUND -->
 

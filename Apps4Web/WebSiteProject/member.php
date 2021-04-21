@@ -1,6 +1,6 @@
 <?php
 		
-		include_once './connection.php';
+		include_once 'connection.php';
 		$username = htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
         $sql = "SELECT * FROM users WHERE username='$username'";
         $result = mysqli_query($conn, $sql);

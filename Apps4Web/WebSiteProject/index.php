@@ -36,7 +36,7 @@
       <div class="header">
          <h1 class="pulsate">Web Programming World</h1>
          <h2>Your place for web development and web design</h2>
-         <button onclick="window.location.href='./auth/SignUp.html'")>Sign up</button>
+         <button onclick="window.location.href='./auth/SignUp.php'")>Sign up</button>
       </div>
 
       <div class="search-boxes">
