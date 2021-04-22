@@ -10,14 +10,14 @@
       <div class="content">
          <div class="dropdown_menus">
             <div class="dropdown">
-               <button class="dropbtn"> Login</button>
+               <button class="dropbtn">Login</button>
                <div class="dropdown-content">
                   <button type="button" id="but1" style="cursor:pointer" onclick="window.location.href='./forms/login_form.php'" value="Password">With Password</button>
                   <button type="button" id="but1" style="cursor:pointer" onclick="window.location.href='./qr/generateQR.php'" value="2FA/QR code">With QR Code</button>
                </div>
             </div>
             <div class="dropdown">
-               <button class="dropbtn"> Articles</button>
+               <button class="dropbtn">Articles</button>
                <div class="dropdown-content">
                   <button type="button" style="cursor:pointer" onclick=window.open("./articles/html.html") value="HTML">HTML</button>
                   <button type="button" style="cursor:pointer" onclick=window.open("./articles/css.html") value="CSS">CSS</button>
@@ -26,7 +26,7 @@
                </div>
             </div>
             <div class="dropdown">
-               <button class="dropbtn"> Contact us</button>
+               <button class="dropbtn">Contact us</button>
                <div class="dropdown-content">
                   <button type="button" style="cursor:pointer" onclick=window.open("./forms/contact_form.php") value="Feedback">Feedback</button>
                   <button type="button" style="cursor:pointer" onclick=window.open("phpBB3/index.php") value="Forum">Forum</button>
