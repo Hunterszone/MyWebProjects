@@ -6,8 +6,10 @@ html, body, .wrap {
 }
 
 body {
-	background: black;
-	background-image: radial-gradient(circle at center, white 0%, #222 10%, black 60%);
+	//background: #222;
+	background-image: radial-gradient(circle at center, white 0%, #222 10%, black 100%);
+	background-repeat: no-repeat;
+	background-size: auto;
 	overflow: hidden;
 }
 

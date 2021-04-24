@@ -154,6 +154,7 @@ button:hover {
     width: 7em;
     text-align: center;
     height: 1.5em;
+	border-radius: 25px;
 }
 
 .social-sidebar .twitter {
@@ -161,6 +162,7 @@ button:hover {
     width: 7em;
     text-align: center;
     height: 1.5em;
+	border-radius: 25px;
 }
 
 .social-sidebar .gplus {
@@ -168,6 +170,7 @@ button:hover {
     width: 7em;
     text-align: center;
     height: 1.5em;
+	border-radius: 25px;
 }
 
 .social-sidebar .linkedin {
@@ -175,6 +178,7 @@ button:hover {
     width: 7em;
     text-align: center;
     height: 1.5em;
+	border-radius: 25px;
 }
 
 .social-sidebar a:hover {
@@ -195,6 +199,15 @@ button:hover {
     -webkit-animation: pulsate 3s ease-out;
     -webkit-animation-iteration-count: infinite;
     opacity: 0.5;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  //background: url(../img/book-carousel.jpg);
 }
 
 @-webkit-keyframes pulsate {

@@ -11,10 +11,10 @@
    -->
 <!-- CSS for BLINKING TEXT HEADER WITH FIRE SHADOW -->
 <html>
+	<head>
    <!-- CSS -->
    <!-- Add icon library -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
    <style>
       html {
       scroll-behavior: smooth;
@@ -349,81 +349,6 @@
       text-shadow: 5px 5px 5px yellow;
       }  
    </style>
-   <!-- CSS for OUR PARTNERS block -->
-   <style type="text/css">
-      .slider:after {
-      font-size: 140%;
-      text-align: center;
-      color: white;
-      padding-top: 40px;
-      padding-left:  50px;
-      content: 'exploring' url(http://i.stack.imgur.com/KUdfa.png) 'thumbnails..';
-      position:absolute;
-      width:100%; height:100%;
-      top:0; left:0;
-      background:rgba(0,0,0,0.9);
-      opacity:0;   
-      box-sizing:border-box;
-      -moz-box-sizing:border-box; 
-      transition: all 0.5s;
-      -webkit-transition: all 0.5s;
-      -ms-transition: all 0.5s;
-      -moz-transition: all 0.5s;
-      }
-      .slider:hover:after {
-      opacity:0.8;
-      }
-      .slider{
-      width: 640px; /*Same as width of the large image*/
-      position: relative;
-      /*Instead of height we will use padding*/
-      padding-top: 320px; /*That helps bring the labels down*/
-      margin: 50px auto;
-      /*Lets add a shadow*/
-      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
-      }
-      /*Last thing remaining is to add transitions*/
-      .slider>img{
-      position: absolute;
-      left: 0; top: 0;
-      transition: all 0.5s;
-      }
-      .slider input[name='slide_switch'] {
-      display: none;
-      }
-      .slider label {
-      /*Lets add some spacing for the thumbnails*/
-      margin: 18px 0 0 18px;
-      border: 3px solid #999;
-      float: left;
-      cursor: pointer;
-      transition: all 0.5s;
-      /*Default style = low opacity*/
-      opacity: 1;
-      }
-      .slider label img{
-      display: block;
-      }
-      /*Click effects*/
-      .slider input[name='slide_switch']:checked+label {
-      border-color: #666;
-      opacity: 1;
-      }
-      /*Change opacity*/
-      /*Time to work on the main images*/
-      .slider input[name='slide_switch'] ~ img {
-      opacity: 0;
-      transform: scale(1.1);
-      }
-      /*That hides all main images at a 110% size
-      On click the images will be displayed at normal size to complete the effect
-      */
-      .slider input[name='slide_switch']:checked+label+img {
-      opacity: 1;
-      transform: scale(1);
-      }
-      /*Clicking on any thumbnail activates the image related to it*/
-   </style>
    <!-- CSS for titles margins -->
    <style type="text/css">
       <!--
@@ -632,7 +557,7 @@
              left: 0;z-index:999;
          	margin-top: -220px; /* (li * a:width) / -2 */
          	position: fixed;
-         	top: 50%;
+         	top: 60%;
          }
          #social-sidebar ul li:first-child a { border-radius: 0 5px 0 0; }
          #social-sidebar ul li:last-child a { border-radius: 0 0 5px 0; }
@@ -704,6 +629,98 @@
       overflow-x:hidden;
       }
    </style>
+   
+   <!-- CSS for OUR PARTNERS block -->
+      <style type="text/css">
+         .slider:after {
+         font-size: 140%;
+         text-align: center;
+         color: white;
+         padding-top: 40px;
+         padding-left:  50px;
+         content: 'exploring' url(http://i.stack.imgur.com/KUdfa.png) 'thumbnails..';
+         position:absolute;
+         width:100%; height:100%;
+         top:0; left:0;
+         background:rgba(0,0,0,0.9);
+         opacity:0;   
+         box-sizing:border-box;
+         -moz-box-sizing:border-box; 
+         transition: all 0.5s;
+         -webkit-transition: all 0.5s;
+         -ms-transition: all 0.5s;
+         -moz-transition: all 0.5s;
+         }
+         .slider:hover:after {
+         opacity:0.8;
+         }
+         .slider{
+         width: 640px; /*Same as width of the large image*/
+         position: relative;
+         /*Instead of height we will use padding*/
+         padding-top: 320px; /*That helps bring the labels down*/
+         margin: 50px auto;
+         /*Lets add a shadow*/
+         box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+         }
+         /*Last thing remaining is to add transitions*/
+         .slider>img{
+         position: absolute;
+         left: 0; top: 0;
+         transition: all 0.5s;
+         }
+         .slider input[name='slide_switch'] {
+         display: none;
+         }
+         .slider label {
+         /*Lets add some spacing for the thumbnails*/
+         margin: 18px 0 0 18px;
+         border: 3px solid #999;
+         float: left;
+         cursor: pointer;
+         transition: all 0.5s;
+         /*Default style = low opacity*/
+         opacity: 1;
+         }
+         .slider label img{
+         display: block;
+         }
+         /*Click effects*/
+         .slider input[name='slide_switch']:checked+label {
+         border-color: #666;
+         opacity: 1;
+         }
+         /*Change opacity*/
+         /*Time to work on the main images*/
+         .slider input[name='slide_switch'] ~ img {
+         opacity: 0;
+         transform: scale(1.1);
+         }
+         /*That hides all main images at a 110% size
+         On click the images will be displayed at normal size to complete the effect
+         */
+         .slider input[name='slide_switch']:checked+label+img {
+         opacity: 1;
+         transform: scale(1);
+         }
+         /*Clicking on any thumbnail activates the image related to it*/
+      </style>
+   
+      <script>
+         var t1=0;
+         window.onscroll = scroll1;
+         
+         function scroll1(){
+                      var toTop = document.getElementById('toTop');
+                      window.scrollY>400 ? toTop.style.display='Block' :  toTop.style.display='none';
+                  	if(window.scrollY>1000){            		
+                  		toTop.style.display='none';
+                  	}
+                  }
+         
+      </script>
+   
+   </head>
    <table>
 	  <tr>
 		<td><a href="../welcome_message.php" target="_blank">
@@ -718,21 +735,6 @@
         </td>
       </tr>
    </table>
-   <head>
-      <script>
-         var t1=0;
-         window.onscroll = scroll1;
-         
-         function scroll1(){
-                      var toTop = document.getElementById('toTop');
-                      window.scrollY>400 ? toTop.style.display='Block' :  toTop.style.display='none';
-                  	if(window.scrollY>1600){
-                  		
-                  		toTop.style.display='none';
-                  	}
-                  }
-         
-      </script>
       <!-- HTML for ANIMATION, CLOCK, HEADING AND SEARCH ENGINE -->
       <div id="header">
          <h1>
@@ -746,7 +748,7 @@
             color="yellow">&</font> WEB DESIGN</font></font></font></font></i></b>
       </center>
       </br></p>
-      <a href="#"><img id="toTop" src="gallery/scroll-to-top.gif" title="Back to top" style="width: 70px; height: 70px;"></a>
+      <a href="#"><img id="toTop" src="../gallery/scroll-to-top.gif" title="Back to top" style="width: 70px; height: 70px;"></a>
       <br>
       <center>
          <button class="nicetoo" onclick="location.href='../quizes/quizes.php'"><i class="fa fa-book"></i> Start quiz</button>
@@ -792,21 +794,17 @@
             <h1>{{name}}</h1>
          </div>
       </center>
-      <br><br>
       </div>
-      </head> 
-      <section class="cd-fixed-background img-3" data-type="slider-item"></section>
+	  </br>
       <div id="header">
          <h2>
-            <center>
-               <p><br>
-               <center><b><font color="black"><font face="algerian"><i><font size="7"><u>OUR 
+              <center><b><font color="black"><font face="algerian"><i><font size="7"><u>OUR 
                   PARTNERS:</u></font></font></i></font></font></b>
                </center>
-               </p>
          </h2>
       </div>
-      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+	  </br>
+	  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
       <div class="slider" style="cursor: hand;">
       <!-- 1st image -->
 	  <input type="radio" name="slide_switch" id="id1" checked="checked" onclick="window.open('https://wordpress.org/')" />
@@ -839,7 +837,7 @@
       </label>
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Weebly_logo.svg/1280px-Weebly_logo.svg.png" width="640" height="320" />
       </div>
-      </center>
+	  
       <br><br>
       <div id="header">
          <h2>

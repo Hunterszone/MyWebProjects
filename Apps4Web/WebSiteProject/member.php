@@ -15,10 +15,10 @@
                 //while($rowimg = mysqli_fetch_assoc($resultimg)){
                     echo "<div class=container>";
                         if($mem_id == $row['mem_id']){
-                            echo "<img src= './gallery/profile".$mem_id.".jpg'>";
+                            echo "<img src= '../gallery/profile".$mem_id.".jpg'>";
                         }else{
 
-                            echo "<img src='./gallery/pd.jpg'>";
+                            echo "<img src='../gallery/pd.jpg'>";
                         }
                         echo "<p>".$row['username']."</p>";
                     echo "</div>";
