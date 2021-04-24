@@ -4,6 +4,7 @@
    <head>
    <title>Home</title>
    <link rel="stylesheet" href="./css/refactored_css.css">
+   <link rel="stylesheet" href="./css/background.css">
    <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
    </head>
    <body>
