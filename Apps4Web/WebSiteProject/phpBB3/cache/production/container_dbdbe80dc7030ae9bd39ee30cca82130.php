@@ -97,6 +97,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
             'core.captcha.plugins.nogd' => 'getCore_Captcha_Plugins_NogdService',
             'core.captcha.plugins.qa' => 'getCore_Captcha_Plugins_QaService',
             'core.captcha.plugins.recaptcha' => 'getCore_Captcha_Plugins_RecaptchaService',
+            'core.captcha.plugins.recaptcha_v3' => 'getCore_Captcha_Plugins_RecaptchaV3Service',
             'cron.controller' => 'getCron_ControllerService',
             'cron.event_listener' => 'getCron_EventListenerService',
             'cron.lock_db' => 'getCron_LockDbService',
@@ -187,6 +188,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
             'notification.type.bookmark' => 'getNotification_Type_BookmarkService',
             'notification.type.disapprove_post' => 'getNotification_Type_DisapprovePostService',
             'notification.type.disapprove_topic' => 'getNotification_Type_DisapproveTopicService',
+            'notification.type.forum' => 'getNotification_Type_ForumService',
             'notification.type.group_request' => 'getNotification_Type_GroupRequestService',
             'notification.type.group_request_approved' => 'getNotification_Type_GroupRequestApprovedService',
             'notification.type.pm' => 'getNotification_Type_PmService',
@@ -243,7 +245,6 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
             'profilefields.type.bool' => 'getProfilefields_Type_BoolService',
             'profilefields.type.date' => 'getProfilefields_Type_DateService',
             'profilefields.type.dropdown' => 'getProfilefields_Type_DropdownService',
-            'profilefields.type.googleplus' => 'getProfilefields_Type_GoogleplusService',
             'profilefields.type.int' => 'getProfilefields_Type_IntService',
             'profilefields.type.string' => 'getProfilefields_Type_StringService',
             'profilefields.type.text' => 'getProfilefields_Type_TextService',
@@ -376,6 +377,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
             'core.captcha.plugins.nogd' => true,
             'core.captcha.plugins.qa' => true,
             'core.captcha.plugins.recaptcha' => true,
+            'core.captcha.plugins.recaptcha_v3' => true,
             'cron.controller' => true,
             'cron.event_listener' => true,
             'cron.lock_db' => true,
@@ -467,6 +469,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
             'notification.type.bookmark' => true,
             'notification.type.disapprove_post' => true,
             'notification.type.disapprove_topic' => true,
+            'notification.type.forum' => true,
             'notification.type.group_request' => true,
             'notification.type.group_request_approved' => true,
             'notification.type.pm' => true,
@@ -523,7 +526,6 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
             'profilefields.type.bool' => true,
             'profilefields.type.date' => true,
             'profilefields.type.dropdown' => true,
-            'profilefields.type.googleplus' => true,
             'profilefields.type.int' => true,
             'profilefields.type.string' => true,
             'profilefields.type.text' => true,
@@ -664,6 +666,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
             'core.captcha.plugins.nogd' => true,
             'core.captcha.plugins.qa' => true,
             'core.captcha.plugins.recaptcha' => true,
+            'core.captcha.plugins.recaptcha_v3' => true,
             'cron.controller' => true,
             'cron.event_listener' => true,
             'cron.lock_db' => true,
@@ -757,6 +760,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
             'notification.type.bookmark' => true,
             'notification.type.disapprove_post' => true,
             'notification.type.disapprove_topic' => true,
+            'notification.type.forum' => true,
             'notification.type.group_request' => true,
             'notification.type.group_request_approved' => true,
             'notification.type.pm' => true,
@@ -813,7 +817,6 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
             'profilefields.type.bool' => true,
             'profilefields.type.date' => true,
             'profilefields.type.dropdown' => true,
-            'profilefields.type.googleplus' => true,
             'profilefields.type.int' => true,
             'profilefields.type.string' => true,
             'profilefields.type.text' => true,
@@ -1211,6 +1214,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
         $instance->add('core.captcha.plugins.nogd');
         $instance->add('core.captcha.plugins.qa');
         $instance->add('core.captcha.plugins.recaptcha');
+        $instance->add('core.captcha.plugins.recaptcha_v3');
 
         return $instance;
     }
@@ -1392,7 +1396,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
      */
     protected function getConsole_Command_Extension_DisableService()
     {
-        return $this->services['console.command.extension.disable'] = new \phpbb\console\command\extension\disable(${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, ${($_ = isset($this->services['ext.manager']) ? $this->services['ext.manager'] : $this->getExt_ManagerService()) && false ?: '_'}, ${($_ = isset($this->services['log']) ? $this->services['log'] : $this->getLogService()) && false ?: '_'});
+        return $this->services['console.command.extension.disable'] = new \phpbb\console\command\extension\disable(${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, ${($_ = isset($this->services['ext.manager']) ? $this->services['ext.manager'] : $this->getExt_ManagerService()) && false ?: '_'}, ${($_ = isset($this->services['log']) ? $this->services['log'] : $this->getLogService()) && false ?: '_'}, 'phpbb\\cache\\driver\\file');
     }
 
     /**
@@ -1402,7 +1406,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
      */
     protected function getConsole_Command_Extension_EnableService()
     {
-        return $this->services['console.command.extension.enable'] = new \phpbb\console\command\extension\enable(${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, ${($_ = isset($this->services['ext.manager']) ? $this->services['ext.manager'] : $this->getExt_ManagerService()) && false ?: '_'}, ${($_ = isset($this->services['log']) ? $this->services['log'] : $this->getLogService()) && false ?: '_'});
+        return $this->services['console.command.extension.enable'] = new \phpbb\console\command\extension\enable(${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, ${($_ = isset($this->services['ext.manager']) ? $this->services['ext.manager'] : $this->getExt_ManagerService()) && false ?: '_'}, ${($_ = isset($this->services['log']) ? $this->services['log'] : $this->getLogService()) && false ?: '_'}, 'phpbb\\cache\\driver\\file');
     }
 
     /**
@@ -1412,7 +1416,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
      */
     protected function getConsole_Command_Extension_PurgeService()
     {
-        return $this->services['console.command.extension.purge'] = new \phpbb\console\command\extension\purge(${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, ${($_ = isset($this->services['ext.manager']) ? $this->services['ext.manager'] : $this->getExt_ManagerService()) && false ?: '_'}, ${($_ = isset($this->services['log']) ? $this->services['log'] : $this->getLogService()) && false ?: '_'});
+        return $this->services['console.command.extension.purge'] = new \phpbb\console\command\extension\purge(${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, ${($_ = isset($this->services['ext.manager']) ? $this->services['ext.manager'] : $this->getExt_ManagerService()) && false ?: '_'}, ${($_ = isset($this->services['log']) ? $this->services['log'] : $this->getLogService()) && false ?: '_'}, 'phpbb\\cache\\driver\\file');
     }
 
     /**
@@ -1422,7 +1426,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
      */
     protected function getConsole_Command_Extension_ShowService()
     {
-        return $this->services['console.command.extension.show'] = new \phpbb\console\command\extension\show(${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, ${($_ = isset($this->services['ext.manager']) ? $this->services['ext.manager'] : $this->getExt_ManagerService()) && false ?: '_'}, ${($_ = isset($this->services['log']) ? $this->services['log'] : $this->getLogService()) && false ?: '_'});
+        return $this->services['console.command.extension.show'] = new \phpbb\console\command\extension\show(${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, ${($_ = isset($this->services['ext.manager']) ? $this->services['ext.manager'] : $this->getExt_ManagerService()) && false ?: '_'}, ${($_ = isset($this->services['log']) ? $this->services['log'] : $this->getLogService()) && false ?: '_'}, 'phpbb\\cache\\driver\\file');
     }
 
     /**
@@ -1613,7 +1617,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
      */
     protected function getController_HelperService()
     {
-        return $this->services['controller.helper'] = new \phpbb\controller\helper(${($_ = isset($this->services['template']) ? $this->services['template'] : $this->getTemplateService()) && false ?: '_'}, ${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, ${($_ = isset($this->services['config']) ? $this->services['config'] : $this->getConfigService()) && false ?: '_'}, ${($_ = isset($this->services['symfony_request']) ? $this->services['symfony_request'] : $this->getSymfonyRequestService()) && false ?: '_'}, ${($_ = isset($this->services['request']) ? $this->services['request'] : ($this->services['request'] = new \phpbb\request\request(NULL, true))) && false ?: '_'}, ${($_ = isset($this->services['routing.helper']) ? $this->services['routing.helper'] : $this->getRouting_HelperService()) && false ?: '_'});
+        return $this->services['controller.helper'] = new \phpbb\controller\helper(${($_ = isset($this->services['auth']) ? $this->services['auth'] : ($this->services['auth'] = new \phpbb\auth\auth())) && false ?: '_'}, ${($_ = isset($this->services['cache.driver']) ? $this->services['cache.driver'] : ($this->services['cache.driver'] = new \phpbb\cache\driver\file())) && false ?: '_'}, ${($_ = isset($this->services['config']) ? $this->services['config'] : $this->getConfigService()) && false ?: '_'}, ${($_ = isset($this->services['cron.manager']) ? $this->services['cron.manager'] : $this->getCron_ManagerService()) && false ?: '_'}, ${($_ = isset($this->services['dbal.conn']) ? $this->services['dbal.conn'] : ($this->services['dbal.conn'] = new \phpbb\db\driver\factory($this))) && false ?: '_'}, ${($_ = isset($this->services['dispatcher']) ? $this->services['dispatcher'] : $this->getDispatcherService()) && false ?: '_'}, ${($_ = isset($this->services['language']) ? $this->services['language'] : $this->getLanguageService()) && false ?: '_'}, ${($_ = isset($this->services['request']) ? $this->services['request'] : ($this->services['request'] = new \phpbb\request\request(NULL, true))) && false ?: '_'}, ${($_ = isset($this->services['routing.helper']) ? $this->services['routing.helper'] : $this->getRouting_HelperService()) && false ?: '_'}, ${($_ = isset($this->services['symfony_request']) ? $this->services['symfony_request'] : $this->getSymfonyRequestService()) && false ?: '_'}, ${($_ = isset($this->services['template']) ? $this->services['template'] : $this->getTemplateService()) && false ?: '_'}, ${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, './../', 'adm/', 'php', false);
     }
 
     /**
@@ -1697,6 +1701,20 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
     }
 
     /**
+     * Gets the private 'core.captcha.plugins.recaptcha_v3' service.
+     *
+     * @return \phpbb\captcha\plugins\recaptcha_v3
+     */
+    protected function getCore_Captcha_Plugins_RecaptchaV3Service()
+    {
+        $instance = new \phpbb\captcha\plugins\recaptcha_v3();
+
+        $instance->set_name('core.captcha.plugins.recaptcha_v3');
+
+        return $instance;
+    }
+
+    /**
      * Gets the private 'cron.controller' shared service.
      *
      * @return \phpbb\cron\controller\cron
@@ -1733,7 +1751,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
      */
     protected function getCron_ManagerService()
     {
-        return $this->services['cron.manager'] = new \phpbb\cron\manager(${($_ = isset($this->services['cron.task_collection']) ? $this->services['cron.task_collection'] : $this->getCron_TaskCollectionService()) && false ?: '_'}, ${($_ = isset($this->services['routing.helper']) ? $this->services['routing.helper'] : $this->getRouting_HelperService()) && false ?: '_'}, './../', 'php');
+        return $this->services['cron.manager'] = new \phpbb\cron\manager($this, ${($_ = isset($this->services['routing.helper']) ? $this->services['routing.helper'] : $this->getRouting_HelperService()) && false ?: '_'}, './../', 'php');
     }
 
     /**
@@ -2128,9 +2146,9 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
         $instance->addListener('core.acp_help_phpbb_submit_before', [0 => function () {
             return ${($_ = isset($this->services['phpbb.viglink.acp_listener']) ? $this->services['phpbb.viglink.acp_listener'] : $this->getPhpbb_Viglink_AcpListenerService()) && false ?: '_'};
         }, 1 => 'update_viglink_settings'], 0);
-        $instance->addListener('console.exception', [0 => function () {
+        $instance->addListener('console.error', [0 => function () {
             return ${($_ = isset($this->services['console.exception_subscriber']) ? $this->services['console.exception_subscriber'] : $this->getConsole_ExceptionSubscriberService()) && false ?: '_'};
-        }, 1 => 'on_exception'], 0);
+        }, 1 => 'on_error'], 0);
         $instance->addListener('kernel.terminate', [0 => function () {
             return ${($_ = isset($this->services['cron.event_listener']) ? $this->services['cron.event_listener'] : $this->getCron_EventListenerService()) && false ?: '_'};
         }, 1 => 'on_kernel_terminate'], 0);
@@ -2193,7 +2211,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
      */
     protected function getFeed_HelperService()
     {
-        return $this->services['feed.helper'] = new \phpbb\feed\helper(${($_ = isset($this->services['config']) ? $this->services['config'] : $this->getConfigService()) && false ?: '_'}, $this, ${($_ = isset($this->services['path_helper']) ? $this->services['path_helper'] : $this->getPathHelperService()) && false ?: '_'}, ${($_ = isset($this->services['text_formatter.s9e.renderer']) ? $this->services['text_formatter.s9e.renderer'] : $this->getTextFormatter_S9e_RendererService()) && false ?: '_'}, ${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'});
+        return $this->services['feed.helper'] = new \phpbb\feed\helper(${($_ = isset($this->services['auth']) ? $this->services['auth'] : ($this->services['auth'] = new \phpbb\auth\auth())) && false ?: '_'}, ${($_ = isset($this->services['config']) ? $this->services['config'] : $this->getConfigService()) && false ?: '_'}, $this, ${($_ = isset($this->services['path_helper']) ? $this->services['path_helper'] : $this->getPathHelperService()) && false ?: '_'}, ${($_ = isset($this->services['text_formatter.s9e.renderer']) ? $this->services['text_formatter.s9e.renderer'] : $this->getTextFormatter_S9e_RendererService()) && false ?: '_'}, ${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'});
     }
 
     /**
@@ -2669,7 +2687,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
      */
     protected function getNotification_Method_EmailService()
     {
-        return new \phpbb\notification\method\email(${($_ = isset($this->services['user_loader']) ? $this->services['user_loader'] : $this->getUserLoaderService()) && false ?: '_'}, ${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, ${($_ = isset($this->services['config']) ? $this->services['config'] : $this->getConfigService()) && false ?: '_'}, './../', 'php');
+        return new \phpbb\notification\method\email(${($_ = isset($this->services['user_loader']) ? $this->services['user_loader'] : $this->getUserLoaderService()) && false ?: '_'}, ${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, ${($_ = isset($this->services['config']) ? $this->services['config'] : $this->getConfigService()) && false ?: '_'}, ${($_ = isset($this->services['dbal.conn']) ? $this->services['dbal.conn'] : ($this->services['dbal.conn'] = new \phpbb\db\driver\factory($this))) && false ?: '_'}, './../', 'php', 'phpbb_notification_emails');
     }
 
     /**
@@ -2784,6 +2802,26 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
 
         $instance->set_user_loader(${($_ = isset($this->services['user_loader']) ? $this->services['user_loader'] : $this->getUserLoaderService()) && false ?: '_'});
         $instance->set_config(${($_ = isset($this->services['config']) ? $this->services['config'] : $this->getConfigService()) && false ?: '_'});
+
+        return $instance;
+    }
+
+    /**
+     * Gets the private 'notification.type.forum' service.
+     *
+     * @return \phpbb\notification\type\forum
+     */
+    protected function getNotification_Type_ForumService()
+    {
+        $instance = new \phpbb\notification\type\forum(${($_ = isset($this->services['dbal.conn']) ? $this->services['dbal.conn'] : ($this->services['dbal.conn'] = new \phpbb\db\driver\factory($this))) && false ?: '_'}, ${($_ = isset($this->services['language']) ? $this->services['language'] : $this->getLanguageService()) && false ?: '_'}, ${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, ${($_ = isset($this->services['auth']) ? $this->services['auth'] : ($this->services['auth'] = new \phpbb\auth\auth())) && false ?: '_'}, './../', 'php', 'phpbb_user_notifications');
+
+        $a = ${($_ = isset($this->services['user_loader']) ? $this->services['user_loader'] : $this->getUserLoaderService()) && false ?: '_'};
+        $b = ${($_ = isset($this->services['config']) ? $this->services['config'] : $this->getConfigService()) && false ?: '_'};
+
+        $instance->set_user_loader($a);
+        $instance->set_config($b);
+        $instance->set_user_loader($a);
+        $instance->set_config($b);
 
         return $instance;
     }
@@ -2990,6 +3028,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
         $instance->add('notification.type.report_post_closed');
         $instance->add('notification.type.topic');
         $instance->add('notification.type.topic_in_queue');
+        $instance->add('notification.type.forum');
 
         return $instance;
     }
@@ -3021,7 +3060,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
      */
     protected function getPasswords_Driver_Argon2iService()
     {
-        return $this->services['passwords.driver.argon2i'] = new \phpbb\passwords\driver\argon2i(${($_ = isset($this->services['config']) ? $this->services['config'] : $this->getConfigService()) && false ?: '_'}, ${($_ = isset($this->services['passwords.driver_helper']) ? $this->services['passwords.driver_helper'] : $this->getPasswords_DriverHelperService()) && false ?: '_'}, 1024, 2, 2);
+        return $this->services['passwords.driver.argon2i'] = new \phpbb\passwords\driver\argon2i(${($_ = isset($this->services['config']) ? $this->services['config'] : $this->getConfigService()) && false ?: '_'}, ${($_ = isset($this->services['passwords.driver_helper']) ? $this->services['passwords.driver_helper'] : $this->getPasswords_DriverHelperService()) && false ?: '_'}, 65536, 2, 4);
     }
 
     /**
@@ -3031,7 +3070,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
      */
     protected function getPasswords_Driver_Argon2idService()
     {
-        return $this->services['passwords.driver.argon2id'] = new \phpbb\passwords\driver\argon2id(${($_ = isset($this->services['config']) ? $this->services['config'] : $this->getConfigService()) && false ?: '_'}, ${($_ = isset($this->services['passwords.driver_helper']) ? $this->services['passwords.driver_helper'] : $this->getPasswords_DriverHelperService()) && false ?: '_'}, 1024, 2, 2);
+        return $this->services['passwords.driver.argon2id'] = new \phpbb\passwords\driver\argon2id(${($_ = isset($this->services['config']) ? $this->services['config'] : $this->getConfigService()) && false ?: '_'}, ${($_ = isset($this->services['passwords.driver_helper']) ? $this->services['passwords.driver_helper'] : $this->getPasswords_DriverHelperService()) && false ?: '_'}, 65536, 2, 4);
     }
 
     /**
@@ -3248,7 +3287,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
      */
     protected function getPhpbb_Feed_ControllerService()
     {
-        return $this->services['phpbb.feed.controller'] = new \phpbb\feed\controller\feed(${($_ = isset($this->services['template.twig.environment']) ? $this->services['template.twig.environment'] : $this->getTemplate_Twig_EnvironmentService()) && false ?: '_'}, ${($_ = isset($this->services['symfony_request']) ? $this->services['symfony_request'] : $this->getSymfonyRequestService()) && false ?: '_'}, ${($_ = isset($this->services['controller.helper']) ? $this->services['controller.helper'] : $this->getController_HelperService()) && false ?: '_'}, ${($_ = isset($this->services['config']) ? $this->services['config'] : $this->getConfigService()) && false ?: '_'}, ${($_ = isset($this->services['dbal.conn']) ? $this->services['dbal.conn'] : ($this->services['dbal.conn'] = new \phpbb\db\driver\factory($this))) && false ?: '_'}, $this, ${($_ = isset($this->services['feed.helper']) ? $this->services['feed.helper'] : $this->getFeed_HelperService()) && false ?: '_'}, ${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, ${($_ = isset($this->services['auth']) ? $this->services['auth'] : ($this->services['auth'] = new \phpbb\auth\auth())) && false ?: '_'}, ${($_ = isset($this->services['dispatcher']) ? $this->services['dispatcher'] : $this->getDispatcherService()) && false ?: '_'}, 'php');
+        return $this->services['phpbb.feed.controller'] = new \phpbb\feed\controller\feed(${($_ = isset($this->services['template.twig.environment']) ? $this->services['template.twig.environment'] : $this->getTemplate_Twig_EnvironmentService()) && false ?: '_'}, ${($_ = isset($this->services['symfony_request']) ? $this->services['symfony_request'] : $this->getSymfonyRequestService()) && false ?: '_'}, ${($_ = isset($this->services['controller.helper']) ? $this->services['controller.helper'] : $this->getController_HelperService()) && false ?: '_'}, ${($_ = isset($this->services['config']) ? $this->services['config'] : $this->getConfigService()) && false ?: '_'}, ${($_ = isset($this->services['dbal.conn']) ? $this->services['dbal.conn'] : ($this->services['dbal.conn'] = new \phpbb\db\driver\factory($this))) && false ?: '_'}, $this, ${($_ = isset($this->services['feed.helper']) ? $this->services['feed.helper'] : $this->getFeed_HelperService()) && false ?: '_'}, ${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, ${($_ = isset($this->services['auth']) ? $this->services['auth'] : ($this->services['auth'] = new \phpbb\auth\auth())) && false ?: '_'}, ${($_ = isset($this->services['dispatcher']) ? $this->services['dispatcher'] : $this->getDispatcherService()) && false ?: '_'}, ${($_ = isset($this->services['language']) ? $this->services['language'] : $this->getLanguageService()) && false ?: '_'}, 'php');
     }
 
     /**
@@ -3412,7 +3451,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
      */
     protected function getProfilefields_ManagerService()
     {
-        return $this->services['profilefields.manager'] = new \phpbb\profilefields\manager(${($_ = isset($this->services['auth']) ? $this->services['auth'] : ($this->services['auth'] = new \phpbb\auth\auth())) && false ?: '_'}, ${($_ = isset($this->services['dbal.conn']) ? $this->services['dbal.conn'] : ($this->services['dbal.conn'] = new \phpbb\db\driver\factory($this))) && false ?: '_'}, ${($_ = isset($this->services['dispatcher']) ? $this->services['dispatcher'] : $this->getDispatcherService()) && false ?: '_'}, ${($_ = isset($this->services['request']) ? $this->services['request'] : ($this->services['request'] = new \phpbb\request\request(NULL, true))) && false ?: '_'}, ${($_ = isset($this->services['template']) ? $this->services['template'] : $this->getTemplateService()) && false ?: '_'}, ${($_ = isset($this->services['profilefields.type_collection']) ? $this->services['profilefields.type_collection'] : $this->getProfilefields_TypeCollectionService()) && false ?: '_'}, ${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, 'phpbb_profile_fields', 'phpbb_profile_lang', 'phpbb_profile_fields_data');
+        return $this->services['profilefields.manager'] = new \phpbb\profilefields\manager(${($_ = isset($this->services['auth']) ? $this->services['auth'] : ($this->services['auth'] = new \phpbb\auth\auth())) && false ?: '_'}, ${($_ = isset($this->services['config_text']) ? $this->services['config_text'] : $this->getConfigTextService()) && false ?: '_'}, ${($_ = isset($this->services['dbal.conn']) ? $this->services['dbal.conn'] : ($this->services['dbal.conn'] = new \phpbb\db\driver\factory($this))) && false ?: '_'}, ${($_ = isset($this->services['dbal.tools']) ? $this->services['dbal.tools'] : $this->getDbal_ToolsService()) && false ?: '_'}, ${($_ = isset($this->services['dispatcher']) ? $this->services['dispatcher'] : $this->getDispatcherService()) && false ?: '_'}, ${($_ = isset($this->services['language']) ? $this->services['language'] : $this->getLanguageService()) && false ?: '_'}, ${($_ = isset($this->services['log']) ? $this->services['log'] : $this->getLogService()) && false ?: '_'}, ${($_ = isset($this->services['request']) ? $this->services['request'] : ($this->services['request'] = new \phpbb\request\request(NULL, true))) && false ?: '_'}, ${($_ = isset($this->services['template']) ? $this->services['template'] : $this->getTemplateService()) && false ?: '_'}, ${($_ = isset($this->services['profilefields.type_collection']) ? $this->services['profilefields.type_collection'] : $this->getProfilefields_TypeCollectionService()) && false ?: '_'}, ${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'}, 'phpbb_profile_fields', 'phpbb_profile_fields_data', 'phpbb_profile_fields_lang', 'phpbb_profile_lang');
     }
 
     /**
@@ -3443,16 +3482,6 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
     protected function getProfilefields_Type_DropdownService()
     {
         return $this->services['profilefields.type.dropdown'] = new \phpbb\profilefields\type\type_dropdown(${($_ = isset($this->services['profilefields.lang_helper']) ? $this->services['profilefields.lang_helper'] : $this->getProfilefields_LangHelperService()) && false ?: '_'}, ${($_ = isset($this->services['request']) ? $this->services['request'] : ($this->services['request'] = new \phpbb\request\request(NULL, true))) && false ?: '_'}, ${($_ = isset($this->services['template']) ? $this->services['template'] : $this->getTemplateService()) && false ?: '_'}, ${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'});
-    }
-
-    /**
-     * Gets the private 'profilefields.type.googleplus' shared service.
-     *
-     * @return \phpbb\profilefields\type\type_googleplus
-     */
-    protected function getProfilefields_Type_GoogleplusService()
-    {
-        return $this->services['profilefields.type.googleplus'] = new \phpbb\profilefields\type\type_googleplus(${($_ = isset($this->services['request']) ? $this->services['request'] : ($this->services['request'] = new \phpbb\request\request(NULL, true))) && false ?: '_'}, ${($_ = isset($this->services['template']) ? $this->services['template'] : $this->getTemplateService()) && false ?: '_'}, ${($_ = isset($this->services['user']) ? $this->services['user'] : $this->getUserService()) && false ?: '_'});
     }
 
     /**
@@ -3507,7 +3536,6 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
         $instance->add('profilefields.type.bool');
         $instance->add('profilefields.type.date');
         $instance->add('profilefields.type.dropdown');
-        $instance->add('profilefields.type.googleplus');
         $instance->add('profilefields.type.int');
         $instance->add('profilefields.type.string');
         $instance->add('profilefields.type.text');
@@ -3729,11 +3757,11 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
     /**
      * Gets the private 'template.twig.extensions.debug' shared service.
      *
-     * @return \Twig_Extension_Debug
+     * @return \Twig\Extension\DebugExtension
      */
     protected function getTemplate_Twig_Extensions_DebugService()
     {
-        return $this->services['template.twig.extensions.debug'] = new \Twig_Extension_Debug();
+        return $this->services['template.twig.extensions.debug'] = new \Twig\Extension\DebugExtension();
     }
 
     /**
@@ -4003,7 +4031,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
      */
     protected function getTextReparser_PollOptionService()
     {
-        $this->services['text_reparser.poll_option'] = $instance = new \phpbb\textreparser\plugins\poll_option(${($_ = isset($this->services['dbal.conn']) ? $this->services['dbal.conn'] : ($this->services['dbal.conn'] = new \phpbb\db\driver\factory($this))) && false ?: '_'});
+        $this->services['text_reparser.poll_option'] = $instance = new \phpbb\textreparser\plugins\poll_option(${($_ = isset($this->services['dbal.conn']) ? $this->services['dbal.conn'] : ($this->services['dbal.conn'] = new \phpbb\db\driver\factory($this))) && false ?: '_'}, 'phpbb_poll_options');
 
         $instance->set_name('poll_option');
 
@@ -4213,9 +4241,9 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
             'core.environment' => 'production',
             'core.debug' => false,
             'core.cache_dir' => './../cache/production/',
-            'passwords.driver.argon2_memory_cost' => 1024,
+            'passwords.driver.argon2_memory_cost' => 65536,
             'passwords.driver.argon2_threads' => 2,
-            'passwords.driver.argon2_time_cost' => 2,
+            'passwords.driver.argon2_time_cost' => 4,
             'passwords.driver.bcrypt_cost' => 10,
             'text_formatter.cache.dir' => './../cache/production/',
             'text_formatter.cache.parser.key' => '_text_formatter_parser',
@@ -4257,6 +4285,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
             'tables.migrations' => 'phpbb_migrations',
             'tables.moderator_cache' => 'phpbb_moderator_cache',
             'tables.modules' => 'phpbb_modules',
+            'tables.notification_emails' => 'phpbb_notification_emails',
             'tables.notification_types' => 'phpbb_notification_types',
             'tables.notifications' => 'phpbb_notifications',
             'tables.poll_options' => 'phpbb_poll_options',
@@ -4357,6 +4386,7 @@ class phpbb_cache_container extends \Symfony\Component\DependencyInjection\Conta
                 'migrations' => 'phpbb_migrations',
                 'moderator_cache' => 'phpbb_moderator_cache',
                 'modules' => 'phpbb_modules',
+                'notification_emails' => 'phpbb_notification_emails',
                 'notification_types' => 'phpbb_notification_types',
                 'notifications' => 'phpbb_notifications',
                 'poll_options' => 'phpbb_poll_options',
@@ -4430,7 +4460,7 @@ class lexer_6d586c2 extends \phpbb\template\twig\lexer implements \ProxyManager\
     /**
      * {@inheritDoc}
      */
-    public function tokenize(\Twig_Source $source)
+    public function tokenize(\Twig\Source $source)
     {
         $this->initializer6d586c2 && ($this->initializer6d586c2->__invoke($valueHolder6d586c2, $this, 'tokenize', array('source' => $source), $this->initializer6d586c2) || 1) && $this->valueHolder6d586c2 = $valueHolder6d586c2;
 
