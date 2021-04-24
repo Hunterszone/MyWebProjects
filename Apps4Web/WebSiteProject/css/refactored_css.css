@@ -84,15 +84,15 @@ button:hover {
   }
 
   .sidebar {
-    width: 80px;
+    width: 70px;
     position: fixed;
     z-index: 1;
     text-align: center;
     top: 40px;
     left: 0px;
-    background: #000000;
+    background: #d9d9d9;
     overflow-x: hidden;
-    padding: 8px 0;
+    padding: 0px 0;
   }
   
   .sidebar a {
