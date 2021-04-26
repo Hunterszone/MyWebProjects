@@ -6,7 +6,7 @@
 	require '../oauth/vendor/vendor/autoload.php';
 
 	//Include member details
-	@include_once '../member.php';
+	@include_once '../account/member.php';
 
 	include_once __DIR__.'..\..\oauth\vendor\src\FixedBitNotation.php';
 	include_once __DIR__.'..\..\oauth\vendor\src\GoogleAuthenticator.php';

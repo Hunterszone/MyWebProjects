@@ -4,7 +4,7 @@
     	session_start();
      
     	//Include database connection details
-    	require_once('../connection.php');
+    	require_once('../connectivity/connection.php');
      
     	//Create array to store validation errors
     	$errmsg_arr = array();
@@ -71,7 +71,7 @@
 				setcookie($member,$cookiehash,time()+3600*24*365,'/','.thatbaddesign.freevar.com');
 				mysqli_query($conn,$cookieQry);
     			session_write_close();
-    			header("location: ../website.php");
+    			header("location: ../account/website.php");
     			exit();
     		}else {
     			//Login failed -> error message

@@ -122,7 +122,7 @@
 	<TR><TD ALIGN=Center>
 The Quiz has finished
 
-<p><a href="end_quizes.php">End quizes</a>
+<p><a href="../../account/end_quizes.php">End quizes</a>
  
         
         </TD></TR>

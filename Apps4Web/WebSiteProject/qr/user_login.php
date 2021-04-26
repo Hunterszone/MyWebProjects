@@ -706,9 +706,9 @@
    </style>
    <table>
 	  <tr>
-		<td><a href="../welcome_message.php" target="_blank">
+		<td><a href="../account/welcome_message.php" target="_blank">
             <?php 
-				require_once('../member.php');
+				require_once('../account/member.php');
 			?>
         </a></td>
 	  </tr>
@@ -750,7 +750,7 @@
       <br>
       <center>
          <button class="nicetoo" onclick="location.href='../quizes/quizes.php'"><i class="fa fa-book"></i> Start quiz</button>
-         <button class="nicetoo" onclick=window.open("../welcome_message.php")><i class="fa fa-home"></i> My Profile</button>
+         <button class="nicetoo" onclick=window.open("../account/welcome_message.php")><i class="fa fa-home"></i> My Profile</button>
          <div class="dropdown">
             <button class="dropbtn"><i class="fa fa-upload"></i> Upload</button>
             <div class="dropdown-content">

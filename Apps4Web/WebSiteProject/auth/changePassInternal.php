@@ -1,5 +1,5 @@
 <?php
-include('../connection.php');
+include('../connectivity/connection.php');
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
