@@ -140,6 +140,7 @@ button:hover {
     margin: 3em 0 3em 0;
     padding: 3em 0 3em 0;
     gap: 3em;
+	background-color: rgba(0,0,0,0.5);
 }
 
 .social-sidebar a{
