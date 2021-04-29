@@ -46,15 +46,6 @@
       </tr>
    </table>
    <!-- HTML for ANIMATION, CLOCK, HEADING AND SEARCH ENGINE -->
-   <center>
-      <b>
-         <p style="color:yellow;font-size: 23px;" id="myP" class="txt">*** Loading page resources: <span id="demo">0</span> / 100% ***</p>
-      </b>
-   </center>
-   <div class="w3-light-grey">
-      <div id="myBar" class="w3-container w3-green" style="height:65px;width:0%">
-      </div>
-   </div>
    <div id="header">
       <h1>
          <center><b><font size="8"><font face="algerian"><i><span class="blink_text">WEB <font color="black">PROGRAMMING</FONT> WORLD</span><i></font></font></b></center>
