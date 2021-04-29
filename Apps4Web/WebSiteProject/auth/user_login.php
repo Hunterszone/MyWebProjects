@@ -638,7 +638,7 @@
          color: white;
          padding-top: 40px;
          padding-left:  50px;
-         content: 'exploring' url(http://i.stack.imgur.com/KUdfa.png) 'thumbnails..';
+         content: 'select' url(http://i.stack.imgur.com/KUdfa.png) 'partner';
          position:absolute;
          width:100%; height:100%;
          top:0; left:0;
