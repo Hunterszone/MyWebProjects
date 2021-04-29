@@ -35,7 +35,7 @@ button:hover {
 
 .header h1 {
     color: #000000;
-    font-size: 3em;
+    font-size: 4em;
     font-family: 'Algerian';
     text-shadow: 0 0 5px #fff,
                  0 0 10px #fff, 
@@ -49,6 +49,7 @@ button:hover {
 .header h2 {
     color:#FFFFFF;
     font-family: 'Algerian';
+	font-size: 2em;
 }
 
 .dropdown_menus {
