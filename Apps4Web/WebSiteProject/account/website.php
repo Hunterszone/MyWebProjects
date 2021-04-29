@@ -8,14 +8,18 @@
 	<head>
 		<title>Login success</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<link rel="stylesheet" href="../../css/particles.css">
+		<script src= "https://github.com/VincentGarreau/particles.js"></script>
 		<title>Untitled Document</title>
 		<style type="text/css">
 		.style1 {
 			font-size: 36px;
 			font-weight: bold;
+			color: #eb7434;
 		}
 		.style2 {
 			font-size: 20px;
+			color: #ffffff;
 		}
 		</style>
 	</head>
@@ -24,7 +28,7 @@
 		<p align="center" class="style1">Login successful</p>
 
 		<p align="center" class="style2"><a href="../auth/user_login.php">Go to user profile</a></p>
-		<p align="center" class="style2"><a href="index.php">Logout</a></p>
+		<p align="center" class="style2"><a href="../index.php">Logout</a></p>
 
 		<!-- CSS for BACKGROUND -->
 
@@ -39,5 +43,30 @@ background-size: cover;
 }
 
 		</style> 
+		<div id="particles-js"></div>
+      <!-- scripts -->
+      <script src="../js/particles.js"></script>
+      <script src="../js/app.js"></script>
+      <!-- stats.js -->
+      <!--<script src="js/lib/stats.js"></script>-->
+      <script>
+         var count_particles, stats, update;
+         stats = new Stats;
+         stats.setMode(0);
+         stats.domElement.style.position = 'absolute';
+         stats.domElement.style.left = '0px';
+         stats.domElement.style.top = '0px';
+         document.body.appendChild(stats.domElement);
+         count_particles = document.querySelector('.js-count-particles');
+         update = function() {
+         stats.begin();
+         stats.end();
+         if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+          count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+         }
+         requestAnimationFrame(update);
+         };
+         requestAnimationFrame(update);
+      </script>
 	</body>
 </html>
