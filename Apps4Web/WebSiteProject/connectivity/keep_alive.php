@@ -28,10 +28,10 @@
 			if(mysqli_num_rows($result) > 0) {
     			//Login Successful
     			/*$usernametoken =*/ mysqli_fetch_assoc($result);
-				header("location: ./auth/user_login.php");
+				header("location: ../auth/user_login.php");
 			}
 			/*if (hash_equals(implode("",$usernametoken), $token)) {
-				header("location: user_login.php");
+				header("location: ../auth/user_login.php");
 			}*/
 		}		
 ?>

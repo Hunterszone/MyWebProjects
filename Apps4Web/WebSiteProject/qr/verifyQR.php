@@ -21,7 +21,7 @@
 	if ($g->checkCode($secret, $check_this_code)) {
 	  echo 'Success!';
 	  session_write_close();
-      header("location: user_login.php");
+      header("location: ../auth/user_login.php");
 	  exit();
 	} else {
 	  echo '<br><br><center>Invalid login</center>';

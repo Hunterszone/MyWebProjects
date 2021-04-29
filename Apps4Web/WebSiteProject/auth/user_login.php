@@ -523,16 +523,16 @@
    <!-- CSS for LOADING BAR -->
    <style>
       #myProgress {
-      width: 100%;
-      background-color: rgba(0,0,0,0.5);
-      height: 80px;
+		  width: 100%;
+		  background-color: rgba(0,0,0,0.5);
+		  height: 80px;
       }
       #myBar {
-      width: 1%;
-      height: 80px;
-      background-image: linear-gradient(to right, black 0%,white 180%), url('../img/faces.gif');
-      background-blend-mode: color-dodge;
-      background-color: rgba(0,0,0,0.5);
+		  width: 1%;
+		  height: 80px;
+		  background-image: linear-gradient(to right, black 0%,white 180%), url('../img/faces.gif');
+		  background-blend-mode: color-dodge;
+		  background-color: rgba(0,0,0,0.5);
       }
    </style>
    <!-- CSS for SHARE BUTTONS -->
@@ -736,6 +736,15 @@
       </tr>
    </table>
       <!-- HTML for ANIMATION, CLOCK, HEADING AND SEARCH ENGINE -->
+	   <center>
+		  <b>
+			 <p style="color:yellow;font-size: 23px;" id="myP" class="txt">*** Loading page resources: <span id="demo">0</span> / 100% ***</p>
+		  </b>
+	   </center>
+	   <div class="w3-light-grey">
+		  <div id="myBar" class="w3-container w3-green" style="height:65px;width:0%">
+		  </div>
+	   </div>
       <div id="header">
          <h1>
             <center><b><font size="8"><font face="algerian"><i><span class="blink_text">WEB <font color="black">PROGRAMMING</FONT> WORLD</span><i></font></font></b></center>
@@ -996,10 +1005,30 @@
             
             document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
             }
+			
+			function move() {
+			   var elem = document.getElementById("myBar");   
+			   var width = 0;
+			   var id = setInterval(frame, 50);
+			   function frame() {
+				 if (width >= 100) {
+				   clearInterval(id);      
+				  document.getElementById("myBar").style.display="none";
+				  document.getElementById("myP").style.display="none";
+				 } else {
+				   width++; 
+				   elem.style.width = width + '%'; 
+				   var num = width * 1 / 1;
+				   num = num.toFixed(0)
+				   document.getElementById("demo").innerHTML = num;
+				 }
+			   }
+			}
             
             window.onload=function(){
-            GetClock();
-            setInterval(GetClock,1000);
+				GetClock();
+				move();
+				setInterval(GetClock,1000);
             }
             
          </script>
