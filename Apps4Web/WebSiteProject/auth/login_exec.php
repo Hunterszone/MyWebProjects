@@ -71,7 +71,7 @@
 				setcookie($member,$cookiehash,time()+3600*24*365,'/','.thatbaddesign.freevar.com');
 				mysqli_query($conn,$cookieQry);
     			session_write_close();
-    			header("location: ../account/website.php");
+    			header("location: ../auth/user_login.php");
     			exit();
     		}else {
     			//Login failed -> error message
