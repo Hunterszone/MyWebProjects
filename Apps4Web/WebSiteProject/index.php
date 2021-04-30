@@ -4,6 +4,7 @@
    <head>
       <title>Home</title>
       <meta charset="utf-8">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="./css/refactored_css.css">
       <link rel="stylesheet" href="./css/particles.css">
       <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
@@ -30,18 +31,17 @@
          <div class="dropdown_menus">
             <div class="dropdown">
 				<button style="cursor:pointer" onclick="window.location.href='./auth/SignUp.php'")>
-                  Sign up
-				</button>
+				<i class="fa fa-user-plus"></i> Sign up</button>
             </div>
             <div class="dropdown">
-				<button class="dropbtn">Login</button>
+				<button class="dropbtn"><i class="fa fa-sign-in"></i> Login</button>
 				<div class="dropdown-content">
 					<button type="button" id="but1" style="cursor:pointer" onclick="window.location.href='./forms/login_form.php'" value="Password">With Password</button>
 					<button type="button" id="but2" style="cursor:pointer" onclick="window.location.href='./qr/generateQR.php'" value="2FA/QR code">With QR Code</button>
 				</div>
             </div>
             <div class="dropdown">
-               <button class="dropbtn">Articles</button>
+               <button class="dropbtn"><i class="fa fa-book"></i> Articles</button>
                <div class="dropdown-content">
                   <button type="button" style="cursor:pointer" onclick=window.open("./articles/html.html") value="HTML">HTML</button>
                   <button type="button" style="cursor:pointer" onclick=window.open("./articles/css.html") value="CSS">CSS</button>
@@ -50,7 +50,7 @@
                </div>
             </div>
             <div class="dropdown">
-               <button class="dropbtn">Contact us</button>
+               <button class="dropbtn"><i class="fa fa-pencil"></i> Contact us</button>
                <div class="dropdown-content">
                   <button type="button" style="cursor:pointer" onclick=window.open("./forms/contact_form.php") value="Feedback">Feedback</button>
                   <button type="button" style="cursor:pointer" onclick=window.open("phpBB3/index.php") value="Forum">Forum</button>
