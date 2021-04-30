@@ -3,7 +3,7 @@
    <head>
       <STYLE TYPE="text/css">
          body { 
-         background: url(../img/book-carousel.jpg) no-repeat center center fixed; 
+         background: url(../img/quiz_cover.png) no-repeat center center fixed;
          -webkit-background-size: cover;
          -moz-background-size: cover;
          -o-background-size: cover;
@@ -15,7 +15,8 @@
          <tr>
             <td>
                <a href="../index.php">
-                  <div id="milkyway">
+				<img id="backToSite" src="../img/faces.gif" title="Back" style="width: 120px; height: 120px;">
+                  <!--<div id="milkyway">
                      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" height="200" width="auto">
                         <param name="wmode" value="transparent">
                         <param name="movie" value="http://parallelreality-bg.com/templates/reality/images/milkyway2.png">
@@ -23,7 +24,7 @@
                         <param name="play" value="true">
                         <embed height="91" src="http://parallelreality-bg.com/templates/reality/images/milkyway2.png" bgcolor="#000000" width="115" quality="best" play="true" wmode="transparent">
                      </object>
-                  </div>
+                  </div>-->
                </a>
             </td>
             <td>

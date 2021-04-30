@@ -29,16 +29,16 @@
          </div>
          <div class="dropdown_menus">
             <div class="dropdown">
-               <button style="cursor:pointer" onclick="window.location.href='./auth/SignUp.php'")>
+				<button style="cursor:pointer" onclick="window.location.href='./auth/SignUp.php'")>
                   Sign up
+				</button>
             </div>
             <div class="dropdown">
-            </button>
-            <button class="dropbtn">Login</button>
-            <div class="dropdown-content">
-            <button type="button" id="but1" style="cursor:pointer" onclick="window.location.href='./forms/login_form.php'" value="Password">With Password</button>
-            <button type="button" id="but1" style="cursor:pointer" onclick="window.location.href='./qr/generateQR.php'" value="2FA/QR code">With QR Code</button>
-            </div>
+				<button class="dropbtn">Login</button>
+				<div class="dropdown-content">
+					<button type="button" id="but1" style="cursor:pointer" onclick="window.location.href='./forms/login_form.php'" value="Password">With Password</button>
+					<button type="button" id="but1" style="cursor:pointer" onclick="window.location.href='./qr/generateQR.php'" value="2FA/QR code">With QR Code</button>
+				</div>
             </div>
             <div class="dropdown">
                <button class="dropbtn">Articles</button>
@@ -64,21 +64,21 @@
          </div>-->
          <div class="footer">
             <div class='social-sidebar'>
-               <a class='facebook' target='_blank' title="S H A R E !" onclick="void window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
+               <a class='facebook' target='_blank' title="S H A R E" onclick="void window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
                <span>FACEBOOK</span>
                </a>
-               <a class='twitter' target='_blank' title="S H A R E !" a onclick="void window.open('https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.example.com%2F&original_referer=.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
+               <a class='twitter' target='_blank' title="S H A R E" a onclick="void window.open('https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.example.com%2F&original_referer=.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
                <span>TWITTER</span>
                </a>
-               <a class='gplus' target='_blank' title="S H A R E !" href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=325,width=548');return false;">
+               <a class='gplus' target='_blank' title="S H A R E" href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=325,width=548');return false;">
                <span>GOOGLE+</span>
                </a>
-               <a class='linkedin' target='_blank' title="S H A R E !" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://YourContentsURLGoesHere.com&amp;title=Article Tile Goes Here&amp;summary=Put your summary here" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=390,width=548');return false;">
+               <a class='linkedin' target='_blank' title="S H A R E" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://YourContentsURLGoesHere.com&amp;title=Article Tile Goes Here&amp;summary=Put your summary here" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=390,width=548');return false;">
                <span>LINKEDIN</span>
                </a>
             </div>
          </div>
-         <img class="scroll-up" src="./img/arrowup.gif" alt="Go to top">
+         <!--<img class="scroll-up" src="../img/scroll-to-top.gif" alt="Go to top">-->
       </div>
       <div id="particles-js"></div>
       <!-- scripts -->

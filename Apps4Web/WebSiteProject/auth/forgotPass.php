@@ -78,7 +78,8 @@ echo "		<table>
 				<tr>
 					<td>
 						<a href='../index.php'>
-							<div id='milkyway'>
+							<img id="backToSite" src="../img/faces.gif" title="Back" style="width: 120px; height: 120px;">
+							<!--<div id='milkyway'>
 								<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' height='200' width='auto'>
 									<param name='wmode' value='transparent'>
 										<param name='movie' value='http://parallelreality-bg.com/templates/reality/images/milkyway2.png'>
@@ -86,7 +87,7 @@ echo "		<table>
 												<param name='play' value='true'>
 													<embed height='91' src='http://parallelreality-bg.com/templates/reality/images/milkyway2.png' bgcolor='#000000' width='115' quality='best' play='true' wmode='transparent'>
 													</object>
-												</div>
+												</div>-->
 											</a>
 										</td>
 									</tr>
@@ -106,8 +107,9 @@ echo "<div class='error'><br><br><br><br>
     			<table>
 				<tr>
 					<td>
-						<a href="./user_login.php">
-							<div id="milkyway">
+						<a href="user_login.php">
+							<img id="backToSite" src="../img/faces.gif" title="Back" style="width: 120px; height: 120px;">
+							<!--<div id="milkyway">
 								<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" height="200" width="auto">
 									<param name="wmode" value="transparent">
 										<param name="movie" value="http://parallelreality-bg.com/templates/reality/images/milkyway2.png">
@@ -115,7 +117,7 @@ echo "<div class='error'><br><br><br><br>
 												<param name="play" value="true">
 													<embed height="91" src="http://parallelreality-bg.com/templates/reality/images/milkyway2.png" bgcolor="#000000" width="115" quality="best" play="true" wmode="transparent">
 													</object>
-												</div>
+												</div>-->
 											</a>
 										</td>
 									</tr>
