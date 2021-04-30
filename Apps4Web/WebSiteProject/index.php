@@ -37,7 +37,7 @@
 				<button class="dropbtn">Login</button>
 				<div class="dropdown-content">
 					<button type="button" id="but1" style="cursor:pointer" onclick="window.location.href='./forms/login_form.php'" value="Password">With Password</button>
-					<button type="button" id="but1" style="cursor:pointer" onclick="window.location.href='./qr/generateQR.php'" value="2FA/QR code">With QR Code</button>
+					<button type="button" id="but2" style="cursor:pointer" onclick="window.location.href='./qr/generateQR.php'" value="2FA/QR code">With QR Code</button>
 				</div>
             </div>
             <div class="dropdown">
