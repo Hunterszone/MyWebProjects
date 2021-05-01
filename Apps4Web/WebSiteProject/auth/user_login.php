@@ -57,7 +57,7 @@
                <li><a style="cursor:pointer" id="avatar" onclick="location.href='../avatar_upload.html'">Avatar</a></li>
             </ul>
          </li>
-         <li><a style="cursor:pointer" id="newPass" onclick="location.href='./forgotPass.php'"><i class="fa fa-unlock"></i> Change pass</a></li>
+         <li><a style="cursor:pointer" id="newPass" onclick="location.href='./changePass.php'"><i class="fa fa-unlock"></i> Change pass</a></li>
          <li>
             <a href='#'><i class="fa fa-comments"></i> Contacts</a>
             <ul>
