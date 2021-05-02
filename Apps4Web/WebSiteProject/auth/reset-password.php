@@ -26,6 +26,7 @@ Click here</a> to reset password.</p>';
   <head>
     <meta name="generator"
     content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title></title>
   </head>
   <body>
@@ -50,7 +51,7 @@ Click here</a> to reset password.</p>';
       <br />
       <br />
       <input type="hidden" name="email" value="<?php echo $email;?>" /> 
-      <input type="submit" value="Reset Password" /></form>
+      <button type="submit" class="btn btn-secondary">Reset password</button>
     </center><?php
         }else{
         $error .= "<h2>Link Expired</h2>

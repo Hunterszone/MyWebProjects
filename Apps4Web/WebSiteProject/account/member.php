@@ -17,8 +17,7 @@
                         if($mem_id == $row['mem_id']){
                             echo "<img src= '../gallery/profile".$mem_id.".jpg'>";
                         }else{
-
-                            echo "<img src='../gallery/pd.jpg'>";
+                            echo "<img src='../gallery/profile51.jpg'>";
                         }
                         echo "<p>".$row['username']."</p>";
                     echo "</div>";

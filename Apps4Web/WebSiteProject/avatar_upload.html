@@ -8,6 +8,7 @@
    <head>
       <meta name="generator"
          content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <title>Avatar Uploader</title>
    </head>
    <table>
@@ -33,9 +34,11 @@
          <h3>Avatar Upload</h3>
          Select an avatar to upload:
          <p>
-         <form action="./account/upload.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" size="45" />
-            <input type="submit" value="Upload Avatar" />
+         <form action="../account/upload.php" method="post" enctype="multipart/form-data">
+			<div align="center">
+				<input type="file" name="file" size="45" />
+				<button type="submit" class="btn btn-secondary">Upload</button>
+			</div>
          </form>
       </center>
       </p>
