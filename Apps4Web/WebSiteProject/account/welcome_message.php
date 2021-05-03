@@ -31,42 +31,38 @@
                 echo "</p>";
                 echo "</center>";
                 echo "</font>";
-				/*echo "<form action='welcome_message.php' method='post' enctype='multipart/form-data'>";
+				echo "<form action='welcome_message.php' method='post' enctype='multipart/form-data'>";
 				echo "<div align='center'>";
 				echo "<input type='file' name='file' size='45' />";
 				echo "<input type='submit' name='changePic' value='Change pic' />";
 				echo "</div>";
-				echo "</form>";*/
+				echo "</form>";
 				
 				if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['changePic']))
 				{
-					func();
+					changeProfPic();
 				}
-				function func()
+				function changeProfPic()
 				{
+					$host = 'localhost';
+					$user = 'root';
+					$pass = 'root';
+					$db = 'phpwebsite';
+					$prefix = "";
+					$conn = new mysqli($host, $user, $pass, $db, 3306) or die("Could not connect to the database");
 					$username = htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
 					$sql = "SELECT * FROM users WHERE username='$username'";
 					$result = mysqli_query($conn, $sql);
 							
 					if(mysqli_num_rows($result)> 0){
-						//while ($row = mysqli_fetch_assoc($result)){
-							$row = mysqli_fetch_assoc($result);
-							$mem_id= $row['mem_id'];
-							$sqlimg = "SELECT * FROM users WHERE mem_id='$mem_id'";
-							$resultimg=mysqli_query($conn,$sqlimg);
-							$rowimg = mysqli_fetch_assoc($resultimg);
-							//while($rowimg = mysqli_fetch_assoc($resultimg)){
-								echo "<div class=container>";
-									if($mem_id == $row['mem_id']){
-										echo "<img src= '../gallery/profile".$mem_id.".jpg'>";
-									}else{
-										echo "<img src='../gallery/profile51.jpg'>";
-									}
-									echo "<p>".$row['username']."</p>";
-								echo "</div>";
-							//}
-						//}
+						$row = mysqli_fetch_assoc($result);
+						$mem_id= $row['mem_id'];
+						$sqlimg = "SELECT img FROM user_img WHERE id=3";
+						$resultimg=mysqli_query($conn,$sqlimg);
+						$rowimg = mysqli_fetch_assoc($resultimg);
 					}
+					
+					return $rowimg;
 				}
 				
 				function getUserIpAddr(){
@@ -87,6 +83,7 @@
   <head>
     <meta name="generator"
     content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+	<link rel="shortcut icon" type="image/jpg" href="../../img/favicon.ico"/>
     <style type="text/css">
 
 		body { 

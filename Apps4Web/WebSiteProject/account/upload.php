@@ -1,5 +1,13 @@
  
-<?php if ($_SERVER['REQUEST_METHOD'] == 'GET') { ?>
+<?php 
+		include_once '../connectivity/connection.php';
+		@$username = htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
+        $sql = "SELECT * FROM users WHERE username='$username'";
+        $result = mysqli_query($conn, $sql);
+		
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') { 
+
+?>
 <form method="post" action="<?php echo $_SERVER['SCRIPT_NAME'] ?>"
       enctype="multipart/form-data">
 <input type="file" name="file"/>
@@ -9,6 +17,8 @@
     if (isset($_FILES['file']) &&
     ($_FILES['file']['error'] == UPLOAD_ERR_OK)) {
         $newPath = $_SERVER['DOCUMENT_ROOT'] . '\\gallery\\' . basename($_FILES['file']['name']);
+		$sqlimg = "INSERT INTO user_img (img) VALUES('$newPath')";
+        $resultimg=mysqli_query($conn,$sqlimg);
         if (move_uploaded_file($_FILES['file']['tmp_name'], $newPath)) {
             print "File saved to $newPath";
         } else {

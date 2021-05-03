@@ -7,6 +7,7 @@
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="./css/refactored_css.css">
       <link rel="stylesheet" href="./css/particles.css">
+	  <link rel="shortcut icon" type="image/jpg" href="../img/favicon.ico"/>
       <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
       <script src= "https://github.com/VincentGarreau/particles.js"></script>
    </head>

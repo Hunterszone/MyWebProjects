@@ -12,6 +12,7 @@
       <link rel="stylesheet" href="../../css/refactored_css.css">
       <link rel="stylesheet" href="../../css/particles.css">
       <link rel="stylesheet" href="../../css/megaMenuSecond.css">
+	  <link rel="shortcut icon" type="image/jpg" href="../../img/favicon.ico"/>
       <script src= "https://github.com/VincentGarreau/particles.js"></script>
       <script src= "../js/user_login.js"></script>
       <!--<script>
@@ -48,7 +49,7 @@
    <div id="menu">
       <div id='menutext'>
          <ul>
-         <li><a id="quiz" style="cursor:pointer" onclick="location.href='../quizes/quizes.php'"><i class="fa fa-book"></i> Start quiz</a></li>
+         <li><a id="quiz" style="cursor:pointer" onclick="location.href='../quizes/quizes.php'"><i class="fa fa-book"></i> Web quiz</a></li>
          <li><a style="cursor:pointer" id="profile" onclick=window.open("../account/welcome_message.php")><i class="fa fa-home"></i> Profile</a></li>
          <li>
             <a href='#'><i class="fa fa-upload"></i> Upload</a>
