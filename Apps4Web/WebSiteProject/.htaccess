@@ -1,3 +1,5 @@
+# WARNING - DON'T UPLOAD THIS FILE TO THE FTP SERVER!!!
+
 AllowOverride All
 
 Options +FollowSymLinks -MultiViews
