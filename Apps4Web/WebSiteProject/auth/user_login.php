@@ -49,7 +49,7 @@
    <div id="menu">
       <div id='menutext'>
          <ul>
-         <li><a id="quiz" style="cursor:pointer" onclick="location.href='../quizes/quizes.php'"><i class="fa fa-book"></i> Web quiz</a></li>
+         <li><a id="quiz" style="cursor:pointer" onclick="location.href='../quizes/quizes.php'"><i class="fa fa-book"></i> Web quizzes</a></li>
          <li><a style="cursor:pointer" id="profile" onclick=window.open("../account/welcome_message.php")><i class="fa fa-home"></i> Profile</a></li>
          <li>
             <a href='#'><i class="fa fa-upload"></i> Upload</a>
