@@ -1,101 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="generator"
-    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
-    <meta charset="utf-8" />
-    <title>jQuery UI Accordion - Default functionality</title>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script>
-  $(function() {
-    $( &amp;quot;#accordion&amp;quot; ).accordion();
-  });
-  
-</script>
-    <style type="text/css">
- 
-body { 
-background: url(http://theappwhisperer.com/wp-content/uploads/2012/05/media_1336386288960.png) no-repeat center center fixed; 
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-}
- 
-</style>
-    <title>Javascript Examples</title>
-  </head>
-  <body>
-    <div id="accordion">
-      <h3>Introduction</h3>
-      <div>
-        <p>JavaScript often abbreviated as JS, is a high-level, dynamic, weakly typed, object-based, multi-paradigm, and
-        interpreted programming language. JavaScript is the programming language of the web. JavaScript enables to add powerful
-        interactions to websites, foundation of a lot of commonly used libraries (like jQuery) and frameworks (like AngularJS,
-        ReactJS and NodeJS). JavaScript is a programming language that enables you to create dynamically updating content, control
-        multimedia, animate images. Javascript can be used to program how the web pages behave on the occurrence of an event,
-        because it runs on the client side of the web. This programming language can function as both a procedural and an object
-        oriented language. Objects are created programmatically in JavaScript, by attaching methods and properties to otherwise
-        empty objects at run time, not like the languages C++ and Java. Once an object has been constructed it can be used as a
-        blueprint or prototype for creating similar objects.</p>
-      </div>
-      <h3>History</h3>
-      <div>
-        <p>In 1993, the National Center for Supercomputing Applications (NCSA), a unit of the University of Illinois at
-        Urbana-Champaign, released NCSA Mosaic, the first popular graphical Web browser, which played an important part in
-        expanding the growth of the nascent World Wide Web. In 1994, a company called Mosaic Communications was founded in Mountain
-        View, California and employed many of the original NCSA Mosaic authors to create Mosaic Netscape. However, it intentionally
-        shared no code with NCSA Mosaic. The internal codename for the company&#39;s browser was Mozilla, which stood for
-        &quot;Mosaic killer&quot;, as the company&#39;s goal was to displace NCSA Mosaic as the world&#39;s number one web browser.
-        The first version of the Web browser, Mosaic Netscape 0.9, was released in late 1994. Within four months it had already
-        taken three-quarters of the browser market and became the main browser for the Internet in the 1990s. To avoid trademark
-        ownership problems with the NCSA, the browser was subsequently renamed Netscape Navigator in the same year, and the company
-        took the name Netscape Communications.</p>
-      </div>
-      <h3>Syntax</h3>
-      <div>
-        <p>JavaScript can be implemented using JavaScript statements that are placed within the 
-        <b>&lt;script&gt;... &lt;/script&gt;</b> HTML tags in a web page.</p>
-        <p>You can place the 
-        <b>&lt;script&gt;</b> tags, containing your JavaScript, anywhere within your web page, but it is normally recommended that
-        you should keep it within the 
-        <b>&lt;head&gt;</b> tags.</p>
-        <p>The &lt;script&gt; tag alerts the browser program to start interpreting all the text between these tags as a script. A
-        simple syntax of your JavaScript will appear as follows.</p>
-        <pre class="prettyprint notranslate">
+   <head>
+      <meta name="generator"
+         content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+      <meta charset="utf-8" />
+      <title>jQuery UI Accordion - Default functionality</title>
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      <script>
+         $(function() {
+           $( &amp;quot;#accordion&amp;quot; ).accordion();
+         });
+         
+      </script>
+      <style type="text/css">
+         /*<![CDATA[*/
+            body {
+            background: url(../img/background.png) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+                  margin: 50px auto;
+                  width: 700px;
+                  font: 75%/120% Arial, Helvetica, sans-serif;
+            }
+            .accordion {
+                  width: 800px;
+                  border-bottom: solid 1px #c4c4c4;
+            }
+            .accordion h3 {
+                  background: #e9e7e7 url(images/arrow-square.gif) no-repeat right -51px;
+                  padding: 7px 15px;
+                  margin: 0;
+                  font: bold 120%/100% Arial, Helvetica, sans-serif;
+                  border: solid 1px #c4c4c4;
+                  border-bottom: none;
+                  cursor: pointer;
+            }
+            .accordion h3:hover {
+                  background-color: #e3e2e2;
+            }
+            .accordion h3.active {
+                  background-position: right 5px;
+            }
+            .accordion p {
+                  background: #f7f7f7;
+                  margin: 0;
+                  padding: 20px 55px 30px;
+                  border-left: solid 1px #c4c4c4;
+                  border-right: solid 1px #c4c4c4;
+            }
+                
+                .page {
+              width: 800px;
+              margin: auto;
+            }
+            /* Style the buttons that are used to open and close the accordion panel */
+            .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            }
+            /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+            .active, .accordion:hover {
+            background-color: #ccc;
+            }
+            /* Style the accordion panel. Note: hidden by default */
+            .panel {
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            }
+            button {
+            cursor: pointer;
+            }
+            /*]]>*/
+      </style>
+      <title>Javascript Examples</title>
+   </head>
+   <body>
+      <div >
+         <button class="accordion">
+            <h2>Introduction</h2>
+         </button>
+         <div class="panel">
+            <p align="left" style="line-height: 1.5; font-size:18px;">JavaScript often abbreviated as JS, is a high-level, dynamic, weakly typed, object-based, multi-paradigm, and
+               interpreted programming language. JavaScript is the programming language of the web. JavaScript enables to add powerful
+               interactions to websites, foundation of a lot of commonly used libraries (like jQuery) and frameworks (like AngularJS,
+               ReactJS and NodeJS). JavaScript is a programming language that enables you to create dynamically updating content, control
+               multimedia, animate images. Javascript can be used to program how the web pages behave on the occurrence of an event,
+               because it runs on the client side of the web. This programming language can function as both a procedural and an object
+               oriented language. Objects are created programmatically in JavaScript, by attaching methods and properties to otherwise
+               empty objects at run time, not like the languages C++ and Java. Once an object has been constructed it can be used as a
+               blueprint or prototype for creating similar objects.
+            </p>
+         </div>
+         <button class="accordion">
+            <h2>History</h2>
+         </button>
+         <div class="panel">
+            <p align="left" style="line-height: 1.5; font-size:18px;">In 1993, the National Center for Supercomputing Applications (NCSA), a unit of the University of Illinois at
+               Urbana-Champaign, released NCSA Mosaic, the first popular graphical Web browser, which played an important part in
+               expanding the growth of the nascent World Wide Web. In 1994, a company called Mosaic Communications was founded in Mountain
+               View, California and employed many of the original NCSA Mosaic authors to create Mosaic Netscape. However, it intentionally
+               shared no code with NCSA Mosaic. The internal codename for the company&#39;s browser was Mozilla, which stood for
+               &quot;Mosaic killer&quot;, as the company&#39;s goal was to displace NCSA Mosaic as the world&#39;s number one web browser.
+               The first version of the Web browser, Mosaic Netscape 0.9, was released in late 1994. Within four months it had already
+               taken three-quarters of the browser market and became the main browser for the Internet in the 1990s. To avoid trademark
+               ownership problems with the NCSA, the browser was subsequently renamed Netscape Navigator in the same year, and the company
+               took the name Netscape Communications.
+            </p>
+         </div>
+         <button class="accordion">
+            <h2>Syntax</h2>
+         </button>
+         <div class="panel">
+            <p align="left" style="line-height: 1.5; font-size:18px;">JavaScript can be implemented using JavaScript statements that are placed within the 
+               <b>&lt;script&gt;... &lt;/script&gt;</b> HTML tags in a web page.
+            </p>
+            <p align="left" style="line-height: 1.5; font-size:18px;">You can place the 
+               <b>&lt;script&gt;</b> tags, containing your JavaScript, anywhere within your web page, but it is normally recommended that
+               you should keep it within the 
+               <b>&lt;head&gt;</b> tags.
+            </p>
+            <p align="left" style="line-height: 1.5; font-size:18px;">The &lt;script&gt; tag alerts the browser program to start interpreting all the text between these tags as a script. A
+               simple syntax of your JavaScript will appear as follows.
+            </p>
+            <pre class="prettyprint notranslate">
 &lt;script ...&gt;
    JavaScript code
 &lt;/script&gt;
 </pre>
-        <p>The script tag takes two important attributes</p>
-        <ul class="list">
-          <li>
-            <p>
-            <b>Language</b> This attribute specifies what scripting language you are using. Typically, its value will be
-            javascript. Although recent versions of HTML (and XHTML, its successor) have phased out the use of this attribute.</p>
-          </li>
-          <li>
-            <p>
-            <b>Type</b> This attribute is what is now recommended to indicate the scripting language in use and its value should be
-            set to &quot;text/javascript&quot;.</p>
-          </li>
-        </ul>
-        <p>So your JavaScript segment will look like</p>
-        <pre class="prettyprint notranslate">
+            <p align="left" style="line-height: 1.5; font-size:18px;">The script tag takes two important attributes</p>
+            <ul class="list">
+               <li>
+                  <p align="left" style="line-height: 1.5; font-size:18px;">
+                     <b>Language</b> This attribute specifies what scripting language you are using. Typically, its value will be
+                     javascript. Although recent versions of HTML (and XHTML, its successor) have phased out the use of this attribute.
+                  </p>
+               </li>
+               <li>
+                  <p align="left" style="line-height: 1.5; font-size:18px;">
+                     <b>Type</b> This attribute is what is now recommended to indicate the scripting language in use and its value should be
+                     set to &quot;text/javascript&quot;.
+                  </p>
+               </li>
+            </ul>
+            <p align="left" style="line-height: 1.5; font-size:18px;">So your JavaScript segment will look like</p>
+            <pre class="prettyprint notranslate">
 &lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;
    JavaScript code
 &lt;/script&gt;
 </pre>
-        <h2>Your First JavaScript Script</h2>
-        <p>Let us take a sample example to print out &quot;Hello World&quot;. We added an optional HTML comment that surrounds our
-        JavaScript code. This is to save our code from a browser that does not support JavaScript. The comment ends with a
-        &quot;//--&gt;&quot;. Here &quot;//&quot; signifies a comment in JavaScript, so we add that to prevent a browser from
-        reading the end of the HTML comment as a piece of JavaScript code. Next, we call a function 
-        <b>document.write</b> which writes a string into our HTML document.</p>
-        <p>This function can be used to write text, HTML, or both. Take a look at the following code.</p>
-        <pre class="prettyprint notranslate tryit">
+         </div>
+         <button class="accordion">
+            <h2>Your First JavaScript Script</h2>
+         </button>
+         <div class="panel">
+            <p align="left" style="line-height: 1.5; font-size:18px;">Let us take a sample example to print out &quot;Hello World&quot;. We added an optional HTML comment that surrounds our
+               JavaScript code. This is to save our code from a browser that does not support JavaScript. The comment ends with a
+               &quot;//--&gt;&quot;. Here &quot;//&quot; signifies a comment in JavaScript, so we add that to prevent a browser from
+               reading the end of the HTML comment as a piece of JavaScript code. Next, we call a function 
+               <b>document.write</b> which writes a string into our HTML document.
+            </p>
+            <p align="left" style="line-height: 1.5; font-size:18px;">This function can be used to write text, HTML, or both. Take a look at the following code.</p>
+            <pre class="prettyprint notranslate tryit">
 &lt;html&gt;
    &lt;body&gt;
       &lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;
@@ -106,19 +185,29 @@ background-size: cover;
    &lt;/body&gt;
 &lt;/html&gt;
 </pre>
-        <p>This code will produce the following result</p>
-        <pre class="result notranslate">
+            <p align="left" style="line-height: 1.5; font-size:18px;">This code will produce the following result</p>
+            <pre class="result notranslate">
 Hello World!
 </pre>
-        <h2>Whitespace and Line Breaks</h2>
-        <p>JavaScript ignores spaces, tabs, and newlines that appear in JavaScript programs. You can use spaces, tabs, and newlines
-        freely in your program and you are free to format and indent your programs in a neat and consistent way that makes the code
-        easy to read and understand.</p>
-        <h2>Semicolons are Optional</h2>
-        <p>Simple statements in JavaScript are generally followed by a semicolon character, just as they are in C, C++, and Java.
-        JavaScript, however, allows you to omit this semicolon if each of your statements are placed on a separate line. For
-        example, the following code could be written without semicolons.</p>
-        <pre class="prettyprint notranslate">
+         </div>
+         <button class="accordion">
+            <h2>Whitespace and Line Breaks</h2>
+         </button>
+         <div class="panel">
+            <p align="left" style="line-height: 1.5; font-size:18px;">JavaScript ignores spaces, tabs, and newlines that appear in JavaScript programs. You can use spaces, tabs, and newlines
+               freely in your program and you are free to format and indent your programs in a neat and consistent way that makes the code
+               easy to read and understand.
+            </p>
+         </div>
+         <button class="accordion">
+            <h2>Semicolons are Optional</h2>
+         </button>
+         <div class="panel">
+            <p align="left" style="line-height: 1.5; font-size:18px;">Simple statements in JavaScript are generally followed by a semicolon character, just as they are in C, C++, and Java.
+               JavaScript, however, allows you to omit this semicolon if each of your statements are placed on a separate line. For
+               example, the following code could be written without semicolons.
+            </p>
+            <pre class="prettyprint notranslate">
 &lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;
    &lt;!--
       var1 = 10
@@ -126,42 +215,86 @@ Hello World!
    //--&gt;
 &lt;/script&gt;
 </pre>
-        <p>But when formatted in a single line as follows, you must use semicolons</p>
-        <pre class="prettyprint notranslate">
+            <p align="left" style="line-height: 1.5; font-size:18px;">But when formatted in a single line as follows, you must use semicolons</p>
+            <pre class="prettyprint notranslate">
 &lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;
    &lt;!--
       var1 = 10; var2 = 20;
    //--&gt;
 &lt;/script&gt;
 </pre>
-        <p>
-        <b>Note</b> It is a good programming practice to use semicolons.</p>
-        <h2>Case Sensitivity</h2>
-        <p>JavaScript is a case-sensitive language. This means that the language keywords, variables, function names, and any other
-        identifiers must always be typed with a consistent capitalization of letters.</p>
-        <p>So the identifiers 
-        <b>Time</b> and 
-        <b>TIME</b> will convey different meanings in JavaScript.</p>
-        <p>
-        <b>NOTE</b> Care should be taken while writing variable and function names in JavaScript.</p>
-        <h2>Comments in JavaScript</h2>
-        <p>JavaScript supports both C-style and C++-style comments, Thus</p>
-        <ul class="list">
-          <li>
-            <p>Any text between a // and the end of a line is treated as a comment and is ignored by JavaScript.</p>
-          </li>
-          <li>
-            <p>Any text between the characters /* and */ is treated as a comment. This may span multiple lines.</p>
-          </li>
-          <li>
-            <p>JavaScript also recognizes the HTML comment opening sequence &lt;!--. JavaScript treats this as a single-line
-            comment, just as it does the // comment.</p>
-          </li>
-          <li>
-            <p>The HTML comment closing sequence --&gt; is not recognized by JavaScript so it should be written as //--&gt;.</p>
-          </li>
-        </ul>
+            <p align="left" style="line-height: 1.5; font-size:18px;">
+               <b>Note</b> It is a good programming practice to use semicolons.
+            </p>
+         </div>
+         <button class="accordion">
+            <h2>Case Sensitivity</h2>
+         </button>
+         <div class="panel">
+            <p align="left" style="line-height: 1.5; font-size:18px;">JavaScript is a case-sensitive language. This means that the language keywords, variables, function names, and any other
+               identifiers must always be typed with a consistent capitalization of letters.
+            </p>
+            <p align="left" style="line-height: 1.5; font-size:18px;">So the identifiers 
+               <b>Time</b> and 
+               <b>TIME</b> will convey different meanings in JavaScript.
+            </p>
+            <p align="left" style="line-height: 1.5; font-size:18px;">
+               <b>NOTE</b> Care should be taken while writing variable and function names in JavaScript.
+            </p>
+            <h2>Comments in JavaScript</h2>
+            <p align="left" style="line-height: 1.5; font-size:18px;">JavaScript supports both C-style and C++-style comments, Thus</p>
+            <ul class="list">
+               <li>
+                  <p align="left" style="line-height: 1.5; font-size:18px;">Any text between a // and the end of a line is treated as a comment and is ignored by JavaScript.</p>
+               </li>
+               <li>
+                  <p align="left" style="line-height: 1.5; font-size:18px;">Any text between the characters /* and */ is treated as a comment. This may span multiple lines.</p>
+               </li>
+               <li>
+                  <p align="left" style="line-height: 1.5; font-size:18px;">JavaScript also recognizes the HTML comment opening sequence &lt;!--. JavaScript treats this as a single-line
+                     comment, just as it does the // comment.
+                  </p>
+               </li>
+               <li>
+                  <p align="left" style="line-height: 1.5; font-size:18px;">The HTML comment closing sequence --&gt; is not recognized by JavaScript so it should be written as //--&gt;.</p>
+               </li>
+            </ul>
+         </div>
       </div>
-    </div>
-  </body>
+   </body>
 </html>
+<script>
+   var acc = document.getElementsByClassName("accordion");
+   var i;
+   
+   for (i = 0; i < acc.length; i++) {
+   acc[i].addEventListener("click", function() {
+   /* Toggle between adding and removing the "active" class,
+   to highlight the button that controls the panel */
+   this.classList.toggle("active");
+   
+   /* Toggle between hiding and showing the active panel */
+   var panel = this.nextElementSibling;
+   if (panel.style.display === "block") {
+     panel.style.display = "none";
+   } else {
+     panel.style.display = "block";
+   }
+   });
+   }
+   
+   var acc = document.getElementsByClassName("accordion");
+   var i;
+   
+   for (i = 0; i < acc.length; i++) {
+   acc[i].addEventListener("click", function() {
+   this.classList.toggle("active");
+   var panel = this.nextElementSibling;
+   if (panel.style.maxHeight) {
+   panel.style.maxHeight = null;
+   } else {
+   panel.style.maxHeight = panel.scrollHeight + "px";
+   }
+   });
+   }
+</script>

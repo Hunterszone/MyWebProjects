@@ -1,454 +1,352 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-  <title>Accordion 1</title>
-  <script type="text/javascript" src="jquery.js">
-</script>
-  <script type="text/javascript">
-//<![CDATA[
-  $(document).ready(function(){
-        
-        $(".accordion h3:first").addClass("active");
-        $(".accordion p:not(:first)").hide();
-
-        $(".accordion h3").click(function(){
-                $(this).next("p").slideToggle("slow")
-                .siblings("p:visible").slideUp("slow");
-                $(this).toggleClass("active");
-                $(this).siblings("h3").removeClass("active");
-        });
-
-  });
-  //]]>
-  </script>
-  <style type="text/css">
-/*<![CDATA[*/
-
-  body { 
-  background: url(http://theappwhisperer.com/wp-content/uploads/2012/05/media_1336386288960.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  }
-
-  /*]]>*/
-  </style>
-  <style type="text/css">
-/*<![CDATA[*/
-  body {
-        margin: 50px auto;
-        width: 700px;
-        font: 75%/120% Arial, Helvetica, sans-serif;
-  }
-  .accordion {
-        width: 800px;
-        border-bottom: solid 1px #c4c4c4;
-  }
-  .accordion h3 {
-        background: #e9e7e7 url(images/arrow-square.gif) no-repeat right -51px;
-        padding: 7px 15px;
-        margin: 0;
-        font: bold 120%/100% Arial, Helvetica, sans-serif;
-        border: solid 1px #c4c4c4;
-        border-bottom: none;
-        cursor: pointer;
-  }
-  .accordion h3:hover {
-        background-color: #e3e2e2;
-  }
-  .accordion h3.active {
-        background-position: right 5px;
-  }
-  .accordion p {
-        background: #f7f7f7;
-        margin: 0;
-        padding: 20px 55px 30px;
-        border-left: solid 1px #c4c4c4;
-        border-right: solid 1px #c4c4c4;
-  }
-  /*]]>*/
-  </style>
-</head>
-
-<body>
-  <div class="accordion">
-    <h3>CSS Introduction</h3>
-
-    <p style="text-align: justify">Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a
-    document written in a markup language.</p>
-
-    <p>Although most often used to set the visual style of web pages and user interfaces written in HTML and XHTML, the language
-    can be applied to any XML document, including plain XML, SVG and XUL, and is applicable to rendering in speech, or on other
-    media. Along with HTML and JavaScript, CSS is a cornerstone technology used by most websites to create visually engaging
-    webpages, user interfaces for web applications, and user interfaces for many mobile applications.</p>
-
-    <p>CSS is designed primarily to enable the separation of presentation and content, including aspects such as the layout,
-    colors, and fonts.</p>
-
-    <p>This separation can improve content accessibility, provide more flexibility and control in the specification of presentation
-    characteristics, enable multiple HTML pages to share formatting by specifying the relevant CSS in a separate .css file, and
-    reduce complexity and repetition in the structural content.</p>
-
-    <p>Separation of formatting and content makes it possible to present the same markup page in different styles for different
-    rendering methods, such as on-screen, in print, by voice (via speech-based browser or screen reader), and on Braille-based
-    tactile devices. It can also display the web page differently depending on the screen size or viewing device. Readers can also
-    specify a different style sheet, such as a CSS file stored on their own computer, to override the one the author specified.</p>
-
-    <p>As we have mentioned before, CSS is a language for specifying how documents are presented to users ‚Äî how they are styled,
-    laid out, etc. A document is usually a text file structured using a markup language ‚Äî HTML is the most common markup
-    language, but you will also come across other markup languages such as SVG or XML. Presenting a document to a user means
-    converting it into a usable form for your audience. Browsers, like Firefox, Chrome or Internet Explorer, are designed to
-    present documents visually, for example, on a computer screen, projector or printer.</p>
-
-    <h2 id="How_does_CSS_affect_HTML" class="highlight-spanned"><span class="highlight-span">How does CSS affect
-    HTML?</span><a href="/en-US/docs/Learn/CSS/Introduction_to_CSS/How_CSS_works$edit#How_does_CSS_affect_HTML" class=
-    "button section-edit only-icon" rel="nofollow, noindex"></a></h2>
-
-    <p>Web browsers apply <strong>CSS rules</strong> to a document to affect how they are displayed. A CSS rule is formed from:</p>
-
-    <p>A set of properties, which have values set to update how the HTML content is displayed, for example <em>I want my
-    element&#39;s width to be 50% of its parent element, and its background to be red</em>.</p>
-
-    <p>A which element(s) selector, which <em>selects</em> the element(s) you want to apply the updated property values to. For
-    example, <em>I want to apply my CSS rule to all the paragraphs in my HTML document</em>.</p>
-
-    <p>Changes to the graphic design of a document (or hundreds of documents) can be applied quickly and easily, by editing a few
-    lines in the CSS file they use, rather than by changing markup in the documents.</p>
-
-    <div class="entry-content" itemprop="text">
-      <p>The syntax for CSS is different than that of (X)HTML markup. Though it is not too confusing, once you take a look at it.
-      It consists of only 3 parts.</p>
-
-      <p class="code">selector { property: value }</p>
-
-      <p>The selector is the (X)HTML element that you want to style. The property is the actual property title, and the value is
-      the style you apply to that property.</p>
-
-      <p>Each selector can have multiple properties, and each property within that selector can have independent values. The
-      property and value are separated with a colon and contained within curly brackets. Multiple properties are separated by a
-      semi colon. Multiple values within a property are sperated by commas, and if an individual value contains more than one word
-      you surround it with quotation marks. As shown below.</p>
-
-      <p class="code">body {<br />
-      ††background: #eeeeee;<br />
-      ††font-family: ‚ÄúTrebuchet MS‚Äù, Verdana, Arial, serif;<br />
-      }</p>
-
-      <p>As you can see in the above code I have separated the color from the font-family with a semi-colon, separated the various
-      fonts with commas and contained the ‚ÄúTrebuchet MS‚Äù within quotations marks. The final result sets the body color to light
-      grey, and sets the font to ones that most users will have installed on there computer.</p>
-
-      <p>I have changed the way I layout my code, but you can arrange it in one line if you choose. I find that it is more readable
-      if I spread each property to a separate line, with a 2 space indention.</p>
-
-      <p><a name="inheritance"></a></p>
-
-      <h2>Inheritance</h2>
-
-      <p>When you nest one element inside another, the nested element will inherit the properties assigned to the containing
-      element. Unless you modify the inner elements values independently.</p>
-
-      <p>For example, a font declared in the body will be inherited by all text in the file no matter the containing element,
-      unless you declare another font for a specific nested element.</p>
-
-      <p class="code">body {font-family: Verdana, serif;}</p>
-
-      <p>Now all text within the (X)HTML file will be set to Verdana.</p>
-
-      <p>If you wanted to style certain text with another font, like an h1 or a paragraph then you could do the following.</p>
-
-      <p class="code">h1 {font-family: Georgia, sans-serif;}<br />
-      p {font-family: Tahoma, serif;}</p>
-
-      <p>Now all &lt;h1&gt; tags within the file will be set to Georgia and all &lt;p&gt; tags are set to Tahoma, leaving text
-      within other elements unchanged from the body declaration of Verdana.</p>
-
-      <p>There are instances where nested elements do not inherit the containing elements properties.</p>
-
-      <p>For example, if the body margin is set to 20 pixels, the other elements within the file will not inherit the body margin
-      by default.</p>
-
-      <p class="code">body {margin: 20px;}</p>
-
-      <p><a name="combining_selectors"></a></p>
-
-      <h2>Combining Selectors</h2>
-
-      <p>You can combine elements within one selector in the following fashion.</p>
-
-      <p class="code">h1, h2, h3, h4, h5, h6 {<br />
-      ††color: #009900;<br />
-      ††font-family: Georgia, sans-serif;<br />
-      }</p>
-
-      <p>As you can see in the above code, I have grouped all the header elements into one selector. Each one is separated by a
-      comma. The final result of the above code sets all headers to green and to the specified font. If the user does not have the
-      first font I declared it will go to another sans-serif font the user has installed on their computer.</p>
-
-      <p><a name="comment_tags"></a></p>
-
-      <h2>Comment tags</h2>
-
-      <p>Comments can be used to explain why you added certain selectors within your css file. So as to help others who may see
-      your file, or to help you remember what you we‚Äôre thinking at a later date. You can add comments that will be ignored by
-      browsers in the following manner.</p>
-
-      <p class="code">/* This is a comment */</p>
-
-      <p>You will note that it begins with a / (forward slash) and than an * (asterisks) then the comment, then the closing tag
-      which is just backward from the opening tag * (asterisks) then the / (forward slash).</p>
-    </div>
-
-    <h3>Example</h3>
-
-    <p style="text-align:justify"><b>C</b>ascading <b>S</b>tyle <b>S</b>heets, fondly referred to as CSS, is a simple design
-    language intended to simplify the process of making web pages presentable.</p>
-
-    <p>CSS handles the look and feel part of a web page. Using CSS, you can control the color of the text, the style of fonts, the
-    spacing between paragraphs, how columns are sized and laid out, what background images or colors are used, layout
-    designs,variations in display for different devices and screen sizes as well as a variety of other effects.</p>
-
-    <p>CSS is easy to learn and understand but it provides powerful control over the presentation of an HTML document. Most
-    commonly, CSS is combined with the markup languages HTML or XHTML.</p>
-
-    <h2>Advantages of CSS</h2>
-
-    <ul class="list">
-      <li>
-        <p><b>CSS saves time</b> ‚àí You can write CSS once and then reuse same sheet in multiple HTML pages. You can define a
-        style for each HTML element and apply it to as many Web pages as you want.</p>
-      </li>
-
-      <li>
-        <p><b>Pages load faster</b> ‚àí If you are using CSS, you do not need to write HTML tag attributes every time. Just write
-        one CSS rule of a tag and apply it to all the occurrences of that tag. So less code means faster download times.</p>
-      </li>
-
-      <li>
-        <p><b>Easy maintenance</b> ‚àí To make a global change, simply change the style, and all elements in all the web pages will
-        be updated automatically.</p>
-      </li>
-
-      <li>
-        <p><b>Superior styles to HTML</b> ‚àí CSS has a much wider array of attributes than HTML, so you can give a far better look
-        to your HTML page in comparison to HTML attributes.</p>
-      </li>
-
-      <li>
-        <p><b>Multiple Device Compatibility</b> ‚àí Style sheets allow content to be optimized for more than one type of device. By
-        using the same HTML document, different versions of a website can be presented for handheld devices such as PDAs and cell
-        phones or for printing.</p>
-      </li>
-
-      <li>
-        <p><b>Global web standards</b> ‚àí Now HTML attributes are being deprecated and it is being recommended to use CSS. So its
-        a good idea to start using CSS in all the HTML pages to make them compatible to future browsers.</p>
-      </li>
-
-      <li>
-        <p><b>Offline Browsing</b> ‚àí CSS can store web applications locally with the help of an offline catche.Using of this, we
-        can view offline websites.The cache also ensures faster loading and better overall performance of the website.</p>
-      </li>
-
-      <li>
-        <p><b>Platform Independence</b> ‚àí The Script offer consistent platform independence and can support latest browsers as
-        well.</p>
-      </li>
-    </ul>
-
-    <h2>Who Creates and Maintains CSS?</h2>
-
-    <h2>Color</h2>
-
-    <p>You can set the color of text with the following:</p>
-
-    <p class="code">††color: value;</p>
-
-    <p>Possible values are</p>
-
-    <p>color name ‚Äì example:(<span class="paths">red, black‚Ä¶</span>)</p>
-
-    <p>hexadecimal number ‚Äì example:(<span class="paths">#ff0000, #000000</span>)</p>
-
-    <p>RGB color code ‚Äì example:(<span class="paths">rgb(255, 0, 0), rgb(0, 0, 0)</span>)</p>
-
-    <p><a name="letter_spacing"></a></p>
-
-    <h2>Letter Spacing</h2>
-
-    <p>You can adjust the space between letters in the following manner. Setting the value to 0, prevents the text from justifying.
-    You can use negative values.</p>
-
-    <p class="code">††letter-spacing: value;</p>
-
-    <p>Possible values are:</p>
-
-    <p>-normal</p>
-
-    <p>-length</p>
-
-    <div class="example">
-      <p>Example:</p>
-
-      <p class="letter_space">These letters are spaced at 5px.</p>
-    </div>
-
-    <p><a name="text_align"></a></p>
-
-    <h2>Text Align</h2>
-
-    <p>You can align text with the following:</p>
-
-    <p class="code">††text-align: value;</p>
-
-    <p>Possible values are:</p>
-
-    <p>  -left</p>
-
-    <p>  -right</p>
-
-    <p>  -center</p>
-
-    <p>  -justify</p>
-
-    <div class="example">
-      <p>Examples:</p>
-
-      <p class="align_left">This text is aligned left.</p>
-
-      <p class="align_center">This text is aligned in the center.</p>
-
-      <p class="align_right">This text is aligned right.</p>
-
-      <p class="align_justify">This text is justified.</p>
-    </div>
-
-    <p><a name="text_decoration"></a></p>
-
-    <h2>Text Decoration</h2>
-
-    <p>You can decorate text with the following:</p>
-
-    <p class="code">††text-decoration: value;</p>
-
-    <p>Possible values are:</p>
-
-    <p>  -none</p>
-
-    <p>  -underline</p>
-
-    <p>  -overline</p>
-
-    <p>  -line through</p>
-
-    <p>  -blink</p>
-
-    <div class="example">
-      <p>Examples:</p>
-
-      <p class="underline">This text is underlined.</p>
-
-      <p class="overline">This text is overlined.</p>
-
-      <p class="line_through">This text has a line through it.</p>
-
-      <p class="blink">This text is blinking (not in internet explorer).</p>
-    </div>
-
-    <p><a name="text_indent"></a></p>
-
-    <h2>Text Indent</h2>
-
-    <p>You can indent the first line of text in an (X)HTML element with the following:</p>
-
-    <p class="code">††text-indent: value;</p>
-
-    <p>Possible values are</p>
-
-    <p>  -length</p>
-
-    <p>  -percentage</p>
-
-    <div class="example">
-      <p>Examples:</p>
-
-      <p class="indent">This text is indented 10px pixels.</p>
-    </div>
-
-    <p><a name="text_transform"></a></p>
-
-    <h2>Text Transform</h2>
-
-    <p>You can control the size of letters in an (X)HTML element with the following:</p>
-
-    <p><span class="code">††text-transform: value;</span></p>
-
-    <p>Possible values are:</p>
-
-    <p>  -none</p>
-
-    <p>  -capitalize</p>
-
-    <p>  -lowercase</p>
-
-    <p>  -uppercase</p>
-
-    <div class="example">
-      <p>Examples:</p>
-
-      <p class="transform_caps">this first letter in each word is capitalized, though it is not in my file.</p>
-
-      <p class="transform_up">this text is all uppercase, though it is all lowercase in my file.</p>
-
-      <p class="transform_low">THIS TEXT IS ALL LOWERCASE. THOUGH IT IS ALL UPPERCASE IN MY FILE.</p>
-    </div>
-
-    <p><a name="white_space"></a></p>
-
-    <h2>White Space</h2>
-
-    <p>You can control the whitespace in an (X)HTML element with the following:</p>
-
-    <p><span class="code">††white-space: value;</span></p>
-
-    <p>Possible values are</p>
-
-    <p>  -normal</p>
-
-    <p>  -pre</p>
-
-    <p>  -nowrap</p>
-
-    <p><a name="word_spacing"></a></p>
-
-    <h2>Word Spacing</h2>
-
-    <p>You can adjust the space between words in the following manner. You can use negative values.</p>
-
-    <p><span class="code">††word-spacing: value;</span></p>
-
-    <p>Possible values are:</p>
-
-    <p>  -normal</p>
-
-    <p>  -length</p>
-
-    <div class="example">
-      <p>Example:</p>
-
-      <p class="word_space">These words are spaced at 5px.</p>
-    </div>
-
-    <p style="text-align:justify"></p>
-
-    <table>
-      <caption>
-        Syntax
-      </caption>
-    </table>
-  </div>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta name="generator"
+         content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+      <meta charset="utf-8" />
+      <title>jQuery UI Accordion - Default functionality</title>
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      <script>
+         $(function() {
+           $( &amp;quot;#accordion&amp;quot; ).accordion();
+         });
+         
+      </script>
+      <style type="text/css">
+         /*<![CDATA[*/
+            body {
+            background: url(../img/background.png) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+                  margin: 50px auto;
+                  width: 700px;
+                  font: 75%/120% Arial, Helvetica, sans-serif;
+            }
+            .accordion {
+                  width: 800px;
+                  border-bottom: solid 1px #c4c4c4;
+            }
+            .accordion h3 {
+                  background: #e9e7e7 url(images/arrow-square.gif) no-repeat right -51px;
+                  padding: 7px 15px;
+                  margin: 0;
+                  font: bold 120%/100% Arial, Helvetica, sans-serif;
+                  border: solid 1px #c4c4c4;
+                  border-bottom: none;
+                  cursor: pointer;
+            }
+            .accordion h3:hover {
+                  background-color: #e3e2e2;
+            }
+            .accordion h3.active {
+                  background-position: right 5px;
+            }
+            .accordion p {
+                  background: #f7f7f7;
+                  margin: 0;
+                  padding: 20px 55px 30px;
+                  border-left: solid 1px #c4c4c4;
+                  border-right: solid 1px #c4c4c4;
+            }
+                
+                .page {
+              width: 800px;
+              margin: auto;
+            }
+            /* Style the buttons that are used to open and close the accordion panel */
+            .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            }
+            /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+            .active, .accordion:hover {
+            background-color: #ccc;
+            }
+            /* Style the accordion panel. Note: hidden by default */
+            .panel {
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            }
+            button {
+            cursor: pointer;
+            }
+            /*]]>*/
+      </style>
+      <title>Javascript Examples</title>
+   </head>
+   <body>
+      <div >
+      <button class="accordion">
+         <h2>CSS Introduction</h2>
+      </button>
+      <div class="panel">
+         <p align="left" style="line-height: 1.5; font-size:18px;">
+            Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language.
+            Although most often used to set the visual style of web pages and user interfaces written in HTML and XHTML, the language can be applied to any XML document, including plain XML, SVG and XUL, and is applicable to rendering in speech, or on other media. Along with HTML and JavaScript, CSS is a cornerstone technology used by most websites to create visually engaging webpages, user interfaces for web applications, and user interfaces for many mobile applications.
+            CSS is designed primarily to enable the separation of presentation and content, including aspects such as the layout, colors, and fonts.
+            This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple HTML pages to share formatting by specifying the relevant CSS in a separate .css file, and reduce complexity and repetition in the structural content.
+            Separation of formatting and content makes it possible to present the same markup page in different styles for different rendering methods, such as on-screen, in print, by voice (via speech-based browser or screen reader), and on Braille-based tactile devices. It can also display the web page differently depending on the screen size or viewing device. Readers can also specify a different style sheet, such as a CSS file stored on their own computer, to override the one the author specified.
+            As we have mentioned before, CSS is a language for specifying how documents are presented to users ‚Äî how they are styled, laid out, etc. A document is usually a text file structured using a markup language ‚Äî HTML is the most common markup language, but you will also come across other markup languages such as SVG or XML. Presenting a document to a user means converting it into a usable form for your audience. Browsers, like Firefox, Chrome or Internet Explorer, are designed to present documents visually, for example, on a computer screen, projector or printer.
+         </p>
+      </div>
+      <button class="accordion">
+         <h2>How does CSS affect HTML?</h2>
+      </button>
+      <div class="panel">
+         <p align="left" style="line-height: 1.5; font-size:18px;">
+            Web browsers apply CSS rules to a document to affect how they are displayed. A CSS rule is formed from:
+            A set of properties, which have values set to update how the HTML content is displayed, for example I want my element's width to be 50% of its parent element, and its background to be red.
+            A which element(s) selector, which selects the element(s) you want to apply the updated property values to. For example, I want to apply my CSS rule to all the paragraphs in my HTML document.
+            Changes to the graphic design of a document (or hundreds of documents) can be applied quickly and easily, by editing a few lines in the CSS file they use, rather than by changing markup in the documents.
+            The syntax for CSS is different than that of (X)HTML markup. Though it is not too confusing, once you take a look at it. It consists of only 3 parts.
+            selector { property: value }
+            The selector is the (X)HTML element that you want to style. The property is the actual property title, and the value is the style you apply to that property.
+            Each selector can have multiple properties, and each property within that selector can have independent values. The property and value are separated with a colon and contained within curly brackets. Multiple properties are separated by a semi colon. Multiple values within a property are sperated by commas, and if an individual value contains more than one word you surround it with quotation marks. As shown below.
+            body {
+            ÔøΩÔøΩbackground: #eeeeee;
+            ÔøΩÔøΩfont-family: ‚ÄúTrebuchet MS‚Äù, Verdana, Arial, serif;
+            }
+            As you can see in the above code I have separated the color from the font-family with a semi-colon, separated the various fonts with commas and contained the ‚ÄúTrebuchet MS‚Äù within quotations marks. The final result sets the body color to light grey, and sets the font to ones that most users will have installed on there computer.
+            I have changed the way I layout my code, but you can arrange it in one line if you choose. I find that it is more readable if I spread each property to a separate line, with a 2 space indention.
+         </p>
+      </div>
+      <button class="accordion">
+         <h2>Inheritance</h2>
+      </button>
+      <div class="panel">
+         <p align="left" style="line-height: 1.5; font-size:18px;">
+            When you nest one element inside another, the nested element will inherit the properties assigned to the containing element. Unless you modify the inner elements values independently.
+            For example, a font declared in the body will be inherited by all text in the file no matter the containing element, unless you declare another font for a specific nested element.
+            Now all text within the (X)HTML file will be set to Verdana.
+            If you wanted to style certain text with another font, like an h1 or a paragraph then you could do the following.
+            Now all tags within the file will be set to Georgia and all tags are set to Tahoma, leaving text within other elements unchanged from the body declaration of Verdana.
+            There are instances where nested elements do not inherit the containing elements properties.
+            For example, if the body margin is set to 20 pixels, the other elements within the file will not inherit the body margin by default.
+         </p>
+      </div>
+      <button class="accordion">
+         <h2>Combining Selectors</h2>
+      </button>
+      <div class="panel">
+         <p align="left" style="line-height: 1.5; font-size:18px;">
+            You can combine elements within one selector in the following fashion.
+            h1, h2, h3, h4, h5, h6 {
+            ÔøΩÔøΩcolor: #009900;
+            ÔøΩÔøΩfont-family: Georgia, sans-serif;
+            }
+            As you can see in the above code, I have grouped all the header elements into one selector. Each one is separated by a comma. The final result of the above code sets all headers to green and to the specified font. If the user does not have the first font I declared it will go to another sans-serif font the user has installed on their computer.
+         </p>
+      </div>
+      <button class="accordion">
+         <h2>Comment tags</h2>
+      </button>
+      <div class="panel">
+         <p align="left" style="line-height: 1.5; font-size:18px;">
+            Comments can be used to explain why you added certain selectors within your css file. So as to help others who may see your file, or to help you remember what you we‚Äôre thinking at a later date. You can add comments that will be ignored by browsers in the following manner.
+            /* This is a comment */
+            You will note that it begins with a / (forward slash) and than an * (asterisks) then the comment, then the closing tag which is just backward from the opening tag * (asterisks) then the / (forward slash).
+         </p>
+      </div>
+      <button class="accordion">
+         <h2>Example</h2>
+      </button>
+      <div class="panel">
+         <p align="left" style="line-height: 1.5; font-size:18px;">
+            Cascading Style Sheets, fondly referred to as CSS, is a simple design language intended to simplify the process of making web pages presentable.
+            CSS handles the look and feel part of a web page. Using CSS, you can control the color of the text, the style of fonts, the spacing between paragraphs, how columns are sized and laid out, what background images or colors are used, layout designs,variations in display for different devices and screen sizes as well as a variety of other effects.
+            CSS is easy to learn and understand but it provides powerful control over the presentation of an HTML document. Most commonly, CSS is combined with the markup languages HTML or XHTML.
+         </p>
+      </div>
+      <button class="accordion">
+         <h2>Advantages of CSS</h2>
+      </button>
+      <div class="panel">
+         <p align="left" style="line-height: 1.5; font-size:18px;">
+            CSS saves time ‚àí You can write CSS once and then reuse same sheet in multiple HTML pages. You can define a style for each HTML element and apply it to as many Web pages as you want.
+         </p>
+         <p align="left" style="line-height: 1.5; font-size:18px;">Pages load faster ‚àí If you are using CSS, you do not need to write HTML tag attributes every time. Just write one CSS rule of a tag and apply it to all the occurrences of that tag. So less code means faster download times.</p>
+         <p align="left" style="line-height: 1.5; font-size:18px;">Easy maintenance ‚àí To make a global change, simply change the style, and all elements in all the web pages will be updated automatically.</p>
+         <p align="left" style="line-height: 1.5; font-size:18px;">Superior styles to HTML ‚àí CSS has a much wider array of attributes than HTML, so you can give a far better look to your HTML page in comparison to HTML attributes.</p>
+         <p align="left" style="line-height: 1.5; font-size:18px;">Multiple Device Compatibility ‚àí Style sheets allow content to be optimized for more than one type of device. By using the same HTML document, different versions of a website can be presented for handheld devices such as PDAs and cell phones or for printing.</p>
+         <p align="left" style="line-height: 1.5; font-size:18px;">Global web standards ‚àí Now HTML attributes are being deprecated and it is being recommended to use CSS. So its a good idea to start using CSS in all the HTML pages to make them compatible to future browsers.</p>
+         <p align="left" style="line-height: 1.5; font-size:18px;">Offline Browsing ‚àí CSS can store web applications locally with the help of an offline catche.Using of this, we can view offline websites.The cache also ensures faster loading and better overall performance of the website.</p>
+         <p align="left" style="line-height: 1.5; font-size:18px;">Platform Independence ‚àí The Script offer consistent platform independence and can support latest browsers as well.
+         </p>
+      </div>
+      <button class="accordion">
+         <h2>Who Creates and Maintains CSS?</h2>
+      </button>
+      <div class="panel">
+         <p align="left" style="line-height: 1.5; font-size:18px;">
+            Color
+            You can set the color of text with the following:
+            ÔøΩÔøΩcolor: value;
+            Possible values are
+            color name ‚Äì example:(red, black‚Ä¶)
+            hexadecimal number ‚Äì example:(#ff0000, #000000)
+            RGB color code ‚Äì example:(rgb(255, 0, 0), rgb(0, 0, 0))
+         </p>
+      </div>
+      <button class="accordion">
+         <h2>Letter Spacing</h2>
+      </button>
+      <div class="panel">
+         <p align="left" style="line-height: 1.5; font-size:18px;">
+            You can adjust the space between letters in the following manner. Setting the value to 0, prevents the text from justifying. You can use negative values.
+            ÔøΩÔøΩletter-spacing: value;
+            Possible values are:
+            -normal
+            -length
+            Example:
+            These letters are spaced at 5px.
+         </p>
+      </div>
+      <button class="accordion">
+         <h2>Text Align</h2>
+      </button>
+      <div class="panel">
+         <p align="left" style="line-height: 1.5; font-size:18px;">
+            You can align text with the following:
+            ÔøΩÔøΩtext-align: value;
+            Possible values are:
+              -left
+              -right
+              -center
+              -justify
+            Examples:
+            This text is aligned left.
+            This text is aligned in the center.
+            This text is aligned right.
+            This text is justified.
+         </p>
+      </div>
+      <button class="accordion">
+         <h2>Text Decoration</h2>
+      </button>
+      <div class="panel">
+         <p align="left" style="line-height: 1.5; font-size:18px;">
+            You can decorate text with the following:
+            ÔøΩÔøΩtext-decoration: value;
+            Possible values are:
+              -none
+              -underline
+              -overline
+              -line through
+              -blink
+            Examples:
+            This text is underlined.
+            This text is overlined.
+            This text has a line through it.
+            This text is blinking (not in internet explorer).
+         </p>
+      </div>
+      <button class="accordion">
+         <h2>Text Indent</h2>
+      </button>
+      <div class="panel">
+         <p align="left" style="line-height: 1.5; font-size:18px;">
+            You can indent the first line of text in an (X)HTML element with the following:
+            ÔøΩÔøΩtext-indent: value;
+            Possible values are
+              -length
+              -percentage
+            Examples:
+            This text is indented 10px pixels.
+         </p>
+      </div>
+      <button class="accordion">
+         <h2>Text Transform</h2>
+      </button>
+      <div class="panel">
+         <p align="left" style="line-height: 1.5; font-size:18px;">
+            You can control the size of letters in an (X)HTML element with the following:
+            ÔøΩÔøΩtext-transform: value;
+            Possible values are:
+              -none
+              -capitalize
+              -lowercase
+              -uppercase
+            Examples:
+            this first letter in each word is capitalized, though it is not in my file.
+            this text is all uppercase, though it is all lowercase in my file.
+            THIS TEXT IS ALL LOWERCASE. THOUGH IT IS ALL UPPERCASE IN MY FILE.
+         </p>
+      </div>
+      <button class="accordion">
+         <h2>White Space</h2>
+      </button>
+      <div class="panel">
+         <p align="left" style="line-height: 1.5; font-size:18px;">
+            You can control the whitespace in an (X)HTML element with the following:
+            ÔøΩÔøΩwhite-space: value;
+            Possible values are
+              -normal
+              -pre
+              -nowrap
+         </p>
+      </div>
+      <button class="accordion">
+         <h2>Word Spacing</h2>
+      </button>
+      <div class="panel">
+         <p align="left" style="line-height: 1.5; font-size:18px;">
+            You can adjust the space between words in the following manner. You can use negative values.
+            ÔøΩÔøΩword-spacing: value;
+            Possible values are:
+              -normal
+              -length
+            Example:
+            These words are spaced at 5px.
+         </p>
+      </div>
+   </body>
 </html>
+<script>
+   var acc = document.getElementsByClassName("accordion");
+   var i;
+   
+   for (i = 0; i < acc.length; i++) {
+   acc[i].addEventListener("click", function() {
+   /* Toggle between adding and removing the "active" class,
+   to highlight the button that controls the panel */
+   this.classList.toggle("active");
+   
+   /* Toggle between hiding and showing the active panel */
+   var panel = this.nextElementSibling;
+   if (panel.style.display === "block") {
+     panel.style.display = "none";
+   } else {
+     panel.style.display = "block";
+   }
+   });
+   }
+   
+   var acc = document.getElementsByClassName("accordion");
+   var i;
+   
+   for (i = 0; i < acc.length; i++) {
+   acc[i].addEventListener("click", function() {
+   this.classList.toggle("active");
+   var panel = this.nextElementSibling;
+   if (panel.style.maxHeight) {
+   panel.style.maxHeight = null;
+   } else {
+   panel.style.maxHeight = panel.scrollHeight + "px";
+   }
+   });
+   }
+</script>
