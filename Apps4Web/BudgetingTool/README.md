@@ -32,7 +32,7 @@ The API has predictable resource-oriented URLs, accepts form-encoded request bod
 ```
 {  
     "name": "NewBudget",
-    "abbreviation": 3454
+    "amount": 3454
 }
 ```
 - For deletion (HTTP **DELETE**), e.g.: http://localhost:8888/budgets/2
