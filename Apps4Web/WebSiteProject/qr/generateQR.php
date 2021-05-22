@@ -10,6 +10,8 @@
          background-size: cover;
          }
       </style>
+	  <link rel="shortcut icon" type="image/jpg" href="../img/favicon.ico"/>
+   </head>   
    <body>
       <table>
          <tr>
@@ -32,7 +34,6 @@
             </td>
          </tr>
       </table>
-      </head>   
    </body>
    <?php
       use Sonata\GoogleAuthenticator;
