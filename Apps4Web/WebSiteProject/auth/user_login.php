@@ -84,7 +84,7 @@
    </div>
    <div class="header">
       <h1 class="pulsate"><a style="color:#eb7434">Web</a> Programming <a style="color:#eb7434">World</a></h1>
-      <h2>Your place <a style="color:#eb7434">for</a> web development <a style="color:#eb7434">and</a> web design</h2>
+      <h2>Online school <a style="color:#eb7434">for</a> web development <a style="color:#eb7434">and</a> web design</h2>
    </div>
    <br>
    <div class="content">

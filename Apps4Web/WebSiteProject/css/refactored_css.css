@@ -4,8 +4,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #292827;
-    color: #eb7434;
+    //background-color: #292827; // controlled from particles.css
+    //color: #eb7434;
     font-family: 'Lato', sans-serif;
 }
 
@@ -105,6 +105,7 @@ button:hover {
     display: flex;
     flex: 100%;
     justify-content: center;
+	color: #eb7434;
   }
 
   #searchbar {
