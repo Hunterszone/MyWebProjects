@@ -1,34 +1,94 @@
 package suite.tests;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 
 public class WebsiteArticles {
 	
-	@Test
-	public void openArticles() {
+	WebDriver driver;
+
+	@Before
+	public void setup() {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://hunterszone.hyperphp.com/WebSite/index.php");
-		
-		Actions hover = new Actions(driver);
+	}
+	
+	@Test
+	public void openHtml() {
 		WebElement articles = driver.findElement(By.xpath("//button[text()=' Articles']"));
-		hover.moveToElement(articles);
-		hover.build();
-		hover.perform();
-		
+		articles.click();
 		WebElement htmlArticle = driver.findElement(By.xpath("//button[text()='HTML']"));
 		htmlArticle.click();
-		
-		String actualUrl = "http://hunterszone.hyperphp.com/WebSite/quizes/quizes.php";
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String actualUrl = "http://hunterszone.hyperphp.com/WebSite/index.php?i=1";
 		String expectedUrl = driver.getCurrentUrl();
-
 		Assert.assertEquals(expectedUrl, actualUrl);
+		driver.quit();
+	}
+	
+	@Test
+	public void openCss() {
+		WebElement articles = driver.findElement(By.xpath("//button[text()=' Articles']"));
+		articles.click();
+		WebElement cssArticle = driver.findElement(By.xpath("//button[text()='CSS']"));
+		cssArticle.click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String actualUrl = "http://hunterszone.hyperphp.com/WebSite/index.php?i=1";
+		String expectedUrl = driver.getCurrentUrl();
+		Assert.assertEquals(expectedUrl, actualUrl);
+		driver.quit();
+	}
+	
+	@Test
+	public void openJs() {
+		WebElement articles = driver.findElement(By.xpath("//button[text()=' Articles']"));
+		articles.click();
+		WebElement jsArticle = driver.findElement(By.xpath("//button[text()='JS']"));
+		jsArticle.click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String actualUrl = "http://hunterszone.hyperphp.com/WebSite/index.php?i=1";
+		String expectedUrl = driver.getCurrentUrl();
+		Assert.assertEquals(expectedUrl, actualUrl);
+		driver.quit();
+	}
+	
+	@Test
+	public void openPhp() {
+		WebElement articles = driver.findElement(By.xpath("//button[text()=' Articles']"));
+		articles.click();
+		WebElement phpArticle = driver.findElement(By.xpath("//button[text()='PHP']"));
+		phpArticle.click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String actualUrl = "http://hunterszone.hyperphp.com/WebSite/index.php?i=1";
+		String expectedUrl = driver.getCurrentUrl();
+		Assert.assertEquals(expectedUrl, actualUrl);
+		driver.quit();
 	}
 }

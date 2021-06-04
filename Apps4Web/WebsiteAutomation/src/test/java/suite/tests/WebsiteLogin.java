@@ -28,5 +28,14 @@ public class WebsiteLogin {
 		String expectedUrl = driver.getCurrentUrl();
 
 		Assert.assertEquals(expectedUrl, actualUrl);
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		driver.quit();
 	}
 }
