@@ -1,18 +1,13 @@
 package suite.tests;
 
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.net.URL;
-import java.util.Collections;
 import java.util.Hashtable;
-import java.util.Properties;
 import java.util.Random;
-import java.util.concurrent.CompletableFuture;
 
 import javax.imageio.ImageIO;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,22 +21,8 @@ import com.google.zxing.Result;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeReader;
-import com.microsoft.aad.msal4j.ClientCredentialFactory;
-import com.microsoft.aad.msal4j.ClientCredentialParameters;
-import com.microsoft.aad.msal4j.ConfidentialClientApplication;
-import com.microsoft.aad.msal4j.IAuthenticationResult;
 
 public class WebsiteLoginWithQRCode {
-
-	private static String authority;
-	private static String clientId;
-	private static String secret;
-	private static String scope;
-
-	@Before
-	public void setUp() throws IOException {
-		setUpSampleData();
-	}
 
 	@Test
 	public void login() throws Exception {
@@ -58,25 +39,25 @@ public class WebsiteLoginWithQRCode {
 		URL urlOfImage = new URL(src);
 		BufferedImage bufferedImage = ImageIO.read(urlOfImage);
 
+		// Convert it to bitmap
 		LuminanceSource source = new BufferedImageLuminanceSource(bufferedImage);
 		BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
 
-		// Scan QR code
+		// Read & scan the QR code
 		QRCodeReader reader = new QRCodeReader();
 		Hashtable<DecodeHintType, Object> decodeHints = new Hashtable<DecodeHintType, Object>();
 		decodeHints.put(DecodeHintType.PURE_BARCODE, Boolean.TRUE);
 		Result result = reader.decode(bitmap, decodeHints);
 		String textPresentInImage = result.getText();
 
-		// Click link to enter code
+		// Click link to enter the token
 		WebElement enterCodeLink = driver.findElement(By.xpath("//a[text()='Enter verification code']"));
 		enterCodeLink.click();
 
-		// Extract code and enter it
+		// Extract token and enter it
 		driver.get("http://hunterszone.hyperphp.com/WebSite/qr/verifyQR.html");
 		WebElement codeField = driver.findElement(By.name("code"));
-//		IAuthenticationResult iAuthenticationResult = getAccessTokenByClientCredentialGrant();
-		String code = numericGenerator(); //iAuthenticationResult.accessToken(); - throws AADSTS7000215: Invalid client secret is provided, TBD
+		String code = numericGenerator();
 		System.out.println("Mocked code: " + code);
 		codeField.sendKeys(code);
 
@@ -105,31 +86,5 @@ public class WebsiteLoginWithQRCode {
 
 		// this will convert any number sequence into 6 character.
 		return String.format("%06d", number);
-	}
-
-	private static IAuthenticationResult getAccessTokenByClientCredentialGrant() throws Exception {
-
-		ConfidentialClientApplication app = ConfidentialClientApplication
-				.builder(clientId, ClientCredentialFactory.createFromSecret(secret)).authority(authority).build();
-
-		// With client credentials flows the scope is ALWAYS of the shape
-		// "resource/.default", as the
-		// application permissions need to be set statically (in the portal), and then
-		// granted by a tenant administrator
-		ClientCredentialParameters clientCredentialParam = ClientCredentialParameters
-				.builder(Collections.singleton(scope)).build();
-
-		CompletableFuture<IAuthenticationResult> future = app.acquireToken(clientCredentialParam);
-		return future.get();
-	}
-
-	private static void setUpSampleData() throws IOException {
-		// Load properties file and set properties used throughout the sample
-		Properties properties = new Properties();
-		properties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("application.properties"));
-		authority = properties.getProperty("AUTHORITY");
-		clientId = properties.getProperty("CLIENT_ID");
-		secret = properties.getProperty("SECRET");
-		scope = properties.getProperty("SCOPE");
 	}
 }
