@@ -3,10 +3,10 @@ package suite.tests;
 import java.awt.image.BufferedImage;
 import java.net.URL;
 import java.util.Hashtable;
-import java.util.Random;
 
 import javax.imageio.ImageIO;
 
+import org.jboss.aerogear.security.otp.Totp;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -54,14 +54,17 @@ public class WebsiteLoginWithQRCode {
 		WebElement enterCodeLink = driver.findElement(By.xpath("//a[text()='Enter verification code']"));
 		enterCodeLink.click();
 
-		// Extract token and enter it
 		driver.get("http://hunterszone.hyperphp.com/WebSite/qr/verifyQR.html");
 		WebElement codeField = driver.findElement(By.name("code"));
-		String code = numericGenerator();
-		System.out.println("Mocked code: " + code);
-		codeField.sendKeys(code);
+		
+		// Extract token and enter it
+		String otpKeyStr = "6jm7n6xwitpjooh7ihewyyzeux7aqmw2"; // <- this 2FA secret key.
+		Totp totp = new Totp(otpKeyStr);
+		String twoFactorCode = totp.now(); // <- got 2FA code at this time!
+		System.out.println("OTP: " + twoFactorCode);
+		codeField.sendKeys(twoFactorCode);
 
-		// Send code
+		// Send token
 		WebElement sendCode = driver.findElement(By.xpath("//button[text()='Send code']"));
 		sendCode.click();
 
@@ -76,15 +79,5 @@ public class WebsiteLoginWithQRCode {
 		}
 
 		driver.quit();
-	}
-
-	private String numericGenerator() {
-		// It will generate 6 digit random Number.
-		// from 0 to 999999
-		Random rnd = new Random();
-		int number = rnd.nextInt(999999);
-
-		// this will convert any number sequence into 6 character.
-		return String.format("%06d", number);
 	}
 }
