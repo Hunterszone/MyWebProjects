@@ -56,7 +56,7 @@
       echo '<center>';
       echo 'Scan this QR and use the verification code from your mobile app to proceed';
       echo '<br><br><br>';
-      echo '<img src="'.$g->getURL(@$username, 'me4gaming.com', $secret).'" />';
+      echo '<img id="qrImg" src="'.$g->getURL(@$username, 'me4gaming.com', $secret).'" />';
       echo '<br><br><br>';
       echo "<a href=verifyQR.html>Enter verification code</a>";
       echo '</center>';
