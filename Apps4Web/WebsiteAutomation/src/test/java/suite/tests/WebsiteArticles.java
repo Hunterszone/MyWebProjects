@@ -10,10 +10,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebsiteArticles {
 	
-	WebDriver driver;
+	private WebDriver driver;
 
 	@Before
-	public void setup() {
+	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
