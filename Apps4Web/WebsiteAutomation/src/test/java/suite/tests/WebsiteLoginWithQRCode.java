@@ -35,7 +35,7 @@ public class WebsiteLoginWithQRCode {
 		String src = driver.findElement(By.id("qrImg")).getAttribute("src");
 		System.out.println("image url is: " + src);
 
-		// Read img from URL
+		// Get QR img from URL
 		URL urlOfImage = new URL(src);
 		BufferedImage bufferedImage = ImageIO.read(urlOfImage);
 
@@ -50,14 +50,14 @@ public class WebsiteLoginWithQRCode {
 		Result result = reader.decode(bitmap, decodeHints);
 		String textPresentInImage = result.getText();
 
-		// Click link to enter the token
+		// Click link to enter token
 		WebElement enterCodeLink = driver.findElement(By.xpath("//a[text()='Enter verification code']"));
 		enterCodeLink.click();
 
 		driver.get("http://hunterszone.hyperphp.com/WebSite/qr/verifyQR.html");
 		WebElement codeField = driver.findElement(By.name("code"));
 		
-		// Extract token and enter it
+		// Generate token and enter it
 		String otpKeyStr = "6jm7n6xwitpjooh7ihewyyzeux7aqmw2"; // <- this 2FA secret key.
 		Totp totp = new Totp(otpKeyStr);
 		String twoFactorCode = totp.now(); // <- got 2FA code at this time!
