@@ -62,7 +62,7 @@
          <li>
             <a href='#'><i class="fa fa-comments"></i> Contacts</a>
             <ul>
-               <li><a style="cursor:pointer" id="feedback" onclick=window.open("../forms/contact_form.php")>Feedback</a></li>
+               <li><a style="cursor:pointer" id="feedback" onclick="location.href='../forms/contact_form.php'">Feedback</a></li>
                <li><a style="cursor:pointer" id="forum" onclick=window.open("../phpBB3/index.php")>Forum</a></li>
             </ul>
          </li>

@@ -40,17 +40,22 @@ if ($action=="")    /* display the contact form */
     {
     ?>
     <input type="hidden" name="action" value="submit">
-    <p><font face="algerian" color="green">Your name:
+	<div align="left">
+		<a href="../auth/user_login.php">
+			<img id="backToSite" src="../img/faces.gif" title="Back" style="width: 120px; height: 120px;">
+		</a>
+	</div>
+    <p><font face="algerian" color="black">Your name:
     <input name="name" type="text" value="" size="30" required="" placeholder="<?php echo $_SESSION['SESS_USERNAME'];?>"/></font></p>
-    <p><font face="algerian" color="green">Your email:
+    <p><font face="algerian" color="black">Your email:
     <input name="email" type="email" value="" size="30" required=""/></font></p>
-    <p><legend><font face="algerian"><font size="4"><font color="green"><u>Send us your feedback:</u></font></font></font></legend></p>
+    <p><legend><font face="algerian"><font size="4"><font color="black"><u>Send us your feedback:</u></font></font></font></legend></p>
     <textarea ng-model="message" name="message" cols="55" rows="16" maxlength="400" required="" placeholder="UP TO 400 CHARACTERS"></textarea>
     <center><p>
-		<input type='submit' ng-click="send()" value='Send' style="cursor: pointer;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-		<input type='reset' ng-click="clear()" value='Clear' style="cursor: pointer;">
+		<input type='submit' id="send" ng-click="send()" value='Send' style="cursor: pointer;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<input type='reset' id="reset" ng-click="clear()" value='Clear' style="cursor: pointer;">
 	</p></center>
-	<p><font face="algerian"><font size="2"><font color="green">Number of characters left: <span ng-bind="left()"></span></font></font></font></p>
+	<p><font face="algerian"><font size="2"><font color="black">Number of characters left: <span ng-bind="left()"></span></font></font></font></p>
     </form></center></p>
     <?php
     } 
