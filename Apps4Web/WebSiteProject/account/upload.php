@@ -1,4 +1,3 @@
- 
 <?php 
 		include_once '../connectivity/connection.php';
 		@$username = htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
@@ -16,8 +15,10 @@
 <?php } else { 
     if (isset($_FILES['file']) &&
     ($_FILES['file']['error'] == UPLOAD_ERR_OK)) {
-        $newPath = $_SERVER['DOCUMENT_ROOT'] . '\\gallery\\' . basename($_FILES['file']['name']);
-		$sqlimg = "INSERT INTO user_img (img) VALUES('$newPath')";
+        $imgFile = $_FILES['file']['name'];
+        $imgFileName = basename($_FILES['file']['name']);
+        $newPath = '../gallery/' . $imgFileName;
+		$sqlimg = "INSERT INTO user_img (img) VALUES('$imgFile')";
         $resultimg=mysqli_query($conn,$sqlimg);
         if (move_uploaded_file($_FILES['file']['tmp_name'], $newPath)) {
             print "File saved to $newPath";

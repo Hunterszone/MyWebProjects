@@ -1,4 +1,3 @@
- 
 <?php if ($_SERVER['REQUEST_METHOD'] == 'GET') { ?>
 <form method="post" action="<?php echo $_SERVER['SCRIPT_NAME'] ?>"
       enctype="multipart/form-data">
@@ -8,7 +7,9 @@
 <?php } else { 
     if (isset($_FILES['file']) &&
     ($_FILES['file']['error'] == UPLOAD_ERR_OK)) {
-        $newPath = $_SERVER['DOCUMENT_ROOT'] . '\\uploads\\' . basename($_FILES['file']['name']);
+        $thisFile = $_FILES['file']['name'];
+        $thisFileName = basename($_FILES['file']['name']);
+        $newPath = '../uploads/' . $thisFileName;
         if (move_uploaded_file($_FILES['file']['tmp_name'], $newPath)) {
             print "File saved to $newPath";
         } else {
