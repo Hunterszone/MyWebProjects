@@ -20,14 +20,11 @@ public class WebsiteSignUp {
 		WebElement signUp = driver.findElement(By.xpath("//button[text()=' Sign up']"));
 		signUp.click();
 		
-		WebElement fullname = driver.findElement(By.name("fullname"));
-		fullname.sendKeys("Konstantin");
-		
-		WebElement email = driver.findElement(By.name("email"));
-		email.sendKeys("k.drenski91@aol.com");
-		
 		WebElement username = driver.findElement(By.name("username"));
 		username.sendKeys("kossio");
+						
+		WebElement email = driver.findElement(By.name("email"));
+		email.sendKeys("k.drenski91@aol.com");
 		
 		WebElement password = driver.findElement(By.name("password"));
 		password.sendKeys("Test123!");
