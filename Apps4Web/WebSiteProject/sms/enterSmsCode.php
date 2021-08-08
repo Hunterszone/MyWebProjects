@@ -1,5 +1,6 @@
 <?php
 	require 'messageBird.php';
+	console_log($MessageBird->messages->create($Message));
 ?>
 <!DOCTYPE html>
 <html>
