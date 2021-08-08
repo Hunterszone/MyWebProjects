@@ -3,7 +3,7 @@
 
 		$six_digit_random_number = random_int(100000, 999999);
 		
-		$MessageBird = new \MessageBird\Client('2zTf9c76AOSGIo74cjzFDWfWq');
+		$MessageBird = new \MessageBird\Client('j6YajDRkLWhMe4G2KYKGVyIMB');
 		$Message = new \MessageBird\Objects\Message();
 		$Message->originator = 'TestMessage';
 		$Message->recipients = array('+359889619295');
