@@ -1,3 +1,6 @@
+<?php
+	require 'messageBird.php';
+?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -47,13 +50,10 @@
             </label>
             <br />
             <br />
-            <input type="text" name="code" maxlength="25" required="" />
+            <input type="text" value="<?php echo $Message->body; ?>" name="code" maxlength="25" required="" />
             <br />
             <br />
             <button type="submit" class="btn btn-secondary">Login</button>
          </form>
       </center>
     </body>
-<?php
-
-?>

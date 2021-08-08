@@ -47,7 +47,7 @@
             </label>
             <br />
             <br />
-            <input type="text" name="phoneNum" maxlength="25" required="" />
+            <input type="text" value="+359889619295" name="phoneNum" maxlength="25" required="" />
             <br />
             <br />
             <button type="submit" class="btn btn-secondary">Send code</button>
@@ -56,34 +56,5 @@
     </body>
 	</html>
 	<?php
-
-		$curl = curl_init();
-
-		curl_setopt_array($curl, array(
-		  CURLOPT_URL => "https://api.msg91.com/api/v5/flow/363815ASTthTI9L60e36b2bP1",
-		  CURLOPT_RETURNTRANSFER => true,
-		  CURLOPT_ENCODING => "",
-		  CURLOPT_MAXREDIRS => 10,
-		  CURLOPT_TIMEOUT => 30,
-		  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-		  CURLOPT_CUSTOMREQUEST => "POST",
-		  CURLOPT_POSTFIELDS => "{\n  \"flow_id\": \"1234\",\n  \"sender\": \"KoDr\",\n  \"mobiles\": \"359889619295\",\n  \"VAR1\": \"VALUE 1\",\n  \"VAR2\": \"VALUE 2\"\n}",
-		  CURLOPT_HTTPHEADER => array(
-			"authkey: 363815ASTthTI9L60e36b2bP1",
-			"content-type: application/JSON"
-		  ),
-		));
-
-		$response = curl_exec($curl);
-		$err = curl_error($curl);
-
-		curl_close($curl);
-
-		if ($err) {
-		  echo "cURL Error #:" . $err;
-		} else {
-		  echo "<center>";	
-		  echo "Response: " . $response;
-		  echo "</center>";	
-		}
+		require 'messageBird.php';
 	?>
