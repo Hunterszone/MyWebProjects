@@ -1,3 +1,6 @@
+<?php
+	require 'messageBird.php';
+?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -55,6 +58,3 @@
       </center>
     </body>
 	</html>
-	<?php
-		require 'messageBird.php';
-	?>
