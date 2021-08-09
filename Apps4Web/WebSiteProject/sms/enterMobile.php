@@ -1,6 +1,3 @@
-<?php
-	require 'messageBird.php';
-?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -46,7 +43,7 @@
             <br />
             <br />
             <label>
-            <strong>Enter phone number:</strong>
+            <strong>Enter mobile number:</strong>
             </label>
             <br />
             <br />
