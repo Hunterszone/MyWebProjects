@@ -18,6 +18,25 @@
          background-size: cover;
          }
       </style>
+	  <script>
+		function check() {
+			var f = document.getElementById("frm");
+			var actualCode = document.getElementById("smsCode");
+			var expectedCode = <?php echo $Message->body; ?>;
+			
+			console.log("Actual: " + actualCode.value);
+			console.log("Expected: " + expectedCode);
+			
+			f.setAttribute('method',"post");
+			
+			if(actualCode.value == expectedCode) {
+				f.setAttribute('action',"../auth/user_login.php");
+			} else {
+				f.setAttribute('action',"../sms/enterSmsCode.php");
+			}
+			return true;
+		}
+	  </script>
    </head>
    <body>
       <table>
@@ -42,7 +61,7 @@
          </tr>
       </table>
 	  <center>
-         <form method="post" action="../auth/user_login.php" name="update">
+         <form id="frm" onsubmit="return check()" name="update">
             <input type="hidden" name="action" value="update" />
             <br />
             <br />
@@ -51,7 +70,7 @@
             </label>
             <br />
             <br />
-            <input type="text" value="<?php echo $Message->body; ?>" name="code" maxlength="25" required="" />
+            <input type="text" id="smsCode" value="<?php echo $Message->body; ?>" name="code" maxlength="25" required="" />
             <br />
             <br />
             <button type="submit" class="btn btn-secondary">Login</button>
