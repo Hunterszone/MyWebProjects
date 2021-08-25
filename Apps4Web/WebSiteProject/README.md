@@ -1,7 +1,7 @@
 # Custom website for web technologies
 
-## Current URL: http://hunterszone.hyperphp.com/WebSite/  
-## Alternate URL (might be not up-to-date): http://thatbaddesign.freevar.com/  
+## Current URL: http://hunterszone.byethost11.com/WebSite/index.php
+## Alternate URL (might be not up-to-date): http://hunterszone.hyperphp.com/WebSite/ 
 
 ## I. How to deploy
 
