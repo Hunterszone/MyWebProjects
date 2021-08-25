@@ -1,7 +1,7 @@
 <?php
    require_once('./authentication.php');
    //echo "WELCOME, " . htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
-   	
+   session_start();	
    ?>
 <!DOCTYPE html>
 <html>
@@ -66,7 +66,7 @@
                <li><a style="cursor:pointer" id="forum" onclick=window.open("../phpBB3/index.php")>Forum</a></li>
             </ul>
          </li>
-         <li><a style="cursor:pointer" id="logout" onclick="location.href='../index.php'"><i class="fa fa-sign-out"></i> Logout</a></li>
+         <li><a style="cursor:pointer" id="logout" onclick="location.href='../index.php'"><i class="fa fa-sign-out"></i><?php session_destroy(); ?> Logout</a></li>
       </div>
       <div class="socialiconsmenu">
          <ul>
