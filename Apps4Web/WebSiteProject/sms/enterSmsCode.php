@@ -33,6 +33,7 @@
 				f.setAttribute('action',"../auth/user_login.php");
 			} else {
 				f.setAttribute('action',"../sms/enterSmsCode.php");
+				alert("Actual code is: " + actualCode.value + ". Expected was: " + expectedCode + ".");
 			}
 			return true;
 		}
