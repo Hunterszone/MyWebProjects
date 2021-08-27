@@ -4,8 +4,6 @@
 body {
     margin: 0;
     padding: 0;
-    //background-color: #292827; // controlled from particles.css
-    //color: #eb7434;
     font-family: 'Lato', sans-serif;
 }
 
@@ -140,7 +138,6 @@ button:hover {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    //margin: 3em 0 3em 0;
     padding: 3em 0 3em 0;
     gap: 3em;
 	background-color: rgba(0,0,0,0.5);
@@ -211,7 +208,6 @@ button:hover {
   bottom: 0;
   width: 100%;
   text-align: center;
-  //background: url(../img/book-carousel.jpg);
 }
 
 @-webkit-keyframes pulsate {
