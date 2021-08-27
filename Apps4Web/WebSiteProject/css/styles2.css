@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 <style type="text/css">
 
 .blink_text {
@@ -89,7 +91,7 @@ ul#menu li a:hover {
 	.tftextinput{
 		margin: 0;
 		padding: 5px 18px;
-		font: Verdana;
+		font-family: Verdana;
 		font-size:21px;
 		border:1px solid black; 
 		border-top-left-radius: 5px 5px;
@@ -112,7 +114,7 @@ ul#menu li a:hover {
 		color: #ffffff;
 		border: solid 1px black; 
 		background: black;
-		background: -webkit-gradient(linear, left top, left bottom, from black), to(black));
+		background: -webkit-gradient(linear, left top, left bottom, from(black), to(black));
 		background: -moz-linear-gradient(top, black,  black);
 		border-top-right-radius: 5px 5px;
 		border-bottom-right-radius: 5px 5px;
@@ -576,7 +578,6 @@ background-color: rgba(0, 0, 0, 0.5)
   height: 75px;
   border-radius: 50%;
   background-clip: content-box;  
-  padding: -20px;
   transition: .5s;
   color: #D7D0BE;
   margin-left: 30px;
@@ -699,17 +700,15 @@ body {
 div:hover {
 	transform: rotate(360deg);
 }
-
-
-
+*/
 
 </style>
 
 
 
 
-<!-- CSS for FOOTER BAR -->
- 
+/* CSS for FOOTER BAR 
+*/ 
 <style type="text/css">
  
  
@@ -751,8 +750,6 @@ img:hover {
 <!-- CSS for SHARE BUTTONS -->
 
 <style type='text/css'>
-/*<![CDATA[*/
-@charset "utf-8";
 /* CSS Document */
 /* ---------- ENTYPO ---------- *//* ---------- Digital Hub Inc : http://www.digitalhubinc.com/---------- */
 /* ---------- http://weloveiconfonts.com/ ---------- */
@@ -863,5 +860,5 @@ img:hover {
          font-size: 150%;
          background-color: orange;
          }
-
+*/
 </style>
