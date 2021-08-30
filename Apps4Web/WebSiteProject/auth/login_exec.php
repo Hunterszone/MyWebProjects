@@ -67,8 +67,11 @@
     			$_SESSION['SESS_USERNAME']  = $member['username'];
     			$_SESSION['SESS_PASSWORD']  = $member['password'];
 				$_SESSION['SESS_EMAIL']  = $member['email'];
-				$_SESSION['USER_IS_LOGGEDIN'] = $member['login_session'];
-				setcookie($member,$cookiehash,time()+3600*24*365,'/','.thatbaddesign.freevar.com');
+				if(isset($_POST['login_session'])){
+					$_SESSION['USER_IS_LOGGEDIN'] = $member['login_session'];	
+				}
+				$arrValues = array_values($member);
+				setcookie($arrValues[0],$arrValues[1],time()+3600*24*365,'/','.hunterszone.byethost11.com');
 				mysqli_query($conn,$cookieQry);
     			session_write_close();
     			header("location: ../auth/user_login.php");
