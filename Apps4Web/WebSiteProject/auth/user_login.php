@@ -40,7 +40,7 @@
       </tr>
       <tr>
          <td>
-            <div id="clockbox" style="font-family:Jokerman; font-size:120%; text-align:right;"></div>
+            <div id="clockbox" style="font-family:Jokerman; color:yellow; font-size:120%; text-align:right;"></div>
          </td>
       </tr>
    </table>

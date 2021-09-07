@@ -41,9 +41,9 @@
             <div class="dropdown">
 				<button class="dropbtn"><i class="fa fa-sign-in"></i> Login</button>
 				<div class="dropdown-content">
-					<button type="button" id="but1" style="cursor:pointer" onclick="window.location.href='./forms/login_form.php'" value="Password">With Password</button>
-					<button type="button" id="but2" style="cursor:pointer" onclick="window.location.href='./qr/generateQR.php'" value="2FA/QR code">With QR Code</button>
-					<button type="button" id="but3" style="cursor:pointer" onclick="window.location.href='./sms/enterMobile.php'" value="SMS login">With SMS Code</button>
+					<button type="button" id="but1" style="cursor:pointer" onclick="window.location.href='./forms/login_form.php'" value="Password">Basic authentication</button>
+					<button type="button" id="but2" style="cursor:pointer" onclick="window.location.href='./qr/generateQR.php'" value="2FA/QR code">2FA with QR code</button>
+					<button type="button" id="but3" style="cursor:pointer" onclick="window.location.href='./sms/enterMobile.php'" value="SMS login">2FA with SMS code</button>
 				</div>
             </div>
             <div class="dropdown">
