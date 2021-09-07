@@ -73,8 +73,14 @@ else                /* send the submitted data */
 	echo "<p>";
 	echo "If you experience any troubles, please <a href='mailto:k.drenski91@gmail.com'> contact administrator</a>";
     echo "</p>";
-	echo "</center>";   
-    }  
+	echo "<p>";
+	echo "You will be redirected to your profile...";
+    echo "</p>";
+	echo "</center>";
+	/* Redirect browser */
+	header("refresh:3;url=../auth/user_login.php");
+	exit();
+    }
 ?>
 
 </body>
