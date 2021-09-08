@@ -21,11 +21,13 @@
       -o-background-size: cover;
       background-size: cover;
       }
+      .center{
+         text-align: center;
+      }
    </style>
 
    </head>
    <body>
-
    <table>
       <tr>
          <td>
@@ -44,6 +46,7 @@
          </td>
       </tr>
    </table>
+   <div class="center">
          <h3>File Upload</h3>
          Select a file to upload:
          <form action="./account/file_upload.php" method="post" enctype="multipart/form-data">
@@ -52,5 +55,6 @@
 				<button type="submit" class="btn btn-secondary">Upload</button>
 			</div>
          </form>
+   </div>
    </body>
 </html>
