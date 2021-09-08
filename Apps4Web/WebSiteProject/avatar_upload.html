@@ -1,17 +1,29 @@
 <!DOCTYPE html>
+<!-- this page is fully validated by w3c -->
+
 <!--
    To change this license header, choose License Headers in Project Properties.
    To change this template file, choose Tools | Templates
    and open the template in the editor.
    -->
-<html>
+<html lang="en">
    <head>
       <meta name="generator"
          content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="shortcut icon" type="image/jpg" href="../img/favicon.ico"/>
       <title>Avatar Uploader</title>
+         <style>
+      body { 
+      background: url(../img/quiz_cover.png) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      }
+   </style>
    </head>
+   <body>
    <table>
       <tr>
          <td>
@@ -30,27 +42,16 @@
          </td>
       </tr>
    </table>
-   <body>
-      <center>
+      <div style="text-align: center;">
          <h3>Avatar Upload</h3>
          Select an avatar to upload:
-         <p>
          <form action="../account/upload.php" method="post" enctype="multipart/form-data">
-			<div align="center">
+			<div>
 				<input type="file" name="file" size="45" />
 				<button type="submit" class="btn btn-secondary">Upload</button>
 			</div>
          </form>
-      </center>
-      </p>
+      </div>
    </body>
-   <STYLE TYPE="text/css">
-      body { 
-      background: url(../img/quiz_cover.png) no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      }
-   </style>
+
 </html>

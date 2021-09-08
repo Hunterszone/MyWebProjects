@@ -1,3 +1,6 @@
+@charset "utf-8";
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
 html {
 	scroll-behavior: smooth;
 }
@@ -144,7 +147,7 @@ h1 {
 .tftextinput {
 	margin: 0;
 	padding: 5px 18px;
-	font: Verdana;
+	font-family: Verdana;
 	font-size: 21px;
 	border: 1px solid black;
 	border-top-left-radius: 5px 5px;
@@ -168,7 +171,7 @@ h1 {
 	color: #ffffff;
 	border: solid 1px black;
 	background: black;
-	background: -webkit-gradient(linear, left top, left bottom, from black), to(black));
+	background: -webkit-gradient(linear, left top, left bottom, from(black), to(black));
 	background: -moz-linear-gradient(top, black, black);
 	border-top-right-radius: 5px 5px;
 	border-bottom-right-radius: 5px 5px;
@@ -299,7 +302,8 @@ body {
 	display: block
 }
 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />.TheTextOff {
+
+.TheTextOff {
 	color: rgba(255, 255, 255, 0.7);
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 20px;
@@ -335,8 +339,11 @@ h2 {
 	text-shadow: 5px 5px 5px yellow;
 }
 
-//  .gap { margin-right: 50px; }
-// .gap { margin-right: 50px; }
+/*.gap { margin-right: 50px; }
+*/
+
+/*.gap { margin-right: 50px; }
+*/
 .shakeimage {
 	POSITION: relative
 }
@@ -473,7 +480,6 @@ body {
    
    /*<![CDATA[*/
 
-@charset "utf-8";
 
 /* CSS Document */
 
@@ -486,7 +492,6 @@ body {
 
 /* ---------- http://weloveiconfonts.com/ ---------- */
 
-@import url(http://weloveiconfonts.com/api/?family=entypo);
 [class*="entypo-"]:before {
 	font-family: 'entypo', sans-serif;
 }
