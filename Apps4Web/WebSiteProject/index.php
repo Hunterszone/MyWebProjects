@@ -67,6 +67,8 @@
             <a href="javascript:window.print()"><img src="img/print-icon.png" alt="print this page" id="print-button" title="Print" style="width:40px;height:40px" /></a>
             <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" target="_blank"><img src="img/creative-icon.png" title="Creative Commons" style="width:40px;height:40px" /></a>
             <a href="http://www.smashingmagazine.com/feed/" target="_blank"><img src="img/rss-feed-icon.png" alt="[Valid RSS]" title="RSS feeds" style="width:40px;height:40px" /></a>
+            <a href="#" onclick="showLocation()"><img src="img/marker.png" alt="marker" title="Get Location" style="width:40px;height:40px" /></a>
+
          </div>
 		 <div class="sidebar-right">
 			<a href="https://statuspage.freshping.io/55647-WebProgrammingWorld" target="_blank"><img src="https://statuspage.freshping.io/badge/2e3e4806-0a16-4fbb-96a9-5db655d9c699?0.5940733387587804"/></a>
@@ -89,11 +91,16 @@
          </div>
          <!--<img class="scroll-up" src="../img/scroll-to-top.gif" alt="Go to top">-->
       </div>
+      <!-- map -->
+      <img alt="map" id="map">
+      <!-- /map -->
       <div id="particles-js"></div>
       <!-- scripts -->
       <script src="js/particles.js"></script>
       <script src="js/app.js"></script>
       <!-- stats.js -->
+      <!-- application js -->
+      <script src="js/app/app.js"></script>
       <!--<script src="js/lib/stats.js"></script>-->
       <script>
          var count_particles, stats, update;
