@@ -3,7 +3,7 @@ error_reporting(0);
 
 //      CONFIGURATION
 $title = "HTML Quiz";
-$address = "index.html";
+$address = "../../auth/user_login.php";
 $randomizequestions ="yes"; // set up as "no" to show questions without randomization
 //    END CONFIGURATION
 // #########################################
