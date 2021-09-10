@@ -1,4 +1,4 @@
-let showLocation = () =>{
+/*let showLocation = () =>{
 	fetch('https://api.geoapify.com/v1/ipinfo?apiKey=e2319db973684c139896cabd32eb6606',{
 		method: 'GET'
 	}).then((response)=>{
@@ -9,4 +9,16 @@ let showLocation = () =>{
 		map.src = `https://maps.geoapify.com/v1/staticmap?style=osm-bright-grey&width=600&height=400&center=lonlat:${data.location.longitude},${data.location.latitude}&zoom=14.1514&apiKey=e2319db973684c139896cabd32eb6606`
 	})
 
+
+
+}
+*/
+
+let showLocation = () =>{
+	let latitude
+	let longitude
+	window.navigator.geolocation.getCurrentPosition((position)=>{
+		latitude = position.coords.latitude;
+		longitude = position.coords.longitude;
+	})
 }
