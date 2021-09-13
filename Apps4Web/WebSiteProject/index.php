@@ -13,13 +13,13 @@
       <link rel="stylesheet" href="./css/particles.css">
       <!-- open layers -->
 
-<!--
+
 	  <link rel="shortcut icon" type="image/jpg" href="../img/favicon.ico"/>
 
       <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
       <script src= "https://github.com/VincentGarreau/particles.js"></script>
       <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-      -->
+      <!-- openLayer maps -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.7.0/css/ol.css" type="text/css">
 
       <style>
@@ -31,7 +31,6 @@
          }
 
       </style>
-          <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.7.0/build/ol.js"></script>
 
    </head>
    <body>
@@ -86,7 +85,7 @@
             <a href="javascript:window.print()"><img src="img/print-icon.png" alt="print this page" id="print-button" title="Print" style="width:40px;height:40px" /></a>
             <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" target="_blank"><img src="img/creative-icon.png" title="Creative Commons" style="width:40px;height:40px" /></a>
             <a href="http://www.smashingmagazine.com/feed/" target="_blank"><img src="img/rss-feed-icon.png" alt="[Valid RSS]" title="RSS feeds" style="width:40px;height:40px" /></a>
-            <a href="#" onclick="showLocation('true')"><img src="img/marker.png" alt="marker" title="Get Location" style="width:40px;height:40px" /></a>
+            <a href="#" onclick="showLocation()"><img src="img/marker.png" alt="marker" title="Get Location" style="width:40px;height:40px" /></a>
 
          </div>
 		 <div class="sidebar-right">
@@ -114,12 +113,14 @@
          </div>
       </div>
       <!-- map -->
+      <div id="mapBox" class="mapBox"></div>
       <!-- /map -->
-
-        <div id="mapBox" class="mapBox"></div>
 
       <div id="particles-js"></div>
       <!-- scripts -->
+      <!-- oopenlayer maps script -->
+          <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.7.0/build/ol.js"></script>
+      <!-- app js -->
       <script src="js/app/app.js"></script>
 
       <script src="js/particles.js"></script>

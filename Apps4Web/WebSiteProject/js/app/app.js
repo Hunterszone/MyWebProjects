@@ -34,7 +34,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/mutebinuhu/cktiw5chp6kpk17p9mq354u
 }
 */
 //have used openlayer to display location 
-let showLocation = () =>{
+function showLocation(){
   //get the map element
 	let theMap = document.getElementById('mapBox');
   //conditionally display map
@@ -78,7 +78,7 @@ let showLocation = () =>{
       });
        map.addLayer(layer)
       })
-      theMap.style.display="block"
+      theMap.style.display="block";
     }else{
     	theMap.style.display="none";
     }
