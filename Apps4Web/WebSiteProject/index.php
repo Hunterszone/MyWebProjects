@@ -11,9 +11,28 @@
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="./css/refactored_css.css">
       <link rel="stylesheet" href="./css/particles.css">
+      <!-- open layers -->
+
+<!--
 	  <link rel="shortcut icon" type="image/jpg" href="../img/favicon.ico"/>
+
       <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
       <script src= "https://github.com/VincentGarreau/particles.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+      -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.7.0/css/ol.css" type="text/css">
+
+      <style>
+
+         .mapBox{
+            height: 400px;
+            width: 100%;
+            display: none;
+         }
+
+      </style>
+          <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.7.0/build/ol.js"></script>
+
    </head>
    <body>
       <div class="header">
@@ -67,7 +86,7 @@
             <a href="javascript:window.print()"><img src="img/print-icon.png" alt="print this page" id="print-button" title="Print" style="width:40px;height:40px" /></a>
             <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" target="_blank"><img src="img/creative-icon.png" title="Creative Commons" style="width:40px;height:40px" /></a>
             <a href="http://www.smashingmagazine.com/feed/" target="_blank"><img src="img/rss-feed-icon.png" alt="[Valid RSS]" title="RSS feeds" style="width:40px;height:40px" /></a>
-            <a href="#" onclick="showLocation()"><img src="img/marker.png" alt="marker" title="Get Location" style="width:40px;height:40px" /></a>
+            <a href="#" onclick="showLocation('true')"><img src="img/marker.png" alt="marker" title="Get Location" style="width:40px;height:40px" /></a>
 
          </div>
 		 <div class="sidebar-right">
@@ -89,18 +108,23 @@
                </a>
             </div>
          </div>
+
          <!--<img class="scroll-up" src="../img/scroll-to-top.gif" alt="Go to top">-->
+         <div>
+         </div>
       </div>
       <!-- map -->
-      <img alt="map" id="map">
       <!-- /map -->
+
+        <div id="mapBox" class="mapBox"></div>
+
       <div id="particles-js"></div>
       <!-- scripts -->
+      <script src="js/app/app.js"></script>
+
       <script src="js/particles.js"></script>
-      <script src="js/app.js"></script>
       <!-- stats.js -->
       <!-- application js -->
-      <script src="js/app/app.js"></script>
       <!--<script src="js/lib/stats.js"></script>-->
       <script>
          var count_particles, stats, update;
@@ -151,5 +175,9 @@
              window.scrollTo({top: 0, behavior: 'smooth'}) 
           }			
       </script>
+
+
+
+
    </body>
 </html>
