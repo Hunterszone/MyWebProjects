@@ -38,8 +38,7 @@ function showLocation(){
   //get the map element
 	let theMap = document.getElementById('mapBox');
   //conditionally display map
-	if (theMap.style.display === "none") {
-
+  theMap.style.display = "block";
   let loc = {
         lat: "",
         lon: ""
@@ -73,13 +72,14 @@ function showLocation(){
           center: ol.proj.fromLonLat([loc.lon, loc.lat]),
           zoom: 12
         })
-
-
       });
        map.addLayer(layer)
       })
-      theMap.style.display="block";
-    }else{
-    	theMap.style.display="none";
-    }
 }
+//cancel button
+let cancel = document.getElementById('cancel');
+cancel.addEventListener('click', ()=>{
+  let theMap = document.getElementById('mapBox');
+  theMap.style.display = 'none';
+
+})

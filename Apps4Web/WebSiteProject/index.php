@@ -113,13 +113,16 @@
          </div>
       </div>
       <!-- map -->
-      <div id="mapBox" class="mapBox"></div>
+
+      <div id="mapBox" class="mapBox">
+         <button style="margin-bottom: 10px;" id="cancel"><i class="fa fa-times"></i> Close</button>
+      </div>
       <!-- /map -->
 
       <div id="particles-js"></div>
       <!-- scripts -->
       <!-- oopenlayer maps script -->
-          <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.7.0/build/ol.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.7.0/build/ol.js"></script>
       <!-- app js -->
       <script src="js/app/app.js"></script>
 
