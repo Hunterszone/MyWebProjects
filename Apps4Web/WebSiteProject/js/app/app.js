@@ -49,18 +49,7 @@ function showLocation(){
           lat: position.coords.latitude,
           lon: position.coords.longitude
         }
-      console.log(loc);
-      //add layer
-       var layer = new ol.layer.Vector({
-     source: new ol.source.Vector({
-         features: [
-             new ol.Feature({
-                 geometry: new ol.geom.Point(ol.proj.fromLonLat([loc.lon, loc.lat]))
-             })
-         ]
-     })
- });
-
+ 
        var map = new ol.Map({
         target: 'mapBox',
         layers: [
@@ -73,6 +62,16 @@ function showLocation(){
           zoom: 12
         })
       });
+            //add layer
+       var layer = new ol.layer.Vector({
+     source: new ol.source.Vector({
+         features: [
+             new ol.Feature({
+                 geometry: new ol.geom.Point(ol.proj.fromLonLat([loc.lon, loc.lat]))
+             })
+         ]
+     })
+ });
        map.addLayer(layer)
       })
 }
