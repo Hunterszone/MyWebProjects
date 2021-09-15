@@ -98,17 +98,19 @@
                <a class='twitter' target='_blank' title="S H A R E" a onclick="void window.open('https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.example.com%2F&original_referer=.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
                <span>TWITTER</span>
                </a>
-               <a class='gplus' target='_blank' title="S H A R E" href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=325,width=548');return false;">
+               <!--<a class='gplus' target='_blank' title="S H A R E" href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=325,width=548');return false;">
                <span>GOOGLE+</span>
-               </a>
+               </a>-->
                <a class='linkedin' target='_blank' title="S H A R E" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://YourContentsURLGoesHere.com&amp;title=Article Tile Goes Here&amp;summary=Put your summary here" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=390,width=548');return false;">
                <span>LINKEDIN</span>
                </a>
+			   <a class='scroll-up gplus' style="cursor: pointer;" alt="Go to top">
+               <span>SCROLL UP</span>
+               </a>
+			   <!--<img class="scroll-up" src="../img/scroll-to-top.gif" alt="Go to top">-->
             </div>
          </div>
-         <!--<img class="scroll-up" src="../img/scroll-to-top.gif" alt="Go to top">-->
       </div>
-	  
       <!-- map -->
       <div id="mapBox" class="mapBox">
          <button style="margin-bottom: 10px; cursor: pointer;" id="cancel" onclick="destroyLocation()"><i class="fa fa-times"></i> Close</button>
@@ -159,25 +161,21 @@
          scrollButton = document.getElementsByClassName("scroll-up")[0];
          scrollButton.addEventListener('click', topFunction);
          
-          // When the user scrolls down 20px from the top of the document, show the button
+          // When the user scrolls down 50px from the top of the document, show the button
           window.onscroll = function() {scrollFunction()};
          
-          /*function scrollFunction() {
-             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          function scrollFunction() {
+             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
                 scrollButton.style.display = "block";
              } else {
                 scrollButton.style.display = "none";
              }
-          }*/
+          }
          
           // When the user clicks on the button, scroll to the top of the document
           function topFunction() {
              window.scrollTo({top: 0, behavior: 'smooth'}) 
           }			
       </script>
-
-
-
-
    </body>
 </html>
