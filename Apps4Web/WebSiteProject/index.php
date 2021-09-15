@@ -85,8 +85,7 @@
             <a href="javascript:window.print()"><img src="img/print-icon.png" alt="print this page" id="print-button" title="Print" style="width:40px;height:40px" /></a>
             <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" target="_blank"><img src="img/creative-icon.png" title="Creative Commons" style="width:40px;height:40px" /></a>
             <a href="http://www.smashingmagazine.com/feed/" target="_blank"><img src="img/rss-feed-icon.png" alt="[Valid RSS]" title="RSS feeds" style="width:40px;height:40px" /></a>
-            <a href="#" onclick="showLocation()"><img src="img/marker.png" alt="marker" title="Get Location" style="width:40px;height:40px" /></a>
-
+            <a href="#" onclick="showLocation()"><img src="img/marker.png" alt="marker" title="Show Location" style="width:40px;height:40px" /></a>
          </div>
 		 <div class="sidebar-right">
 			<a href="https://statuspage.freshping.io/55647-WebProgrammingWorld" target="_blank"><img src="https://statuspage.freshping.io/badge/2e3e4806-0a16-4fbb-96a9-5db655d9c699?0.5940733387587804"/></a>
@@ -107,15 +106,12 @@
                </a>
             </div>
          </div>
-
          <!--<img class="scroll-up" src="../img/scroll-to-top.gif" alt="Go to top">-->
-         <div>
-         </div>
       </div>
+	  
       <!-- map -->
-
       <div id="mapBox" class="mapBox">
-         <button style="margin-bottom: 10px;" id="cancel"><i class="fa fa-times"></i> Close</button>
+         <button style="margin-bottom: 10px; cursor: pointer;" id="cancel" onclick="destroyLocation()"><i class="fa fa-times"></i> Close</button>
       </div>
       <!-- /map -->
 
