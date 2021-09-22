@@ -11,6 +11,8 @@
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="./css/refactored_css.css">
       <link rel="stylesheet" href="./css/particles.css">
+      <link rel="stylesheet" href="./css/styles.css">
+
       <!-- open layers -->
 
 
@@ -34,6 +36,7 @@
 
    </head>
    <body>
+      <div class="container">
       <div class="header">
          <h1 class="pulsate"><a style="color:#eb7434">Web</a> Programming <a style="color:#eb7434">World</a></h1>
          <h2>Online school <a style="color:#eb7434">for</a> web development <a style="color:#eb7434">and</a> web design</h2>
@@ -81,6 +84,20 @@
                </div>
             </div>
          </div>
+               <div class="video-slider">
+            <!-- SLIDE 1 -->
+            <div class="slide">
+
+               <iframe class="video" width="640" height="360" src="https://www.youtube.com/embed/hQAHSlTtcmY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- SLIDE 2 -->
+            <div class="slide">
+               <iframe class="video" width="640" height="360" src="https://www.youtube.com/embed/dGcsHMXbSOA?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- END OF SLIDES -->
+            <div class="slide-arrow left" ></div>
+            <div class="slide-arrow right" ></div>
+         </div>
          <div class="sidebar">
             <a href="javascript:window.print()"><img src="img/print-icon.png" alt="print this page" id="print-button" title="Print" style="width:40px;height:40px" /></a>
             <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" target="_blank"><img src="img/creative-icon.png" title="Creative Commons" style="width:40px;height:40px" /></a>
@@ -111,6 +128,8 @@
             </div>
          </div>
       </div>
+      <!-- iframe -->
+    
       <!-- map -->
       <div id="mapBox" class="mapBox">
          <button style="margin-bottom: 10px; cursor: pointer;" id="cancel" onclick="destroyLocation()"><i class="fa fa-times"></i> Close</button>
@@ -118,9 +137,15 @@
       <!-- /map -->
 
       <div id="particles-js"></div>
+      </div>
       <!-- scripts -->
       <!-- oopenlayer maps script -->
+
       <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.7.0/build/ol.js"></script>
+      <!-- jquery -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       <!-- youtube iframe api -->
+         <script src="https://www.youtube.com/iframe_api"></script>
       <!-- app js -->
       <script src="js/app/app.js"></script>
 
