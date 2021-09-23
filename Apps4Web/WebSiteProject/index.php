@@ -84,10 +84,9 @@
                </div>
             </div>
          </div>
-               <div class="video-slider">
+               <div class="video-slider" id="slider-video">
             <!-- SLIDE 1 -->
             <div class="slide">
-
                <iframe class="video" width="640" height="360" src="https://www.youtube.com/embed/hQAHSlTtcmY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <!-- SLIDE 2 -->

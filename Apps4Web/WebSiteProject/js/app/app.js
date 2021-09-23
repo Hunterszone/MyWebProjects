@@ -62,6 +62,7 @@ $(document).ready(function () {
       var pos = 0,
          slides = $('.slide'),
          numOfSlides = slides.length;
+     
 
       function nextSlide() {
          slides[pos].video.stopVideo()

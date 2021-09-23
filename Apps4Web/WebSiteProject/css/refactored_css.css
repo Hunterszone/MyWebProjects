@@ -150,14 +150,20 @@ button:hover {
     background-color: #eb7434;
     color: #ffffff
   }
-
+#slider-video{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
 .social-sidebar {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-between;
+/*    justify-content: center;
+*/   
     padding: 3em 0 3em 0;
     gap: 3em;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.1);
 }
 
 .social-sidebar a{
@@ -216,7 +222,7 @@ button:hover {
 .pulsate {
     -webkit-animation: pulsate 3s ease-out;
     -webkit-animation-iteration-count: infinite;
-    opacity: 0.5;
+    opacity: 0.1;
 }
 
 .footer {
