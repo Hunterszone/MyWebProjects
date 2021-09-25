@@ -103,28 +103,26 @@
             <a href="http://www.smashingmagazine.com/feed/" target="_blank"><img src="img/rss-feed-icon.png" alt="[Valid RSS]" title="RSS feeds" style="width:40px;height:40px" /></a>
             <a href="#" onclick="showLocation()"><img src="img/marker.png" alt="marker" title="Show Location" style="width:40px;height:40px" /></a>
          </div>
-		 <div class="sidebar-right">
+		 <div class="sidebar-right-badge">
 			<a href="https://statuspage.freshping.io/55647-WebProgrammingWorld" target="_blank"><img src="https://statuspage.freshping.io/badge/2e3e4806-0a16-4fbb-96a9-5db655d9c699?0.5940733387587804"/></a>
-         </div>
-         <div class="footer">
-            <div class='social-sidebar'>
-               <a class='facebook' target='_blank' title="S H A R E" onclick="void window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
-               <span>FACEBOOK</span>
-               </a>
-               <a class='twitter' target='_blank' title="S H A R E" a onclick="void window.open('https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.example.com%2F&original_referer=.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
-               <span>TWITTER</span>
-               </a>
-               <!--<a class='gplus' target='_blank' title="S H A R E" href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=325,width=548');return false;">
-               <span>GOOGLE+</span>
-               </a>-->
-               <a class='linkedin' target='_blank' title="S H A R E" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://YourContentsURLGoesHere.com&amp;title=Article Tile Goes Here&amp;summary=Put your summary here" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=390,width=548');return false;">
-               <span>LINKEDIN</span>
-               </a>
-			   <a class='scroll-up gplus' style="cursor: pointer;" alt="Go to top">
-               <span>SCROLL UP</span>
-               </a>
-			   <!--<img class="scroll-up" src="../img/scroll-to-top.gif" alt="Go to top">-->
-            </div>
+		</div>
+		<div class="sidebar-right">
+			<a class='facebook' target='_blank' title="S H A R E" onclick="void window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
+		   <span>FACEBOOK</span>
+		   </a>
+		   <a class='twitter' target='_blank' title="S H A R E" a onclick="void window.open('https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.example.com%2F&original_referer=.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
+		   <span>TWITTER</span>
+		   </a>
+		   <!--<a class='gplus' target='_blank' title="S H A R E" href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=325,width=548');return false;">
+		   <span>GOOGLE+</span>
+		   </a>-->
+		   <a class='linkedin' target='_blank' title="S H A R E" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://YourContentsURLGoesHere.com&amp;title=Article Tile Goes Here&amp;summary=Put your summary here" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=390,width=548');return false;">
+		   <span>LINKEDIN</span>
+		   </a>
+		   <!--<a class='scroll-up gplus' style="cursor: pointer;" alt="Go to top">
+		   <span>SCROLL UP</span>
+		   </a>-->
+		   <!--<img class="scroll-up" src="../img/scroll-to-top.gif" alt="Go to top">-->
          </div>
       </div>
       <!-- iframe -->
