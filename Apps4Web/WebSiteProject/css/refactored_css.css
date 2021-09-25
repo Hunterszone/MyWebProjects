@@ -178,9 +178,46 @@ button:hover {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding: 0 20em 0 20em;
+    padding: 3em 0 3em 0;
     gap: 3em;
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgba(0,0,0,0.5);
+}
+
+.social-sidebar a{
+    text-decoration: none;
+    color: #FFFFFF;
+    line-height: 25px;
+    transition: 0.6s;
+}
+
+.social-sidebar .facebook {
+    background-color: #167feb;
+    width: 7em;
+    text-align: center;
+    height: 2em;
+	border-radius: 25px;
+}
+
+.social-sidebar .twitter {
+    background-color: #00acee;
+    width: 7em;
+    text-align: center;
+    height: 2em;
+	border-radius: 25px;
+}
+
+.social-sidebar .linkedin {
+    background-color: #0e76a8;
+    width: 7em;
+    text-align: center;
+    height: 2em;
+	border-radius: 25px;
+}
+
+.social-sidebar a:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 1px solid #000000;
 }
 
 .sidebar-right-badge a{
@@ -215,6 +252,14 @@ button:hover {
 
 .sidebar-right .linkedin {
     background-color: #0e76a8;
+    width: 7em;
+    text-align: center;
+    //height: 2em;
+	border-radius: 25px;
+}
+
+.social-sidebar .gplus {
+    background-color: #db4a39;
     width: 7em;
     text-align: center;
     //height: 2em;
