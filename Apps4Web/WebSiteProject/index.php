@@ -11,11 +11,32 @@
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="./css/refactored_css.css">
       <link rel="stylesheet" href="./css/particles.css">
+      <link rel="stylesheet" href="./css/styles.css">
+
+      <!-- open layers -->
+
+
 	  <link rel="shortcut icon" type="image/jpg" href="../img/favicon.ico"/>
+
       <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
       <script src= "https://github.com/VincentGarreau/particles.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+      <!-- openLayer maps -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.7.0/css/ol.css" type="text/css">
+
+      <style>
+
+         .mapBox{
+            height: 400px;
+            width: 100%;
+            display: none;
+         }
+
+      </style>
+
    </head>
    <body>
+      <div class="container">
       <div class="header">
          <h1 class="pulsate"><a style="color:#eb7434">Web</a> Programming <a style="color:#eb7434">World</a></h1>
          <h2>Online school <a style="color:#eb7434">for</a> web development <a style="color:#eb7434">and</a> web design</h2>
@@ -63,44 +84,65 @@
                </div>
             </div>
          </div>
+               <div class="video-slider" id="slider-video">
+            <!-- SLIDE 1 -->
+            <div class="slide">
+               <iframe class="video" width="640" height="360" src="https://www.youtube.com/embed/hQAHSlTtcmY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- SLIDE 2 -->
+            <div class="slide">
+               <iframe class="video" width="640" height="360" src="https://www.youtube.com/embed/dGcsHMXbSOA?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- END OF SLIDES -->
+            <div class="slide-arrow left" ></div>
+            <div class="slide-arrow right" ></div>
+         </div>
          <div class="sidebar">
             <a href="javascript:window.print()"><img src="img/print-icon.png" alt="print this page" id="print-button" title="Print" style="width:40px;height:40px" /></a>
             <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" target="_blank"><img src="img/creative-icon.png" title="Creative Commons" style="width:40px;height:40px" /></a>
             <a href="http://www.smashingmagazine.com/feed/" target="_blank"><img src="img/rss-feed-icon.png" alt="[Valid RSS]" title="RSS feeds" style="width:40px;height:40px" /></a>
-            <a href="#" onclick="showLocation()"><img src="img/marker.png" alt="marker" title="Get Location" style="width:40px;height:40px" /></a>
-
+            <a href="#" onclick="showLocation()"><img src="img/marker.png" alt="marker" title="Show Location" style="width:40px;height:40px" /></a>
          </div>
-		 <div class="sidebar-right">
+		 <div class="sidebar-right-badge">
 			<a href="https://statuspage.freshping.io/55647-WebProgrammingWorld" target="_blank"><img src="https://statuspage.freshping.io/badge/2e3e4806-0a16-4fbb-96a9-5db655d9c699?0.5940733387587804"/></a>
+		</div>
+		<div class="sidebar-right">
+			<a class='facebook' target='_blank' title="S H A R E" onclick="void window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
+			<span>FACEBOOK</span>
+		   </a>
+		   <a class='twitter' target='_blank' title="S H A R E" a onclick="void window.open('https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.example.com%2F&original_referer=.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
+			<span>TWITTER</span>
+		   </a>
+		   <a class='linkedin' target='_blank' title="S H A R E" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://YourContentsURLGoesHere.com&amp;title=Article Tile Goes Here&amp;summary=Put your summary here" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=390,width=548');return false;">
+			<span>LINKEDIN</span>
+		   </a>
+		   <!--<img class="scroll-up" src="../img/scroll-to-top.gif" alt="Go to top">-->
          </div>
-         <div class="footer">
-            <div class='social-sidebar'>
-               <a class='facebook' target='_blank' title="S H A R E" onclick="void window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
-               <span>FACEBOOK</span>
-               </a>
-               <a class='twitter' target='_blank' title="S H A R E" a onclick="void window.open('https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.example.com%2F&original_referer=.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
-               <span>TWITTER</span>
-               </a>
-               <a class='gplus' target='_blank' title="S H A R E" href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=325,width=548');return false;">
-               <span>GOOGLE+</span>
-               </a>
-               <a class='linkedin' target='_blank' title="S H A R E" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://YourContentsURLGoesHere.com&amp;title=Article Tile Goes Here&amp;summary=Put your summary here" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=390,width=548');return false;">
-               <span>LINKEDIN</span>
-               </a>
-            </div>
-         </div>
-         <!--<img class="scroll-up" src="../img/scroll-to-top.gif" alt="Go to top">-->
       </div>
+      <!-- iframe -->
+    
       <!-- map -->
-      <img alt="map" id="map">
+      <div id="mapBox" class="mapBox">
+         <button style="margin-bottom: 10px; cursor: pointer;" id="cancel" onclick="destroyLocation()"><i class="fa fa-times"></i> Close</button>
+      </div>
       <!-- /map -->
+
       <div id="particles-js"></div>
+      </div>
       <!-- scripts -->
+      <!-- oopenlayer maps script -->
+
+      <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.7.0/build/ol.js"></script>
+      <!-- jquery -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       <!-- youtube iframe api -->
+         <script src="https://www.youtube.com/iframe_api"></script>
+      <!-- app js -->
+      <script src="js/app/app.js"></script>
+
       <script src="js/particles.js"></script>
-      <script src="js/app.js"></script>
       <!-- stats.js -->
       <!-- application js -->
-      <script src="js/app/app.js"></script>
       <!--<script src="js/lib/stats.js"></script>-->
       <script>
          var count_particles, stats, update;
@@ -135,16 +177,16 @@
          scrollButton = document.getElementsByClassName("scroll-up")[0];
          scrollButton.addEventListener('click', topFunction);
          
-          // When the user scrolls down 20px from the top of the document, show the button
+          // When the user scrolls down 50px from the top of the document, show the button
           window.onscroll = function() {scrollFunction()};
          
-          /*function scrollFunction() {
-             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          function scrollFunction() {
+             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
                 scrollButton.style.display = "block";
              } else {
                 scrollButton.style.display = "none";
              }
-          }*/
+          }
          
           // When the user clicks on the button, scroll to the top of the document
           function topFunction() {
