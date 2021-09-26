@@ -14,19 +14,27 @@
 	  <link rel="shortcut icon" type="image/jpg" href="../../img/favicon.ico"/>
       <script src= "https://github.com/VincentGarreau/particles.js"></script>
       <script src= "../js/user_login.js"></script>
-      <!--<script>
-         var t1=0;
-         window.onscroll = scroll1;
+      <script>
+       //Get the button:
+         scrollButton = document.getElementsByClassName("scroll-up")[0];
+         scrollButton.addEventListener('click', topFunction);
          
-         function scroll1(){
-                      var toTop = document.getElementById('toTop');
-                      window.scrollY>200 ? toTop.style.display='Block' :  toTop.style.display='none';
-                  	if(window.scrollY>700){            		
-                  		toTop.style.display='none';
-                  	}
-                  }
+          // When the user scrolls down 50px from the top of the document, show the button
+          window.onscroll = function() {scrollFunction()};
          
-         </script>-->
+          function scrollFunction() {
+             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                scrollButton.style.display = "block";
+             } else {
+                scrollButton.style.display = "none";
+             }
+          }
+         
+          // When the user clicks on the button, scroll to the top of the document
+          function topFunction() {
+             window.scrollTo({top: 0, behavior: 'smooth'}) 
+          }			  
+       </script>
    </head>
    </br></br>
    <table>
@@ -107,16 +115,16 @@
 		<div class="footer">
             <div class='social-sidebar'>
                <a class='facebook' target='_blank' title="S H A R E" onclick="void window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
-               <span>FACEBOOK</span>
+				<span>FACEBOOK</span>
                </a>
                <a class='twitter' target='_blank' title="S H A R E" a onclick="void window.open('https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.example.com%2F&original_referer=.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
-               <span>TWITTER</span>
-               </a>
-               <a class='gplus' target='_blank' title="S H A R E" href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=325,width=548');return false;">
-               <span>GOOGLE+</span>
+				<span>TWITTER</span>
                </a>
                <a class='linkedin' target='_blank' title="S H A R E" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://YourContentsURLGoesHere.com&amp;title=Article Tile Goes Here&amp;summary=Put your summary here" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=390,width=548');return false;">
-               <span>LINKEDIN</span>
+				<span>LINKEDIN</span>
+               </a>
+			   <a class='scroll-up gplus' style="cursor: pointer;" alt="Go to top">
+				<span>SCROLL UP</span>
                </a>
             </div>
         </div>
