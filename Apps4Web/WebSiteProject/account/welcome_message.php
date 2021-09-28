@@ -33,7 +33,7 @@
                 echo "</font>";
 				echo "<form action='welcome_message.php' method='post' enctype='multipart/form-data'>";
 				echo "<div align='center'>";
-				echo "<input type='file' name='file' size='45' />";
+				echo "<input type='file' name='fileToUpload' size='45' />";
 				echo "<input type='submit' name='changePic' value='Change pic' />";
 				echo "</div>";
 				echo "</form>";
@@ -46,14 +46,50 @@
 				{
 					$host = 'localhost';
 					$user = 'root';
-					$pass = 'root';
+					$pass = '';
 					$db = 'phpwebsite';
 					$prefix = "";
 					$conn = new mysqli($host, $user, $pass, $db, 3306) or die("Could not connect to the database");
-					$username = htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
-					$sql = "SELECT * FROM users WHERE username='$username'";
-					$result = mysqli_query($conn, $sql);
-							
+					//$username = htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
+					$userId = htmlspecialchars($_SESSION['SESS_MEMBER_ID']);
+
+					//file name
+					$filename = $_FILES['fileToUpload']['name'];
+					$temp_name = $_FILES['fileToUpload']['tmp_name'];
+					$folder = "../uploads/".$filename;
+					//get file type
+					$fileType = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+
+					//check file type
+					if ($fileType != 'jpg' && $fileType != 'png' && $fileType !='jpeg' && $fileType!='gif') {
+
+						echo 'image cant be uploaded';
+					}else{
+						//check file size
+					if ($_FILES['fileToUpload']['size'] > 500000) {
+						echo "Image size is too large";
+
+					}else{
+								
+								$sql = "UPDATE  users SET profile_pic ='$filename' WHERE mem_id='$userId'";
+
+							$result = mysqli_query($conn, $sql);
+
+							if (move_uploaded_file($temp_name, $folder)) {
+								echo "image uploaded";
+							}else{
+								echo "failed To upload image";
+							}
+							//an automatic redirect to update the pic and stop a double submission
+							header('Location: /account/welcome_message.php');
+							return;
+					}
+				}
+					
+
+					}
+
+					/*
 					if(mysqli_num_rows($result)> 0){
 						$row = mysqli_fetch_assoc($result);
 						$mem_id= $row['mem_id'];
@@ -62,9 +98,8 @@
 						$rowimg = mysqli_fetch_assoc($resultimg);
 					}
 					
-					return $rowimg;
-				}
-				
+					return $rowimg;*/
+					
 				function getUserIpAddr(){
 					if(!empty($_SERVER['HTTP_CLIENT_IP'])){
 						//ip from share internet

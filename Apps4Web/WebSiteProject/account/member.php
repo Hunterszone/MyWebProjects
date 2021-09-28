@@ -1,7 +1,7 @@
 <?php
 		
 		include_once '../connectivity/connection.php';
-		$username = htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
+/*		$username = htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
         $sql = "SELECT * FROM users WHERE username='$username'";
         $result = mysqli_query($conn, $sql);
 		        
@@ -24,7 +24,23 @@
                 //}
             //}
         }
+*/
+        $id = $_SESSION['SESS_MEMBER_ID'];
+        $sql = "SELECT * FROM users WHERE mem_id = $id";
 
+        $results = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($results) > 0) {
+            while($row = mysqli_fetch_array($results)){
+            $pic = $row['profile_pic'];
+             echo "<div class=container>";
+                    echo "<img src= '../uploads/".$pic."'>";
+
+                    echo "</div>";
+
+        }
+ 
+            // code...
+        }
         if(isset($_SESSION['mem_id'])){
             if ($_SESSION['mem_id'] == 1){
                 echo "You are logged in as user #1";
