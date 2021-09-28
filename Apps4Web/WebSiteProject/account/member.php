@@ -34,12 +34,12 @@
             $pic = $row['profile_pic'];
              echo "<div class=container>";
                     echo "<img src= '../uploads/".$pic."'>";
-
+                        echo"<p>".$row['username']."</p>";
                     echo "</div>";
 
         }
  
-            // code...
+         
         }
         if(isset($_SESSION['mem_id'])){
             if ($_SESSION['mem_id'] == 1){
