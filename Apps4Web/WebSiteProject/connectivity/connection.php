@@ -23,10 +23,10 @@
 	}*/
 	
 	/*alter users table*/
-	$sql = "ALTER TABLE users ADD profile_pic varchar(100) NULL AFTER username";
+	/*$sql = "ALTER TABLE users ADD profile_pic varchar(100) NULL AFTER username";
 	if ($conn->query($sql) === TRUE) {
 	}else{
 		die("failed". $conn->connect_error);
-	}
+	}*/
 ?>
 
