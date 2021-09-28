@@ -3,8 +3,8 @@
 	// DB connection
     $host = 'localhost';
 	$user = 'root';
-    //$pass = 'root';
-    $pass = '';
+    $pass = 'root';
+    //$pass = '';
     $db = 'phpwebsite';
 	$prefix = "";
     $conn = new mysqli($host, $user, $pass, $db, 3306) or die("Could not connect to the database");
@@ -23,11 +23,10 @@
 	}*/
 	
 	/*alter users table*/
-	/*$sql = "ALTER TABLE users ADD profile_pic varchar(100) NULL AFTER username";
+	$sql = "ALTER TABLE users ADD profile_pic varchar(100) NULL AFTER username";
 	if ($conn->query($sql) === TRUE) {
-		echo "table created";
 	}else{
 		die("failed". $conn->connect_error);
-	}*/
+	}
 ?>
 
