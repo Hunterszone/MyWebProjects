@@ -11,32 +11,63 @@
 
                 echo "<center>";
                 echo "<span style='font-size:20px'>";
-                echo "<p>Welcome, " . htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
-                echo "!</p>";
-				echo "<p>Your personal ID is: " . htmlspecialchars($_SESSION['SESS_MEMBER_ID'], ENT_QUOTES, 'UTF-8');
-                echo "</p>";
-				echo "<p>Your password is: " . htmlspecialchars($_SESSION['SESS_PASSWORD'], ENT_QUOTES, 'UTF-8');
-                echo "</p>";
-                echo "<p>Your email is: " . htmlspecialchars($_SESSION['SESS_EMAIL'], ENT_QUOTES, 'UTF-8');
-                echo "</p>";
-                echo "<p>Your hostname is: " . htmlspecialchars($_SERVER['SERVER_NAME'], ENT_QUOTES, 'UTF-8');
-                echo "</p>";
-                echo "<p>Your remote IP address is: " . htmlspecialchars($remoteIp, ENT_QUOTES, 'UTF-8');
-                echo "</p>";
-				echo "<p>Your client IP address is: {$geoplugin->ip}";
-                echo "</p>";
-				echo "<p>Country of origin: {$geoplugin->countryName}";
-                echo "</p>";
-				echo "<p>City of origin: {$geoplugin->city}";
-                echo "</p>";
-                echo "</center>";
+                echo "<p><b>Welcome, " . htmlspecialchars($_SESSION['SESS_USERNAME'], ENT_QUOTES, 'UTF-8');
+                echo "!</b></p>";
+				echo "<table style='width:100%; border:1px solid black;'>";
+				echo "<tr><th>Personal ID</th>";
+				echo "<th>Password</th>";
+				echo "<th>Email</th>";
+				echo "<th>Hostname</th>";
+				echo "<th>Remote IP</th>";
+				echo "<th>Client IP</th>";
+				echo "<th>Country</th>";
+				echo "<th>City</th></tr>";
+				echo "<tr><td>";
+				echo "<center>";
+				echo htmlspecialchars($_SESSION['SESS_MEMBER_ID'], ENT_QUOTES, 'UTF-8');
+				echo "</center>";
+				echo "</td>";
+				echo "<td>";
+				echo "<center>";
+				echo htmlspecialchars($_SESSION['SESS_PASSWORD'], ENT_QUOTES, 'UTF-8');
+				echo "</center>";
+				echo "</td>";
+				echo "<td>";
+				echo "<center>";
+				echo htmlspecialchars($_SESSION['SESS_EMAIL'], ENT_QUOTES, 'UTF-8');
+				echo "</center>";
+				echo "</td>";
+				echo "<td>";
+				echo "<center>";
+				echo htmlspecialchars($_SERVER['SERVER_NAME'], ENT_QUOTES, 'UTF-8');
+				echo "</center>";
+				echo "</td>";
+				echo "<td>";
+				echo "<center>";
+				echo htmlspecialchars($remoteIp, ENT_QUOTES, 'UTF-8');
+				echo "</center>";
+				echo "</td>";
+				echo "<td>";
+				echo "<center>{$geoplugin->ip}</center>";
+				echo "</td>";
+				echo "<td>";
+				echo "<center>{$geoplugin->countryName}</center>";
+				echo "</td>";
+				echo "<td>";
+				echo "<center>{$geoplugin->city}</center>";
+				echo "</td></tr>";
+				echo "</table>";
+				echo "</center>";
                 echo "</font>";
+				echo "<p>";
+				echo "<img src= '../uploads/".$pic."' style='border-radius: 8px; max-width: 100%; max-height: 100%; margin: auto;'>";
 				echo "<form action='welcome_message.php' method='post' enctype='multipart/form-data'>";
 				echo "<div align='center'>";
-				echo "<input type='file' name='fileToUpload' size='45' />";
+				echo "<input type='file' name='fileToUpload' />";
 				echo "<input type='submit' name='changePic' value='Change pic' />";
 				echo "</div>";
 				echo "</form>";
+				echo "</p>";
 				
 				if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['changePic']))
 				{
@@ -62,43 +93,36 @@
 
 					//check file type
 					if ($fileType != 'jpg' && $fileType != 'png' && $fileType !='jpeg' && $fileType!='gif') {
-
-						echo 'image cant be uploaded';
-					}else{
+						echo '<script language="javascript">';
+						echo 'alert("Image type is unsupported!")';
+						echo '</script>';
+						return;
+					} else{
 						//check file size
-					if ($_FILES['fileToUpload']['size'] > 500000) {
-						echo "Image size is too large";
-
-					}else{
-								
+						if ($_FILES['fileToUpload']['size'] > 500000) {
+							echo '<script language="javascript">';
+							echo 'alert("Image size is too large!")';
+							echo '</script>';
+							return;
+						}else{
+									
 								$sql = "UPDATE  users SET profile_pic ='$filename' WHERE mem_id='$userId'";
 
-							$result = mysqli_query($conn, $sql);
+								$result = mysqli_query($conn, $sql);
 
-							if (move_uploaded_file($temp_name, $folder)) {
-								echo "image uploaded";
-							}else{
-								echo "failed To upload image";
-							}
-							//an automatic redirect to update the pic and stop a double submission
-							header('Location: /account/welcome_message.php');
-							return;
-					}
+								if (move_uploaded_file($temp_name, $folder)) {
+									echo "image uploaded";
+								}else{
+									echo "failed To upload image";
+								}
+								//an automatic redirect to update the pic and stop a double submission
+								header('Location: /account/welcome_message.php');
+								return;
+						}
 				}
 					
 
 					}
-
-					/*
-					if(mysqli_num_rows($result)> 0){
-						$row = mysqli_fetch_assoc($result);
-						$mem_id= $row['mem_id'];
-						$sqlimg = "SELECT img FROM user_img WHERE id=3";
-						$resultimg=mysqli_query($conn,$sqlimg);
-						$rowimg = mysqli_fetch_assoc($resultimg);
-					}
-					
-					return $rowimg;*/
 					
 				function getUserIpAddr(){
 					if(!empty($_SERVER['HTTP_CLIENT_IP'])){
