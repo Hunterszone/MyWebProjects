@@ -60,7 +60,11 @@
 				echo "</center>";
                 echo "</font>";
 				echo "<p>";
+				echo "<center>";
 				echo "<img src= '../uploads/".$pic."' style='border-radius: 8px; max-width: 100%; max-height: 100%; margin: auto;'>";
+				echo "</center>";
+				echo "</p>";
+				echo "<p>";
 				echo "<form action='welcome_message.php' method='post' enctype='multipart/form-data'>";
 				echo "<div align='center'>";
 				echo "<input type='file' name='fileToUpload' />";

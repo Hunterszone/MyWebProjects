@@ -13,10 +13,10 @@
       <link rel="stylesheet" href="../../css/megaMenuSecond.css">
 	  <link rel="shortcut icon" type="image/jpg" href="../../img/favicon.ico"/>
       <script src= "https://github.com/VincentGarreau/particles.js"></script>
-      <script src= "../js/user_login.js"></script>
+      <script src= "../../js/user_login.js"></script>
       <script>
        //Get the button:
-         scrollButton = document.getElementsByClassName("scroll-up")[0];
+         scrollButton = document.getElementsByClassName("scroll")[0];
          scrollButton.addEventListener('click', topFunction);
          
           // When the user scrolls down 50px from the top of the document, show the button
@@ -32,7 +32,7 @@
          
           // When the user clicks on the button, scroll to the top of the document
           function topFunction() {
-             window.scrollTo({top: 0, behavior: 'smooth'}) 
+             window.scrollTo({top: 0, behavior: 'smooth'}); 
           }			  
        </script>
    </head>
@@ -126,7 +126,7 @@
                <a class='linkedin' target='_blank' title="S H A R E" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://YourContentsURLGoesHere.com&amp;title=Article Tile Goes Here&amp;summary=Put your summary here" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=390,width=548');return false;">
 				<span>LINKEDIN</span>
                </a>
-			   <a class='scroll-up gplus' style="cursor: pointer;" alt="Go to top">
+			   <a class="scroll gplus" style="cursor: pointer;" alt="Go to top">
 				<span>SCROLL UP</span>
                </a>
             </div>

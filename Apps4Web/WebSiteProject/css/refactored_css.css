@@ -214,6 +214,14 @@ button:hover {
 	border-radius: 25px;
 }
 
+.social-sidebar .gplus {
+    background-color: #db4a39;
+    width: 7em;
+    text-align: center;
+    height: 2em;
+	border-radius: 25px;
+}
+
 .social-sidebar a:hover {
     background-color: #FFFFFF;
     color: #000000;
@@ -258,21 +266,13 @@ button:hover {
 	border-radius: 25px;
 }
 
-.social-sidebar .gplus {
-    background-color: #db4a39;
-    width: 7em;
-    text-align: center;
-    //height: 2em;
-	border-radius: 25px;
-}
-
 .sidebar-right a:hover {
     background-color: #FFFFFF;
     color: #000000;
     //border: 1px solid #000000;
 }
 
-.scroll-up {
+.scroll {
     display: none;
     float: right;
     width: 60px;
