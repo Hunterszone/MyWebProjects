@@ -13,6 +13,10 @@
       <link rel="stylesheet" href="./css/particles.css">
       <link rel="stylesheet" href="./css/styles.css">
 
+      <!-- rwd styles-->
+      <link rel="stylesheet" href="./css/rwd/small.css">
+
+
       <!-- open layers -->
 
 
@@ -44,12 +48,13 @@
       <div class="content">
          <div class="search-boxes">
             <!-- HTML for SEARCH BAR -->
-            <div id="tfheader">
+            <div id="tfheader" class="index-search-form">
                <form method="get" action="http://www.google.com/search" target="_blank">
                   <input type="search" ng-model="name" class="tftextinput" name="q" id="searchbar" placeholder="Google results" size="56" maxlength="120">
-                  <input type="submit" value="Search" style="cursor:pointer" class="tfbutton" id="searchsubmit" class="searchsubmit" />
-                  <div>
-                     <input type="checkbox" class="L1" name="sitesearch" value="bing.com" unchecked /><font size="4"> Bing results</font>
+                  <input type="submit" value="Search" style="cursor:pointer" class="tfbutton" id="searchsubmit" class="searchsubmit index-search-form-button" />
+                  <div class="index-checkbox" style="margin-top: 10px;">
+                     <input type="checkbox" class="L1" id="index-search-form-checkbox" name="sitesearch" value="bing.com" unchecked />
+                     <span>Bing results</span>
                   </div>
                </form>
             </div>
