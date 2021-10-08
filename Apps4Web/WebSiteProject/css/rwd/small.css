@@ -9,6 +9,44 @@
   .container{
   	padding: 30px;
   }
+  .header h1{
+    font-size: 2em;
+    text-align: center;
+  }
+  .header h2{
+    font-size: 1.5em;
+    text-align: center;
+  }
+  .facebook, .twitter, .linkedin{
+    display: none;
+  }
+  .phone-social-links .facebook {
+    background-color: transparent;
+    color: hsl(210deg 84% 50%);
+
+}
+ .phone-social-links .twitter {
+    background-color: transparent;
+    color: hsl(197deg 100% 47%);
+
+}
+ .phone-social-links .linkedin {
+    background-color: transparent;
+    color: hsl(199deg 85% 36%);
+
+}
+.icons{
+  background-color: white;
+}
+
+
+
+  .phone-social-links{
+    display: block;
+  }
+  .web-social-links{
+    display: none;
+  }
   .dropdown_menus{
   	display: none;
 
