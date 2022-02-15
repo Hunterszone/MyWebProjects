@@ -19,7 +19,6 @@ function parseRandWord() {
         if (request.status >= 200 && request.status < 400) {
             secretText = data[0];
 			parseWordAttributes();
-            //console.log(data[0].word)
         } else {
             console.log('error')
         }
@@ -74,8 +73,6 @@ function generateSecret() {
 	attempt = 0;
 	
 	parseRandWord();
-
-    //alert(secretText);
 	
     alert("New word was generated!");
 }
@@ -104,8 +101,6 @@ function gameTwo() {
 
     if (isNaN(wordToLower)) {
 
-        //document.write('<font color="yellow" size="4"><center><b>The word matches the required length!</b></center></font>');
-
         document.write('<font color="yellow" size="4"><center><b>Your suggestion is: </b></center></font>' + '<font color="cyan" size="4"><center><b>' + wordToLower.toUpperCase() + '</b></center></font>');		
 
 		document.write("<br>");
@@ -116,10 +111,9 @@ function gameTwo() {
 		
 		document.write('<style>.nice {background-color: #03AD07;border-style: solid;border-color: black;color: white;padding: 12px 24px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 6px;cursor: pointer;width: 190px;height: 50px;)</style>');
 		
-		document.write('<center><button id="plays" class="nice" onclick="gameTwo();">Play again?</button><button class="nice" id="plays2" onclick="hintword();">Hint</button><button class="nice" id="plays3" onclick="console.log(generateSecret());">Generator</button></center>');
+		document.write('<center><button class="nice" id="plays" onclick="gameTwo();">Play again?</button><button class="nice" id="plays2" onclick="hintword();">Hint</button><button class="nice" id="plays3" onclick="console.log(generateSecret());">Generator</button></center>');
 		
 		document.write('<br><center><textarea readonly id="hintWord" name="hintWord" rows="10" cols="50">Hints will be displayed here</textarea></center><br>');
-
 
         for (i = 0; i < wordToLower.length; i++) {
 
@@ -137,7 +131,7 @@ function gameTwo() {
 
         }
 		
-		document.write('<p><font color="yellow" size="4"><center><b>The following letters match: </b></center></font></p>');
+		document.write('<p><font color="yellow" size="4"><center><b>Following letters match: </b></center></font></p>');
 
 		document.write("\n\n");
 
@@ -154,11 +148,10 @@ function gameTwo() {
 			perfectMatch();
 			
             document.write('<font color="yellow" size="4"><center><b>\nA PERFECT MATCH! YOU WON!</b></center></font>');
-
-            //document.write('<center><table><tr><th><button class="nice" onclick="perfectMatch();">Celebrate!</button></th></tr></table></center>');
         }
-
+		
     } else {
+		
         document.write('<font color="yellow" size="4"><center><br><br><b>Looking for a word...</b></center></font>');
 		
 		document.write("<br>");
@@ -177,6 +170,7 @@ function gameTwo() {
 }
 
 function hintWordOne() {
+
     var msg = new SpeechSynthesisUtterance();
 
     msg.text = "Hint number one!";
@@ -232,37 +226,9 @@ function gameOver() {
 
 }
 
-function allowDrop(ev) {
-
-    ev.preventDefault();
-
-}
-
-
-function drag(ev) {
-
-    ev.dataTransfer.setData("text", ev.target.id);
-
-}
-
-
-
-function drop(ev) {
-
-    ev.preventDefault();
-
-    var data = ev.dataTransfer.getData("text");
-
-    ev.target.appendChild(document.getElementById(data)); //IF YOU WANT DRAGnDROP TEXT-ONLY, THEN: 
-
-    //ev.target.innerHTML+=" <p>"+document.getElementById(data).innerHTML+"</p>"; 
-
-}
-
-
 function hintword() {
 
-    if (attempt == 1) {
+    if (attempt == 0) {
 
         hintWordOne();
 		
@@ -272,7 +238,7 @@ function hintword() {
 
     }
 
-    if (attempt == 2) {
+    if (attempt == 1) {
 		
 		hintWordTwo();
 		
@@ -291,7 +257,7 @@ function hintword() {
         
     }
 
-    if (attempt == 3) {
+    if (attempt == 2) {
         
 		hintWordThree();
 		
@@ -305,19 +271,11 @@ function hintword() {
 		document.getElementById('hintWord').innerHTML = "Hint 3: " + msg3;
     }
 
-    if (attempt == 4) {
+    if (attempt == 3) {
 		
-		document.write('<audio id="lossSound" src="sounds/highsc.wav" preload="auto"></audio>');
-      
-		var soundLoss = document.getElementById("lossSound");
-		soundLoss.play();
 		gameOver();
 		
-        document.write("<br>");
-		
-        document.write('<font color="yellow" size="4"><center><b>No more hints! Game over!</b></center></font>');
-
-        attempt = 0;
+		document.location.reload();
     }
 	
 	document.write('<style>body{background-size: 100%;}</style>');
