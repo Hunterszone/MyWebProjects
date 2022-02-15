@@ -16,7 +16,7 @@ function parseRandWord() {
         // Begin accessing JSON data here
         data = JSON.parse(this.response)
 
-        if (request.status >= 200 && request.status < 400) {
+        if (request.status == 200) {
             secretText = data[0];
 			parseWordAttributes();
         } else {
@@ -31,7 +31,7 @@ function parseRandWord() {
 
 function parseWordAttributes() {
 	
-	if (request.status >= 200 && request.status < 400) {
+	if (request.status == 200) {
 		
 		parsedWord = "https://api.dictionaryapi.dev/api/v2/entries/en/" + secretText;		
 		
@@ -40,23 +40,23 @@ function parseWordAttributes() {
 		request.onload = function() {
 			// Begin accessing JSON data here
 			data = JSON.parse(this.response)
-			meanings = data[0].meanings[0];
-			definitions = data[0].meanings[0].definitions[0];
+			meanings = data[0]?.meanings[0];
+			definitions = data[0]?.meanings[0]?.definitions[0];
 			
 			if(typeof meanings !== 'undefined' ||
 			   typeof definitions !== 'undefined') {
-				wordDefinition = data[0].meanings[0].definitions[0].definition;
-				wordSynonyms = data[0].meanings[0].definitions[0].synonyms.join();
-				partOfSp = data[0].meanings[0].partOfSpeech;
+				wordDefinition = data[0]?.meanings[0]?.definitions[0]?.definition;
+				wordSynonyms = data[0]?.meanings[0]?.definitions[0]?.synonyms.join();
+				partOfSp = data[0]?.meanings[0]?.partOfSpeech;
 			} else {
 				wordDefinition = "Definition is missing!";
 				wordSynonyms = "SYNONYMS INFO IS MISSING!";
 				partOfSp = "Part of speech info is missing!";
 			}
-			console.log(data[0]);
 		} 
 		
-		request.send()
+		console.log(data[0]);
+		request.send();
 		
 	} else {
 		wordDefinition = "Definition is missing!";
@@ -266,7 +266,7 @@ function hintword() {
 				
 		var msg3 = "The first letter is " + firstLetter.toUpperCase() + 
 				   " and the last letter is " + lastLetter.toUpperCase() + 
-				   ". \nDefinition: " + parseWordAttributes() + "! Could be plural or 3rd person.";
+				   ". \nDefinition: " + parseWordAttributes() + "Could be plural or 3rd person!";
 		
 		document.getElementById('hintWord').innerHTML = "Hint 3: " + msg3;
     }
