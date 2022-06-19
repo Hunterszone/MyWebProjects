@@ -1,5 +1,4 @@
 <?php
-
     	//Start session
     	session_start();
      
@@ -19,7 +18,7 @@
         
         if (isset($_COOKIE['PrivatePageLogin'])) {
         if ($_COOKIE['PrivatePageLogin'] == md5($password.$nonsense)) {
-        ?>
+?>
 
 <!-- LOGGED IN CONTENT HERE -->
 
@@ -74,8 +73,8 @@
 				setcookie($arrValues[0],$arrValues[1],time()+3600*24*365,'/','.hunterszone.byethost11.com');
 				mysqli_query($conn,$cookieQry);
     			session_write_close();
-    			header("location: ../auth/user_login.php");
-    			exit();
+				header("location: ../qr/generateQR.php");
+				exit();
     		}else {
     			//Login failed -> error message
     			$errmsg_arr[] = 'Username or password not found';

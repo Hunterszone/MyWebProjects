@@ -1,7 +1,7 @@
 <?php
    session_start();	
    session_destroy();
-   ?>
+?>
 <!DOCTYPE html>
 <html>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,14 +59,15 @@
 				<button style="cursor:pointer" onclick="window.location.href='./auth/SignUp.php'")>
 				<i class="fa fa-user-plus"></i> Sign up</button>
             </div>
-            <div class="dropdown">
-				<button class="dropbtn"><i class="fa fa-sign-in"></i> Login</button>
-				<div class="dropdown-content">
-					<button type="button" id="but1" style="cursor:pointer" onclick="window.location.href='./forms/login_form.php'" value="Password">Basic authentication</button>
-					<button type="button" id="but2" style="cursor:pointer" onclick="window.location.href='./qr/generateQR.php'" value="2FA/QR code">2FA with QR code</button>
-					<button type="button" id="but3" style="cursor:pointer" onclick="window.location.href='./sms/enterMobile.php'" value="SMS login">2FA with SMS code</button>
+			<form method="post" action="">
+				<div class="dropdown">
+					<button class="dropbtn"><i class="fa fa-sign-in"></i> Login</button>
+					<div class="dropdown-content">
+						<button type="button" id="qr-auth" style="cursor:pointer" onclick="window.location.href='./forms/login_form.php'" value="qrCode">2FA with QR code</button>
+						<button type="button" id="sms-auth" style="cursor:pointer" onclick="window.location.href='./forms/login_form_sms.php'" value="smsCode">2FA with SMS code</button>
+					</div>
 				</div>
-            </div>
+			</form>
             <div class="dropdown">
                <button class="dropbtn"><i class="fa fa-book"></i> Articles</button>
                <div class="dropdown-content">
