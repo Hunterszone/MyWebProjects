@@ -271,6 +271,9 @@ button:hover {
     color: #000000;
     //border: 1px solid #000000;
 }
+.phone-social-links{
+    display: none;
+}
 
 .scroll {
     display: none;

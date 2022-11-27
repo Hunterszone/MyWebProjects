@@ -9,9 +9,14 @@
       <title>Home</title>
       <meta charset="utf-8">
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
       <link rel="stylesheet" href="./css/refactored_css.css">
       <link rel="stylesheet" href="./css/particles.css">
       <link rel="stylesheet" href="./css/styles.css">
+
+                 <!-- rwd styles-->
+      <link rel="stylesheet" href="./css/rwd/small.css">
 
       <!-- open layers -->
 
@@ -44,12 +49,13 @@
       <div class="content">
          <div class="search-boxes">
             <!-- HTML for SEARCH BAR -->
-            <div id="tfheader">
+            <div id="tfheader" class="index-search-form">
                <form method="get" action="http://www.google.com/search" target="_blank">
                   <input type="search" ng-model="name" class="tftextinput" name="q" id="searchbar" placeholder="Google results" size="56" maxlength="120">
-                  <input type="submit" value="Search" style="cursor:pointer" class="tfbutton" id="searchsubmit" class="searchsubmit" />
-                  <div>
-                     <input type="checkbox" class="L1" name="sitesearch" value="bing.com" unchecked /><font size="4"> Bing results</font>
+                  <input type="submit" value="Search" style="cursor:pointer" class="tfbutton" id="searchsubmit" class="searchsubmit index-search-form-button" />
+                  <div class="index-checkbox" style="margin-top: 10px;">
+                     <input type="checkbox" class="L1" id="index-search-form-checkbox" name="sitesearch" value="bing.com" unchecked />
+                     <span>Bing results</span>
                   </div>
                </form>
             </div>
@@ -85,7 +91,7 @@
                </div>
             </div>
          </div>
-               <div class="video-slider" id="slider-video">
+               <div class="video-slider" id="slider-video" style="width:100%">
             <!-- SLIDE 1 -->
             <div class="slide">
                <iframe class="video" width="640" height="360" src="https://www.youtube.com/embed/hQAHSlTtcmY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -108,16 +114,34 @@
 			<a href="https://statuspage.freshping.io/55647-WebProgrammingWorld" target="_blank"><img src="https://statuspage.freshping.io/badge/2e3e4806-0a16-4fbb-96a9-5db655d9c699?0.5940733387587804"/></a>
 		</div>
 		<div class="sidebar-right">
-			<a class='facebook' target='_blank' title="S H A R E" onclick="void window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
-			<span>FACEBOOK</span>
-		   </a>
-		   <a class='twitter' target='_blank' title="S H A R E" a onclick="void window.open('https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.example.com%2F&original_referer=.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
-			<span>TWITTER</span>
-		   </a>
-		   <a class='linkedin' target='_blank' title="S H A R E" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://YourContentsURLGoesHere.com&amp;title=Article Tile Goes Here&amp;summary=Put your summary here" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=390,width=548');return false;">
-			<span>LINKEDIN</span>
-		   </a>
-		   <!--<img class="scroll-up" src="../img/scroll-to-top.gif" alt="Go to top">-->
+			<div class="web-social-links">
+            <a class='facebook' target='_blank' title="S H A R E" onclick="void window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
+         <span>FACEBOOK</span>
+         </a>
+         <a class='twitter' target='_blank' title="S H A R E" a onclick="void window.open('https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.example.com%2F&original_referer=.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
+         <span>TWITTER</span>
+         </a>
+         <a class='linkedin' target='_blank' title="S H A R E" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://YourContentsURLGoesHere.com&amp;title=Article Tile Goes Here&amp;summary=Put your summary here" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=390,width=548');return false;">
+         <span>LINKEDIN</span>
+         </a>
+         <!--<img class="scroll-up" src="../img/scroll-to-top.gif" alt="Go to top">-->
+         </div>
+
+         <div class="phone-social-links">
+             <a class='facebook' target='_blank' title="S H A R E" onclick="void window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
+         <span><i class="icons fa fa-facebook-square fa-lg" aria-hidden="true"></i>
+            </span>
+         </a>
+         <a class='twitter' target='_blank' title="S H A R E" a onclick="void window.open('https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.example.com%2F&original_referer=.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
+         <span><i class="icons fa fa-twitter-square fa-lg" aria-hidden="true"></i>
+            </span>
+         </a>
+         <a class='linkedin' target='_blank' title="S H A R E" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://YourContentsURLGoesHere.com&amp;title=Article Tile Goes Here&amp;summary=Put your summary here" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=390,width=548');return false;">
+         <span><i class="icons fa fa-linkedin-square fa-lg" aria-hidden="true"></i>
+            </span>
+         </a>
+         </div>
+
          </div>
       </div>
       <!-- iframe -->
