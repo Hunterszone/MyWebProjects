@@ -5,6 +5,7 @@
       <title>Login</title>
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	  <link rel="shortcut icon" type="image/jpg" href="../img/favicon.ico"/>
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">	  
    </head>
    <body>
       <?php
@@ -61,7 +62,12 @@
                <td>
                   <div align="right">Password</div>
                </td>
-               <td><input type="password" name="password" type="text" /></td>
+               <td>
+				<input id="myPass" type="password" name="password" />
+			   </td> 
+			   <td>
+				<i class="far fa-eye" id="togglePassword" onclick="togglePass()" style="margin-left: -30px; cursor: pointer;"></i>
+			   </td>
             </tr>
             <tr>
                <td>
@@ -92,6 +98,16 @@
             </tr>
          </table>
       </form>
+	  <script>
+			function togglePass() {
+			  var x = document.getElementById("myPass");
+			  if (x.type === "password") {
+				x.type = "text";
+			  } else {
+				x.type = "password";
+			  }
+			}
+	  </script>
    </body>
    <STYLE TYPE="text/css">
       body { 
