@@ -66,7 +66,7 @@
 				<input id="myPass" type="password" name="password" />
 			   </td> 
 			   <td>
-				<i class="far fa-eye" id="togglePassword" onclick="togglePass()" style="margin-left: -30px; cursor: pointer;"></i>
+				<i class="fa fa-eye-slash" id="togglePassword" onclick="togglePass();" style="margin-left: -30px; cursor: pointer;"></i>
 			   </td>
             </tr>
             <tr>
@@ -101,10 +101,13 @@
 	  <script>
 			function togglePass() {
 			  var x = document.getElementById("myPass");
+			  var y = document.getElementById("togglePassword");
 			  if (x.type === "password") {
 				x.type = "text";
+				y.className = "far fa-eye"
 			  } else {
 				x.type = "password";
+				y.className = "far fa-eye-slash"
 			  }
 			}
 	  </script>
