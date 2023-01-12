@@ -4,20 +4,22 @@
 ?>
 <!DOCTYPE html>
 <html>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/refactored_css.css">
+    <link rel="stylesheet" href="./css/particles.css">
+    <link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+	
+	<head>
       <title>Home</title>
       <meta charset="utf-8">
-	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="./css/refactored_css.css">
-      <link rel="stylesheet" href="./css/particles.css">
-      <link rel="stylesheet" href="./css/styles.css">
-
-      <!-- open layers -->
-
-
+	 
 	  <link rel="shortcut icon" type="image/jpg" href="../img/favicon.ico"/>
 
+	  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.js"></script>
       <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
       <script src= "https://github.com/VincentGarreau/particles.js"></script>
       <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -135,17 +137,17 @@
 
       <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.7.0/build/ol.js"></script>
       <!-- jquery -->
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-       <!-- youtube iframe api -->
-         <script src="https://www.youtube.com/iframe_api"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- youtube iframe api -->
+      <script src="https://www.youtube.com/iframe_api"></script>
       <!-- app js -->
       <script src="js/app/app.js"></script>
-
-      <script src="js/particles.js"></script>
+	  <!--<script src="js/app.js"></script>-->
+      <!--<script src="js/particles.js"></script>-->
       <!-- stats.js -->
       <!-- application js -->
       <!--<script src="js/lib/stats.js"></script>-->
-      <script>
+      <!--<script>
          var count_particles, stats, update;
          stats = new Stats;
          stats.setMode(0);
@@ -163,7 +165,7 @@
          requestAnimationFrame(update);
          };
          requestAnimationFrame(update);
-      </script>
+      </script>-->
       <!-- JAVA SCRIPT -->
       <script type="text/javascript">
          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
