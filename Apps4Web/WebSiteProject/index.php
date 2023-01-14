@@ -23,9 +23,7 @@
       <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
       <script src= "https://github.com/VincentGarreau/particles.js"></script>
       <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-      <!-- openLayer maps -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.7.0/css/ol.css" type="text/css">
-
+    
       <style>
 
          .mapBox{
@@ -63,7 +61,7 @@
             </div>
 			<form method="post" action="">
 				<div class="dropdown">
-					<button class="dropbtn"><i class="fa fa-sign-in"></i> Login</button>
+					<button type="button" class="dropbtn"><i class="fa fa-sign-in"></i> Login</button>
 					<div class="dropdown-content">
 						<button type="button" id="qr-auth" style="cursor:pointer" onclick="window.location.href='./forms/login_form.php'" value="qrCode">2FA with QR code</button>
 						<button type="button" id="sms-auth" style="cursor:pointer" onclick="window.location.href='./forms/login_form_sms.php'" value="smsCode">2FA with SMS code</button>
