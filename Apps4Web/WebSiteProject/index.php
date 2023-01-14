@@ -81,9 +81,12 @@
                <button class="dropbtn"><i class="fa fa-pencil"></i> Contact us</button>
                <div class="dropdown-content">
                   <button type="button" style="cursor:pointer" onclick="window.location.href='./forms/contact_form.php'" value="Feedback">Feedback</button>
-                  <button type="button" style="cursor:pointer" onclick=window.open("phpBB3/index.php") value="Forum">Forum</button>
+                  <button type="button" style="cursor:pointer" onclick=window.open("phpBB3/index.php") value="Forum">Forum</button>	
                </div>
             </div>
+			<div class="dropdown">
+				<button type="button" style="cursor:pointer" onclick=window.open("sphider/search.php") value="Site search"><i class="fa fa-search"></i> Site search</button>
+			</div>
          </div>
                <div class="video-slider" id="slider-video">
             <!-- SLIDE 1 -->

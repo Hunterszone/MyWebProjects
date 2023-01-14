@@ -1,7 +1,7 @@
 <?php
 	$database="sphider";
 	$mysqli_user = "root";
-	$mysqli_password = ""; 
+	$mysqli_password = "root"; 
 	$mysqli_host = "localhost";
 	$mysqli_table_prefix = "";
 

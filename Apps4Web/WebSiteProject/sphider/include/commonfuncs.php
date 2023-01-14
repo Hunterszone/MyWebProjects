@@ -18,13 +18,14 @@
 	* @return array|null massiiv
 	 */
 	function sql_fetch_all($query) {
-		$result = mysqli_query($query);
-		if($mysqli_err = mysqli_errno()) {
-			print $query.'<br>'.mysqli_error();
+		$conn = mysqli_connect('localhost','root','root','sphider');
+		$result = mysqli_query($conn, $query);
+		if($mysqli_err = mysqli_errno($conn)) {
+			print $query.'<br>'.mysqli_error($conn);
 		} else {
 			while($row=mysqli_fetch_array($result)) {
 				$data[]=$row;
-			}	
+			}		
 		}		
 		return $data;
 	}
@@ -179,7 +180,7 @@
 	$lines = @file($include_dir.'/common.txt');
 
 	if (is_array($lines)) {
-		while (list($id, $word) = each($lines))
+		foreach ( (Array) $lines as $id => $word)
 			$common[trim($word)] = 1;
 	}
 
@@ -658,7 +659,7 @@ function replace_ampersand($str) {
 		global $regex_consonant;
 		$c = $regex_consonant;
 
-		return preg_match("#$c{2}$#", $str, $matches) AND $matches[0]{0} == $matches[0]{1};
+		return preg_match("#$c[2]$#", $str, $matches) AND $matches[0][0] == $matches[0][1];
 	}
 
 
@@ -675,9 +676,9 @@ function replace_ampersand($str) {
 
 		return     preg_match("#($c$v$c)$#", $str, $matches)
 			   AND strlen($matches[1]) == 3
-			   AND $matches[1]{2} != 'w'
-			   AND $matches[1]{2} != 'x'
-			   AND $matches[1]{2} != 'y';
+			   AND $matches[1][2] != 'w'
+			   AND $matches[1][2] != 'x'
+			   AND $matches[1][2] != 'y';
 	}
 
 ?>

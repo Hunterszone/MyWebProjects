@@ -61,9 +61,9 @@ if ($results != "") {
 	$results_per_page = $results;
 }
 
-if (get_magic_quotes_gpc()==1) {
+/*if (get_magic_quotes_gpc()==1) {
 	$query = stripslashes($query);
-} 
+}*/ 
 
 if (!is_numeric($catid)) {
 	$catid = "";
