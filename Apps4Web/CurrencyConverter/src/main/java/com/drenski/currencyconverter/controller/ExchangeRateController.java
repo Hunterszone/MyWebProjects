@@ -1,7 +1,5 @@
 package com.drenski.currencyconverter.controller;
 
-import java.util.Arrays;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,6 +32,6 @@ public class ExchangeRateController {
 		if (exchangeResults.equals(null)) {
 			return "error";
 		}
-		return String.format(template, target, source) + Arrays.toString(exchangeResults);
+		return String.format(template, target, source) + exchangeResults[1];
 	}
 }

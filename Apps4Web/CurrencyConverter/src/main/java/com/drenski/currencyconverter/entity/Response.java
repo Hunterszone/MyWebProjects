@@ -1,4 +1,4 @@
-package com.drenski.currencyconverter.dbconn;
+package com.drenski.currencyconverter.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,12 +8,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "responses")
-public class Responses {
+@Table(name = "response")
+public class Response {
 
 	@Id
 	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int respId;
 	
 	@Column
@@ -47,7 +47,7 @@ public class Responses {
 	
 	@Override
 	public String toString() {
-		return "Responses [respId=" + respId + ", endpoint=" + endpoint + ", output=" + output + "]";
+		return "Response [respId=" + respId + ", endpoint=" + endpoint + ", output=" + output + "]";
 	}
 
 }

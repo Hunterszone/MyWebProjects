@@ -8,18 +8,23 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.net.UnknownHostException;
-import java.sql.SQLException;
+import java.util.Random;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.drenski.currencyconverter.dbconn.DbConnWithH2;
+import com.drenski.currencyconverter.dao.IResponseDao;
+import com.drenski.currencyconverter.entity.Response;
 import com.drenski.currencyconverter.handler.ApiHandler;
 
 @Service
 public class ExchangeRateService implements ApiHandler {
+	
+	@Autowired
+	private IResponseDao repository;
 
 	/* https://currencylayer.com - service provider */
 	private static final String TOKEN = "b860bbec1be4e73de0659ffbf932a996";
@@ -73,16 +78,25 @@ public class ExchangeRateService implements ApiHandler {
 		target = json.get("quotes");
 
 		HelperStructures.outputs.add(jsonRespBlock);
-		HelperStructures.endpointsAndOutputs.put(HelperStructures.endpoints.get(0), HelperStructures.outputs.get(0));
+//		HelperStructures.endpointsAndOutputs.put(HelperStructures.endpoints.get(0), HelperStructures.outputs.get(0));
+				
+		Response resp = new Response();
 		
-		try {
-			DbConnWithH2.initDbConn();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		for (int i = 0; i < HelperStructures.outputs.size(); i++) {
+			resp.setEndpoint(HelperStructures.endpoints.get(i));
+			resp.setOutput(HelperStructures.outputs.get(i));
 		}
+		
+		repository.save(resp);
+		
+//		try {
+//			DbConnWithH2.initDbConn();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
-		return new String[] { source.toString(), target.toString() };
+		return new String[] { source.toString(), target.toString().substring(10, 15) };
 	}
 
 	@Override

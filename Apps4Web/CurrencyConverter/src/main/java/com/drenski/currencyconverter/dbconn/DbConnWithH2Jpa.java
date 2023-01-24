@@ -9,6 +9,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import com.drenski.currencyconverter.entity.Response;
 import com.drenski.currencyconverter.service.HelperStructures;
 
 public class DbConnWithH2Jpa {
@@ -17,13 +18,13 @@ public class DbConnWithH2Jpa {
 
 	public static void init() {
 
-		Responses responses = new Responses();
+		Response responses = new Response();
 
 		responses.setRespId(1);
 		responses.setEndpoint(endpointAndOutput.keySet().iterator().next());
 		responses.setOutput(endpointAndOutput.get(endpointAndOutput.keySet().iterator().next()));
 
-		Configuration cfg = new Configuration().configure().addAnnotatedClass(Responses.class);
+		Configuration cfg = new Configuration().configure().addAnnotatedClass(Response.class);
 
 		ServiceRegistry srvReg = new StandardServiceRegistryBuilder().applySettings(cfg.getProperties()).build();
 

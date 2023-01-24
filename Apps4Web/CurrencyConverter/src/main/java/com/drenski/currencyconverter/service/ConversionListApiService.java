@@ -78,12 +78,12 @@ public class ConversionListApiService implements ApiHandler {
 		HelperStructures.outputs.add(jsonRespBlock);
 		HelperStructures.endpointsAndOutputs.put(HelperStructures.endpoints.get(0), HelperStructures.outputs.get(0));
 		
-		try {
-			DbConnWithH2.initDbConn();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			DbConnWithH2.initDbConn();
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 		return new String[] { date.toString(), currency.toString() };
 	}

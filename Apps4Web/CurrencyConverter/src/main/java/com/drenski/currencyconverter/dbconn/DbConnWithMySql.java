@@ -41,7 +41,7 @@ public class DbConnWithMySql {
 			while (counter < HelperStructures.endpoints.size()) {
 				// STEP 3: Execute a query
 				endpointAndOutput = HelperStructures.endpointsAndOutputs;
-				preparedStatement = conn.prepareStatement("INSERT INTO responses (ENDPOINT, OUTPUT) " + "VALUES (?,?)");
+				preparedStatement = conn.prepareStatement("INSERT INTO response (ENDPOINT, OUTPUT) " + "VALUES (?,?)");
 				preparedStatement.setString(1, endpointAndOutput.keySet().iterator().next());
 				System.out.println("ENDPOINT added: " + endpointAndOutput.keySet().iterator().next());
 				preparedStatement.setString(2, endpointAndOutput.get(endpointAndOutput.keySet().iterator().next()));

@@ -39,7 +39,7 @@ public class DbConnWithH2 {
 //			preparedStatement.executeUpdate();
 
 			// STEP 3: Execute a query
-			preparedStatement = conn.prepareStatement("INSERT INTO responses (ENDPOINT, OUTPUT) " + "VALUES (?,?)");
+			preparedStatement = conn.prepareStatement("INSERT INTO response (ENDPOINT, OUTPUT) " + "VALUES (?,?)");
 			preparedStatement.setString(1, endpointAndOutput.keySet().iterator().next());
 			System.out.println("ENDPOINT added: " + endpointAndOutput.keySet().iterator().next());
 			preparedStatement.setString(2, endpointAndOutput.get(endpointAndOutput.keySet().iterator().next()));
