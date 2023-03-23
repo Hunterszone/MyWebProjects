@@ -65,6 +65,7 @@
 					<div class="dropdown-content">
 						<button type="button" id="qr-auth" style="cursor:pointer" onclick="window.location.href='./forms/login_form.php'" value="qrCode">2FA with QR code</button>
 						<button type="button" id="sms-auth" style="cursor:pointer" onclick="window.location.href='./forms/login_form_sms.php'" value="smsCode">2FA with SMS code</button>
+						<button type="button" id="sms-auth" style="cursor:pointer" onclick="window.location.href='./forms/login_form_email.php'" value="smsCode">2FA with EMAIL code</button>
 					</div>
 				</div>
 			</form>
