@@ -6,14 +6,6 @@ session_start();
 //Include database connection details
 require_once('../connectivity/connection.php');
 
-//Include member details
-@include_once '../account/member.php';
-
-//Sanitize the POST values - TODO
-//$username = htmlspecialchars($_POST['username']);
-//$password = htmlspecialchars($_POST['password']);
-//$email = htmlspecialchars($_POST['email']);
-
 $success = "";
 $error_message = "";
 $conn = mysqli_connect("localhost","root","root","phpwebsite");
