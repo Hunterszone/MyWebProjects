@@ -13,7 +13,7 @@
 		$mail->SMTPAuth = TRUE;
 		$mail->SMTPSecure = 'tls'; // tls or ssl
 		$mail->Username = "me@example.com"; // Enter your email here
-		$mail->Password = "nanameca123"; //Enter your password here
+		$mail->Password = "**********"; //Enter your password here
 		$mail->Port = 25;
 		$mail->Host = "mail.hmailserver.com"; // Enter your host here
 		$mail->From = "me@example.com";

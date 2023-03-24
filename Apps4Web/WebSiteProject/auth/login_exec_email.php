@@ -1,7 +1,18 @@
 <?php
 
+//Start session
+session_start();
+
+//Include database connection details
+require_once('../connectivity/connection.php');
+
 //Include member details
 @include_once '../account/member.php';
+
+//Sanitize the POST values - TODO
+//$username = htmlspecialchars($_POST['username']);
+//$password = htmlspecialchars($_POST['password']);
+//$email = htmlspecialchars($_POST['email']);
 
 $success = "";
 $error_message = "";
@@ -10,6 +21,19 @@ if(!empty($_POST["submit_email"])) {
 	$result = mysqli_query($conn,"SELECT * FROM users WHERE email='" . $_POST["email"] . "'");
 	$count  = mysqli_num_rows($result);
 	if($count>0) {
+		//Login Successful
+		session_regenerate_id();
+		$member = mysqli_fetch_assoc($result);
+		$mem_id= $member['mem_id'];
+		$_SESSION['SESS_MEMBER_ID'] = $member['mem_id'];
+		$_SESSION['SESS_USERNAME']  = $member['username'];
+		$_SESSION['SESS_PASSWORD']  = $member['password'];
+		$_SESSION['SESS_EMAIL']  = $member['email'];
+		if(isset($_POST['login_session'])){
+			$_SESSION['USER_IS_LOGGEDIN'] = $member['login_session'];	
+		}
+		$arrValues = array_values($member);
+		setcookie($arrValues[0],$arrValues[1],time()+3600*24*365,'/','.hunterszone.byethost11.com');
 		// generate OTP
 		$otp = rand(100000,999999);
 		// Send OTP
@@ -69,6 +93,11 @@ if(!empty($_POST["submit_otp"])) {
 <style>
 body{
 	font-family: calibri;
+	background: url(../img/quiz_cover.png) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
 }
 .tblLogin {
 	border: #95bee6 1px solid;
@@ -78,7 +107,9 @@ body{
 	padding:20px 30px 30px;
 	text-align:center;
 }
-.tableheader { font-size: 20px; }
+.tableheader { 
+	font-size: 20px;
+}
 .tablerow { padding:20px; }
 .error_message {
 	color: #b12d2d;
@@ -104,6 +135,7 @@ body{
     border: #d1e8ff 1px solid;
     color: #FFF;
 	border-radius:4px;
+	cursor: pointer;
 }
 </style>
 </head>
@@ -131,7 +163,6 @@ body{
 		<div class="tableheader"><input type="submit" name="submit_otp" value="Submit" class="btnSubmit"></div>
 		<?php 
 			} else if ($success == 2) {
-				
 			session_write_close();
 			header("location: ../auth/user_login.php");
 			exit();
