@@ -54,7 +54,7 @@ button:hover {
     display: flex;
     justify-content: center;
     flex: 100%;
-    gap: 6em;
+    gap: 3em;
     margin: 2em 0 2em 0;
 }
 
