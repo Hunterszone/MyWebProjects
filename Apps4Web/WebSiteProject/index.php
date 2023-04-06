@@ -26,12 +26,75 @@
     
       <style>
 
-         .mapBox{
-            height: 400px;
-            width: 100%;
-            display: none;
-         }
+		.mapBox{
+			height: 400px;
+			width: 100%;
+			display: none;
+		}
+		
+		img, video {
+			height: auto;
+			max-width: 100%;
+			vertical-align: middle;
+			overflow-clip-margin: content-box;
+			overflow: clip;
+		}
+		 
+		#tars-widget-fab.pop_right {
+			display: block;
+			bottom: calc(18px + -3px);
+			right: calc(18px + 0px);
+		}
+		
+		#tars-widget-fab {
+			margin: 0;
+			outline: 0;
+			position: fixed;
+			width: 86px;
+			height: 150px;
+			cursor: pointer;
+			bottom: calc(4% - 12px);
+			right: 18px;
+			-webkit-transition-property: top,bottom,left,right;
+			-webkit-transition-duration: .5s;
+			transition-property: top,bottom,left,right;
+			transition-duration: .5s;
+			font-family: 'Roboto', sans-serif;
+		}
+		
+		#tars-widget-fab {
+			bottom: calc(4% - 12px);
+			cursor: pointer;
+			font-family: Roboto,sans-serif;
+			height: 120px;
+			margin: 0;
+			outline: 0;
+			position: fixed;
+			right: 18px;
+			transition-duration: .5s;
+			transition-property: top,bottom,left,right;
+			width: 86px;
+		}
+		
+		#tars-cb-widget, #tars-widget-fab {
+			overflow: hidden;
+			z-index: 2147483647!important;
+		}
+		
+		#tars-widget-fab {
+			overflow: visible!important;
+			overflow: initial!important;
+		}
 
+		#tars-widget-fab {
+			height: 84px!important;
+		}
+		
+		a {
+			color: inherit;
+			text-decoration: inherit;
+		}
+		
       </style>
 
    </head>
@@ -82,7 +145,7 @@
                <button class="dropbtn"><i class="fa fa-pencil"></i> Contact us</button>
                <div class="dropdown-content">
                   <button type="button" style="cursor:pointer" onclick="window.location.href='./forms/contact_form.php'" value="Feedback">Feedback</button>
-                  <button type="button" style="cursor:pointer" onclick=window.open("phpBB3/index.php") value="Forum">Forum</button>	
+                  <button type="button" style="cursor:pointer" onclick=window.open("phpBB3/index.php") value="Forum">Forum</button>
                </div>
             </div>
 			<div class="dropdown">
@@ -108,9 +171,9 @@
             <a href="http://www.smashingmagazine.com/feed/" target="_blank"><img src="img/rss-feed-icon.png" alt="[Valid RSS]" title="RSS feeds" style="width:40px;height:40px" /></a>
             <a href="#" onclick="showLocation()"><img src="img/marker.png" alt="marker" title="Show Location" style="width:40px;height:40px" /></a>
          </div>
-		 <div class="sidebar-right-badge">
+		 <!-- <div class="sidebar-right-badge">
 			<a href="https://statuspage.freshping.io/55647-WebProgrammingWorld" target="_blank"><img src="https://statuspage.freshping.io/badge/2e3e4806-0a16-4fbb-96a9-5db655d9c699?0.5940733387587804"/></a>
-		</div>
+		</div>-->
 		<div class="sidebar-right">
 			<a class='facebook' target='_blank' title="S H A R E" onclick="void window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=&amp;p[url]=&amp;&p[images][0]=', 'sharer', 'toolbar=0,status=0,width=548,height=325'); return false;" target="_parent" href="javascript: void(0)">
 			<span>FACEBOOK</span>
@@ -198,5 +261,6 @@
              window.scrollTo({top: 0, behavior: 'smooth'}) 
           }			
       </script>
+	  <a id="tars-widget-fab" class="tars-fab bounce closed pop_right" data-convid="Nju2fJ" href="https://chatbot.hellotars.com/conv/H1mwgM/?_nav&amp;amp;_end_redirect=0" target="_blank" rel="noopener" tabindex="-1"><div class="convbot-button  " style="background-color : #ac46e3 ; box-shadow : "><img class="convbot convbot-open" src="https://tars-file-upload.s3.amazonaws.com/Nju2fJ/dcf5b19f731653374422e35999a5ba75--Tars-Logo-Gif.gif" alt="Tars-Chatbot"></div></a>
    </body>
 </html>
