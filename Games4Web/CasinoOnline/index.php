@@ -35,9 +35,12 @@
 		
 <form id="navBarForm" action="EWallet/ewallet.php" method="post">
   <nav class="navbar navbar-expand-lg fixed-top ">
-    <button id=deposit type="button" class="btn btn-lg navbar-brand">Deposit</button>
-	<button id=deposit class="btn btn-lg navbar-brand" name="bankroll">E-Wallet</button>
-	<h2 id=bankroll class="nav-brand">Credit: $ <?php echo end($row) ?></h2>
+	<li class="list-inline-item">
+		<a href="#!" class="btn btn-success btn-rounded" onclick="window.location.href='./forms/login_form.php'" value="qrCode"><b>Sign in</b></a>
+	</li>
+	<li class="list-inline-item">
+		<a href="#!" class="btn btn-primary btn-rounded" onclick="window.location.href='./auth/SignUp.php'" value="qrCode"><b>Sign up</b></a>
+	</li>
   <!--<button id=deposit type="button" class="btn btn-lg navbar-brand" name="button" onclick="cashOut();">CashOut</button>-->
     <h2 class="flash nav-brand" id=jackpot>Jackpot: $50000</h2>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,12 +63,6 @@
           <a class="nav-link " data-value="PokerJs" href="PokerJS/poker.html#PokerJs">Texas Hold'em</a> </li>
       </ul>
     </div>
-	<li class="list-inline-item">
-		<a href="#!" class="btn btn-success btn-rounded"><b>Sign in</b></a>
-	</li>
-	<li class="list-inline-item">
-		<a href="#!" class="btn btn-primary btn-rounded"><b>Sign up</b></a>
-	</li>	
   </nav>
 </form>
         

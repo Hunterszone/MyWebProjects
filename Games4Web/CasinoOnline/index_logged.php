@@ -1,4 +1,22 @@
-<!DOCTYPE html>
+<?php
+	
+    require('EWallet/connection.php');
+	
+	//Create array to store validation errors
+	$errmsg_arr = array();
+	 
+	//Validation error flag
+	$errflag = false;
+	
+	$queryDeposit = "SELECT * FROM wallet AS w WHERE w.amount !='' ORDER BY id DESC limit 1";
+    $resultDeposit = mysqli_query($conn,$queryDeposit);
+	$row = mysqli_fetch_array($resultDeposit);
+
+	$conn->close();
+	
+?>
+	
+	
 <html lang="en" dir="ltr">
 
 <head>
@@ -14,48 +32,51 @@
 
 <body>
   <!-- navbar -->
+		
 <form id="navBarForm" action="EWallet/ewallet.php" method="post">
   <nav class="navbar navbar-expand-lg fixed-top ">
-    <li class="list-inline-item">
-		<a href="#!" class="btn btn-success btn-rounded" onclick="window.location.href='./forms/login_form.php'" value="qrCode"><b>Sign in</b></a>
-	</li>
-	<li class="list-inline-item">
-		<a href="#!" class="btn btn-primary btn-rounded" onclick="window.location.href='./auth/SignUp.php'" value="qrCode"><b>Sign up</b></a>
-	</li>
-	<!--<button id=deposit type="button" class="btn btn-lg navbar-brand" name="button" onclick="cashOut();">CashOut</button>-->
+	<button id=deposit type="button" class="btn btn-lg navbar-brand">Deposit</button>
+	<button id=deposit class="btn btn-lg navbar-brand" name="bankroll">E-Wallet</button>
+	<h2 id=bankroll class="nav-brand">Credit: $ <?php echo end($row) ?></h2>
+  <!--<button id=deposit type="button" class="btn btn-lg navbar-brand" name="button" onclick="cashOut();">CashOut</button>-->
     <h2 class="flash nav-brand" id=jackpot>Jackpot: $50000</h2>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav mr-4">
-        <li class="nav-item">
+		<li class="nav-item">
           <a class="nav-link " data-value="Genie" href="#Genie">Magical numbers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " data-value="Carousel" href="#carousel">Stars of fortune</a> </li>
+          <a class="nav-link " data-value="Carousel" href="home.html#carousel">Stars of fortune</a> </li>
         <li class="nav-item">
-          <a class="nav-link " data-value="WheelOfFortune" href="WheelOfFortune/wheelOfFortune.php#WheelOfFortune">Wheel of fortune</a> </li>
-		  <li class="nav-item">
-          <a class="nav-link " data-value="Roulette" href="Roulette/roulette.php#Roulette">Casino Roulette</a> </li>
 		<li class="nav-item">
+          <a class="nav-link " data-value="WheelOfFortune" href="WheelOfFortune/wheelOfFortune.php#WheelOfFortune">Wheel of fortune</a> </li>
+		<li class="nav-item">
+          <a class="nav-link " data-value="Roulette" href="Roulette/roulette.php#Roulette">Casino Roulette</a> </li>
 			<a class="nav-link " data-value="Crazy" href="slotMachine.php">Slot machine</a> </li>
 		<li class="nav-item">
           <a class="nav-link " data-value="PokerJs" href="PokerJS/poker.html#PokerJs">Texas Hold'em</a> </li>
       </ul>
     </div>
+	<li class="list-inline-item">
+		<a href="#!" class="btn btn-success btn-rounded" onclick="window.location.href='../'" value="qrCode"><b>Logout</b></a>
+	</li>
   </nav>
 </form>
-
+        
   <!-- header background img -->
+  
   <header id=header>
     <!--<img class="img-fluid" src="img/casino1.jpg">-->
 			<div>
-					<!--<button onclick="location.href='#carousel'" style="text-decoration:none;" type="button" class="fancy">PLAY NOW</button>-->
-					<input type="image" onclick="location.href='#carousel'" class="fancy" src="img/playNow.png" />
+					<!--<button onclick="location.href='#carousel'" style="text-decoration:none;" type="button" class="fancy">PLAY NOW</button>-->	
+				<input type="image" onclick="location.href='#Genie'" class="fancy" src="img/playNow.png" />
 			</div>
 	   <!--<button id=buttonmain onclick="location.href='#carousel'" type="button" class="btn btn-warning">Play now</button>-->
   </header>
+
 
   <div class="container-fluid  About" id=About>
     <div class="description">
@@ -67,63 +88,6 @@
     </div>
   </div>
 
-  <!-- Stars of fortune game -->
-
-
-    <div class="Carousel container-fluid" id=carousel>
-        <div class="starswin col-12 col-6-medium col-12-small text-center">
-          <x-sign class="col text-center" id=fancy2>
-            Stars of fortune
-          </x-sign>
-          <h1 id=info1>Stars are waiting for you. May the odds be in your favor.</h1>
-          <h1 id=jackpotstars></h1>
-        </div>
-        <div class="scene col-12 col-6-medium col-12-small" id=scene>
-          <div class="carousel">
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$8</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$8</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$8</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$20</div>
-            <div class="carousel__cell">$2</div>
-            <div class="carousel__cell">$500</div>
-            <div class="carousel__cell">$20</div>
-          </div>
-        </div>
-        <div class="carousel-options col-12 col-6-medium col-12-small text-center">
-          <div class="cells">
-    <p>
-      <label>
-        Cells
-        <input class="cells-range" type="range" min="3" max="15" value="15" />
-      </label>
-    </p>
-  </div>
-    <p>
-      <button class="next-button btn btn-primary btn-lg text-center" id=playbutton>Play</button>
-    </p>
-    <div class="orientation col-12 col-6-medium col-12-small text-center">
-    <p>
-      Orientation:
-      <label>
-        <input type="radio" name="orientation" value="horizontal" checked />
-        horizontal
-      </label>
-      <label>
-        <input type="radio" name="orientation" value="vertical" />
-        vertical
-      </label>
-    </p>
-    </div>
-  </div>
-    </div>
 
   <!--  Magical numbers game-->
   <div class="wrapper">
@@ -141,7 +105,6 @@
           <div class="col-12">
             <h1 style="color:red" id=number class="animated pulse infinite">777777</h1>
             <div id=svg>
-          <?xml version="1.0" standalone="no"?>
       <!-- Generator: SVG Circus (http://svgcircus.com) -->
       <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
       <svg id="SVG-Circus-1210ca36-f756-6c40-bfc4-26aaa8fdb58d" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet"><circle id="actor_2" cx="50" cy="50" r="25" opacity="1" fill="rgba(0,0,0,0)" fill-opacity="1" stroke="rgba(166,3,17,1)" stroke-width="7" stroke-opacity="1" stroke-dasharray="22 30"></circle><circle id="actor_1" cx="50" cy="50" r="12.5" opacity="1" fill="rgba(0,0,0,0)" fill-opacity="1" stroke="rgba(166,3,17,1)" stroke-width="7" stroke-opacity="1" stroke-dasharray="13 13"></circle><script type="text/ecmascript"><![CDATA[(function(){var actors={};actors.actor_1={node:document.getElementById("SVG-Circus-1210ca36-f756-6c40-bfc4-26aaa8fdb58d").getElementById("actor_1"),type:"circle",cx:50,cy:50,dx:25,dy:28,opacity:1};actors.actor_2={node:document.getElementById("SVG-Circus-1210ca36-f756-6c40-bfc4-26aaa8fdb58d").getElementById("actor_2"),type:"circle",cx:50,cy:50,dx:50,dy:28,opacity:1};var tricks={};tricks.trick_1=(function(t,a){a=(function(n){return n})(a)%1,a=a*2%1,a=0>a?1+a:a;var M=a*1*360*Math.PI/180,i=t._tMatrix,_=Math.cos(M),c=Math.sin(M),x=-Math.sin(M),s=Math.cos(M),h=-t.cx*Math.cos(M)+t.cy*Math.sin(M)+t.cx,n=-t.cx*Math.sin(M)-t.cy*Math.cos(M)+t.cy,r=i[0]*_+i[2]*c,o=i[1]*_+i[3]*c,y=i[0]*x+i[2]*s,f=i[1]*x+i[3]*s,d=i[0]*h+i[2]*n+i[4],e=i[1]*h+i[3]*n+i[5];t._tMatrix[0]=r,t._tMatrix[1]=o,t._tMatrix[2]=y,t._tMatrix[3]=f,t._tMatrix[4]=d,t._tMatrix[5]=e});tricks.trick_2=(function(t,a){a=(function(n){return n})(a)%1,a=a*1%1,a=0>a?1+a:a;var M=a*-1*360*Math.PI/180,i=t._tMatrix,_=Math.cos(M),c=Math.sin(M),x=-Math.sin(M),s=Math.cos(M),h=-t.cx*Math.cos(M)+t.cy*Math.sin(M)+t.cx,n=-t.cx*Math.sin(M)-t.cy*Math.cos(M)+t.cy,r=i[0]*_+i[2]*c,o=i[1]*_+i[3]*c,y=i[0]*x+i[2]*s,f=i[1]*x+i[3]*s,d=i[0]*h+i[2]*n+i[4],e=i[1]*h+i[3]*n+i[5];t._tMatrix[0]=r,t._tMatrix[1]=o,t._tMatrix[2]=y,t._tMatrix[3]=f,t._tMatrix[4]=d,t._tMatrix[5]=e});var scenarios={};scenarios.scenario_1={actors: ["actor_1"],tricks: [{trick: "trick_2",start:0,end:1}],startAfter:0,duration:1000,actorDelay:0,repeat:0,repeatDelay:0};scenarios.scenario_2={actors: ["actor_2"],tricks: [{trick: "trick_1",start:0,end:1}],startAfter:0,duration:1000,actorDelay:0,repeat:0,repeatDelay:0};var _reqAnimFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.oRequestAnimationFrame,fnTick=function(t){var r,a,i,e,n,o,s,c,m,f,d,k,w;for(c in actors)actors[c]._tMatrix=[1,0,0,1,0,0];for(s in scenarios)for(o=scenarios[s],m=t-o.startAfter,r=0,a=o.actors.length;a>r;r++){if(i=actors[o.actors[r]],i&&i.node&&i._tMatrix)for(f=0,m>=0&&(d=o.duration+o.repeatDelay,o.repeat>0&&m>d*o.repeat&&(f=1),f+=m%d/o.duration),e=0,n=o.tricks.length;n>e;e++)k=o.tricks[e],w=(f-k.start)*(1/(k.end-k.start)),tricks[k.trick]&&tricks[k.trick](i,Math.max(0,Math.min(1,w)));m-=o.actorDelay}for(c in actors)i=actors[c],i&&i.node&&i._tMatrix&&i.node.setAttribute("transform","matrix("+i._tMatrix.join()+")");_reqAnimFrame(fnTick)};_reqAnimFrame(fnTick);})()]]></script></svg>
@@ -253,7 +216,6 @@
   </footer>
   <!-- Footer -->
 
-
   <audio id="audio" src="mp3/suspense.mp3" ></audio>
   <audio id="audio2" src="mp3/duel.mp3" ></audio>
   <audio id="audio3" src="mp3/gucci.mp3" ></audio>
@@ -261,12 +223,12 @@
   <audio id="audio5" src="mp3/darkhorsewin.mp3" ></audio>
   <audio id="audio6" src="mp3/coin.mp3" ></audio>
 
-
-
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
   <script src="casinojs.js"></script>
+  <script src="crazy.js"></script>
 
 </body>
 

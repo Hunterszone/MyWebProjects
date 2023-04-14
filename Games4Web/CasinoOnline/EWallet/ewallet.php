@@ -43,7 +43,7 @@
 
 <body>
 	<div class="wallet-container text-center">
-		<p class="page-title"><i class="fa fa-align-left"></i><a href="../">Back to casino</a></p>
+		<p class="page-title"><i class="fa fa-align-left"></i><a href="../index_logged.php">Back to casino</a></p>
 
 		<div class="amount-box text-center">
 			<img src="../img/wallet.png" alt="wallet">
