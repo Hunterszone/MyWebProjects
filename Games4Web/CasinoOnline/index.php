@@ -35,8 +35,8 @@
 		
 <form id="navBarForm" action="EWallet/ewallet.php" method="post">
   <nav class="navbar navbar-expand-lg fixed-top ">
-    <button id=deposit type="button" class="btn btn-lg navbar-brand" name="button">Deposit</button>
-	<button id=deposit class="btn btn-lg navbar-brand" name="bankroll" data-value="EWallet" value="">E-Wallet</button>
+    <button id=deposit type="button" class="btn btn-lg navbar-brand">Deposit</button>
+	<button id=deposit class="btn btn-lg navbar-brand" name="bankroll">E-Wallet</button>
 	<h2 id=bankroll class="nav-brand">Credit: $ <?php echo end($row) ?></h2>
   <!--<button id=deposit type="button" class="btn btn-lg navbar-brand" name="button" onclick="cashOut();">CashOut</button>-->
     <h2 class="flash nav-brand" id=jackpot>Jackpot: $50000</h2>

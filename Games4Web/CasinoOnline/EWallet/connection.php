@@ -6,7 +6,7 @@
     $host = 'localhost';
 	$user = 'root';
     $pass = 'root';
-    $db = 'casino';
+    $db = 'phpwebsite';
 	$prefix = "";
 	$fallback_address = "../home.html";
     $conn = new mysqli($host, $user, $pass, $db, 3306) or die("Could not connect to the database");

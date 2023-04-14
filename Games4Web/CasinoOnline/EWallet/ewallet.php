@@ -11,6 +11,10 @@
         $money = $_POST['bankroll'];
 		$query = "INSERT INTO wallet (amount) VALUES('$money')";
         $result = mysqli_query($conn,$query);
+		
+		$queryDeposit = "SELECT * FROM wallet AS w WHERE w.amount !='' ORDER BY id DESC limit 1";
+		$resultDeposit = mysqli_query($conn,$queryDeposit);
+		$row = mysqli_fetch_array($resultDeposit);
 			
 	$conn->close();
 
@@ -25,7 +29,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script>		
-		var calc = parseInt("<?php echo $_POST['bankroll'] ?>") / 4;
+		var calc = parseInt("<?php echo end($row) ?>") / 4;
 		
 		window.onload = function() {
     	   document.getElementById("myScore").innerHTML="$ " + calc;
@@ -39,11 +43,11 @@
 
 <body>
 	<div class="wallet-container text-center">
-		<p class="page-title"><i class="fa fa-align-left"></i><a href="#" onclick="print();">My E-wallet</a></p>
+		<p class="page-title"><i class="fa fa-align-left"></i><a href="../">Back to casino</a></p>
 
 		<div class="amount-box text-center">
 			<img src="../img/wallet.png" alt="wallet">
-			<h4><p>Total Balance : <?php echo $_POST['bankroll'] ?> $</p></h4>
+			<h4><p>Total Balance : <?php echo end($row) ?> $</p></h4>
 			<!--<p id=bankroll class="amount">$ 0</p>-->
 		</div>
 
