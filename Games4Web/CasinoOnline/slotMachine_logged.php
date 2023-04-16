@@ -35,9 +35,9 @@
   <!-- navbar -->
 <form id="navBarForm" action="EWallet/ewallet.php" method="post">
   <nav class="navbar navbar-expand-lg fixed-top ">
-    <li class="list-inline-item">
-		<a href="#!" class="btn btn-success btn-rounded" onclick="window.location.href='slotMachine_logged.php'" value="qrCode"><b>Play</b></a>
-	</li>
+	<button id=deposit type="button" class="btn btn-lg navbar-brand">Deposit</button>
+	<button id=deposit class="btn btn-lg navbar-brand" name="bankroll">E-Wallet</button>
+	<h2 id=bankroll class="nav-brand">Credit: $ <?php echo end($row) ?></h2>
 	<!--<button id=deposit type="button" class="btn btn-lg navbar-brand" name="button" onclick="cashOut();">CashOut</button>-->
     <h2 class="flash nav-brand" id=jackpot>Jackpot: $50000</h2>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,6 +60,9 @@
           <a class="nav-link " data-value="PokerJs" href="PokerJS/poker.html#PokerJs">Texas Hold'em</a> </li>
       </ul>
     </div>
+	<li class="list-inline-item">
+		<a href="#!" class="btn btn-success btn-rounded" onclick="window.location.href='../'" value="qrCode"><b>Logout</b></a>
+	</li>
   </nav>
 </form>
 
@@ -125,6 +128,15 @@
 </div>
 <div class="row">
   <div class=" container text-center" id=footer>   <!-- Spin button, betsizing buttons, information tab and also special event which will be hidden.-->
+    <h2><x-sign class="text-center" id=info>
+      Super cool jackpot!
+    </x-sign></h2>
+	  <div> 
+	   <button class="btn btn-lg btn-success" id=increasebet onclick="betincrease();">Increase bet</button>
+	   <button class="btn btn-lg btn-success" id=decreasebet onclick="betdecrease();">Decrease bet</button>
+	   <p id=currentbet>Current bet: $5</p>
+	  </div> 
+      <button class="next-button2" id=playbutton>SPIN</button>
       <div class="col-12" id=specialchest>  <!--special event uncle scroove, player will be able to pick up the random lucky chest which will contain randomly generated price, this event will be triggered through the game of chance itself-->
         <p id=specialchest_info>Uncle Scroove has got lucky chest for you! Pick one and enjoy your prize!</p>
         <button class="btn btn-lg btn-success" id=firstchest><i class="fa fa-gift fa-1x"></i></button>

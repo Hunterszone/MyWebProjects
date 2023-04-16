@@ -101,7 +101,6 @@ var specialwin = range(55000, 60000); // free spins range which will trigger spe
 
 function randomnumber() {
 
-
   if (bankroll > 0) {
     spin();
     document.getElementById("info").innerHTML = "Jackpot activated during any spin!";
