@@ -1,0 +1,516 @@
+@charset "utf-8";
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+html {
+	scroll-behavior: smooth;
+}
+
+.content {
+	display: flex;
+	justify-content: space-between;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 10px 0;
+}
+
+.blink_text {
+	-webkit-animation-name: blinker;
+	-webkit-animation-duration: 2.5s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-name: blinker;
+	-moz-animation-duration: 2.5s;
+	-moz-animation-timing-function: linear;
+	-moz-animation-iteration-count: infinite;
+	-ms-animation-name: blinker;
+	-ms-animation-duration: 2.5s;
+	-ms-animation-timing-function: linear;
+	-ms-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {
+	0% {
+		opacity: 1.0;
+	}
+	50% {
+		opacity: 0.0;
+	}
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@-webkit-keyframes blinker {
+	0% {
+		opacity: 1.0;
+	}
+	50% {
+		opacity: 0.0;
+	}
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@-ms-keyframes blinker {
+	0% {
+		opacity: 1.0;
+	}
+	50% {
+		opacity: 0.0;
+	}
+	100% {
+		opacity: 1.0;
+	}
+}
+
+h1 {
+	text-shadow: 0 0 20px red, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;
+}
+
+.dropbtn {
+	background-color: black;
+	border-style: solid;
+	border-color: black;
+	color: white;
+	font-size: 125%;
+	font-weight: bold;
+	padding: 10px 30px;
+	text-decoration: none;
+	border-radius: 4px 4px 0 0;
+	cursor: pointer;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: black;
+	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.8);
+}
+
+.dropdown-content button {
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown:hover .dropdown-content {
+	margin-top: 1px;
+	font: 10px;
+	top: 100%;
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	border-style: solid;
+	border-color: black;
+	color: black;
+	background-color: orange;
+	font-weight: bold;
+	font-size: 125%;
+	padding: 10px 30px;
+	text-decoration: none;
+	border-radius: 4px 4px 0 0;
+	cursor: pointer;
+}
+
+.nicetoo {
+	background-color: black;
+	border-style: solid;
+	border-color: black;
+	color: white;
+	font-weight: bold;
+	font-size: 125%;
+	padding: 10px 30px;
+	text-decoration: none;
+	border-radius: 4px 4px 0 0;
+	cursor: pointer;
+}
+
+.nicetoo:hover {
+	border-style: solid;
+	border-width: 5px;
+	border-color: black;
+	color: black;
+	background-color: orange;
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.5), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#tfnewsearch {
+	padding: 20px;
+}
+
+.tftextinput {
+	margin: 0;
+	padding: 5px 18px;
+	font-family: Verdana;
+	font-size: 21px;
+	border: 1px solid black;
+	border-top-left-radius: 5px 5px;
+	border-bottom-left-radius: 5px 5px;
+	background-image: url('http://www.knowledgequarter.london/wp-content/uploads/2017/05/books.jpg');
+	background-position: 4px 2px;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	text-indent: 23px;
+}
+
+.tfbutton {
+	margin: 0;
+	padding: 5px 15px;
+	font-size: 21px;
+	font-weight: bold;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	border: solid 1px black;
+	background: black;
+	background: -webkit-gradient(linear, left top, left bottom, from(black), to(black));
+	background: -moz-linear-gradient(top, black, black);
+	border-top-right-radius: 5px 5px;
+	border-bottom-right-radius: 5px 5px;
+}
+
+.tfbutton:hover {
+	text-decoration: none;
+	color: black;
+	background: orange;
+	background: -webkit-gradient(linear, left top, left bottom, from(orange), to(orange));
+	background: -moz-linear-gradient(top, orange, orange);
+	background: -ms-linear-gradient(top, orange, orange);
+}
+
+
+/* Fixes submit button height problem in Firefox */
+
+.tfbutton::-moz-focus-inner {
+	border: 0;
+}
+
+.tfclear {
+	clear: both;
+}
+
+.L1 {
+	width: 17px;
+	height: 17px;
+}
+
+body {
+	background: url(http://www.knowledgequarter.london/wp-content/uploads/2017/05/books.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.cd-fixed-background .cd-content::after {
+	/* phone image on small devices */
+	content: '';
+	display: block;
+	width: 104%;
+	padding: 34% 0;
+	margin: 2em auto 0;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+.cd-fixed-background {
+	height: 60%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+.cd-fixed-background.img-3 {
+	background-image: url("http://www.calgaryherald.com/news/cms/binary/10271025.jpg?size=sw620x65");
+}
+
+#primary_nav_wrap {
+	margin-top: 15px
+}
+
+#primary_nav_wrap ul {
+	list-style: none;
+	position: relative;
+	float: left;
+	margin: 0;
+	padding: 0
+}
+
+#primary_nav_wrap ul a {
+	display: block;
+	color: rgba(0, 0, 0, 0.5);
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 32px;
+	padding: 0 15px;
+	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+#primary_nav_wrap ul li {
+	position: relative;
+	float: left;
+	margin: 0;
+	padding: 0
+}
+
+#primary_nav_wrap ul li.current-menu-item {
+	background: rgba(0, 0, 0, 0.5)
+}
+
+#primary_nav_wrap ul li:hover {
+	background: rgba(0, 0, 0, 0.5)
+}
+
+#primary_nav_wrap ul ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 0
+}
+
+#primary_nav_wrap ul ul li {
+	float: none;
+	width: 200px
+}
+
+#primary_nav_wrap ul ul a {
+	line-height: 120%;
+	padding: 10px 15px
+}
+
+#primary_nav_wrap ul ul ul {
+	top: 0;
+	left: 100%
+}
+
+#primary_nav_wrap ul li:hover>ul {
+	display: block
+}
+
+
+.TheTextOff {
+	color: rgba(255, 255, 255, 0.7);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+}
+
+.TheTextOn {
+	color: yellow;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 22px;
+}
+
+h10 {
+	position: fixed;
+	width: 59%;
+}
+
+h888 {
+	position: fixed;
+	width: 100%;
+}
+
+#toTop {
+	display: block;
+	position: fixed;
+	bottom: 100px;
+	right: 20px;
+	opacity: 1;
+	display: none;
+	cursor: pointer;
+}
+
+h2 {
+	text-shadow: 5px 5px 5px yellow;
+}
+
+/*.gap { margin-right: 50px; }
+*/
+
+/*.gap { margin-right: 50px; }
+*/
+.shakeimage {
+	POSITION: relative
+}
+
+h222 {
+	text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;
+}
+
+@-webkit-keyframes pulse_animation {
+	0% {
+		-webkit-transform: scale(1);
+	}
+	20% {
+		-webkit-transform: scale(1);
+	}
+	30% {
+		-webkit-transform: scale(1.08);
+	}
+	40% {
+		-webkit-transform: scale(1);
+	}
+	60% {
+		-webkit-transform: scale(1);
+	}
+	70% {
+		-webkit-transform: scale(1.05);
+	}
+	80% {
+		-webkit-transform: scale(1);
+	}
+	100% {
+		-webkit-transform: scale(1);
+	}
+}
+
+.pulse:hover {
+	-animation-name: 'pulse_animation';
+	-animation-duration: 2500ms;
+	-transform-origin: 100% 100%;
+	-animation-iteration-count: infinite;
+	-webkit-animation-name: 'pulse_animation';
+	-webkit-animation-duration: 2500ms;
+	-webkit-transform-origin: 70% 70%;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-name: 'pulse_animation';
+	-moz-animation-duration: 2500ms;
+	-moz-transform-origin: 70% 70%;
+	-moz-animation-iteration-count: infinite;
+	-ms-animation-name: 'pulse_animation';
+	-ms-animation-duration: 2500ms;
+	-ms-transform-origin: 70% 70%;
+	-ms-animation-iteration-count: infinite;
+}
+
+h20 {
+	position: fixed;
+	width: 80%;
+}
+
+h30 {
+	position: fixed;
+	width: 150%;
+}
+
+body {
+	color: yellow;
+	font: 600 14px/24px "algerian", Verdana;
+}
+
+.box {
+	margin: 1.5em;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 6px;
+	cursor: pointer;
+	height: 170px;
+	line-height: 170px;
+	text-align: center;
+	-webkit-transition-property: background;
+	-moz-transition-property: background;
+	-o-transition-property: background;
+	transition-property: background;
+	-webkit-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition: 1s ease-in-out;
+	-moz-transition: 1s ease-in-out;
+	-o-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+	-webkit-box-shadow: 19px 21px 41px 0px rgba(0, 0, 0, 0.69);
+	-moz-box-shadow: 19px 21px 41px 0px rgba(0, 0, 0, 0.69);
+	box-shadow: 19px 21px 41px 0px rgba(0, 0, 0, 0.69);
+	border-radius: 34px 34px 34px 34px;
+	-moz-border-radius: 34px 34px 34px 34px;
+	-webkit-border-radius: 34px 34px 34px 34px;
+	border: 6px solid rgba(255, 255, 255, 0.7);
+	width: 170px;
+}
+
+.box:hover {
+	background: rgba(255, 255, 255, 0.3);
+	color: black;
+}
+
+
+/*.div img: not(.tfclear) {
+      transition: all 2s ease-in-out;
+      }
+      div:hover {
+      transform: rotate(360deg);
+      }
+   
+   img {
+      opacity: 0.6;
+      filter: alpha(opacity=40);
+      }
+      img:hover {
+      opacity: 1;
+      filter: alpha(opacity=40);
+      }
+
+      #myProgress {
+		  width: 100%;
+		  background-color: rgba(0,0,0,0.5);
+		  height: 80px;
+      }
+      #myBar {
+		  width: 1%;
+		  height: 80px;
+		  background-image: linear-gradient(to right, black 0%,white 180%), url('../img/faces.gif');
+		  background-blend-mode: color-dodge;
+		  background-color: rgba(0,0,0,0.5);
+      }
+   
+   /*<![CDATA[*/
+
+
+/* CSS Document */
+
+
+/* ---------- ENTYPO ---------- */
+
+
+/* ---------- Digital Hub Inc : http://www.digitalhubinc.com/---------- */
+
+
+/* ---------- http://weloveiconfonts.com/ ---------- */
+
+[class*="entypo-"]:before {
+	font-family: 'entypo', sans-serif;
+}
+
+
+/* ---------- GENERAL ---------- */
+
+#social-sidebar a {
+	text-decoration: none;
+}
+
+#social-sidebar ul,
+#social-sidebar ul li,
+#social-sidebar ul li a {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	overflow-x: hidden;
+}
