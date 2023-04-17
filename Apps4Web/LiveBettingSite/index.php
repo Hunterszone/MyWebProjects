@@ -101,8 +101,8 @@
    <body>
       <div class="container">
       <div class="header">
-         <h1 class="pulsate"><a style="color:#eb7434">Web</a> Programming <a style="color:#eb7434">World</a></h1>
-         <h2>Online school <a style="color:#eb7434">for</a> web development <a style="color:#eb7434">and</a> web design</h2>
+         <h1 class="pulsate"><a style="color:#eb7434">Live</a> Sports <a style="color:#eb7434">Betting</a></h1>
+         <h2>Football <a style="color:#eb7434">,</a> basketball <a style="color:#eb7434">and</a> much more...</h2>
       </div>
       <div class="content">
          <div class="search-boxes">
@@ -124,7 +124,7 @@
             </div>
 			<form method="post" action="">
 				<div class="dropdown">
-					<button type="button" class="dropbtn"><i class="fa fa-sign-in"></i> SignIn</button>
+					<button type="button" class="dropbtn"><i class="fa fa-sign-in"></i> Sign in</button>
 					<div class="dropdown-content">
 						<button type="button" id="qr-auth" style="cursor:pointer" onclick="window.location.href='./forms/login_form.php'" value="qrCode">2FA with QR code</button>
 						<button type="button" id="sms-auth" style="cursor:pointer" onclick="window.location.href='./forms/login_form_sms.php'" value="smsCode">2FA with SMS code</button>

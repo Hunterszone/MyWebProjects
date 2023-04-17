@@ -4,7 +4,7 @@
 
 		$six_digit_random_number = random_int(100000, 999999);
 		
-		$MessageBird = new \MessageBird\Client('BIO9DUtS1ORJa1ESOPnqomUrW');
+		$MessageBird = new \MessageBird\Client('GkfLV35QscDHOtgQOuE1t977h');
 		$Message = new \MessageBird\Objects\Message();
 		$Message->originator = 'Me4Gaming';
 		$Message->recipients = array('+359889619295');

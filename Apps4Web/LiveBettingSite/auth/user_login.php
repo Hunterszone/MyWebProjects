@@ -57,9 +57,20 @@
       <div id='menutext'>
          <ul>
          <li><a id="quiz" style="cursor:pointer" onclick="location.href='../competitions/competitions.php'"><i class="fa fa-book"></i> Competitions</a></li>
-         <li><a style="cursor:pointer" id="profile" onclick="location.href='../standings/standings.php'"><i class="fa fa-home"></i> Standings</a></li>
          <li>
-            <a href='#'><i class="fa fa-upload"></i> Events</a>
+			<a href='#'><i class="fa fa-home"></i> Standings</a>
+			<ul>
+               <li><a style="cursor:pointer" id="laliga" onclick="location.href='../standings/standings.php'">La Liga</a></li>
+			   <li><a style="cursor:pointer" id="secunda" onclick="location.href='../standings/standings_secunda.php'">Secunda</a></li>
+               <li><a style="cursor:pointer" id="champsLeague" onclick="location.href='../standings/promotions.php'">Promotions</a></li>
+			</ul>
+		</li>
+		 <li>
+            <a href='#'><i class="fa fa-home"></i> Events</a>
+			<ul>
+               <li><a style="cursor:pointer" id="results" onclick="location.href='../events/results.php'">Results</a></li>
+               <li><a style="cursor:pointer" id="liveScores" onclick="location.href='../events/live_scores.php'">Live Scores</a></li>
+			</ul>
          </li>
          <li><a style="cursor:pointer" id="newPass" onclick="location.href='./changePass.php'"><i class="fa fa-unlock"></i> Change pass</a></li>
          <li>
