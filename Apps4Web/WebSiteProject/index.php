@@ -265,6 +265,6 @@
              window.scrollTo({top: 0, behavior: 'smooth'}) 
           }  
       </script>
-	  <a id="tars-widget-fab" class="tars-fab bounce closed pop_right" data-convid="Nju2fJ" href="https://chatbot.hellotars.com/conv/H1mwgM/?_nav&amp;amp;_end_redirect=0" target="_blank" rel="noopener" tabindex="-1"><div class="convbot-button  " style="background-color : #ac46e3 ; box-shadow : "><img class="convbot convbot-open" src="https://tars-file-upload.s3.amazonaws.com/Nju2fJ/dcf5b19f731653374422e35999a5ba75--Tars-Logo-Gif.gif" alt="Tars-Chatbot"></div></a>
+	  <a id="tars-widget-fab" class="tars-fab bounce closed pop_right" data-convid="Nju2fJ" href="https://chatbot.hellotars.com/conv/H1mwgM/?_nav&amp;amp;_end_redirect=0" target="_blank" rel="noopener" tabindex="-1"><div class="convbot-button  " style="background-color : #ac46e3 ; box-shadow : "><img class="convbot convbot-open" src="https://tars-file-upload.s3.amazonaws.com/Nju2fJ/dcf5b19f731653374422e35999a5ba75--Tars-Logo-Gif.gif" alt="Tars-Chatbot" title="ChatBot"></div></a>
    </body>
 </html>
