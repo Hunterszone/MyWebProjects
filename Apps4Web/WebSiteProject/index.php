@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./css/styles.css">
 	<link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
     <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/bg_BG/sdk.js#xfbml=1&version=v16.0&appId=172626243450160&autoLogAppEvents=1" nonce="1R3WLEbM"></script>		
 	
 	<head>
       <title>Home</title>
@@ -152,7 +153,8 @@
 				<button type="button" style="cursor:pointer" onclick=window.open("sphider/search.php") value="Site search"><i class="fa fa-search"></i> Site search</button>
 			</div>
          </div>
-               <div class="video-slider" id="slider-video">
+		 <div align="center" style="display: flex;">
+		 <div class="video-slider" id="slider-video">
             <!-- SLIDE 1 -->
             <div class="slide">
                <iframe class="video" width="640" height="360" src="https://www.youtube.com/embed/hQAHSlTtcmY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -165,6 +167,8 @@
             <div class="slide-arrow left" ></div>
             <div class="slide-arrow right" ></div>
          </div>
+		 <div class="fb-page fb_iframe_widget" data-height="280px" style="width: 500px;" data-href="https://www.facebook.com/3d.web.design.seo" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"></blockquote></div>
+		 </div>
          <div class="sidebar">
             <a href="javascript:window.print()"><img src="img/print-icon.png" alt="print this page" id="print-button" title="Print" style="width:40px;height:40px" /></a>
             <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" target="_blank"><img src="img/creative-icon.png" title="Creative Commons" style="width:40px;height:40px" /></a>
@@ -259,7 +263,7 @@
           // When the user clicks on the button, scroll to the top of the document
           function topFunction() {
              window.scrollTo({top: 0, behavior: 'smooth'}) 
-          }			
+          }  
       </script>
 	  <a id="tars-widget-fab" class="tars-fab bounce closed pop_right" data-convid="Nju2fJ" href="https://chatbot.hellotars.com/conv/H1mwgM/?_nav&amp;amp;_end_redirect=0" target="_blank" rel="noopener" tabindex="-1"><div class="convbot-button  " style="background-color : #ac46e3 ; box-shadow : "><img class="convbot convbot-open" src="https://tars-file-upload.s3.amazonaws.com/Nju2fJ/dcf5b19f731653374422e35999a5ba75--Tars-Logo-Gif.gif" alt="Tars-Chatbot"></div></a>
    </body>
