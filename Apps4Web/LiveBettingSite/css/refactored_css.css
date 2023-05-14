@@ -110,6 +110,23 @@ button:hover {
     overflow-x: hidden;
   }
   
+  .sidebar-left {
+    width: 90px;
+    position: fixed;
+    z-index: 1;
+    text-align: center;
+    top: 95px;
+    left: 0px;
+    background: rgba(0,0,0,0.5);
+    overflow-x: hidden;
+  }
+  
+  .sidebar-left a {
+    //padding: 6px 8px 6px 16px;
+    display: block;
+	margin-top: 15px;
+  }
+  
   .sidebar-right {
     width: 90px;
     position: fixed;
@@ -214,25 +231,23 @@ button:hover {
 	border-radius: 25px;
 }
 
-.social-sidebar .gplus {
-    background-color: #db4a39;
-    width: 7em;
-    text-align: center;
-    height: 2em;
-	border-radius: 25px;
-}
-
 .social-sidebar a:hover {
     background-color: #FFFFFF;
     color: #000000;
     border: 1px solid #000000;
 }
 
-.sidebar-right-badge a{
+.sidebar-left a{
     text-decoration: none;
     color: #FFFFFF;
     line-height: 25px;
     transition: 0.6s;
+}
+
+.sidebar-left .linkedin {
+    background-color: #0e76a8;
+	text-align: center;
+	border-radius: 0px 0px 25px;
 }
 
 .sidebar-right a{
@@ -264,6 +279,12 @@ button:hover {
     text-align: center;
     //height: 2em;
 	border-radius: 25px;
+}
+
+.sidebar-left a:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    //border: 1px solid #000000;
 }
 
 .sidebar-right a:hover {

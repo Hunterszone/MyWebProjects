@@ -58,11 +58,17 @@
          <ul>
          <li><a id="quiz" style="cursor:pointer" onclick="location.href='../competitions/competitions.php'"><i class="fa fa-book"></i> Competitions</a></li>
          <li>
-			<a href='#'><i class="fa fa-home"></i> Standings</a>
+			<a href='#'><i class="fa fa-home"></i> SOCCER</a>
 			<ul>
                <li><a style="cursor:pointer" id="laliga" onclick="location.href='../standings/standings.php'">La Liga</a></li>
 			   <li><a style="cursor:pointer" id="secunda" onclick="location.href='../standings/standings_secunda.php'">Secunda</a></li>
                <li><a style="cursor:pointer" id="champsLeague" onclick="location.href='../standings/promotions.php'">Promotions</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href='#'><i class="fa fa-home"></i> BASKETBALL</a>
+			<ul>
+               <li><a style="cursor:pointer" id="laliga" onclick="location.href='../basketball/players.php'">Players</a></li>
 			</ul>
 		</li>
 		 <li>
