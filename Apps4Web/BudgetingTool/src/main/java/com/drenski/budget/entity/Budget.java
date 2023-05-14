@@ -8,11 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.lang.NonNull;
+
 @Entity(name = "BUDGET")
 public class Budget {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@NonNull
+	@GeneratedValue(strategy = GenerationType.AUTO)
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "country_seq")
 //	@GenericGenerator(name = "country_seq", strategy = "com.drenski.country.generator.StringSequenceGenerator", parameters = {
 //			@Parameter(name = StringSequenceGenerator.INCREMENT_PARAM, value = "50"),
