@@ -42,7 +42,7 @@
             </td>
          </tr>
       </table>
-      <form name="loginform" action="../auth/login_exec_email.php" method="post">
+      <form name="loginform" action="../auth/login_exec_email.php" method="post" onsubmit="event.preventDefault(); checkRecaptcha();">
          <table width="309" border="0" align="center" cellpadding="2" cellspacing="5">
             <tr>
                <td colspan="2">
@@ -117,6 +117,15 @@
 				x.type = "password";
 				y.className = "far fa-eye-slash"
 			  }
+			}
+			function checkRecaptcha() {
+				if(grecaptcha && grecaptcha.getResponse().length > 0) {
+					alert('Recaptcha was checked!');
+					window.location.replace("../auth/login_exec_email.php");
+				} else {
+					alert('Oops, you have to check the recaptcha!');
+					return false;
+				}
 			}
 	  </script>
 	  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
