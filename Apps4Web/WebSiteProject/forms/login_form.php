@@ -6,13 +6,6 @@
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	  <link rel="shortcut icon" type="image/jpg" href="../img/favicon.ico"/>
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-	  <script type="text/javascript">
-		  var onloadCallback = function() {
-			grecaptcha.render('html_element', {
-			  'sitekey' : '6LeVgrkUAAAAAN1Jdgh4YcMXOaB_RwbnKk3bjgMe'
-			});
-		  };
-		</script>
    </head>
    <body>
       <?php
@@ -104,7 +97,6 @@
                <td><a href="mailto:k.drenski91@gmail.com" target="_blank">Contact administrator</a></td>
             </tr>
          </table>
-		 <center><div id="html_element"></div></center>
       </form>
 	  <script>
 			function togglePass() {
@@ -119,9 +111,9 @@
 			  }
 			}
 	  </script>
-	  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer>
-      </script>
+	  <script src="https://www.google.com/recaptcha/api.js?render=6LdpSyImAAAAAEkpJFJu97kp7RXumgweBDzEP-8C"
+	async defer>
+	</script>
    </body>
    <STYLE TYPE="text/css">
       body { 

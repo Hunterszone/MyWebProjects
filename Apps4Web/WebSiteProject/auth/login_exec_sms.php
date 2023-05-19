@@ -44,7 +44,7 @@
     	if($errflag) {
     		$_SESSION['ERRMSG_ARR'] = $errmsg_arr;
     		session_write_close();
-    		header("location: ../forms/login_form.php");
+    		header("location: ../forms/login_form_sms.php");
     		exit();
     	}  
     	//Create query, but first use hashing algorithm for the password
