@@ -1,4 +1,5 @@
 <?php
+header("Cache-Control: no-cache,no-store");
 
 //Start session
 session_start();
