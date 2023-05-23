@@ -33,6 +33,12 @@ and **password_reset_temp**, having following structure:
 
 in order to store your users details and the temp keys, that are generated on password reset  
 
+and **otp_expiry**, having following structure: 
+
+![otp_expiry-table-struct](uploads/otp_expiry-table-struct.png)
+
+in order to store your OTP codes for the email login
+
 **IMPORTANT: Set the length for the PASSWORD column to 255 and always set a default value to INT columns, that are not PK!**  
 
 NB: You can also create your own collection of avatars under the **uploads** folder
@@ -46,4 +52,5 @@ NB: Set the SMTP settings in your hMailServer and your **php.ini**
 ## IV. Authentication
 - You can also authenticate, using a password, or a mobile app for scanning QR codes plus  
 another one for the generation of a one-time pass code
-- For this project I use the **sonata-project/GoogleAuthenticator** library
+- Another authentication options are by using SMS or email address
+- For this project I use the **sonata-project/GoogleAuthenticator** library for the QR auth, MessageBird for the SMS auth and OTP generation for the email auth
