@@ -126,9 +126,6 @@
                <a class='linkedin' target='_blank' title="S H A R E" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://YourContentsURLGoesHere.com&amp;title=Article Tile Goes Here&amp;summary=Put your summary here" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=390,width=548');return false;">
 				<span>LINKEDIN</span>
                </a>
-			   <a class="scroll gplus" style="cursor: pointer;" alt="Go to top">
-				<span>SCROLL UP</span>
-               </a>
             </div>
         </div>
       </br>

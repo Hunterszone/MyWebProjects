@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/refactored_css.css">
     <link rel="stylesheet" href="./css/particles.css">
     <link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="./css/megaMenuSecond.css">
 	<link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
     <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/bg_BG/sdk.js#xfbml=1&version=v16.0&appId=172626243450160&autoLogAppEvents=1" nonce="1R3WLEbM"></script>		
@@ -26,6 +27,15 @@
       <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     
       <style>
+	  
+		body {
+		  overflow: hidden; /* Hide scrollbars */
+		}
+		
+		marquee{
+		  color: #8ebf42;
+		  font-family: sans-serif;
+		}
 
 		.mapBox{
 			height: 400px;
@@ -118,42 +128,52 @@
                </form>
             </div>
          </div>
-         <div class="dropdown_menus">
-            <div class="dropdown">
-				<button style="cursor:pointer" onclick="window.location.href='./auth/SignUp.php'")>
-				<i class="fa fa-user-plus"></i> Sign up</button>
-            </div>
-			<form method="post" action="">
-				<div class="dropdown">
-					<button type="button" class="dropbtn"><i class="fa fa-sign-in"></i> Login</button>
-					<div class="dropdown-content">
-						<button type="button" id="qr-auth" style="cursor:pointer" onclick="window.location.href='./forms/login_form.php'" value="qrCode">2FA with QR code</button>
-						<button type="button" id="sms-auth" style="cursor:pointer" onclick="window.location.href='./forms/login_form_sms.php'" value="smsCode">2FA with SMS code</button>
-						<button type="button" id="sms-auth" style="cursor:pointer" onclick="window.location.href='./forms/login_form_email.php'" value="smsCode">2FA with EMAIL code</button>
-					</div>
-				</div>
-			</form>
-            <div class="dropdown">
-               <button class="dropbtn"><i class="fa fa-book"></i> Articles</button>
-               <div class="dropdown-content">
-                  <button type="button" style="cursor:pointer" onclick=window.open("./articles/html.html") value="HTML">HTML</button>
-                  <button type="button" style="cursor:pointer" onclick=window.open("./articles/css.html") value="CSS">CSS</button>
-                  <button type="button" style="cursor:pointer" onclick=window.open("./articles/javascript.html") value="JS">JS</button>
-                  <button type="button" style="cursor:pointer" onclick=window.open("./articles/php.html") value="PHP">PHP</button>
-               </div>
-            </div>
-            <div class="dropdown">
-               <button class="dropbtn"><i class="fa fa-pencil"></i> Contact us</button>
-               <div class="dropdown-content">
-                  <button type="button" style="cursor:pointer" onclick="window.location.href='./forms/contact_form.php'" value="Feedback">Feedback</button>
-                  <button type="button" style="cursor:pointer" onclick=window.open("phpBB3/index.php") value="Forum">Forum</button>
-               </div>
-            </div>
-			<div class="dropdown">
-				<button type="button" style="cursor:pointer" onclick=window.open("sphider/search.php") value="Site search"><i class="fa fa-search"></i> Site search</button>
-			</div>
-         </div>
-		 <div align="center" style="display: flex;">
+		 <!-- HTML for ANIMATION, CLOCK, HEADING AND SEARCH ENGINE -->
+		<div id="menu">
+		  <div id='menutext'>
+			 <ul>
+			 <li><a id="quiz" style="cursor:pointer" onclick="window.location.href='./auth/SignUp.php'"><i class="fa fa-user-plus"></i> Sign up</a></li>
+			 <li>
+				<a href='#'><i class="fa fa-sign-in"></i> Login</a>
+				<ul>
+				   <li><a style="cursor:pointer" id="files" onclick="window.location.href='./forms/login_form.php'">QR auth
+				   <li><a style="cursor:pointer" id="avatar" onclick="window.location.href='./forms/login_form_sms.php'">SMS auth</a></li>
+				   <li><a style="cursor:pointer" id="avatar" onclick="window.location.href='./forms/login_form_email.php'">Email auth</a></li>
+				</ul>
+			 </li>
+			 <li>
+				<a href='#'><i class="fa fa-book"></i> Articles</a>
+				<ul>
+				   <li><a style="cursor:pointer" id="htmlReadings" onclick=window.open("./articles/html.html")>HTML readings</a></li>
+				   <li><a style="cursor:pointer" id="cssReadings" onclick=window.open("./articles/css.html")>CSS readings</a></li>
+				   <li><a style="cursor:pointer" id="jsReadings" onclick=window.open("./articles/javascript.html")>JS readings</a></li>
+				   <li><a style="cursor:pointer" id="phpReadings" onclick=window.open("./articles/php.html")>PHP readings</a></li>
+				</ul>
+			 </li>
+			 <li>
+				<a href='#'><i class="fa fa-comments"></i> Contact us</a>
+				<ul>
+				   <li><a style="cursor:pointer" id="files" onclick="window.location.href='./forms/contact_form.php'">Feedback
+				   <li><a style="cursor:pointer" id="avatar" onclick=window.open("phpBB3/index.php")>Forum</a></li>
+				</ul>
+			 </li>
+			 <li><a style="cursor:pointer" id="logout" onclick=window.open("sphider/search.php")><i class="fa fa-search"></i>Site search</a></li>
+		  </div>
+		  <div class="socialiconsmenu">
+			 <ul>
+				<a>Follow us:</a>
+				<a href="Facebook address" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+				<a href="Twitter address" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+				<a href="Pinterest address" class="pinterest-p" target="_blank"><i class="fa fa-pinterest-p"></i></a>
+				<a href="YouTube address" class="youtube-play" target="_blank"><i class="fa fa-youtube-play"></i></a>
+				<a href="Instagram address" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+				<a href="Tumblr address" class="tumblr" target="_blank"><i class="fa fa-tumblr"></i></a>
+				<a href="LookBook address" class="lookbook" target="_blank"><i class="fa fa-heart"></i></a>
+				<a href="Bloglovin address" class="bloglovin" target="_blank"><i class="fa fa-plus"></i></a>
+			 </ul>
+		  </div>
+		 </div>
+		 <div align="center" style="display: flex; margin-top: 50px;">
 		 <div class="video-slider" id="slider-video">
             <!-- SLIDE 1 -->
             <div class="slide">
@@ -199,8 +219,12 @@
       </div>
       <!-- /map -->
 
-      <div id="particles-js"></div>
       </div>
+	  <div align="center" style="display: flex; margin-top: 50px;">
+		  <marquee width="100%" direction="right" color="white" onmouseover="this.stop();" onmouseout="this.start();">
+			Check our special offers and subscribe for our web content now!
+		  </marquee>
+	  </div>
       <!-- scripts -->
       <!-- oopenlayer maps script -->
 
