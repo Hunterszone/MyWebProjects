@@ -189,12 +189,6 @@
          </div>
 		 <div class="fb-page fb_iframe_widget" data-height="280px" style="width: 500px;" data-href="https://www.facebook.com/3d.web.design.seo" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"></blockquote></div>
 		 </div>
-         <div class="sidebar">
-            <a href="javascript:window.print()"><img src="img/print-icon.png" alt="print this page" id="print-button" title="Print" style="width:40px;height:40px" /></a>
-            <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" target="_blank"><img src="img/creative-icon.png" title="Creative Commons" style="width:40px;height:40px" /></a>
-            <a href="http://www.smashingmagazine.com/feed/" target="_blank"><img src="img/rss-feed-icon.png" alt="[Valid RSS]" title="RSS feeds" style="width:40px;height:40px" /></a>
-            <a href="#" onclick="showLocation()"><img src="img/marker.png" alt="marker" title="Show Location" style="width:40px;height:40px" /></a>
-         </div>
 		 <!-- <div class="sidebar-right-badge">
 			<a href="https://statuspage.freshping.io/55647-WebProgrammingWorld" target="_blank"><img src="https://statuspage.freshping.io/badge/2e3e4806-0a16-4fbb-96a9-5db655d9c699?0.5940733387587804"/></a>
 		</div>-->
@@ -289,6 +283,40 @@
              window.scrollTo({top: 0, behavior: 'smooth'}) 
           }  
       </script>
-	  <a id="tars-widget-fab" class="tars-fab bounce closed pop_right" data-convid="Nju2fJ" href="https://chatbot.hellotars.com/conv/H1mwgM/?_nav&amp;amp;_end_redirect=0" target="_blank" rel="noopener" tabindex="-1"><div class="convbot-button  " style="background-color : #ac46e3 ; box-shadow : "><img class="convbot convbot-open" src="https://tars-file-upload.s3.amazonaws.com/Nju2fJ/dcf5b19f731653374422e35999a5ba75--Tars-Logo-Gif.gif" alt="Tars-Chatbot" title="ChatBot"></div></a>
+	  <script>
+		  window.chatbaseConfig = {
+			chatbotId: "Nb9mY-i9u047kWUvjuspY",
+		  }
+		</script>
+		<script
+		  src="https://www.chatbase.co/embed.min.js"
+		  id="Nb9mY-i9u047kWUvjuspY"
+		  defer>
+	  </script>
+	  <!-- Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
+	  <script type="text/javascript" src="//www.freeprivacypolicy.com/public/cookie-consent/4.1.0/cookie-consent.js" charset="UTF-8"></script>
+	  <script type="text/javascript" charset="UTF-8">
+	  document.addEventListener('DOMContentLoaded', function () {
+	  cookieconsent.run({"notice_banner_type":"headline","consent_type":"express","palette":"dark","language":"en","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_name":"drenski4web.eu"});
+	  });
+	  </script>
+	  
+	  <!-- Google tag (gtag.js) -->
+	  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VNVNVV3E3"></script>
+	  <script>
+	   window.dataLayer = window.dataLayer || [];
+	   function gtag(){dataLayer.push(arguments);}
+	   gtag('js', new Date());
+
+	   gtag('config', 'G-8VNVNVV3E3');
+	  </script>
+
+	  <noscript>Cookie Consent by <a href="https://www.freeprivacypolicy.com/">Free Privacy Policy Generator</a></noscript>
+	  <!-- End Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
+
+      <!-- Below is the link that users can use to open Preferences Center to change their preferences. Do not modify the ID parameter. Place it where appropriate, style it as needed. -->
+
+	  <a href="#" id="open_preferences_center">Update cookies preferences</a>
+
    </body>
 </html>
