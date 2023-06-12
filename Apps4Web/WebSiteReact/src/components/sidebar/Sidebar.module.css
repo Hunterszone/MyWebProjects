@@ -1,0 +1,136 @@
+.sidebar {
+    width: 70px;
+    position: fixed;
+    z-index: 1;
+    text-align: center;
+    top: 40px;
+    left: 0px;
+    overflow: hidden;
+    padding: 0px 0;
+}
+
+.sidebar a {
+    padding: 6px 8px 6px 16px;
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.sidebar  img {
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar button {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.sidebar-right {
+    width: 90px;
+    position: fixed;
+    z-index: 1;
+    text-align: center;
+    top: 95px;
+    right: 0px;
+    overflow-x: hidden;
+}
+
+.social {
+    margin-top: 5px;
+}
+
+.social .facebook{
+    margin-top: 35px;
+    background-color: #167feb;
+    color: white;
+    width: 7em;
+    text-align: center;
+    height: 2em;
+	border-radius: 25px;
+}
+
+.social .facebook:hover {
+    color: #167feb;
+    background-color: white;
+}
+
+.social .twitter {
+    background-color: #00acee;
+    color: white;
+    width: 7em;
+    text-align: center;
+    height: 2em;
+	border-radius: 25px;
+    margin-top: 5px;
+}
+
+.social .twitter:hover {
+    color:  #00acee;
+    background-color: white;
+} 
+
+.social .linkedin {
+    background-color: #0e76a8;
+    color: white;
+    width: 7em;
+    text-align: center;
+    height: 2em;
+	border-radius: 25px;
+    margin-top: 5px;
+}
+
+.social .linkedin:hover {
+    color: #0e76a8;
+    background-color: white;
+}
+
+.sidebar-right-badge {
+    margin-top: 35px;
+    width: 4.5%;
+    height: auto;
+    position: fixed;
+    z-index: 1;
+    text-align: center;
+    top: 40px;
+    right: 0px;
+    overflow-x: hidden;
+}
+
+.sidebar-right-badge:hover {
+    width: 2.5%;
+}
+
+@media screen and (max-width: 450px) {
+    .sidebar {
+       margin-top: 8rem;
+       background: none;
+    }
+
+    .social .facebook  {
+        display: block;
+        margin-left: 60%;
+        width: 35%;
+        margin-top: 60%;
+    }
+
+    .social .twitter {
+        display: block;
+        margin-left: 60%;
+        width: 35%;
+    }
+
+    .social .linkedin {
+        display: block;
+        margin-left: 60%;
+        width: 35%;
+    }
+
+    .social .sidebar-right-badge {
+        display: none;
+        margin-top: 20%;
+        margin-left: 60%;
+        width: 24%;
+    }
+}
