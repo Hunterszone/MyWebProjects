@@ -202,6 +202,9 @@
 		   <a class='linkedin' target='_blank' title="S H A R E" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://YourContentsURLGoesHere.com&amp;title=Article Tile Goes Here&amp;summary=Put your summary here" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=390,width=548');return false;">
 			<span>LINKEDIN</span>
 		   </a>
+		   <a href="#" id="open_preferences_center">
+			<span>COOKIES</span>
+		   </a>
 		   <!--<img class="scroll-up" src="../img/scroll-to-top.gif" alt="Go to top">-->
          </div>
       </div>
@@ -313,10 +316,6 @@
 
 	  <noscript>Cookie Consent by <a href="https://www.freeprivacypolicy.com/">Free Privacy Policy Generator</a></noscript>
 	  <!-- End Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
-
-      <!-- Below is the link that users can use to open Preferences Center to change their preferences. Do not modify the ID parameter. Place it where appropriate, style it as needed. -->
-
-	  <a href="#" id="open_preferences_center">Update cookies preferences</a>
 
    </body>
 </html>
